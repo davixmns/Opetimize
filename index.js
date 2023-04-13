@@ -3,12 +3,31 @@ const express = require('express')
 const mongoose = require('mongoose')
 const app = express()
 
+const Purchase = require('./models/Purchase')
+
 //forma de ler json / middlewares
 app.use(express.urlencoded({
     extended: true,
 }),)
-
 app.use(express.json())
+
+//rotas da api
+app.post('/purchase', async (req, res) => {
+    const {name, price, weight, date} = req.body
+    const purchase = {
+        name,
+        price,
+        weight,
+        date
+    }
+    try{
+        await Purchase.create(purchase) //criando dados
+        res.status(201).json({message: "Compra de ração foi cadastrada"})
+    }catch (error){
+        res.status(500).json({error: error})
+    }
+})
+
 
 //rota inicial / endpoint
 app.get('/', (req, res) => {
