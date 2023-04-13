@@ -13,7 +13,7 @@ app.use(express.json())
 //rota inicial / endpoint
 app.get('/', (req, res) => {
     //mostrar req
-
+    //teste
     res.json({message: "oi express!"})
 })
 
