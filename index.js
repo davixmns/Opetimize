@@ -56,7 +56,7 @@ app.post('/purchase', async (req, res) => {
 //GET - CAPTURA TODAS AS COMPRAS DE RAÇÕES
 app.get("/purchases", async (req, res) => {
     const allPurchases = await Purchase.find()
-    res.status(200).json({resposta: allPurchases})
+    res.status(200).json(allPurchases)
 })
 
 //GET - CAPTURA UMA COMPRA DE RAÇÃO POR ID
@@ -90,5 +90,22 @@ app.put("/purchases/:id", async (req, res) => {
         res.status(500).json({error: error})
     }
 })
+
+//DELETE - DELETAR COMPRA DE RAÇÃO POR ID
+app.delete("/purchases/:id", async (req, res) => {
+    try {
+        const id = req.params.id;
+        const purchase = await Purchase.findById(id);
+        if (!purchase) {
+            res.status(404).json({message: "Compra de ração não encontrada"});
+            return;
+        }
+        await Purchase.deleteOne({_id: id});
+        res.status(200).json({message: "Compra de ração deletada com sucesso!"});
+    } catch (error) {
+        res.status(500).json({error: error});
+    }
+});
+
 
 
