@@ -26,7 +26,6 @@ function startConnection() {
         })
         .catch((err) => console.log(err))
 }
-
 startConnection()
 
 //POST - CADASTRA UMA COMPRA DE RAÇÃO
