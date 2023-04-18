@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="estruturando">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/titulo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/card/card.js" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="card">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/navbar/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/header/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -124,7 +123,7 @@
       <workItem from="1681827676352" duration="7924000" />
       <workItem from="1681841428701" duration="2087000" />
       <workItem from="1681843745403" duration="56000" />
-      <workItem from="1681843834232" duration="1688000" />
+      <workItem from="1681843834232" duration="4317000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -210,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681840948401</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="card">
+      <created>1681847251782</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681847251782</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +242,7 @@
     <MESSAGE value="react" />
     <MESSAGE value="react web begin" />
     <MESSAGE value="estruturando" />
-    <option name="LAST_COMMIT_MESSAGE" value="estruturando" />
+    <MESSAGE value="card" />
+    <option name="LAST_COMMIT_MESSAGE" value="card" />
   </component>
 </project>

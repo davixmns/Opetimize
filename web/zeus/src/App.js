@@ -7,7 +7,10 @@ function App() {
   return (
     <div className="App">
         <Header/>
-        <PurchaseHistory/>
+        <div id="globalDiv">
+            <PurchaseHistory/>
+
+        </div>
 
     </div>
   );

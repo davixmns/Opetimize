@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+#globalDiv {
+  display: flex;
+  flex-direction: column;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
