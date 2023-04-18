@@ -1,0 +1,21 @@
+#header {
+    background-color: #DADADA;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.33);
+    gap: 30rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+}
+
+
+#logo {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+#titulo {
+    width: 15rem;
+    height: 3.7rem;
+
+}

@@ -16,7 +16,6 @@ function PurchaseHistory() {
 
     return (
         <div className="firstcomponent">
-            <h2>Compras</h2>
 
             <ul>
                 {
