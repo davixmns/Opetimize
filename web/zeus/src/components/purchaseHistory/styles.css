@@ -1,0 +1,12 @@
+li {
+    color: #000000;
+
+}
+
+.content {
+    background-color: #fff;
+    width: 20rem;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 8px;
+}
