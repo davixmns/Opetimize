@@ -9,7 +9,6 @@ function App() {
         <Header/>
         <div id="globalDiv">
             <PurchaseHistory/>
-
         </div>
 
     </div>

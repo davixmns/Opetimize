@@ -17,17 +17,18 @@ function PurchaseHistory() {
     }, [purchases]);
 
     return (
-        <div id={"historico-content"}>
-            <h2 id="title">Historico</h2>
+        <div id="historyContent">
+            <h2 id="title">Histórico</h2>
             <div id="historyBackground">
-                <ul>
-                    {
-                        purchases.map((purchase) => (
-                            <Card name={purchase.name} price={purchase.price}/>
-                        ))
-                    }
+                <ul id="cardList">
+                    {purchases.map((purchase) => (
+                        <Card name={purchase.name}
+                              price={purchase.price}
+                              weight={purchase.weight}
+                              date={purchase.date}
+                        />
+                    ))}
                 </ul>
-
             </div>
         </div>
 
@@ -35,3 +36,4 @@ function PurchaseHistory() {
 }
 
 export default PurchaseHistory;
+

@@ -2,6 +2,7 @@
     background-color: #EF820D;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
     width: 50rem;
+    padding: 1rem;
 }
 
 #title {
@@ -16,8 +17,26 @@
     border-radius: 8px;
 }
 
-#historico-content {
+#historyContent {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#historyBackground {
+    max-height: 40rem;
+    overflow: auto;
+}
+
+#historyBackground::-webkit-scrollbar {
+    width: 0; /* Oculta a barra de rolagem do navegador */
+}
+
+
+#cardList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
