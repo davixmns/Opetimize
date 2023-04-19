@@ -1,20 +1,19 @@
-import React, {useState, useEffect} from 'react';
-import {getAllPurchases} from '../../service/apiService';
-import "./styles.css";
-import {Card} from "../card/Card";
-
+import React, { useState, useEffect } from 'react';
+import { getAllPurchases } from '../../service/apiService';
+import './styles.css';
+import { Card } from '../card/Card';
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getAllPurchases();
+            const data = await getAllPurchases()
+            console.log(data);
             setPurchases(data);
         };
-
-        fetchData();
-    }, [purchases]);
+        fetchData()
+    }, []);
 
     return (
         <div id="historyContent">
@@ -22,18 +21,19 @@ function PurchaseHistory() {
             <div id="historyBackground">
                 <ul id="cardList">
                     {purchases.map((purchase) => (
-                        <Card name={purchase.name}
-                              price={purchase.price}
-                              weight={purchase.weight}
-                              date={purchase.date}
+                        <Card
+                            key={purchase._id}
+                            id={purchase._id}
+                            name={purchase.name}
+                            price={purchase.price}
+                            weight={purchase.weight}
+                            date={purchase.date}
                         />
                     ))}
                 </ul>
             </div>
         </div>
-
     );
 }
 
 export default PurchaseHistory;
-
