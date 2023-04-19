@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="scroll bar e delete na api">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="delete funcionando">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/pencil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/trash.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/public/favicon.ico" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/m9/Documentos/zeus",
+    "last_opened_file_path": "/home/m9/Documentos/zeus/web/zeus/src/assets",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -122,7 +123,7 @@
       <workItem from="1681843745403" duration="56000" />
       <workItem from="1681843834232" duration="4317000" />
       <workItem from="1681916433904" duration="138000" />
-      <workItem from="1681916597973" duration="13516000" />
+      <workItem from="1681916597973" duration="13862000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -229,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681927712306</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="delete funcionando">
+      <created>1681935459116</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681935459116</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +265,7 @@
     <MESSAGE value="estruturando" />
     <MESSAGE value="card" />
     <MESSAGE value="scroll bar e delete na api" />
-    <option name="LAST_COMMIT_MESSAGE" value="scroll bar e delete na api" />
+    <MESSAGE value="delete funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete funcionando" />
   </component>
 </project>

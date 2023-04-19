@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {format} from 'date-fns';
 import {ptBR} from 'date-fns/locale';
 import './styles.css';
-import {deletePurchaseById, getAllPurchases} from '../../service/apiService';
+import {deletePurchaseById} from '../../service/apiService';
 
 export function Card(props) {
     const handleDelete = async () => {
