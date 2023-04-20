@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="delete funcionando">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/pencil.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/trash.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/public/favicon.ico" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="favicon e titulo">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -39,25 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/m9/Documentos/zeus/web/zeus/src/assets",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/m9/Área de Trabalho/Zeus/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "/home/m9/.nvm/versions/node/v16.20.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m9/Documentos/zeus/web/zeus/src/assets&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/m9/Área de Trabalho/Zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/m9/.nvm/versions/node/v16.20.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -68,10 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/backend_api" />
       <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
+      <recent name="$PROJECT_DIR$/backend_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/zeus/public" />
       <recent name="$PROJECT_DIR$/web/zeus/src/service" />
       <recent name="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory" />
     </key>
@@ -123,7 +127,8 @@
       <workItem from="1681843745403" duration="56000" />
       <workItem from="1681843834232" duration="4317000" />
       <workItem from="1681916433904" duration="138000" />
-      <workItem from="1681916597973" duration="13862000" />
+      <workItem from="1681916597973" duration="14057000" />
+      <workItem from="1681996607910" duration="3495000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -237,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681935459116</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="favicon e titulo">
+      <created>1681935869763</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681935869763</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +278,7 @@
     <MESSAGE value="card" />
     <MESSAGE value="scroll bar e delete na api" />
     <MESSAGE value="delete funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete funcionando" />
+    <MESSAGE value="favicon e titulo" />
+    <option name="LAST_COMMIT_MESSAGE" value="favicon e titulo" />
   </component>
 </project>
