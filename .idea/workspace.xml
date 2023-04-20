@@ -4,8 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="atualizacao da lista no delete">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/dist/browser.umd.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/dist/browser.umd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/document.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/document.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/helpers/document/compile.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/helpers/document/compile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/model.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/query.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/query.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/schema/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/lib/schema/array.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/scripts/generateSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/scripts/generateSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/mongoose/types/models.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/mongoose/types/models.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,27 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/m09/Área de Trabalho/zeus",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/m9/Área de Trabalho/Zeus/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m09/Área de Trabalho/zeus&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/m9/Área de Trabalho/Zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -76,7 +89,7 @@
       <recent name="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RunManager" selected="Jest.renders learn react link">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="$USER_HOME$/.nvm/versions/node/v16.20.0/bin/node" />
       <jest-package value="$PROJECT_DIR$/web/zeus/node_modules/react-scripts" />
@@ -89,7 +102,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="index.js" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.nvm/versions/node/v16.20.0/bin/node" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
+    <configuration name="index.js" type="NodeJSConfigurationType" path-to-node="node" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" path-to-node="$USER_HOME$/.nvm/versions/node/v16.20.0/bin/node" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/backend_api/index.js" working-dir="$PROJECT_DIR$/backend_api">
@@ -126,7 +139,9 @@
       <workItem from="1681916597973" duration="14057000" />
       <workItem from="1681996607910" duration="10228000" />
       <workItem from="1682020101398" duration="57000" />
-      <workItem from="1682021202881" duration="24000" />
+      <workItem from="1682021202881" duration="526000" />
+      <workItem from="1682022065523" duration="528000" />
+      <workItem from="1682022613759" duration="384000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -254,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682000337915</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary=".">
+      <created>1682021274409</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682021274409</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,6 +307,7 @@
     <MESSAGE value="delete funcionando" />
     <MESSAGE value="favicon e titulo" />
     <MESSAGE value="atualizacao da lista no delete" />
-    <option name="LAST_COMMIT_MESSAGE" value="atualizacao da lista no delete" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>
