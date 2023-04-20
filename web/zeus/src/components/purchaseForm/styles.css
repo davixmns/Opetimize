@@ -1,0 +1,13 @@
+#formContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30rem;
+    padding-left: 2rem;
+}
+
+#formBackground {
+    width: 28rem;
+    background-color: #EF820D;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}

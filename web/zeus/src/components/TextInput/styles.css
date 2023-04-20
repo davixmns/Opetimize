@@ -1,0 +1,14 @@
+#inputText {
+    outline: none;
+    background-color: rgb(252, 103, 1);
+    color: white;
+    border-radius: 15px;
+    height: 2.5rem;
+    width: 20rem;
+    text-indent: 1rem;
+
+}
+
+#div {
+    margin-bottom: 2rem;
+}

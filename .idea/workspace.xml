@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="favicon e titulo">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="atualizacao da lista no delete">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +130,7 @@
       <workItem from="1681843834232" duration="4317000" />
       <workItem from="1681916433904" duration="138000" />
       <workItem from="1681916597973" duration="14057000" />
-      <workItem from="1681996607910" duration="3495000" />
+      <workItem from="1681996607910" duration="10228000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -249,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681935869763</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="atualizacao da lista no delete">
+      <created>1682000337915</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682000337915</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +288,7 @@
     <MESSAGE value="scroll bar e delete na api" />
     <MESSAGE value="delete funcionando" />
     <MESSAGE value="favicon e titulo" />
-    <option name="LAST_COMMIT_MESSAGE" value="favicon e titulo" />
+    <MESSAGE value="atualizacao da lista no delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="atualizacao da lista no delete" />
   </component>
 </project>
