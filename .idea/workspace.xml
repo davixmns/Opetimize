@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=".">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="arrumando css do form">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +136,7 @@
       <workItem from="1682297337474" duration="10000" />
       <workItem from="1682297353373" duration="81000" />
       <workItem from="1682297484615" duration="173000" />
-      <workItem from="1682297663514" duration="2378000" />
+      <workItem from="1682297663514" duration="4690000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -276,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682021274409</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="arrumando css do form">
+      <created>1682300201389</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1682300201389</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +310,7 @@
     <MESSAGE value="favicon e titulo" />
     <MESSAGE value="atualizacao da lista no delete" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="arrumando css do form" />
+    <option name="LAST_COMMIT_MESSAGE" value="arrumando css do form" />
   </component>
 </project>

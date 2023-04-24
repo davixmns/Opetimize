@@ -38,13 +38,7 @@ startConnection()
 //POST - CADASTRA UMA COMPRA DE RAÇÃO
 app.post('/purchase', async (req, res) => {
     const {name, price, weight, date} = req.body
-    if (!name) {
-        res.status(422).json({error: "Compra não cadastrada, o nome é obrigatório"})
-    } else if (!price) {
-        res.status(422).json({error: "Compra não cadastrada, o preço é obrigatório"})
-    } else if (!weight) {
-        res.status(422).json({error: "Compra não cadastrada, o peso é obrigatório"})
-    }
+
     const purchase = {
         name,
         price,

@@ -24,6 +24,16 @@ export const deletePurchaseById = async (purchaseID) => {
     }
 }
 
+export const insertPurchase = async (purchase) => {
+    try{
+        const response = await axios.post(`${BASE_URL}/purchase`, purchase)
+        return response.data
+    }catch (error){
+        console.log(error)
+        return null
+    }
+}
+
 
 
 
