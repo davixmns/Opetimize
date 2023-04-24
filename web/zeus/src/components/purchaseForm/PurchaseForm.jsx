@@ -2,8 +2,8 @@ import "./styles.css";
 import TextInput from "../TextInput/TextInput";
 import SaveButton from "../saveButton/SaveButton";
 import DatePicker from "../datePicker/DatePicker";
-import { useState } from "react";
-import { insertPurchase } from "../../service/apiService";
+import {useEffect, useState} from "react";
+import {getAllPurchases, insertPurchase} from "../../service/apiService";
 
 function PurchaseForm() {
     const [name, setName] = useState("");
@@ -29,8 +29,6 @@ function PurchaseForm() {
 
     const handleSaveClick = async () => {
         const purchase = { name, price, weight, date };
-        console.log(purchase)
-
         if (name && price && weight && date) {
             await insertPurchase(purchase);
             setName("");
@@ -58,7 +56,7 @@ function PurchaseForm() {
                     <DatePicker id="date" value={date} onChange={handleDateChange} />
 
                     <label htmlFor="saveButton">Salvar</label>
-                    <SaveButton handleSave={handleSaveClick} />
+                    <SaveButton onClick={handleSaveClick} />
                 </ul>
             </div>
         </div>

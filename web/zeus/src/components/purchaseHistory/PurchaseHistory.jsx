@@ -9,7 +9,6 @@ function PurchaseHistory() {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getAllPurchases();
-            console.log(data);
             setPurchases(data);
         };
         fetchData();

@@ -14,6 +14,7 @@ export const getAllPurchases = async () => {
     }
 };
 
+
 export const deletePurchaseById = async (purchaseID) => {
     try{
         const response = await axios.delete(`${BASE_URL}/purchases/${purchaseID}`)
