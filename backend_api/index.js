@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const app = express()
 const Purchase = require('./models/Purchase')
 const cors = require('cors');
+const {all} = require("express/lib/application");
 
 
 app.use(cors());
@@ -104,6 +105,15 @@ app.delete("/purchases/:id", async (req, res) => {
         res.status(200).json({message: "Compra de ração deletada com sucesso!"});
     } catch (error) {
         res.status(500).json({error: error});
+    }
+});
+
+app.delete("/purchases", async (req, res) => {
+    try {
+        await Purchase.deleteMany();
+        res.status(200).json({ message: "Todas as compras foram deletadas com sucesso." });
+    } catch (error) {
+        res.status(500).json({ error: error });
     }
 });
 

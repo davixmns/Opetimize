@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="arrumando css do form">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,6 +139,8 @@
       <workItem from="1682297353373" duration="81000" />
       <workItem from="1682297484615" duration="173000" />
       <workItem from="1682297663514" duration="4690000" />
+      <workItem from="1682347690774" duration="1077000" />
+      <workItem from="1682355457415" duration="4417000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>

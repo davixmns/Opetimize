@@ -29,11 +29,15 @@ function PurchaseForm() {
 
     const handleSaveClick = async () => {
         const purchase = { name, price, weight, date };
-        await insertPurchase(purchase);
-        setName("");
-        setPrice("");
-        setWeight("");
-        setDate("");
+        console.log(purchase)
+
+        if (name && price && weight && date) {
+            await insertPurchase(purchase);
+            setName("");
+            setPrice("");
+            setWeight("");
+            setDate("");
+        }
     };
 
     return (
@@ -54,7 +58,7 @@ function PurchaseForm() {
                     <DatePicker id="date" value={date} onChange={handleDateChange} />
 
                     <label htmlFor="saveButton">Salvar</label>
-                    <SaveButton onClick={handleSaveClick} />
+                    <SaveButton handleSave={handleSaveClick} />
                 </ul>
             </div>
         </div>

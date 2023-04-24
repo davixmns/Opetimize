@@ -1,10 +1,10 @@
 import "./styles.css"
 
-function SaveButton(){
+function SaveButton(props){
     return (
         <div>
             <label htmlFor="button"></label>
-            <input type="button" id="button"/>
+            <input onClick={props.handleSave} type="button" id="button"/>
         </div>
     )
 }
