@@ -8,6 +8,16 @@
 
 #formBackground {
     width: 28rem;
-    background-color: #EF820D;
+    border-radius: 28px;
+    /*background-color: #EF820D;*/
+    background-color: #DADADA;
+
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+#inputList {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
 }

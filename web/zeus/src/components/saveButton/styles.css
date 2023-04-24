@@ -1,0 +1,16 @@
+#button {
+    height: 2.5rem;
+    width: 20rem;
+    outline: none;
+    border: none;
+    background-color: #919974;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    margin-bottom: 2rem;
+}
+
+#button:active{
+    background-color: darkolivegreen;
+}
+

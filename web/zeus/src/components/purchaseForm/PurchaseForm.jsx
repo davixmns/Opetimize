@@ -1,5 +1,6 @@
 import "./styles.css";
 import TextInput from "../TextInput/TextInput";
+import SaveButton from "../saveButton/SaveButton";
 
 function PurchaseForm() {
     return (
@@ -7,7 +8,6 @@ function PurchaseForm() {
             <h2 id="title">Cadastrar Ração</h2>
             <div id="formBackground">
                 <ul id="inputList">
-                    <li>
                         <label htmlFor="inputText">Nome:</label>
                         <TextInput/>
 
@@ -19,7 +19,9 @@ function PurchaseForm() {
 
                         <label htmlFor="inputText">Data:</label>
                         <TextInput/>
-                    </li>
+
+                        <label htmlFor="saveButton">Salvar</label>
+                        <SaveButton/>
                 </ul>
             </div>
         </div>

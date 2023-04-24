@@ -12,7 +12,6 @@ function App() {
             <PurchaseForm/>
             <PurchaseHistory/>
         </div>
-
     </div>
   );
 }
