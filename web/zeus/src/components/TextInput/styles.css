@@ -1,6 +1,5 @@
 #inputText {
     border: none;
-    outline: none;
     background-color: white;
     color: black;
     border-radius: 15px;
@@ -11,5 +10,58 @@
 }
 
 #div {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
 }
+
+#name-text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+#price-text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+#weight-text-input {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+#date-datepicker {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+#label-name {
+    margin-left: 0.5rem;
+}
+
+#label-price {
+    margin-left: 0.5rem;
+}
+
+#label-weight {
+    margin-left: 0.5rem;
+}
+
+#label-date {
+    margin-left: 0.5rem;
+}
+
+ul {
+   display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+

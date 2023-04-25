@@ -4,12 +4,21 @@ import SaveButton from "../saveButton/SaveButton";
 import DatePicker from "../datePicker/DatePicker";
 import {useEffect, useState} from "react";
 import {getAllPurchases, insertPurchase} from "../../service/apiService";
+import ErrorModal from "../errorModal/ErrorModal";
 
 function PurchaseForm() {
+    const today = new Date().toISOString().substr(0, 10);
+    const [error, setError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [weight, setWeight] = useState("");
-    const [date, setDate] = useState("");
+    const [date, setDate] = useState(today);
+
+    const handleCloseErrorModal = () => {
+        setError(false);
+    };
 
     const handleNameChange = (event) => {
         setName(event.target.value);
@@ -28,13 +37,28 @@ function PurchaseForm() {
     };
 
     const handleSaveClick = async () => {
-        const purchase = { name, price, weight, date };
-        if (name && price && weight && date) {
-            await insertPurchase(purchase);
-            setName("");
-            setPrice("");
-            setWeight("");
-            setDate("");
+        try{
+
+            const purchase = { name, price, weight, date };
+            if (name && price && weight) {
+                if(!date){
+                    setDate(today)
+                }
+                await insertPurchase(purchase);
+                setName("");
+                setPrice("");
+                setWeight("");
+                setDate("");
+                // eslint-disable-next-line no-restricted-globals
+                location.reload()
+            } else {
+                setErrorMessage("Todos os campos precisam ser preenchidos");
+                setError(true);
+            }
+
+        }catch (error){
+            setError(error.message)
+            setError(true)
         }
     };
 
@@ -43,20 +67,28 @@ function PurchaseForm() {
             <h2 id="title">Cadastrar Ração</h2>
             <div id="formBackground">
                 <ul id="inputList">
-                    <label htmlFor="name">Nome:</label>
-                    <TextInput id="name" value={name} onChange={handleNameChange} />
+                    <div id="name-text-input">
+                        <label htmlFor="name" id="label-name">Nome:</label>
+                        <TextInput id="name" value={name} onChange={handleNameChange} placeHolder = "Ração/Marca"/>
+                    </div>
 
-                    <label htmlFor="price">Valor:</label>
-                    <TextInput id="price" value={price} onChange={handlePriceChange} />
+                    <div id="price-text-input">
+                        <label htmlFor="price" id="label-price">Valor:</label>
+                        <TextInput id="price" value={price} onChange={handlePriceChange} placeHolder={"R$"} />
+                    </div>
 
-                    <label htmlFor="weight">Peso:</label>
-                    <TextInput id="weight" value={weight} onChange={handleWeightChange} />
+                    <div id="weight-text-input">
+                        <label htmlFor="weight" id="label-weight">Peso:</label>
+                        <TextInput id="weight" value={weight} onChange={handleWeightChange} placeHolder={"gramas"}/>
+                    </div>
 
-                    <label htmlFor="date">Data:</label>
-                    <DatePicker id="date" value={date} onChange={handleDateChange} />
+                    <div id="date-datepicker">
+                        <label htmlFor="date" id="label-date">Data:</label>
+                        <DatePicker id="date" value={date} onChange={handleDateChange} />
+                    </div>
 
-                    <label htmlFor="saveButton">Salvar</label>
-                    <SaveButton onClick={handleSaveClick} />
+                    <SaveButton onClick={handleSaveClick} title={"Salvar"} />
+                    {error && <ErrorModal title="Erro" message={errorMessage} onClose={handleCloseErrorModal} />}
                 </ul>
             </div>
         </div>

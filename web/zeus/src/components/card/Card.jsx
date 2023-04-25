@@ -11,7 +11,7 @@ export function Card(props) {
     return (
         <div id="card">
             <h3>
-                {props.name} - {props.weight}g - R${props.price} -{' '}
+                {props.name} - R${props.price} - {props.weight}g - {' '}
                 {format(new Date(props.date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
             </h3>
             <div id="buttons">
