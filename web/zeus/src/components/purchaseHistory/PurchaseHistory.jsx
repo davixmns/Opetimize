@@ -30,6 +30,10 @@ function PurchaseHistory() {
     const filteredPurchases = purchases.filter(purchase => {
         const searchValueLowerCase = searchValue.toLowerCase();
 
+        if (purchase.name.toLowerCase().includes(searchValueLowerCase)) {
+            return true;
+        }
+
         if (purchase.date.includes(searchValueLowerCase)) {
             return true;
         }
@@ -48,13 +52,7 @@ function PurchaseHistory() {
 
         const monthIndex = monthNames.indexOf(searchValueLowerCase);
         return monthIndex !== -1 && parseInt(month) === monthIndex + 1;
-
-
     });
-
-
-
-
 
     return (
         <div id="historyContent">
