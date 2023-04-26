@@ -1,0 +1,72 @@
+#edit-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#edit-modal button {
+    cursor: pointer;
+}
+
+#edit-modal i {
+    margin-right: 5px;
+}
+
+#edit-modal input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#edit-modal label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+#edit-modal h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#edit-modal > div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#edit-modal > div > button {
+    background-color: #cccccc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+#edit-modal > div > button:hover {
+    background-color: #333333;
+    color: #fff;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}

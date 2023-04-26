@@ -6,7 +6,6 @@
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  background-color: #E49052;
 }
 
 .App-logo {

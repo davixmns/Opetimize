@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = 'http://172.18.9.85:3000';
+// const BASE_URL = 'http://172.18.9.85:3000';
+const BASE_URL = 'http://localhost:3000';
 
 export const getAllPurchases = async () => {
     try {
@@ -34,6 +35,17 @@ export const insertPurchase = async (purchase) => {
         return null
     }
 }
+
+export const editPurchase = async (id, purchase) => {
+    try {
+        const response = await axios.put(`${BASE_URL}/purchases/${id}`, purchase);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 
 
 

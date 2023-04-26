@@ -19,6 +19,7 @@ function PurchaseHistory() {
     const handleDelete = async (id) => {
         await deletePurchaseById(id);
         const data = await getAllPurchases();
+        console.log(data)
         setPurchases(data);
     };
 
@@ -46,11 +47,9 @@ function PurchaseHistory() {
             "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
         const monthIndex = monthNames.indexOf(searchValueLowerCase);
-        if (monthIndex !== -1 && parseInt(month) === monthIndex + 1) {
-            return true;
-        }
+        return monthIndex !== -1 && parseInt(month) === monthIndex + 1;
 
-        return false;
+
     });
 
 

@@ -4,28 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/errorModal/ErrorModal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/errorModal/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/searchBar/SearchBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/searchBar/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="inicio backend botao de save">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/editModal/EditModal.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/editModal/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/TextInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/TextInput/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/trash.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/assets/trash.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +67,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/home/m9/Área de Trabalho/Zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
@@ -98,7 +95,7 @@
   </component>
   <component name="RunManager" selected="Jest.renders learn react link">
     <configuration name="renders learn react link" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v16.20.0/bin/node" />
+      <node-interpreter value="node" />
       <jest-package value="$PROJECT_DIR$/web/zeus/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$/web/zeus" />
       <envs />
@@ -153,10 +150,7 @@
       <workItem from="1682297353373" duration="81000" />
       <workItem from="1682297484615" duration="173000" />
       <workItem from="1682297663514" duration="4690000" />
-      <workItem from="1682347690774" duration="1077000" />
-      <workItem from="1682355457415" duration="10004000" />
-      <workItem from="1682427843102" duration="79000" />
-      <workItem from="1682427942674" duration="19807000" />
+      <workItem from="1682477246305" duration="4965000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -298,21 +292,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682300201389</updated>
     </task>
-    <task id="LOCAL-00021" summary="salvar funcionando">
-      <created>1682362561681</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1682362561681</updated>
-    </task>
-    <task id="LOCAL-00022" summary=".">
-      <created>1682368098152</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1682368098152</updated>
-    </task>
-    <option name="localTasksCounter" value="23" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,9 +323,8 @@
     <MESSAGE value="delete funcionando" />
     <MESSAGE value="favicon e titulo" />
     <MESSAGE value="atualizacao da lista no delete" />
-    <MESSAGE value="arrumando css do form" />
-    <MESSAGE value="salvar funcionando" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="arrumando css do form" />
+    <option name="LAST_COMMIT_MESSAGE" value="arrumando css do form" />
   </component>
 </project>

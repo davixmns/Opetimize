@@ -7,6 +7,7 @@
     border-radius: 15px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: ease-in-out 0.2s ;
     margin-bottom: 2rem;
 }
 
@@ -16,5 +17,7 @@
 
 #button:hover{
     background-color: #7C8046;
+    height: 2.6rem;
+    width: 20.5rem;
 }
 

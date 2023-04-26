@@ -6,8 +6,7 @@ function SaveButton( {
     return (
         <div>
             <label htmlFor="button"></label>
-            <input onClick={onClick} type="button" id="button" value={title}>
-            </input>
+            <input onClick={onClick} type="button" id="button" value={title}></input>
         </div>
     )
 }
