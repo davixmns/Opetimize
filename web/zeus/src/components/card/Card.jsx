@@ -5,9 +5,12 @@ import { ReactComponent as TrashIcon } from '../../assets/trash.svg';
 import { ReactComponent as EditIcon } from '../../assets/pencil.svg';
 import './styles.css';
 import {editPurchase} from "../../service/apiService";
+import EditModal from "../editModal/EditModal";
+import DeleteModal from "../deleteModal/DeleteModal";
 
 export function Card(props) {
-    const [showModal, setShowModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [showDeleteModal, setShowDeleteModal] = useState(false)
     const [name, setName] = useState(props.name);
     const [price, setPrice] = useState(props.price);
     const [weight, setWeight] = useState(props.weight);
@@ -17,7 +20,7 @@ export function Card(props) {
         await props.handleDelete(props.id);
     };
 
-    async function handleSave(){
+    async function handleSaveEdit(){
         const newCard = {
             id: props.id,
             name: name,
@@ -26,12 +29,18 @@ export function Card(props) {
             date: date,
         };
         await editPurchase(props.id, newCard)
-        setShowModal(false);
+        setShowEditModal(false);
+        // eslint-disable-next-line no-restricted-globals
+        location.reload()
     }
 
-    const handleCancel = () => {
-        setShowModal(false);
+    const handleCancelEditModal = () => {
+        setShowEditModal(false);
     };
+
+    const handleCancelDeleteModal = () => {
+        setShowDeleteModal(false)
+    }
 
     return (
         <div id="card">
@@ -44,51 +53,42 @@ export function Card(props) {
                 </p>
             </div>
             <div id="right">
-                <button id="edit" onClick={() => setShowModal(true)}>
-                    <EditIcon />
+                <button id="edit" onClick={() => setShowEditModal(true)}>
+                    <EditIcon/>
                 </button>
-                <button id="trash" onClick={handleDelete}>
+                <button id="trash" onClick={() => setShowDeleteModal(true)}>
                     <TrashIcon />
                 </button>
             </div>
-            {showModal && (
-                <div id="modal">
-                    <div id="modal-content">
-                        <label htmlFor="name">Nome:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-                        <label htmlFor="price">Preço:</label>
-                        <input
-                            type="number"
-                            id="price"
-                            value={price}
-                            onChange={(e) => setPrice(e.target.value)}
-                        />
-                        <label htmlFor="weight">Peso:</label>
-                        <input
-                            type="number"
-                            id="weight"
-                            value={weight}
-                            onChange={(e) => setWeight(e.target.value)}
-                        />
-                        <label htmlFor="date">Data:</label>
-                        <input
-                            type="date"
-                            id="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                        />
-                        <div id="modal-buttons">
-                            <button onClick={handleSave}>Salvar</button>
-                            <button onClick={handleCancel}>Cancelar</button>
-                        </div>
-                    </div>
-                </div>
+            {showEditModal && (
+                <EditModal
+                    id={props.id}
+                    name={name}
+                    price={price}
+                    weight={weight}
+                    date={date}
+                    handleSaveEditModal={handleSaveEdit}
+                    handleCancelEditModal={handleCancelEditModal}
+                    setName={setName}
+                    setPrice={setPrice}
+                    setWeight={setWeight}
+                    setDate={setDate}
+                    setShowEditModal={setShowEditModal}
+                    showEditModal={showEditModal}
+                />
             )}
+            {showDeleteModal && (
+                <DeleteModal
+                    id={props.id}
+                    name={name}
+                    date={date}
+                    handleDeleteCard={handleDelete}
+                    handleCancelDeleteModal={handleCancelDeleteModal}
+                    showDeleteModal={showDeleteModal}
+                    setShowDeleteModal={setShowDeleteModal}
+                />
+            )}
+
         </div>
     );
 }

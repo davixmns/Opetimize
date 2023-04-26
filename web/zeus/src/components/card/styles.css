@@ -26,9 +26,11 @@
 
 #trash:hover{
     color: red;
+
 }
 
 #edit {
+    transition: ease-in-out 0.2s;
     outline: none;
     border: none;
     cursor: pointer;

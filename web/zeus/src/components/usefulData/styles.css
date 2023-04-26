@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+#usefulDataContent {
+    margin-right: 1rem;
+}
+
 #label {
     display: flex;
     font-size: 1.4rem;

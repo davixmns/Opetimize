@@ -38,7 +38,6 @@ function PurchaseForm() {
 
     const handleSaveClick = async () => {
         try{
-
             const purchase = { name, price, weight, date };
             if (name && price && weight) {
                 if(!date){
