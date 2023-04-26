@@ -1,20 +1,18 @@
-import {FlatList, Text} from 'react-native';
-import {useEffect, useState} from "react";
-import {getAllPurchases} from "../../service/apiService";
-import Card from "../card/Card";
+import { FlatList, ScrollView } from 'react-native';
+import { useEffect, useState } from 'react';
+import { getAllPurchases } from '../../service/apiService';
+import Card from '../card/Card';
 
-function PurchaseHistory(){
-    const [purchases, setPurchases] = useState([])
+function PurchaseHistory() {
+    const [purchases, setPurchases] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         const fetchData = async () => {
-            const data = await getAllPurchases()
-            console.log("data - " + data)
-            setPurchases(data)
+            const data = await getAllPurchases();
+            setPurchases(data);
         };
         fetchData();
-        }, []
-    )
+    }, []);
 
     const renderPurchase = ({ item: purchase }) => {
         return (
@@ -28,8 +26,24 @@ function PurchaseHistory(){
     };
 
     return (
-        <FlatList data={purchases} renderItem={renderPurchase} keyExtractor={item => item._id.toString()}/>
-    )
+        <ScrollView contentContainerStyle={styles.container}>
+            <FlatList
+                data={purchases}
+                renderItem={renderPurchase}
+                keyExtractor={(item) => item._id.toString()}
+            />
+        </ScrollView>
+    );
 }
+import { StyleSheet } from 'react-native';
 
-export default PurchaseHistory
+const styles = StyleSheet.create({
+    container: {
+
+        paddingHorizontal: 0,
+        paddingBottom: 40,
+    },
+});
+
+export default PurchaseHistory;
+
