@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="estilizando lista">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

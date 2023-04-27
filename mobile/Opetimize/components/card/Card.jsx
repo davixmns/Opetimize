@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: "bold",
         marginBottom: 8,
+        color: "#E49052"
     },
     price: {
         fontSize: 20,

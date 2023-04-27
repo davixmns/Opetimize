@@ -1,28 +1,29 @@
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import PurchaseHistory from "../purchaseHistory/PurchaseHistory";
-import {PurchaseForm} from "../purchaseForm/PurchaseForm";
 import {UsefulData} from "../usefulData/UsefulData";
-import {View} from "react-native";
-import {StyleSheet} from "react-native";
-import {Feather} from "@expo/vector-icons"
+import {StyleSheet, View} from "react-native";
+import {Feather} from "@expo/vector-icons";
+import PurchaseForm from "../purchaseForm/PurchaseForm";
 
 const Tab = createBottomTabNavigator();
 
 function BottomBar() {
     return (
-        <View style={styles.bottomBar}>
+        <View style={styles.container}>
             <Tab.Navigator
                 screenOptions={{
                     tabBarStyle: {
                         backgroundColor: '#E49052',
-                        borderTopWidth: 0
+                        borderBottomWidth: 0,
+                        height: 60
                     }
-                }}
-            >
+                }}>
+
                 <Tab.Screen
                     name="List"
                     component={PurchaseHistory}
                     options={{
+                        headerShown: false,
                         tabBarIcon: () => {
                             return <Feather name="list" size={30} color={"#fff"}/>
                         }
@@ -51,13 +52,11 @@ function BottomBar() {
     );
 }
 
-
 const styles = StyleSheet.create({
-    bottomBar: {
-        bottom: 0,
-        height: 50,
-        width: '100%',
-    }
-})
+    container: {
+        flex: 1,
+    },
+});
+
 
 export default BottomBar;

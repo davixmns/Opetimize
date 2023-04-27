@@ -1,26 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, StatusBar} from 'react-native';
-import PurchaseHistory from './components/purchaseHistory/PurchaseHistory';
-import BottomBar from "./components/bottomBar/BottomBar";
-import {NavigationContainer} from "@react-navigation/native";
+import { NavigationContainer } from '@react-navigation/native';
+import BottomBar from './components/bottomBar/BottomBar';
+import {StatusBar} from "react-native";
 
-function App() {
+export default function App() {
     return (
         <NavigationContainer>
-            <View style={styles.container}>
-                <StatusBar backgroundColor="#000" barStyle="light-content" translucent={false}/>
-                <PurchaseHistory/>
-                <BottomBar/>
-            </View>
+            <StatusBar backgroundColor="#E49052" barStyle="light-content" translucent={false}/>
+            <BottomBar/>
         </NavigationContainer>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#E49052',
-    },
-});
-
-export default App;
