@@ -5,7 +5,7 @@ import {ptBR} from "date-fns/locale";
 
 function Card(props){
     const date = new Date(props.date);
-    const formattedDate = format(date, "dd 'de' MMMM 'de' yyyy", { locale: ptBR });
+    const formattedDate = format(date, "dd/MM/yyyy", { locale: ptBR });
     return (
         <View style={styles.background}>
             <View style={styles.card}>
@@ -49,12 +49,12 @@ const styles = StyleSheet.create({
         height: "100%",
     },
     name: {
-        fontSize: 20,
+        fontSize: 22,
         fontWeight: "bold",
         marginBottom: 8,
     },
     price: {
-        fontSize: 16,
+        fontSize: 20,
         color: "#4CAF50",
         fontWeight: "bold",
     },
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     },
     date: {
         alignSelf: "flex-end",
-        fontSize: 14,
+        fontSize: 17,
         color: "#777",
     },
 });

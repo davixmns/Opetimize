@@ -26,14 +26,14 @@ function PurchaseHistory() {
     };
 
     return (
-        <ScrollView contentContainerStyle={styles.container}>
-            <FlatList
-                data={purchases}
-                renderItem={renderPurchase}
-                keyExtractor={(item) => item._id.toString()}
-            />
-        </ScrollView>
+        <FlatList
+            style={styles.container}
+            data={purchases}
+            renderItem={renderPurchase}
+            keyExtractor={(item) => item._id.toString()}
+        />
     );
+
 }
 import { StyleSheet } from 'react-native';
 
