@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import { Text, StyleSheet, View } from "react-native";
 import { format } from 'date-fns';
-import {ptBR} from "date-fns/locale";
+import { ptBR } from "date-fns/locale";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import { IconButton } from "react-native-paper";
 
-function Card(props){
+function Card(props) {
+    const [showDeleteModal, setShowDeleModal] = useState(false)
+    const [showEditModal, setShowEditModal] = useState(false)
+
     const date = new Date(props.date);
     const formattedDate = format(date, "dd/MM/yyyy", { locale: ptBR });
+
     return (
         <View style={styles.background}>
             <View style={styles.card}>
@@ -15,9 +21,23 @@ function Card(props){
                 <View>
                     <Text style={styles.date}>{formattedDate}</Text>
                 </View>
+                <View style={styles.content2}>
+                    <IconButton
+                        icon={(p) => <Icon name="pencil" {...p} size={35} />}
+                        style={styles.icon}
+                    />
+                    <IconButton
+                        icon={(props) => (
+                            <Icon name="trash-can-outline" {...props} size={35} />
+                        )}
+                        style={styles.icon}
+                        iconColor={'red'}
+                        onPress={() => props.handleDelete(props.id)}
+                    />
+                </View>
             </View>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -31,7 +51,7 @@ const styles = StyleSheet.create({
         marginBottom: 16,
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
+        alignItems: "flex-start",
         justifyContent: "space-between",
         shadowColor: "#000",
         shadowOffset: {
@@ -41,34 +61,40 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.23,
         shadowRadius: 2.62,
         elevation: 4,
+        position: 'relative',
     },
-    content: {
+    content2: {
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "100%",
+        flexDirection: "row",
+        position: 'absolute',
+        bottom: 10,
+        right: 10,
     },
     name: {
         fontSize: 22,
         fontWeight: "bold",
-        marginBottom: 8,
+        marginBottom: 0,
         color: "#E49052"
     },
     price: {
-        fontSize: 20,
+        fontSize: 25,
         color: "#4CAF50",
         fontWeight: "bold",
     },
     weight: {
-        fontSize: 16,
+        fontSize: 20,
         color: "#333",
-        marginBottom: 8,
     },
     date: {
         alignSelf: "flex-end",
         fontSize: 17,
         color: "#777",
     },
+    icon: {
+        width: 40,
+        height: 40,
+        marginLeft: 10,
+    }
 });
 
 export default Card;

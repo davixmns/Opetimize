@@ -1,6 +1,6 @@
-import { FlatList, ScrollView } from 'react-native';
+import { FlatList } from 'react-native';
 import { useEffect, useState } from 'react';
-import { getAllPurchases } from '../../service/apiService';
+import { deletePurchaseById, getAllPurchases } from '../../service/apiService';
 import Card from '../card/Card';
 
 function PurchaseHistory() {
@@ -14,13 +14,26 @@ function PurchaseHistory() {
         fetchData();
     }, []);
 
+    async function handleDeletePurchase(id) {
+        try {
+            await deletePurchaseById(id);
+            const data = await getAllPurchases();
+            setPurchases(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const renderPurchase = ({ item: purchase }) => {
         return (
             <Card
+                key={purchase._id}
+                id={purchase._id}
                 name={purchase.name}
                 price={purchase.price}
                 weight={purchase.weight}
                 date={purchase.date}
+                handleDelete={handleDeletePurchase}
             />
         );
     };
@@ -30,19 +43,18 @@ function PurchaseHistory() {
             style={styles.container}
             data={purchases}
             renderItem={renderPurchase}
-            keyExtractor={(item) => item._id.toString()}
+            keyExtractor={(item) => item._id}
         />
     );
-
 }
+
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 0,
-        paddingBottom: 40,
         backgroundColor: '#7C8046',
-
+        paddingTop: 20,
     },
 });
 

@@ -1,58 +1,88 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
 import {insertPurchase} from "../../service/apiService";
+import DatePicker from "react-native-modern-datepicker";
+import { Snackbar } from 'react-native-paper';
+
 
 function PurchaseForm() {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
-    const [date, setDate] = useState('');
+    const [date, setDate] = useState(new Date());
+    const [snackbarVisible, setSnackbarVisible] = useState(false);
+    const [snackbarSaveVisible, setSnackbarSaveVisible] = useState(false);
 
     const handleSavePurchase = async () => {
         try {
-            const newPurchase = {name, price, weight, date}
-            await insertPurchase(newPurchase)
-            console.log("ração " + name + " salva com sucesso!")
-            setName("")
-            setPrice("")
-            setWeight("")
-            setDate("")
+            if (name && price && weight && date) {
+                const newPurchase = { name, price, weight, date };
+                await insertPurchase(newPurchase);
+                setSnackbarSaveVisible(true)
+                console.log('ração ' + name + ' salva com sucesso!');
+                setName('');
+                setPrice('');
+                setWeight('');
+                setDate(new Date());
+            } else {
+                setSnackbarVisible(true);
+            }
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.label}>Nome:</Text>
-            <TextInput
-                style={styles.input}
-                value={name}
-                onChangeText={setName}
-                placeholder="Ração/Marca"
-            />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Text style={styles.title}>Cadastrar Ração</Text>
+                <Text style={styles.label}>Nome:</Text>
+                <TextInput
+                    style={styles.input}
+                    value={name}
+                    onChangeText={setName}
+                    placeholder="Ração/Marca"
+                />
+                <Text style={styles.label}>Valor:</Text>
+                <TextInput
+                    style={styles.input}
+                    value={price}
+                    onChangeText={setPrice}
+                    placeholder="R$"
+                    keyboardType="numeric"
+                />
+                <Text style={styles.label}>Peso:</Text>
+                <TextInput
+                    style={styles.input}
+                    value={weight}
+                    onChangeText={setWeight}
+                    placeholder="gramas"
+                    keyboardType="numeric"
+                />
+                <Text style={styles.label}>Data:</Text>
+                <DatePicker mode={'calendar'} date={date} onChange={setDate} />
+                <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
+                    <Text style={styles.buttonText}>Salvar</Text>
+                </TouchableOpacity>
 
-            <Text style={styles.label}>Valor:</Text>
-            <TextInput
-                style={styles.input}
-                value={price}
-                onChangeText={setPrice}
-                placeholder="R$"
-                keyboardType="numeric"
-            />
+                <Snackbar
+                    visible={snackbarVisible}
+                    duration={1000}
+                    onDismiss={() => setSnackbarVisible(false)}
+                    style={styles.snackBarError}
+                >
+                    Preencha todos os campos para salvar a ração
+                </Snackbar>
 
-            <Text style={styles.label}>Peso:</Text>
-            <TextInput
-                style={styles.input}
-                value={weight}
-                onChangeText={setWeight}
-                placeholder="gramas"
-                keyboardType="numeric"
-            />
-
-            <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
-                <Text style={styles.buttonText}>Salvar</Text>
-            </TouchableOpacity>
+                <Snackbar
+                    style={styles.snackBarSave}
+                    visible={snackbarSaveVisible}
+                    duration={1000}
+                    onDismiss={() => setSnackbarSaveVisible(false)}
+                >
+                    Ração salva com sucesso!
+                </Snackbar>
+            </ScrollView>
         </View>
     );
 }
@@ -63,7 +93,8 @@ const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
         flex: 1,
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingTop: 0,
         backgroundColor: "#F5E7CC"
     },
     label: {
@@ -74,7 +105,7 @@ const styles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: 'transparent',
-        borderRadius: 30,
+        borderRadius: 10,
         padding: 10,
         marginBottom: 20,
         backgroundColor: "white",
@@ -85,7 +116,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 30,
         alignItems: 'center',
-        marginTop:38,
+        marginTop: 38,
         shadowColor: "#000",
         shadowOffset: {
             width: 2,
@@ -94,10 +125,24 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.23,
         shadowRadius: 2.62,
         elevation: 4,
+        marginBottom:20
     },
     buttonText: {
         color: '#fff',
         fontWeight: 'bold',
         fontSize: 18,
     },
+    title: {
+        paddingTop: 30,
+        fontSize: 30,
+        paddingBottom: 20,
+        color: "#7C8046"
+    },
+    snackBarSave: {
+        backgroundColor: "#7C8046"
+    },
+    snackBarError: {
+        backgroundColor: "red"
+    }
 });
+

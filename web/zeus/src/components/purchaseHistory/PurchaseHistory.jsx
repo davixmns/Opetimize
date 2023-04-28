@@ -6,7 +6,7 @@ import SearchBar from "../searchBar/SearchBar";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
-    const [searchValue, setSearchValue] = useState('');
+    const [searchValue, setSearchValue] = useState("");
 
     useEffect(() => {
         const fetchData = async () => {
