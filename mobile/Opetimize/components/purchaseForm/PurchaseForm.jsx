@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         color: "#7C8046"
     },
     snackBarSave: {
-        backgroundColor: "#7C8046"
+        backgroundColor: "#E49052"
     },
     snackBarError: {
         backgroundColor: "red"

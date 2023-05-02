@@ -6,9 +6,6 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { IconButton } from "react-native-paper";
 
 function Card(props) {
-    const [showDeleteModal, setShowDeleModal] = useState(false)
-    const [showEditModal, setShowEditModal] = useState(false)
-
     const date = new Date(props.date);
     const formattedDate = format(date, "dd/MM/yyyy", { locale: ptBR });
 
@@ -22,10 +19,6 @@ function Card(props) {
                     <Text style={styles.date}>{formattedDate}</Text>
                 </View>
                 <View style={styles.content2}>
-                    <IconButton
-                        icon={(p) => <Icon name="pencil" {...p} size={35} />}
-                        style={styles.icon}
-                    />
                     <IconButton
                         icon={(props) => (
                             <Icon name="trash-can-outline" {...props} size={35} />
@@ -42,6 +35,7 @@ function Card(props) {
 
 const styles = StyleSheet.create({
     card: {
+
         height: 150,
         width: 340,
         backgroundColor: "#FFF",

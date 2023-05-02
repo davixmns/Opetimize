@@ -1,73 +1,97 @@
-import {ScrollView, Text, View} from "react-native";
+import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {StyleSheet} from 'react-native';
 import {getAllPurchases} from "../../service/apiService";
 import {useEffect, useState} from "react";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
 export function UsefulData() {
     const [monthCosts, setMonthCosts] = useState(null)
     const [racaoTotalDoMes, setRacaoTotalDoMes] = useState(null)
     const [bestDay, setBestDay] = useState("")
+    const [racaoMaisBarata, setRacaoMaisBarata] = useState(null)
 
     useEffect(() => {
-        async function getMonthCosts() {
-            const purchases = await getAllPurchases()
+        fetchData()
+    }, [])
+
+    async function fetchData(){
+        calculateMonthCosts()
+        calcularEstoqueDeRacao()
+        calculateBestDay()
+        calcularRacaoMaisBarata()
+    }
+
+    async function calculateMonthCosts() {
+        const purchases = await getAllPurchases()
+        const currentMonthPurchases = purchases.filter((purchase) => {
+            const purchaseDate = new Date(purchase.date);
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
+        });
+        const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
+        setMonthCosts(totalCost.toFixed(2));
+    }
+
+    async function calcularEstoqueDeRacao() {
+        const purchases = await getAllPurchases()
+        const comprasDoMes = purchases.filter((compra) => {
+            const dataDaCompra = new Date(compra.date);
+            const mesDaCompra = dataDaCompra.getMonth()
+            const anoDaCompra = dataDaCompra.getFullYear()
+            return dataDaCompra.getMonth() === mesDaCompra && dataDaCompra.getFullYear() === anoDaCompra
+        })
+        const racaoTotal = comprasDoMes.reduce((acumulador, compra) => acumulador + compra.weight, 0)
+        setRacaoTotalDoMes((racaoTotal / 1000).toFixed(2))
+    }
+
+    async function calculateBestDay() {
+        const purchases = await getAllPurchases()
+        if (purchases) {
             const currentMonthPurchases = purchases.filter((purchase) => {
                 const purchaseDate = new Date(purchase.date);
                 const currentMonth = new Date().getMonth();
                 const currentYear = new Date().getFullYear();
-                return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
+                return (
+                    purchaseDate.getMonth() === currentMonth &&
+                    purchaseDate.getFullYear() === currentYear
+                );
             });
-            const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
-            setMonthCosts(totalCost.toFixed(2));
+
+            const weekDays = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+            const purchasesByWeekDay = Array.from({length: 7}, () => 0);
+
+            currentMonthPurchases.forEach((purchase) => {
+                const purchaseDate = new Date(purchase.date);
+                const weekDay = purchaseDate.getDay();
+                purchasesByWeekDay[weekDay] += purchase.price;
+            });
+
+            const bestDayIndex = purchasesByWeekDay.indexOf(Math.max(...purchasesByWeekDay));
+            setBestDay(weekDays[bestDayIndex]);
         }
+    }
 
-        getMonthCosts()
+    async function calcularRacaoMaisBarata() {
+        const purchases = await getAllPurchases();
+        let cheapestPurchase = null;
 
-        async function calcularEstoqueDeRacao() {
-            const purchases = await getAllPurchases()
-            const comprasDoMes = purchases.filter((compra) => {
-                const dataDaCompra = new Date(compra.date);
-                const mesDaCompra = dataDaCompra.getMonth()
-                const anoDaCompra = dataDaCompra.getFullYear()
-                return dataDaCompra.getMonth() === mesDaCompra && dataDaCompra.getFullYear() === anoDaCompra
-            })
-            const racaoTotal = comprasDoMes.reduce((acumulador, compra) => acumulador + compra.weight, 0)
-            setRacaoTotalDoMes((racaoTotal / 1000).toFixed(2))
-        }
-
-        calcularEstoqueDeRacao()
-
-        async function calculateBestDay() {
-            const purchases = await getAllPurchases()
-            if (purchases) {
-                const currentMonthPurchases = purchases.filter((purchase) => {
-                    const purchaseDate = new Date(purchase.date);
-                    const currentMonth = new Date().getMonth();
-                    const currentYear = new Date().getFullYear();
-                    return (
-                        purchaseDate.getMonth() === currentMonth &&
-                        purchaseDate.getFullYear() === currentYear
-                    );
-                });
-
-                const weekDays = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
-                const purchasesByWeekDay = Array.from({length: 7}, () => 0);
-
-                currentMonthPurchases.forEach((purchase) => {
-                    const purchaseDate = new Date(purchase.date);
-                    const weekDay = purchaseDate.getDay();
-                    purchasesByWeekDay[weekDay] += purchase.price;
-                });
-
-                const bestDayIndex = purchasesByWeekDay.indexOf(Math.max(...purchasesByWeekDay));
-                setBestDay(weekDays[bestDayIndex]);
-                console.log(purchasesByWeekDay)
+        for (const purchase of purchases) {
+            const costPerKg = purchase.price / (purchase.weight / 1000);
+            if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
+                cheapestPurchase = {
+                    ...purchase,
+                    costPerKg,
+                };
             }
         }
 
-        calculateBestDay()
-
-    }, [])
+        setRacaoMaisBarata(
+            cheapestPurchase
+                ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
+                : 'Nenhuma compra registrada.'
+        );
+    }
 
     return (
         <View style={styles.container}>
@@ -83,13 +107,18 @@ export function UsefulData() {
                 </View>
 
                 <View style={styles.dataCard}>
-                    <Text style={styles.title}>Melhor dia de compra</Text>
+                    <Text style={styles.title}>Dia mais frequente</Text>
                     <Text style={styles.dataText}>{bestDay}</Text>
                 </View>
 
-
-
+                <View style={styles.dataCard}>
+                    <Text style={styles.title}>Ração mais barata</Text>
+                    <Text style={styles.dataText2}>{racaoMaisBarata}</Text>
+                </View>
             </ScrollView>
+            <TouchableOpacity onPress={fetchData} style={styles.buttom}>
+                <Icon name="refresh" size={25} color="white"/>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -99,6 +128,7 @@ const styles = StyleSheet.create({
         paddingTop: 20,
         backgroundColor: '#F5E7CC',
         alignItems: "center",
+        flex: 1
     },
     dataCard: {
         height: 150,
@@ -130,7 +160,33 @@ const styles = StyleSheet.create({
     },
 
     dataText: {
-        fontSize: 60,
+        fontSize: 50,
         color: "#E49052"
-    }
+    },
+
+    dataText2: {
+        fontSize: 30,
+        color: "#E49052"
+    },
+
+    buttom: {
+        position: 'absolute',
+        bottom: 20,
+        right: 20,
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        backgroundColor: '#E49052',
+        justifyContent: 'center',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+
+        elevation: 5,
+    },
 })

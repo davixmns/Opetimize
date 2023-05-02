@@ -7,7 +7,6 @@ import './styles.css';
 import {editPurchase} from "../../service/apiService";
 import EditModal from "../editModal/EditModal";
 import DeleteModal from "../deleteModal/DeleteModal";
-import moment from "moment"
 
 export function Card(props) {
     const [showEditModal, setShowEditModal] = useState(false);
@@ -43,10 +42,6 @@ export function Card(props) {
         setShowDeleteModal(false)
     }
 
-    const d = new Date(date);
-    d.setMinutes(d.getMinutes() - d.getTimezoneOffset());
-    const formattedDate = format(d, "dd 'de' MMMM 'de' yyyy", { locale: ptBR });
-
     return (
         <div id="card">
             <div id="left">
@@ -54,7 +49,7 @@ export function Card(props) {
                 <p id="price">R${price}</p>
                 <p id="weight">{weight}g</p>
                 <p id="date">
-                    {moment(date).format('DD [de] MMMM [de] YYYY', 'pt-BR')}
+                    {format(new Date(date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
                 </p>
             </div>
             <div id="right">
