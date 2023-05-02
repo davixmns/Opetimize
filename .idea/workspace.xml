@@ -4,18 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="form">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/assets/pencil.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/assets/trash.svg" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="formulario funcionando e delete tambem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/searchBar/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/searchBar/SearchBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +49,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/m09/Área de Trabalho/zeus/mobile/Opetimize/assets",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m09/Área de Trabalho/zeus/mobile/Opetimize/assets&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -150,7 +153,8 @@
       <workItem from="1682601503181" duration="2632000" />
       <workItem from="1682604149732" duration="7777000" />
       <workItem from="1682688307831" duration="7657000" />
-      <workItem from="1682701331084" duration="11814000" />
+      <workItem from="1682701331084" duration="12155000" />
+      <workItem from="1683033751252" duration="15075000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -348,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682627826020</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="formulario funcionando e delete tambem">
+      <created>1682714990874</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682714990874</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -386,6 +397,7 @@
     <MESSAGE value="consumindo api e formatando data" />
     <MESSAGE value="estilizando lista" />
     <MESSAGE value="form" />
-    <option name="LAST_COMMIT_MESSAGE" value="form" />
+    <MESSAGE value="formulario funcionando e delete tambem" />
+    <option name="LAST_COMMIT_MESSAGE" value="formulario funcionando e delete tambem" />
   </component>
 </project>

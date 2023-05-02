@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {UsefulData} from "../usefulData/UsefulData";
-import {Animated, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../purchaseForm/PurchaseForm";
-import purchaseHistory from "../purchaseHistory/PurchaseHistory";
+import PurchaseHistory from "../purchaseHistory/PurchaseHistory";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +21,7 @@ function BottomBar() {
 
                 <Tab.Screen
                     name="List"
-                    component={purchaseHistory}
+                    component={PurchaseHistory}
                     options={{
                         tabBarShowLabel: false,
                         tabBarActiveBackgroundColor: "#e07e38",

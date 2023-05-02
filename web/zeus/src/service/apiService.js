@@ -8,6 +8,7 @@ export const getAllPurchases = async () => {
         const response = await axios.get(`${BASE_URL}/purchases`);
         const purchases = response.data;
         purchases.sort((a, b) => new Date(b.date) - new Date(a.date));
+        console.log(purchases)
         return purchases;
     } catch (error) {
         console.log(error);
