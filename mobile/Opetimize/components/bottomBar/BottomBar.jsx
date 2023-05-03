@@ -23,6 +23,7 @@ function BottomBar() {
                     name="List"
                     component={PurchaseHistory}
                     options={{
+                        tabBarHideOnKeyboard: true,
                         tabBarShowLabel: false,
                         tabBarActiveBackgroundColor: "#e07e38",
                         headerShown: false,

@@ -105,14 +105,14 @@ const styles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: 'transparent',
-        borderRadius: 10,
+        borderRadius: 30,
         padding: 10,
         marginBottom: 20,
         backgroundColor: "white",
         fontSize: 18,
     },
     button: {
-        backgroundColor: '#7C8046',
+        backgroundColor: '#F19020',
         padding: 10,
         borderRadius: 30,
         alignItems: 'center',
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
         fontSize: 30,
         paddingBottom: 20,
-        color: "#7C8046"
+        color: "#F19020"
     },
     snackBarSave: {
         backgroundColor: "#E49052"

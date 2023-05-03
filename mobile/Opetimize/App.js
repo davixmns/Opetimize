@@ -7,7 +7,7 @@ import {StyleSheet} from "react-native";
 export default function App() {
     return (
         <NavigationContainer>
-            <StatusBar backgroundColor="#E49052" barStyle="light-content" translucent={false}/>
+            <StatusBar backgroundColor="#F19020" barStyle="light-content" translucent={false}/>
             <BottomBar/>
         </NavigationContainer>
     );

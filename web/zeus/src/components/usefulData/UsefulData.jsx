@@ -6,6 +6,7 @@ function UsefulData() {
     const [monthCosts, setMonthCosts] = useState(0);
     const [racaoTotalDoMes, setRacaoTotalDoMes] = useState(0)
     const [bestDay, setBestDay] = useState("")
+    const [racaoMaisBarata, setRacaoMaisBarata] = useState(null)
 
     useEffect(() => {
         async function getMonthCosts() {
@@ -20,7 +21,29 @@ function UsefulData() {
             setMonthCosts(totalCost.toFixed(2));
         }
         getMonthCosts();
-        
+
+        async function calcularRacaoMaisBarata() {
+            const purchases = await getAllPurchases();
+            let cheapestPurchase = null;
+
+            for (const purchase of purchases) {
+                const costPerKg = purchase.price / (purchase.weight / 1000);
+                if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
+                    cheapestPurchase = {
+                        ...purchase,
+                        costPerKg,
+                    };
+                }
+            }
+
+            setRacaoMaisBarata(
+                cheapestPurchase
+                    ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
+                    : 'Nenhuma compra registrada.'
+            );
+        }
+        calcularRacaoMaisBarata()
+
         async function calcularEstoqueDeRacao() {
             const purchases = await getAllPurchases()
             const comprasDoMes = purchases.filter((compra) => {
@@ -47,7 +70,7 @@ function UsefulData() {
                     );
                 });
 
-                const weekDays = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+                const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
                 const purchasesByWeekDay = Array.from({ length: 7 }, () => 0);
 
                 currentMonthPurchases.forEach((purchase) => {
@@ -80,6 +103,11 @@ function UsefulData() {
             <div id="divBackground">
                 <label id="label" htmlFor="monthCosts">Melhor dia de compra</label>
                 <h1 id="monthCosts">{bestDay}</h1>
+            </div>
+
+            <div id="divBackground">
+                <label id="label" htmlFor="monthCosts">Ração mais barata</label>
+                <h2 id="monthCosts2">{racaoMaisBarata}</h2>
             </div>
             
         </div>

@@ -9,6 +9,7 @@
     align-items: center;
 }
 
+
 #usefulDataContent {
     margin-right: 1rem;
 }
@@ -32,4 +33,10 @@
 h1 {
     color: #7C8046;
     font-size: 4rem;
+}
+
+#monthCosts2 {
+    font-size: 2rem;
+    color: #7C8046;
+    margin-top: 50px;
 }

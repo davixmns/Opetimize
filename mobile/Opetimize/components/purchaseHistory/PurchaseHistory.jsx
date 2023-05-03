@@ -1,4 +1,4 @@
-import {Button, FlatList, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Button, FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {useEffect, useState} from 'react';
 import {deletePurchaseById, getAllPurchases} from '../../service/apiService';
 import Card from '../card/Card';
@@ -73,15 +73,20 @@ function PurchaseHistory() {
 
     return (
         <View style={styles.background}>
-            <FlatList
-                style={styles.container}
-                data={filteredPurchases}
-                renderItem={renderPurchase}
-                keyExtractor={(item) => item._id}
-            />
-            <View style={styles.b}>
+            <ScrollView>
+                <View style={styles.a}>
+                    <Text style={styles.title2}>Histórico</Text>
+                </View>
+                <FlatList
+                    style={styles.container}
+                    data={filteredPurchases}
+                    renderItem={renderPurchase}
+                    keyExtractor={(item) => item._id}
+                />
+                <View style={styles.b}>
 
-            </View>
+                </View>
+            </ScrollView>
 
             <TouchableOpacity onPress={reloadList} style={styles.fab}>
                 <Icon name="refresh" size={25} color="white"/>
@@ -102,9 +107,19 @@ function PurchaseHistory() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 0,
-        backgroundColor: '#7C8046',
+        backgroundColor: '',
         paddingTop: 20,
+        paddingBottom: 20
     },
+
+    title2: {
+        color: "white",
+        fontSize: 30,
+        backgroundColor: "#F19020",
+        alignSelf: "center",
+        marginTop: 10
+    },
+
     title: {
         marginTop: 10,
         fontSize: 25,
@@ -112,11 +127,16 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     background: {
-        flex: 10,
+        flex: 1,
+        backgroundColor: 'blue',
+    },
+
+    a: {
+        backgroundColor: '#F19020',
     },
     b: {
-        backgroundColor: "#7C8046",
-        height: 30,
+        backgroundColor: "#F19020",
+        height: 20
     },
     fab: {
         position: 'absolute',
