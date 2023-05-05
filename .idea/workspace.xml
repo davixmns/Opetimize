@@ -7,10 +7,6 @@
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="fim">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +145,7 @@
       <workItem from="1683033751252" duration="22816000" />
       <workItem from="1683119256236" duration="7755000" />
       <workItem from="1683206474932" duration="1776000" />
-      <workItem from="1683298383468" duration="4322000" />
+      <workItem from="1683298383468" duration="5342000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -382,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683208464583</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="fim">
+      <created>1683305561504</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1683305561504</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

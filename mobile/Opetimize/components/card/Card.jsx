@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Text, StyleSheet, View, Modal, Button } from "react-native";
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import React, {useEffect, useState} from "react";
+import {Text, StyleSheet, View, Modal, Button} from "react-native";
+import {format} from "date-fns";
+import {ptBR} from "date-fns/locale";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { IconButton } from "react-native-paper";
+import {IconButton} from "react-native-paper";
 
 function Card(props) {
     const date = new Date(props.date);
-    const formattedDate = format(date, "dd/MM/yyyy", { locale: ptBR });
+    const formattedDate = format(date, "dd/MM/yyyy", {locale: ptBR});
     const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
 
     function handleDelete() {
@@ -27,7 +27,7 @@ function Card(props) {
                 <View style={styles.content2}>
                     <IconButton
                         icon={() => (
-                            <Icon name="trash-can-outline" color={"red"} size={35} />
+                            <Icon name="trash-can-outline" color={"red"} size={35}/>
                         )}
                         style={styles.icon}
                         color="red"
@@ -36,20 +36,26 @@ function Card(props) {
                 </View>
                 <Modal visible={showDeleteConfirmModal} transparent={true}>
                     <View style={styles.deleteModal}>
-                        <Text style={{ color: "white", fontSize: 20 }}>
-                            Tem certeza que quer deletar esta compra?
-                        </Text>
-                        <Button title={"Sim"} onPress={handleDelete} />
-                        <Button
-                            title={"Cancelar"}
-                            onPress={() => setShowDeleteConfirmModal(false)}
-                        />
+                        <View>
+                            <Text style={{color: "white", fontSize: 20}}>
+                                Tem certeza que quer deletar esta compra?
+                            </Text>
+                            <View style={styles.modalButtons}>
+                                <Button style={styles.modalButtom} title={"Sim"} onPress={handleDelete}/>
+                                <Button
+                                    style={styles.modalButtom}
+                                    title={"Cancelar"}
+                                    onPress={() => setShowDeleteConfirmModal(false)}
+                                />
+                            </View>
+                        </View>
                     </View>
                 </Modal>
             </View>
         </View>
     );
 }
+
 const styles = StyleSheet.create({
     card: {
         height: 150,
@@ -106,10 +112,34 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     deleteModal: {
-        backgroundColor: "black",
-        height: 300,
-        width: 200,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        borderRadius: 30,
+        alignItems: "center",
+        shadowOpacity: 0.23,
+        shadowRadius: 2.62,
+        elevation: 4,
+        marginTop: 220,
+        alignSelf: "center",
+        backgroundColor: "#E49052",
+        height: 150,
+        width: 350,
         position: "absolute"
+    },
+    modalButtons: {
+        gap: 20,
+        display: "flex",
+        flexDirection: "row",
+        alignSelf: "center"
+    },
+
+    modalButtom: {
+        backgroundColor: "white",
+        width: 200,
+        height: 30,
     }
 });
 
