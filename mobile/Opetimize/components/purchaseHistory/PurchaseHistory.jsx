@@ -28,7 +28,6 @@ function PurchaseHistory() {
 
     async function fetchData() {
         const data = await getAllPurchases();
-        console.log(data)
         setPurchases(data);
     }
 

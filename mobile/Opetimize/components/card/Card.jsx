@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Text, StyleSheet, View, Modal, Button} from "react-native";
+import {Text, StyleSheet, View, Modal, Button, TextInput} from "react-native";
 import {format} from "date-fns";
 import {ptBR} from "date-fns/locale";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
@@ -7,18 +7,30 @@ import {IconButton} from "react-native-paper";
 
 function Card(props) {
     const today = new Date(props.date);
-    const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
-    const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
+    const formattedDate = format(today,"dd/MM/yyyy", {locale: ptBR});
     const [showEditModal, setShowEditModal] = useState(false)
     const [name, setName] = useState(props.name)
     const [price, setPrice] = useState(props.price)
     const [weight, setWeight] = useState(props.weight)
     const [date, setDate] = useState(props.date)
 
-
     function handleDelete() {
         props.handleDelete(props.id);
-        setShowDeleteConfirmModal(false);
+        setShowEditModal(false)
+    }
+
+    function handleSaveEdit(){
+        const editedPurchase = {name, price, weight, date}
+        props.handleSaveEdit(props.id, editedPurchase)
+        setShowEditModal(false);
+    }
+
+    function handleEditModalClose() {
+        setShowEditModal(false);
+    }
+
+    function handleEditModalShow(){
+        setShowEditModal(true)
     }
 
     return (
@@ -32,41 +44,45 @@ function Card(props) {
                 </View>
                 <View style={styles.content2}>
                     <IconButton
-                        icon={() =>(
-                            <Icon name={"pencil"} color={"black"} size={35}/>
-                        )}
-                        onPress={() => setShowEditModal(true)}
-                    />
-                    <IconButton
                         icon={() => (
-                            <Icon name="trash-can-outline" color={"red"} size={35}/>
+                            <Icon name={"pencil"} color={"#E49052"} size={35}/>
                         )}
-                        onPress={() => setShowDeleteConfirmModal(true)}
+                        onPress={() => handleEditModalShow()}
                     />
                 </View>
 
-                <Modal visible={showDeleteConfirmModal} transparent={true}>
-                    <View style={styles.deleteModal}>
-                        <View>
-                            <Text style={{color: "white", fontSize: 20, marginTop: 25}}>
-                                Tem certeza que quer deletar esta compra?
-                            </Text>
-                            <View style={styles.modalButtons}>
-                                <Button style={styles.modalButtom} title={"Sim"} onPress={handleDelete}/>
-                                <Button
-                                    style={styles.modalButtom}
-                                    title={"Cancelar"}
-                                    onPress={() => setShowDeleteConfirmModal(false)}
-                                />
-                            </View>
-                        </View>
-                    </View>
-                </Modal>
-
                 <Modal visible={showEditModal} transparent={true}>
                     <View style={styles.editModal}>
-                        <View>
+                        <View style={styles.a}>
                             <Text style={styles.editModalTitle}>Editar Ração</Text>
+
+                            <TextInput style={styles.inputTextEdit} value={name} onChangeText={setName}></TextInput>
+                            <TextInput style={styles.inputTextEdit} value={price} onChangeText={setPrice}></TextInput>
+                            <TextInput style={styles.inputTextEdit} value={weight} onChangeText={setWeight}></TextInput>
+
+                            <View style={styles.editModalButtons}>
+                                <IconButton
+                                    icon={() => (
+                                        <Icon name="check-circle-outline" color={"green"} size={40}/>
+                                    )}
+                                    onPress={() => handleSaveEdit()}
+                                />
+
+                                <IconButton
+                                    icon={() => (
+                                        <Icon name={"close"} color={"black"} size={40}/>
+                                    )}
+                                    onPress={() => handleEditModalClose()}
+                                />
+
+                                <IconButton
+                                    icon={() => (
+                                        <Icon name="trash-can-outline" color={"red"} size={40}/>
+                                    )}
+                                    onPress={() => handleDelete()}
+                                />
+                            </View>
+
                         </View>
                     </View>
                 </Modal>
@@ -125,40 +141,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         color: "#777",
     },
-    icon: {
-        width: 40,
-        height: 40,
-        marginLeft: 10,
-    },
-    deleteModal: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        borderRadius: 30,
-        alignItems: "center",
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-        elevation: 4,
-        marginTop: 220,
-        alignSelf: "center",
-        backgroundColor: "#E49052",
-        height: 150,
-        width: 350,
-        position: "absolute"
-    },
-    modalButtons: {
-        gap: 20,
-        display: "flex",
-        flexDirection: "row",
-        alignSelf: "center"
-    },
-    modalButtom: {
-        backgroundColor: "white",
-        width: 200,
-        height: 30,
-    },
+
     editModal: {
         backgroundColor: "white",
         width: 350,
@@ -168,19 +151,35 @@ const styles = StyleSheet.create({
         marginTop: 70,
         shadowColor: "#000",
         shadowOffset: {
-            width: 200,
-            height: 10,
+            width: 1,
+            height: 1,
         },
         shadowOpacity: 2,
         shadowRadius: 2.62,
         elevation: 10,
         borderRadius: 20
     },
+
     editModalTitle: {
         color: "#E49052",
         fontWeight: "bold",
         fontSize: 25,
         marginTop: 20
+    },
+
+    editModalButtons: {
+        display: "flex",
+        flexDirection: "row",
+        gap: 45
+    },
+
+    a: {
+        alignItems: "center"
+    },
+    inputTextEdit: {
+        height: 30,
+        width: 100,
+        backgroundColor: "red"
     }
 });
 
