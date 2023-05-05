@@ -11,7 +11,7 @@ import {
 
 
 import React, {useEffect, useState} from 'react';
-import {deletePurchaseById, getAllPurchases} from '../../service/apiService';
+import {deletePurchaseById, editPurchase, getAllPurchases} from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
@@ -38,6 +38,15 @@ function PurchaseHistory() {
             fetchData()
         } catch (error) {
             console.log(error);
+        }
+    }
+
+    async function handleSaveEditPurchase(id, purchase){
+        try{
+            await editPurchase(id, purchase)
+            fetchData()
+        } catch (error){
+            console.log(error)
         }
     }
 
@@ -81,6 +90,7 @@ function PurchaseHistory() {
                     weight={purchase.weight}
                     date={purchase.date}
                     handleDelete={handleDeletePurchase}
+                    handleSaveEdit={handleSaveEditPurchase}
                 />
             </Animated.View>
         );

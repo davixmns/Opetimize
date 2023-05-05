@@ -6,9 +6,15 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import {IconButton} from "react-native-paper";
 
 function Card(props) {
-    const date = new Date(props.date);
-    const formattedDate = format(date, "dd/MM/yyyy", {locale: ptBR});
+    const today = new Date(props.date);
+    const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
     const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
+    const [showEditModal, setShowEditModal] = useState(false)
+    const [name, setName] = useState(props.name)
+    const [price, setPrice] = useState(props.price)
+    const [weight, setWeight] = useState(props.weight)
+    const [date, setDate] = useState(props.date)
+
 
     function handleDelete() {
         props.handleDelete(props.id);
@@ -26,14 +32,19 @@ function Card(props) {
                 </View>
                 <View style={styles.content2}>
                     <IconButton
+                        icon={() =>(
+                            <Icon name={"pencil"} color={"black"} size={35}/>
+                        )}
+                        onPress={() => setShowEditModal(true)}
+                    />
+                    <IconButton
                         icon={() => (
                             <Icon name="trash-can-outline" color={"red"} size={35}/>
                         )}
-                        style={styles.icon}
-                        color="red"
                         onPress={() => setShowDeleteConfirmModal(true)}
                     />
                 </View>
+
                 <Modal visible={showDeleteConfirmModal} transparent={true}>
                     <View style={styles.deleteModal}>
                         <View>
@@ -48,6 +59,14 @@ function Card(props) {
                                     onPress={() => setShowDeleteConfirmModal(false)}
                                 />
                             </View>
+                        </View>
+                    </View>
+                </Modal>
+
+                <Modal visible={showEditModal} transparent={true}>
+                    <View style={styles.editModal}>
+                        <View>
+                            <Text style={styles.editModalTitle}>Editar Ração</Text>
                         </View>
                     </View>
                 </Modal>
@@ -135,11 +154,33 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignSelf: "center"
     },
-
     modalButtom: {
         backgroundColor: "white",
         width: 200,
         height: 30,
+    },
+    editModal: {
+        backgroundColor: "white",
+        width: 350,
+        height: 610,
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 70,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 200,
+            height: 10,
+        },
+        shadowOpacity: 2,
+        shadowRadius: 2.62,
+        elevation: 10,
+        borderRadius: 20
+    },
+    editModalTitle: {
+        color: "#E49052",
+        fontWeight: "bold",
+        fontSize: 25,
+        marginTop: 20
     }
 });
 
