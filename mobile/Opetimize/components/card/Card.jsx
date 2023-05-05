@@ -37,7 +37,7 @@ function Card(props) {
                 <Modal visible={showDeleteConfirmModal} transparent={true}>
                     <View style={styles.deleteModal}>
                         <View>
-                            <Text style={{color: "white", fontSize: 20}}>
+                            <Text style={{color: "white", fontSize: 20, marginTop: 25}}>
                                 Tem certeza que quer deletar esta compra?
                             </Text>
                             <View style={styles.modalButtons}>
