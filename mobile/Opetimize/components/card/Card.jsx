@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import { Text, StyleSheet, View } from "react-native";
-import { format } from 'date-fns';
+import React, { useEffect, useState } from "react";
+import { Text, StyleSheet, View, Modal, Button } from "react-native";
+import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import { IconButton } from "react-native-paper";
@@ -8,6 +8,12 @@ import { IconButton } from "react-native-paper";
 function Card(props) {
     const date = new Date(props.date);
     const formattedDate = format(date, "dd/MM/yyyy", { locale: ptBR });
+    const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
+
+    function handleDelete() {
+        props.handleDelete(props.id);
+        setShowDeleteConfirmModal(false);
+    }
 
     return (
         <View style={styles.background}>
@@ -20,22 +26,32 @@ function Card(props) {
                 </View>
                 <View style={styles.content2}>
                     <IconButton
-                        icon={(props) => (
-                            <Icon name="trash-can-outline" {...props} size={35} />
+                        icon={() => (
+                            <Icon name="trash-can-outline" color={"red"} size={35} />
                         )}
                         style={styles.icon}
-                        iconColor={'red'}
-                        onPress={() => props.handleDelete(props.id)}
+                        color="red"
+                        onPress={() => setShowDeleteConfirmModal(true)}
                     />
                 </View>
+                <Modal visible={showDeleteConfirmModal} transparent={true}>
+                    <View style={styles.deleteModal}>
+                        <Text style={{ color: "white", fontSize: 20 }}>
+                            Tem certeza que quer deletar esta compra?
+                        </Text>
+                        <Button title={"Sim"} onPress={handleDelete} />
+                        <Button
+                            title={"Cancelar"}
+                            onPress={() => setShowDeleteConfirmModal(false)}
+                        />
+                    </View>
+                </Modal>
             </View>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     card: {
-
         height: 150,
         width: 340,
         backgroundColor: "#FFF",
@@ -88,6 +104,12 @@ const styles = StyleSheet.create({
         width: 40,
         height: 40,
         marginLeft: 10,
+    },
+    deleteModal: {
+        backgroundColor: "black",
+        height: 300,
+        width: 200,
+        position: "absolute"
     }
 });
 

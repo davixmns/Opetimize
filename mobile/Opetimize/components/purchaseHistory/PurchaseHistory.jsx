@@ -1,5 +1,16 @@
-import {Button, FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-import {useEffect, useState} from 'react';
+import {
+    Animated, Easing,
+    FlatList,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
+} from 'react-native';
+
+
+import React, {useEffect, useState} from 'react';
 import {deletePurchaseById, getAllPurchases} from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
@@ -7,8 +18,11 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const [animation] = useState(new Animated.Value(0));
+
 
     useEffect(() => {
+        runAnimation()
         fetchData();
     }, []);
 
@@ -21,28 +35,55 @@ function PurchaseHistory() {
     async function handleDeletePurchase(id) {
         try {
             await deletePurchaseById(id);
-            fetchData();
+            fetchData()
         } catch (error) {
             console.log(error);
         }
     }
 
-    const renderPurchase = ({item: purchase}) => {
-        return (
-            <Card
-                key={purchase._id}
-                id={purchase._id}
-                name={purchase.name}
-                price={purchase.price}
-                weight={purchase.weight}
-                date={purchase.date}
-                handleDelete={handleDeletePurchase}
-            />
-        );
+    const runAnimation = () => {
+        Animated.timing(animation, {
+            toValue: 1,
+            duration: 1000,
+            easing: Easing.ease,
+            useNativeDriver: true,
+        }).start(() => {
+            Animated.timing(animation, {
+                toValue: 0,
+                duration: 1000,
+                easing: Easing.ease,
+                useNativeDriver: true,
+            })
+        });
     };
 
-    const reloadList = () => {
-        fetchData();
+
+    const renderPurchase = ({item: purchase}) => {
+        return (
+            <Animated.View
+                style={{
+                    opacity: animation,
+                    transform: [
+                        {
+                            translateY: animation.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [100, 0],
+                            }),
+                        },
+                    ],
+                }}
+            >
+                <Card
+                    key={purchase._id}
+                    id={purchase._id}
+                    name={purchase.name}
+                    price={purchase.price}
+                    weight={purchase.weight}
+                    date={purchase.date}
+                    handleDelete={handleDeletePurchase}
+                />
+            </Animated.View>
+        );
     };
 
     const filteredPurchases = purchases.filter(purchase => {
@@ -89,7 +130,7 @@ function PurchaseHistory() {
                 </View>
             </ScrollView>
 
-            <TouchableOpacity onPress={reloadList} style={styles.fab}>
+            <TouchableOpacity onPress={fetchData} style={styles.fab}>
                 <Icon name="refresh" size={25} color="white"/>
             </TouchableOpacity>
 
@@ -176,7 +217,15 @@ const styles = StyleSheet.create({
         textAlign: "left",
         color: "white",
         fontSize: 17,
-        paddingLeft: 15
+        paddingLeft: 15,
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
 
 });

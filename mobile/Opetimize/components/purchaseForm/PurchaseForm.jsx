@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
 import {insertPurchase} from "../../service/apiService";
 import DatePicker from "react-native-modern-datepicker";
 import { Snackbar } from 'react-native-paper';
