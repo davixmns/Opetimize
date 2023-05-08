@@ -197,5 +197,4 @@ const styles = StyleSheet.create({
         marginTop: 35,
         marginBottom: 10
     }
-
 })

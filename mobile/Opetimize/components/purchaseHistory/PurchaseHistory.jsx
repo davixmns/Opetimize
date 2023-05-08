@@ -1,19 +1,11 @@
-import {
-    Animated, Easing,
-    FlatList,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
-} from 'react-native';
-
-
-import React, {useEffect, useState} from 'react';
-import {deletePurchaseById, editPurchase, getAllPurchases} from '../../service/apiService';
+import React, { useEffect, useState } from 'react';
+import { deletePurchaseById, editPurchase, getAllPurchases } from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import * as Animatable from 'react-native-animatable';
+import {FlatList, ScrollView, TextInput, TouchableOpacity, View} from "react-native";
+import {Text} from "react-native";
+import {StyleSheet} from "react-native";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
@@ -39,6 +31,7 @@ function PurchaseHistory() {
 
     async function handleSaveEditPurchase(id, purchase) {
         try {
+            this.refs.card.animate('bounceOutRight', 500)
             await editPurchase(id, purchase)
             fetchData()
         } catch (error) {
@@ -46,18 +39,22 @@ function PurchaseHistory() {
         }
     }
 
-    const renderPurchase = ({item: purchase}) => {
+    const renderPurchase = ({ item: purchase, index }) => {
+        const animationDelay = index * 200; // Define um atraso para a animação com base no índice do item
+
         return (
-            <Card
-                key={purchase._id}
-                id={purchase._id}
-                name={purchase.name}
-                price={purchase.price}
-                weight={purchase.weight}
-                date={purchase.date}
-                handleDelete={handleDeletePurchase}
-                handleSaveEdit={handleSaveEditPurchase}
-            />
+            <Animatable.View animation="fadeInUp" delay={animationDelay}>
+                <Card
+                    key={purchase._id}
+                    id={purchase._id}
+                    name={purchase.name}
+                    price={purchase.price}
+                    weight={purchase.weight}
+                    date={purchase.date}
+                    handleDelete={handleDeletePurchase}
+                    handleSaveEdit={handleSaveEditPurchase}
+                />
+            </Animatable.View>
         );
     };
 
