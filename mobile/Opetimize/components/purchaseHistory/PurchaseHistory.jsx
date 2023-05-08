@@ -18,11 +18,8 @@ import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    const [animation] = useState(new Animated.Value(0));
-
 
     useEffect(() => {
-        runAnimation()
         fetchData();
     }, []);
 
@@ -40,58 +37,27 @@ function PurchaseHistory() {
         }
     }
 
-    async function handleSaveEditPurchase(id, purchase){
-        try{
+    async function handleSaveEditPurchase(id, purchase) {
+        try {
             await editPurchase(id, purchase)
             fetchData()
-        } catch (error){
+        } catch (error) {
             console.log(error)
         }
     }
 
-    const runAnimation = () => {
-        Animated.timing(animation, {
-            toValue: 1,
-            duration: 1000,
-            easing: Easing.ease,
-            useNativeDriver: true,
-        }).start(() => {
-            Animated.timing(animation, {
-                toValue: 0,
-                duration: 1000,
-                easing: Easing.ease,
-                useNativeDriver: true,
-            })
-        });
-    };
-
-
     const renderPurchase = ({item: purchase}) => {
         return (
-            <Animated.View
-                style={{
-                    opacity: animation,
-                    transform: [
-                        {
-                            translateY: animation.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [100, 0],
-                            }),
-                        },
-                    ],
-                }}
-            >
-                <Card
-                    key={purchase._id}
-                    id={purchase._id}
-                    name={purchase.name}
-                    price={purchase.price}
-                    weight={purchase.weight}
-                    date={purchase.date}
-                    handleDelete={handleDeletePurchase}
-                    handleSaveEdit={handleSaveEditPurchase}
-                />
-            </Animated.View>
+            <Card
+                key={purchase._id}
+                id={purchase._id}
+                name={purchase.name}
+                price={purchase.price}
+                weight={purchase.weight}
+                date={purchase.date}
+                handleDelete={handleDeletePurchase}
+                handleSaveEdit={handleSaveEditPurchase}
+            />
         );
     };
 
@@ -168,7 +134,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         backgroundColor: "#F19020",
         alignSelf: "center",
-        marginTop: 10
+        marginTop: 45
     },
 
     title: {
@@ -182,9 +148,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#F19020"
     },
 
-    a: {
-        backgroundColor: '#F19020',
-    },
     b: {
         backgroundColor: "#F19020",
         height: 20

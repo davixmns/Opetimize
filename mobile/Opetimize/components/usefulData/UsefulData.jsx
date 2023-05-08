@@ -58,7 +58,7 @@ export function UsefulData() {
                 );
             });
 
-            const weekDays = ["domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado"];
+            const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
             const purchasesByWeekDay = Array.from({length: 7}, () => 0);
 
             currentMonthPurchases.forEach((purchase) => {
@@ -96,6 +96,7 @@ export function UsefulData() {
     return (
         <View style={styles.container}>
             <ScrollView>
+                <Text style={styles.bigTitle}>Dados úteis</Text>
                 <View style={styles.dataCard}>
                     <Text style={styles.title}>Gastos do mês</Text>
                     <Text style={styles.dataText}>R$ {monthCosts}</Text>
@@ -125,7 +126,7 @@ export function UsefulData() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 20,
+        paddingTop: 10,
         backgroundColor: '#F5E7CC',
         alignItems: "center",
         flex: 1
@@ -189,4 +190,12 @@ const styles = StyleSheet.create({
 
         elevation: 5,
     },
+    bigTitle: {
+        color: "#E49052",
+        fontSize: 30,
+        alignSelf: "center",
+        marginTop: 35,
+        marginBottom: 10
+    }
+
 })

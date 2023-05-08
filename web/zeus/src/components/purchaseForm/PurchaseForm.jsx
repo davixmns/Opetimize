@@ -5,7 +5,6 @@ import DatePicker from "../datePicker/DatePicker";
 import {useEffect, useState} from "react";
 import {getAllPurchases, insertPurchase} from "../../service/apiService";
 import ErrorModal from "../errorModal/ErrorModal";
-import swal from "sweetalert"
 
 function PurchaseForm() {
     const today = new Date().toISOString().substr(0, 10);

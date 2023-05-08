@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     title: {
-        paddingTop: 30,
+        marginTop: 70,
         fontSize: 30,
         paddingBottom: 20,
         color: "#F19020"

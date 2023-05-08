@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from "react";
-import {Text, StyleSheet, View, Modal, Button, TextInput} from "react-native";
+import {Text, StyleSheet, View, Modal, Button, TextInput, ScrollView} from "react-native";
 import {format} from "date-fns";
 import {ptBR} from "date-fns/locale";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import {IconButton} from "react-native-paper";
+import DatePicker from "react-native-modern-datepicker";
 
 function Card(props) {
     const today = new Date(props.date);
-    const formattedDate = format(today,"dd/MM/yyyy", {locale: ptBR});
+    const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
     const [showEditModal, setShowEditModal] = useState(false)
     const [name, setName] = useState(props.name)
     const [price, setPrice] = useState(props.price)
@@ -19,17 +20,20 @@ function Card(props) {
         setShowEditModal(false)
     }
 
-    function handleSaveEdit(){
-        const editedPurchase = {name, price, weight, date}
-        props.handleSaveEdit(props.id, editedPurchase)
+    function handleSaveEdit() {
+        const editedPurchase = { name, price, weight, date: date};
+        console.log(date)
+        props.handleSaveEdit(props.id, editedPurchase);
         setShowEditModal(false);
     }
+
+
 
     function handleEditModalClose() {
         setShowEditModal(false);
     }
 
-    function handleEditModalShow(){
+    function handleEditModalShow() {
         setShowEditModal(true)
     }
 
@@ -53,38 +57,44 @@ function Card(props) {
 
                 <Modal visible={showEditModal} transparent={true}>
                     <View style={styles.editModal}>
-                        <View style={styles.a}>
+                        <ScrollView style={{flex: 1, width: 300}}>
                             <Text style={styles.editModalTitle}>Editar Ração</Text>
 
-                            <TextInput style={styles.inputTextEdit} value={name} onChangeText={setName}></TextInput>
-                            <TextInput style={styles.inputTextEdit} value={price} onChangeText={setPrice}></TextInput>
-                            <TextInput style={styles.inputTextEdit} value={weight} onChangeText={setWeight}></TextInput>
+                            <View>
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Nome:</Text>
+                                    <TextInput style={styles.inputText} value={name} onChangeText={setName}/>
+                                </View>
 
-                            <View style={styles.editModalButtons}>
-                                <IconButton
-                                    icon={() => (
-                                        <Icon name="check-circle-outline" color={"green"} size={40}/>
-                                    )}
-                                    onPress={() => handleSaveEdit()}
-                                />
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Preço:</Text>
+                                    <TextInput style={styles.inputText} value={price.toString()} onChangeText={setPrice}
+                                               keyboardType={"numeric"}/>
+                                </View>
 
-                                <IconButton
-                                    icon={() => (
-                                        <Icon name={"close"} color={"black"} size={40}/>
-                                    )}
-                                    onPress={() => handleEditModalClose()}
-                                />
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Peso:</Text>
+                                    <TextInput style={styles.inputText} value={weight.toString()}
+                                               onChangeText={setWeight} keyboardType={"numeric"}/>
+                                </View>
 
-                                <IconButton
-                                    icon={() => (
-                                        <Icon name="trash-can-outline" color={"red"} size={40}/>
-                                    )}
-                                    onPress={() => handleDelete()}
-                                />
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Data:</Text>
+                                    <DatePicker style={styles.picker} mode={'calendar'} onDateChange={setDate}/>
+                                </View>
                             </View>
 
-                        </View>
+                            <View style={styles.editModalButtons}>
+                                <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                            onPress={() => handleSaveEdit()}/>
+                                <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                            onPress={() => handleEditModalClose()}/>
+                                <IconButton icon={() => (<Icon name="trash-can-outline" color={"red"} size={40}/>)}
+                                            onPress={() => handleDelete()}/>
+                            </View>
+                        </ScrollView>
                     </View>
+
                 </Modal>
             </View>
         </View>
@@ -145,18 +155,18 @@ const styles = StyleSheet.create({
     editModal: {
         backgroundColor: "white",
         width: 350,
-        height: 610,
+        height: 600,
         alignSelf: "center",
         alignItems: "center",
-        marginTop: 70,
+        marginTop: 90,
         shadowColor: "#000",
         shadowOffset: {
-            width: 1,
-            height: 1,
+            width: 5,
+            height: 5,
         },
-        shadowOpacity: 2,
-        shadowRadius: 2.62,
-        elevation: 10,
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+        elevation: 1,
         borderRadius: 20
     },
 
@@ -167,19 +177,51 @@ const styles = StyleSheet.create({
         marginTop: 20
     },
 
-    editModalButtons: {
-        display: "flex",
-        flexDirection: "row",
-        gap: 45
-    },
-
     a: {
         alignItems: "center"
     },
+
+    b: {
+        alignItems: "center",
+        display: "flex",
+        gap: 20,
+        marginTop: 0,
+        marginLeft: 140
+    },
+
     inputTextEdit: {
         height: 30,
-        width: 100,
-        backgroundColor: "red"
+        width: 300,
+        fontSize: 30,
+    },
+
+    inputGroup: {
+        marginBottom: 20
+    },
+    inputLabel: {
+        fontSize: 20,
+        color: "#333",
+        marginBottom: 5
+    },
+    inputText: {
+        fontSize: 18,
+        borderWidth: 1,
+        borderRadius: 20,
+        borderColor: "#999",
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        width: "100%"
+    },
+    picker: {
+        width: "100%",
+        marginTop: 5
+    },
+
+    editModalButtons: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        marginBottom: 40,
     }
 });
 
