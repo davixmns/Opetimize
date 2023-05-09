@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const purchaseController = require("controllers/purchaseController.js")
+const purchaseController = require("./controllers/purchaseController")
 const cors = require('cors');
 
 const app = express()
@@ -33,11 +33,6 @@ router.get("/purchases/:id", purchaseController.getPurchaseById)
 router.post("/purchases", purchaseController.createPurchase)
 router.put("/purchases/:id", purchaseController.updatePurchaseById)
 router.delete("/purchases/:id", purchaseController.deletePurchaseById)
+router.delete("/purchases", purchaseController.deleteAllPurchases)
 
 app.use('/', router);
-
-// Inicia o servidor
-const PORT = 3000;
-app.listen(PORT, () => {
-    console.log(`Servidor iniciado na porta ${PORT}`);
-});

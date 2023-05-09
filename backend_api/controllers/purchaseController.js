@@ -60,7 +60,7 @@ module.exports = {
         try{
             const {name, price, weight, date} = req.body
             const newPurchase = {name, price, weight, date}
-            await PurchaseModel.createPurchase(newPurchase)
+            await PurchaseModel.create(newPurchase)
             res.status(201).json({message: "Compra de ração salva com sucesso!"})
         }catch (error){
             console.log(error)

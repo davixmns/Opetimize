@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="animacao">
-      <change afterPath="$PROJECT_DIR$/backend_api/controllers/purchaseController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend_api/index2.js" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="arquitetura mvc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend_api/controllers/purchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/controllers/purchaseController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend_api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend_api/models/Purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend_api/models/purchaseModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +149,7 @@
       <workItem from="1683119256236" duration="7755000" />
       <workItem from="1683206474932" duration="1776000" />
       <workItem from="1683298383468" duration="13004000" />
-      <workItem from="1683642199449" duration="1829000" />
+      <workItem from="1683642199449" duration="3146000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -425,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683577344680</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="arquitetura mvc">
+      <created>1683644269555</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1683644269555</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,6 +473,7 @@
     <MESSAGE value="secao de utilidades" />
     <MESSAGE value="fim" />
     <MESSAGE value="add edicao no mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="add edicao no mobile" />
+    <MESSAGE value="arquitetura mvc" />
+    <option name="LAST_COMMIT_MESSAGE" value="arquitetura mvc" />
   </component>
 </project>
