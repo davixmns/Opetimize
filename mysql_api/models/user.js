@@ -1,7 +1,5 @@
-const Sequelize = require("sequelize")
-const database = require("../database/db")
-const Purchase = require("./purchase")
-const Pet = require("./pet")
+const Sequelize = require('sequelize');
+const database = require('../database/db');
 
 const User = database.define('user', {
     user_id: {
@@ -16,21 +14,13 @@ const User = database.define('user', {
     },
     email: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
     password: {
         type: Sequelize.STRING,
         allowNull: false
     },
-})
+});
 
-module.exports = User
-
-User.hasMany(Pet, {
-    foreignKey: "user_id"
-})
-
-User.hasMany(Purchase, {
-    foreignKey: "user_id"
-})
-
+module.exports = User;
