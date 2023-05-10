@@ -27,9 +27,6 @@ const Pet = database.define("pet", {
     },
 })
 
-User.hasMany(Pet, {
-    foreignKey: "user_id"
-})
 
 Pet.belongsTo(User, {
     constraints: true,

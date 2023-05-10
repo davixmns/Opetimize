@@ -24,6 +24,13 @@ const User = database.define('user', {
     },
 })
 
-
-
 module.exports = User
+
+User.hasMany(Pet, {
+    foreignKey: "user_id"
+})
+
+User.hasMany(Purchase, {
+    foreignKey: "user_id"
+})
+

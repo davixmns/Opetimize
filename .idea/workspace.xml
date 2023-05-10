@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="api mysql">
-      <change afterPath="$PROJECT_DIR$/mysql_api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/models/pet.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/pet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/models/purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/purchase.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +152,8 @@
       <workItem from="1683642199449" duration="3146000" />
       <workItem from="1683665392572" duration="37000" />
       <workItem from="1683724996722" duration="271000" />
-      <workItem from="1683725277655" duration="8377000" />
+      <workItem from="1683725277655" duration="8511000" />
+      <workItem from="1683739615654" duration="1128000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -452,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683732373904</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="api mysql">
+      <created>1683739438953</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1683739438953</updated>
+    </task>
+    <task id="LOCAL-00044" summary="api mysql">
+      <created>1683739450409</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1683739450409</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

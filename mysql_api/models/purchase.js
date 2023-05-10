@@ -27,13 +27,9 @@ const Purchase = database.define("purchase", {
     },
 })
 
-User.hasMany(Purchase, {
-    foreignKey: "id_user"
-})
-
 Purchase.belongsTo(User, {
     constraints: true,
-    foreignKey: "id_user"
+    foreignKey: "user_id"
 })
 
 module.exports = Purchase
