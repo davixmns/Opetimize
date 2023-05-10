@@ -1,5 +1,7 @@
 const Sequelize = require("sequelize")
 const database = require("../database/db")
+const Purchase = require("./purchase")
+const Pet = require("./pet")
 
 const User = database.define('user', {
     user_id: {
@@ -20,7 +22,8 @@ const User = database.define('user', {
         type: Sequelize.STRING,
         allowNull: false
     },
-
 })
+
+
 
 module.exports = User

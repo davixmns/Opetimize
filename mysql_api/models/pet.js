@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize')
 const database = require('../database/db')
+const {User} = require("./user")
 
 const Pet = database.define("pet", {
     pet_id: {
@@ -24,6 +25,15 @@ const Pet = database.define("pet", {
         type: Sequelize.DOUBLE,
         allowNull: false
     },
+})
+
+User.hasMany(Pet, {
+    foreignKey: "user_id"
+})
+
+Pet.belongsTo(User, {
+    constraints: true,
+    foreignKey: "user_id"
 })
 
 module.exports = Pet
