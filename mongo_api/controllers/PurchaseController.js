@@ -1,4 +1,4 @@
-const PurchaseModel = require("../models/purchaseModel");
+const PurchaseModel = require("../models/PurchaseModel");
 
 module.exports = {
     async getAllPurchases(req, res) {

@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
-const database = require('../database/db');
-const User = require('./user');
+const database = require('../database/DB');
+const User = require('./UserModel');
 
-const Pet = database.define('pet', {
+const PetModel = database.define('pet', {
     pet_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -31,8 +31,8 @@ const Pet = database.define('pet', {
     },
 });
 
-Pet.belongsTo(User, {
+PetModel.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = Pet;
+module.exports = PetModel;

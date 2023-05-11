@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
-const database = require('../database/db');
-const User = require('./user');
+const database = require('../database/DB');
+const User = require('./UserModel');
 
-const Purchase = database.define('purchase', {
+const PurchaseModel = database.define('purchase', {
     purchase_id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -27,8 +27,8 @@ const Purchase = database.define('purchase', {
     }
 });
 
-Purchase.belongsTo(User, {
+PurchaseModel.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-module.exports = Purchase;
+module.exports = PurchaseModel;

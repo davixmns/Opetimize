@@ -1,50 +1,16 @@
-async function start() {
-    const database = require('./database/db');
-    const Purchase = require('./models/purchase');
-    const Pet = require('./models/pet');
-    const User = require('./models/user');
+const express = require('express');
+const router = express.Router();
+const app = express();
+const cors = require('cors');
 
-    try {
-        await database.sync({ force: true });
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-        const user = await User.create({
-            name: 'Davi Ximenes',
-            email: 'dropperdavi@gmail.com',
-            password: 'minhasenha',
-        });
-        console.log(user.user_id)
-        const purchase = await Purchase.create({
-            name: 'dog show',
-            user_id: user.user_id,
-            price: 18.89,
-            weight: 900,
-            date: new Date(),
-        });
+router.use('/', require('./routes/index'));
 
-        const pet = await Pet.create({
-            name: "Zeus",
-            breed:"Pastor Alemão",
-            age: 8,
-            weight: 25,
-            user_id:user.user_id
-        })
+const port = process.env.PORT;
 
-        const pet2 = await Pet.create({
-            name: "Thor",
-            breed:"HotVailer",
-            age: 8,
-            weight: 25,
-            user_id:user.user_id
-        })
-
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-start();
-
-
-
-
-
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`);
+});

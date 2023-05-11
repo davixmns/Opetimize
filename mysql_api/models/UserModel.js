@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
-const database = require('../database/db');
+const database = require('../database/DB');
 
-const User = database.define('user', {
+const UserModel = database.define('user', {
     user_id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
@@ -23,4 +23,4 @@ const User = database.define('user', {
     },
 });
 
-module.exports = User;
+module.exports = UserModel;
