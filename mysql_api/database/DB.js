@@ -13,4 +13,15 @@ const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
     port: port
 })
 
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log("Conectado ao banco");
+        sequelize.sync();
+    })
+    .catch((error) => {
+        console.error("Unable to connect to the database: ", error);
+    });
+
+
 module.exports = sequelize

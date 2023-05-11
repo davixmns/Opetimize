@@ -10794,8 +10794,8 @@
 5877 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 5878 silly gunzTarPerm extractEntry package.json
 5879 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-5880 silly gunzTarPerm extractEntry index.js
-5881 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+5880 silly gunzTarPerm extractEntry routes.js
+5881 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 5882 silly gunzTarPerm extractEntry license
 5883 silly gunzTarPerm modified mode [ 'license', 420, 436 ]
 5884 silly gunzTarPerm extractEntry lib/bson.cjs
@@ -10875,8 +10875,8 @@
 5958 silly gunzTarPerm extractEntry LICENSE
 5959 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 5960 silly gunzTarPerm extractEntry LICENSE
-5961 silly gunzTarPerm extractEntry index.js
-5962 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+5961 silly gunzTarPerm extractEntry routes.js
+5962 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 5963 silly gunzTarPerm extractEntry package.json
 5964 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 5965 silly gunzTarPerm extractEntry LICENSE
@@ -10891,8 +10891,8 @@
 5974 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 5975 silly gunzTarPerm extractEntry LICENSE
 5976 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-5977 silly gunzTarPerm extractEntry index.js
-5978 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+5977 silly gunzTarPerm extractEntry routes.js
+5978 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 5979 silly gunzTarPerm extractEntry LICENSE
 5980 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 5981 silly gunzTarPerm extractEntry package.json
@@ -10926,8 +10926,8 @@
 6009 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6010 silly gunzTarPerm extractEntry package.json
 6011 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6012 silly gunzTarPerm extractEntry index.js
-6013 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6012 silly gunzTarPerm extractEntry routes.js
+6013 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6014 silly gunzTarPerm extractEntry package.json
 6015 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6016 silly gunzTarPerm extractEntry .eslintignore
@@ -10965,8 +10965,8 @@
 6048 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6049 silly gunzTarPerm extractEntry LICENSE
 6050 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6051 silly gunzTarPerm extractEntry index.js
-6052 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6051 silly gunzTarPerm extractEntry routes.js
+6052 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6053 silly gunzTarPerm extractEntry package.json
 6054 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6055 silly gunzTarPerm extractEntry .jscsrc
@@ -10983,8 +10983,8 @@
 6066 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6067 silly gunzTarPerm extractEntry package.json
 6068 silly gunzTarPerm modified mode [ 'package.json', 438, 436 ]
-6069 silly gunzTarPerm extractEntry lib/index.js
-6070 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+6069 silly gunzTarPerm extractEntry lib/routes.js
+6070 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
 6071 silly gunzTarPerm extractEntry lib/encoding.js
 6072 silly gunzTarPerm modified mode [ 'lib/encoding.js', 420, 436 ]
 6073 silly gunzTarPerm extractEntry LICENSE
@@ -11011,18 +11011,18 @@
 6094 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6095 silly gunzTarPerm extractEntry README.md
 6096 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6097 silly gunzTarPerm extractEntry es/index.js
-6098 silly gunzTarPerm modified mode [ 'es/index.js', 420, 436 ]
-6099 silly gunzTarPerm extractEntry es5m/index.js
-6100 silly gunzTarPerm modified mode [ 'es5m/index.js', 420, 436 ]
+6097 silly gunzTarPerm extractEntry es/routes.js
+6098 silly gunzTarPerm modified mode [ 'es/routes.js', 420, 436 ]
+6099 silly gunzTarPerm extractEntry es5m/routes.js
+6100 silly gunzTarPerm modified mode [ 'es5m/routes.js', 420, 436 ]
 6101 silly gunzTarPerm extractEntry package.json
 6102 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6103 silly gunzTarPerm extractEntry LICENSE.md
 6104 silly gunzTarPerm modified mode [ 'LICENSE.md', 420, 436 ]
 6105 silly gunzTarPerm extractEntry lib/Function.js
 6106 silly gunzTarPerm modified mode [ 'lib/Function.js', 420, 436 ]
-6107 silly gunzTarPerm extractEntry index.js
-6108 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6107 silly gunzTarPerm extractEntry routes.js
+6108 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6109 silly gunzTarPerm extractEntry
 6110 silly gunzTarPerm modified mode [ '', 511, 509 ]
 6111 silly gunzTarPerm extractEntry
@@ -11041,40 +11041,40 @@
 6124 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6125 silly gunzTarPerm extractEntry LICENSE.md
 6126 silly gunzTarPerm modified mode [ 'LICENSE.md', 420, 436 ]
-6127 silly gunzTarPerm extractEntry index.js
-6128 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6127 silly gunzTarPerm extractEntry routes.js
+6128 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6129 silly gunzTarPerm extractEntry binary-extensions.json
 6130 silly gunzTarPerm modified mode [ 'binary-extensions.json', 420, 436 ]
-6131 silly gunzTarPerm extractEntry index.js
-6132 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6131 silly gunzTarPerm extractEntry routes.js
+6132 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6133 silly gunzTarPerm extractEntry package.json
 6134 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6135 silly gunzTarPerm extractEntry LICENSE
 6136 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6137 silly gunzTarPerm extractEntry index.js
-6138 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6139 silly gunzTarPerm extractEntry index.js
-6140 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6137 silly gunzTarPerm extractEntry routes.js
+6138 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6139 silly gunzTarPerm extractEntry routes.js
+6140 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6141 silly gunzTarPerm extractEntry package.json
 6142 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6143 silly gunzTarPerm extractEntry index.js
-6144 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6143 silly gunzTarPerm extractEntry routes.js
+6144 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6145 silly gunzTarPerm extractEntry package.json
 6146 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6147 silly gunzTarPerm extractEntry index.js
-6148 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6147 silly gunzTarPerm extractEntry routes.js
+6148 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6149 silly gunzTarPerm extractEntry LICENSE
 6150 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6151 silly gunzTarPerm extractEntry .npmignore
 6152 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
-6153 silly gunzTarPerm extractEntry index.js
-6154 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6153 silly gunzTarPerm extractEntry routes.js
+6154 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6155 silly gunzTarPerm extractEntry History.md
 6156 silly gunzTarPerm modified mode [ 'History.md', 420, 436 ]
-6157 silly gunzTarPerm extractEntry index.js
-6158 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6159 silly gunzTarPerm extractEntry index.js
-6160 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6157 silly gunzTarPerm extractEntry routes.js
+6158 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6159 silly gunzTarPerm extractEntry routes.js
+6160 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6161 silly gunzTarPerm extractEntry package.json
 6162 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6163 silly gunzTarPerm extractEntry README.md
@@ -11087,14 +11087,14 @@
 6170 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
 6171 silly gunzTarPerm extractEntry LICENSE
 6172 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
-6173 silly gunzTarPerm extractEntry index.js
-6174 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6173 silly gunzTarPerm extractEntry routes.js
+6174 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6175 silly gunzTarPerm extractEntry README.md
 6176 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
 6177 silly gunzTarPerm extractEntry LICENSE
 6178 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
-6179 silly gunzTarPerm extractEntry index.js
-6180 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6179 silly gunzTarPerm extractEntry routes.js
+6180 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6181 silly gunzTarPerm extractEntry package.json
 6182 silly gunzTarPerm modified mode [ 'package.json', 438, 436 ]
 6183 silly gunzTarPerm extractEntry README.md
@@ -11109,8 +11109,8 @@
 6192 silly gunzTarPerm modified mode [ 'LICENSE-MIT', 420, 436 ]
 6193 silly gunzTarPerm extractEntry README.md
 6194 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6195 silly gunzTarPerm extractEntry index.js
-6196 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6195 silly gunzTarPerm extractEntry routes.js
+6196 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6197 silly gunzTarPerm extractEntry license
 6198 silly gunzTarPerm modified mode [ 'license', 420, 436 ]
 6199 silly gunzTarPerm extractEntry .nycrc
@@ -11139,26 +11139,26 @@
 6222 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6223 silly gunzTarPerm extractEntry index.d.ts
 6224 silly gunzTarPerm modified mode [ 'index.d.ts', 420, 436 ]
-6225 silly gunzTarPerm extractEntry index.js
-6226 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6225 silly gunzTarPerm extractEntry routes.js
+6226 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6227 silly gunzTarPerm extractEntry README.md
 6228 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6229 silly gunzTarPerm extractEntry LICENSE
 6230 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6231 silly gunzTarPerm extractEntry index.js
-6232 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6231 silly gunzTarPerm extractEntry routes.js
+6232 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6233 silly gunzTarPerm extractEntry package.json
 6234 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6235 silly gunzTarPerm extractEntry index.js
-6236 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6235 silly gunzTarPerm extractEntry routes.js
+6236 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6237 silly gunzTarPerm extractEntry package.json
 6238 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6239 silly gunzTarPerm extractEntry index.js
-6240 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6239 silly gunzTarPerm extractEntry routes.js
+6240 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6241 silly gunzTarPerm extractEntry LICENSE
 6242 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6243 silly gunzTarPerm extractEntry index.js
-6244 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6243 silly gunzTarPerm extractEntry routes.js
+6244 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6245 silly gunzTarPerm extractEntry package.json
 6246 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6247 silly gunzTarPerm extractEntry README.md
@@ -11169,8 +11169,8 @@
 6252 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
 6253 silly gunzTarPerm extractEntry .travis.yml
 6254 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
-6255 silly gunzTarPerm extractEntry index.js
-6256 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6255 silly gunzTarPerm extractEntry routes.js
+6256 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6257 silly gunzTarPerm extractEntry README.md
 6258 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
 6259 silly gunzTarPerm extractEntry LICENSE
@@ -11179,12 +11179,12 @@
 6262 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
 6263 silly gunzTarPerm extractEntry LICENSE
 6264 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
-6265 silly gunzTarPerm extractEntry index.js
-6266 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6265 silly gunzTarPerm extractEntry routes.js
+6266 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6267 silly gunzTarPerm extractEntry db.json
 6268 silly gunzTarPerm modified mode [ 'db.json', 420, 436 ]
-6269 silly gunzTarPerm extractEntry index.js
-6270 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6269 silly gunzTarPerm extractEntry routes.js
+6270 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6271 silly gunzTarPerm extractEntry package.json
 6272 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6273 silly gunzTarPerm extractEntry minimatch.js
@@ -11193,14 +11193,14 @@
 6276 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6277 silly gunzTarPerm extractEntry README.md
 6278 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6279 silly gunzTarPerm extractEntry index.js
-6280 silly gunzTarPerm extractEntry lib/index.js
+6279 silly gunzTarPerm extractEntry routes.js
+6280 silly gunzTarPerm extractEntry lib/routes.js
 6281 silly gunzTarPerm extractEntry package.json
 6282 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6283 silly gunzTarPerm extractEntry license.md
 6284 silly gunzTarPerm modified mode [ 'license.md', 420, 436 ]
-6285 silly gunzTarPerm extractEntry index.js
-6286 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6285 silly gunzTarPerm extractEntry routes.js
+6286 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6287 silly gunzTarPerm extractEntry license.md
 6288 silly gunzTarPerm modified mode [ 'license.md', 420, 436 ]
 6289 silly gunzTarPerm extractEntry src/browser.js
@@ -11211,8 +11211,8 @@
 6294 silly gunzTarPerm modified mode [ 'lib/collection/collection.js', 420, 436 ]
 6295 silly gunzTarPerm extractEntry lib/env.js
 6296 silly gunzTarPerm modified mode [ 'lib/env.js', 420, 436 ]
-6297 silly gunzTarPerm extractEntry index.js
-6298 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6297 silly gunzTarPerm extractEntry routes.js
+6298 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6299 silly gunzTarPerm extractEntry license.md
 6300 silly gunzTarPerm modified mode [ 'license.md', 420, 436 ]
 6301 silly gunzTarPerm extractEntry .npmignore
@@ -11223,8 +11223,8 @@
 6306 silly gunzTarPerm modified mode [ 'lib/charset.js', 420, 436 ]
 6307 silly gunzTarPerm extractEntry lib/encoding.js
 6308 silly gunzTarPerm modified mode [ 'lib/encoding.js', 420, 436 ]
-6309 silly gunzTarPerm extractEntry index.js
-6310 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6309 silly gunzTarPerm extractEntry routes.js
+6310 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6311 silly gunzTarPerm extractEntry package.json
 6312 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6313 silly gunzTarPerm extractEntry package.json
@@ -11235,34 +11235,34 @@
 6318 silly gunzTarPerm modified mode [ 'src/browser.js', 420, 436 ]
 6319 silly gunzTarPerm extractEntry src/common.js
 6320 silly gunzTarPerm modified mode [ 'src/common.js', 420, 436 ]
-6321 silly gunzTarPerm extractEntry index.js
-6322 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6321 silly gunzTarPerm extractEntry routes.js
+6322 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6323 silly gunzTarPerm extractEntry LICENSE
 6324 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6325 silly gunzTarPerm extractEntry .nycrc
 6326 silly gunzTarPerm modified mode [ '.nycrc', 420, 436 ]
 6327 silly gunzTarPerm extractEntry LICENSE
 6328 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6329 silly gunzTarPerm extractEntry index.js
-6330 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6329 silly gunzTarPerm extractEntry routes.js
+6330 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6331 silly gunzTarPerm extractEntry package.json
 6332 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6333 silly gunzTarPerm extractEntry HISTORY.md
 6334 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
-6335 silly gunzTarPerm extractEntry index.js
-6336 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6335 silly gunzTarPerm extractEntry routes.js
+6336 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6337 silly gunzTarPerm extractEntry LICENSE
 6338 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6339 silly gunzTarPerm extractEntry index.js
-6340 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6339 silly gunzTarPerm extractEntry routes.js
+6340 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6341 silly gunzTarPerm extractEntry lib/constants.js
-6342 silly gunzTarPerm extractEntry index.js
-6343 silly gunzTarPerm extractEntry index.js
-6344 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6342 silly gunzTarPerm extractEntry routes.js
+6343 silly gunzTarPerm extractEntry routes.js
+6344 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6345 silly gunzTarPerm extractEntry package.json
 6346 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6347 silly gunzTarPerm extractEntry index.js
-6348 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6347 silly gunzTarPerm extractEntry routes.js
+6348 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6349 silly gunzTarPerm extractEntry package.json
 6350 silly gunzTarPerm modified mode [ 'package.json', 438, 436 ]
 6351 silly gunzTarPerm extractEntry tests/fixtures/out1
@@ -11279,18 +11279,18 @@
 6362 silly gunzTarPerm modified mode [ 'LICENSE-MIT.txt', 420, 436 ]
 6363 silly gunzTarPerm extractEntry HISTORY.md
 6364 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
-6365 silly gunzTarPerm extractEntry index.js
-6366 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6367 silly gunzTarPerm extractEntry index.js
-6368 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6365 silly gunzTarPerm extractEntry routes.js
+6366 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6367 silly gunzTarPerm extractEntry routes.js
+6368 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6369 silly gunzTarPerm extractEntry package.json
 6370 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6371 silly gunzTarPerm extractEntry index.js
-6372 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6371 silly gunzTarPerm extractEntry routes.js
+6372 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6373 silly gunzTarPerm extractEntry package.json
 6374 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6375 silly gunzTarPerm extractEntry index.js
-6376 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6375 silly gunzTarPerm extractEntry routes.js
+6376 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6377 silly gunzTarPerm extractEntry package.json
 6378 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6379 silly gunzTarPerm extractEntry dangerous.js
@@ -11307,8 +11307,8 @@
 6390 silly gunzTarPerm modified mode [ 'license.md', 420, 436 ]
 6391 silly gunzTarPerm extractEntry index.d.ts
 6392 silly gunzTarPerm modified mode [ 'index.d.ts', 420, 436 ]
-6393 silly gunzTarPerm extractEntry index.js
-6394 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6393 silly gunzTarPerm extractEntry routes.js
+6394 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6395 silly gunzTarPerm extractEntry .eslintrc
 6396 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
 6397 silly gunzTarPerm extractEntry .nycrc
@@ -11317,8 +11317,8 @@
 6400 silly gunzTarPerm modified mode [ '.eslintrc', 420, 436 ]
 6401 silly gunzTarPerm extractEntry .nycrc
 6402 silly gunzTarPerm modified mode [ '.nycrc', 420, 436 ]
-6403 silly gunzTarPerm extractEntry build/index.js
-6404 silly gunzTarPerm modified mode [ 'build/index.js', 420, 436 ]
+6403 silly gunzTarPerm extractEntry build/routes.js
+6404 silly gunzTarPerm modified mode [ 'build/routes.js', 420, 436 ]
 6405 silly gunzTarPerm extractEntry package.json
 6406 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6407 silly gunzTarPerm extractEntry build/smartbuffer.js
@@ -11333,42 +11333,42 @@
 6416 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6417 silly gunzTarPerm extractEntry .editorconfig
 6418 silly gunzTarPerm extractEntry .gitattributes
-6419 silly gunzTarPerm extractEntry index.js
-6420 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6419 silly gunzTarPerm extractEntry routes.js
+6420 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6421 silly gunzTarPerm extractEntry codes.json
 6422 silly gunzTarPerm modified mode [ 'codes.json', 438, 436 ]
 6423 silly gunzTarPerm extractEntry browser.js
 6424 silly gunzTarPerm modified mode [ 'browser.js', 420, 436 ]
-6425 silly gunzTarPerm extractEntry index.js
-6426 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6427 silly gunzTarPerm extractEntry index.js
-6428 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6425 silly gunzTarPerm extractEntry routes.js
+6426 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6427 silly gunzTarPerm extractEntry routes.js
+6428 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6429 silly gunzTarPerm extractEntry LICENSE
 6430 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6431 silly gunzTarPerm extractEntry index.js
-6432 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6431 silly gunzTarPerm extractEntry routes.js
+6432 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6433 silly gunzTarPerm extractEntry LICENSE
 6434 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6435 silly gunzTarPerm extractEntry CHANGELOG.md
 6436 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
-6437 silly gunzTarPerm extractEntry index.js
-6438 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6437 silly gunzTarPerm extractEntry routes.js
+6438 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6439 silly gunzTarPerm extractEntry build/utils.js
 6440 silly gunzTarPerm modified mode [ 'build/utils.js', 420, 436 ]
 6441 silly gunzTarPerm extractEntry lib/constants.js
 6442 silly gunzTarPerm modified mode [ 'lib/constants.js', 420, 436 ]
 6443 silly gunzTarPerm extractEntry lib/fsevents-handler.js
 6444 silly gunzTarPerm modified mode [ 'lib/fsevents-handler.js', 420, 436 ]
-6445 silly gunzTarPerm extractEntry index.js
-6446 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6445 silly gunzTarPerm extractEntry routes.js
+6446 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6447 silly gunzTarPerm extractEntry package.json
 6448 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6449 silly gunzTarPerm extractEntry index.js
-6450 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6449 silly gunzTarPerm extractEntry routes.js
+6450 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6451 silly gunzTarPerm extractEntry package.json
 6452 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6453 silly gunzTarPerm extractEntry index.js
-6454 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6453 silly gunzTarPerm extractEntry routes.js
+6454 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6455 silly gunzTarPerm extractEntry package.json
 6456 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6457 silly gunzTarPerm extractEntry HISTORY.md
@@ -11377,16 +11377,16 @@
 6460 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6461 silly gunzTarPerm extractEntry SECURITY.md
 6462 silly gunzTarPerm modified mode [ 'SECURITY.md', 420, 436 ]
-6463 silly gunzTarPerm extractEntry index.js
-6464 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6463 silly gunzTarPerm extractEntry routes.js
+6464 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6465 silly gunzTarPerm extractEntry package.json
 6466 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6467 silly gunzTarPerm extractEntry lib/regexes.js
 6468 silly gunzTarPerm modified mode [ 'lib/regexes.js', 420, 436 ]
 6469 silly gunzTarPerm extractEntry HISTORY.md
 6470 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
-6471 silly gunzTarPerm extractEntry index.js
-6472 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6471 silly gunzTarPerm extractEntry routes.js
+6472 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6473 silly gunzTarPerm extractEntry .jshintrc
 6474 silly gunzTarPerm modified mode [ '.jshintrc', 420, 436 ]
 6475 silly gunzTarPerm extractEntry LICENSE
@@ -11395,16 +11395,16 @@
 6478 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
 6479 silly gunzTarPerm extractEntry LICENSE
 6480 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
-6481 silly gunzTarPerm extractEntry index.js
-6482 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6481 silly gunzTarPerm extractEntry routes.js
+6482 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6483 silly gunzTarPerm extractEntry package.json
 6484 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6485 silly gunzTarPerm extractEntry index.js
-6486 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6485 silly gunzTarPerm extractEntry routes.js
+6486 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6487 silly gunzTarPerm extractEntry lib/types/json.js
 6488 silly gunzTarPerm modified mode [ 'lib/types/json.js', 420, 436 ]
-6489 silly gunzTarPerm extractEntry index.js
-6490 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6489 silly gunzTarPerm extractEntry routes.js
+6490 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6491 silly gunzTarPerm extractEntry package.json
 6492 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6493 silly gunzTarPerm extractEntry .npmignore
@@ -11415,14 +11415,14 @@
 6498 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
 6499 silly gunzTarPerm extractEntry LICENSE
 6500 silly gunzTarPerm modified mode [ 'LICENSE', 438, 436 ]
-6501 silly gunzTarPerm extractEntry lib/index.js
-6502 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+6501 silly gunzTarPerm extractEntry lib/routes.js
+6502 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
 6503 silly gunzTarPerm extractEntry lib/redact.js
 6504 silly gunzTarPerm modified mode [ 'lib/redact.js', 420, 436 ]
 6505 silly gunzTarPerm extractEntry package.json
 6506 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6507 silly gunzTarPerm extractEntry lib/index.js.map
-6508 silly gunzTarPerm modified mode [ 'lib/index.js.map', 420, 436 ]
+6507 silly gunzTarPerm extractEntry lib/routes.js.map
+6508 silly gunzTarPerm modified mode [ 'lib/routes.js.map', 420, 436 ]
 6509 silly gunzTarPerm extractEntry lib/redact.js.map
 6510 silly gunzTarPerm modified mode [ 'lib/redact.js.map', 420, 436 ]
 6511 silly gunzTarPerm extractEntry README.md
@@ -11507,24 +11507,24 @@
 6590 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6591 silly gunzTarPerm extractEntry callBound.js
 6592 silly gunzTarPerm modified mode [ 'callBound.js', 420, 436 ]
-6593 silly gunzTarPerm extractEntry src/index.js
-6594 silly gunzTarPerm modified mode [ 'src/index.js', 420, 436 ]
+6593 silly gunzTarPerm extractEntry src/routes.js
+6594 silly gunzTarPerm modified mode [ 'src/routes.js', 420, 436 ]
 6595 silly gunzTarPerm extractEntry src/node.js
 6596 silly gunzTarPerm modified mode [ 'src/node.js', 420, 436 ]
 6597 silly gunzTarPerm extractEntry package.json
 6598 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6599 silly gunzTarPerm extractEntry README.md
 6600 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6601 silly gunzTarPerm extractEntry index.js
-6602 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6601 silly gunzTarPerm extractEntry routes.js
+6602 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6603 silly gunzTarPerm extractEntry lib/language.js
 6604 silly gunzTarPerm modified mode [ 'lib/language.js', 420, 436 ]
 6605 silly gunzTarPerm extractEntry README.md
 6606 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6607 silly gunzTarPerm extractEntry bin/nopt.js
 6608 silly gunzTarPerm modified mode [ 'bin/nopt.js', 493, 509 ]
-6609 silly gunzTarPerm extractEntry src/index.js
-6610 silly gunzTarPerm modified mode [ 'src/index.js', 420, 436 ]
+6609 silly gunzTarPerm extractEntry src/routes.js
+6610 silly gunzTarPerm modified mode [ 'src/routes.js', 420, 436 ]
 6611 silly gunzTarPerm extractEntry node.js
 6612 silly gunzTarPerm modified mode [ 'node.js', 420, 436 ]
 6613 silly gunzTarPerm extractEntry src/node.js
@@ -11544,8 +11544,8 @@
 6627 silly gunzTarPerm extractEntry README.md
 6628 silly gunzTarPerm extractEntry LICENSE
 6629 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6630 silly gunzTarPerm extractEntry index.js
-6631 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6630 silly gunzTarPerm extractEntry routes.js
+6631 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6632 silly gunzTarPerm extractEntry package.json
 6633 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 6634 silly gunzTarPerm extractEntry build/smartbuffer.js.map
@@ -11554,8 +11554,8 @@
 6637 silly gunzTarPerm modified mode [ 'build/utils.js.map', 420, 436 ]
 6638 silly gunzTarPerm extractEntry README.md
 6639 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6640 silly gunzTarPerm extractEntry index.js
-6641 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6640 silly gunzTarPerm extractEntry routes.js
+6641 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6642 silly gunzTarPerm extractEntry example.js
 6643 silly gunzTarPerm modified mode [ 'example.js', 420, 436 ]
 6644 silly gunzTarPerm extractEntry lib/undefsafe.js
@@ -11564,10 +11564,10 @@
 6647 silly gunzTarPerm modified mode [ 'lib/mappingTable.json', 420, 436 ]
 6648 silly gunzTarPerm extractEntry package.json
 6649 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-6650 silly gunzTarPerm extractEntry index.js
-6651 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6652 silly gunzTarPerm extractEntry lib/router/index.js
-6653 silly gunzTarPerm modified mode [ 'lib/router/index.js', 420, 436 ]
+6650 silly gunzTarPerm extractEntry routes.js
+6651 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6652 silly gunzTarPerm extractEntry lib/router/routes.js
+6653 silly gunzTarPerm modified mode [ 'lib/router/routes.js', 420, 436 ]
 6654 silly gunzTarPerm extractEntry array-flatten.js
 6655 silly gunzTarPerm modified mode [ 'array-flatten.js', 420, 436 ]
 6656 silly gunzTarPerm extractEntry README.md
@@ -11600,40 +11600,40 @@
 6683 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6684 silly gunzTarPerm extractEntry README.md
 6685 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6686 silly gunzTarPerm extractEntry index.js
-6687 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
-6688 silly gunzTarPerm extractEntry index.js
-6689 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6686 silly gunzTarPerm extractEntry routes.js
+6687 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
+6688 silly gunzTarPerm extractEntry routes.js
+6689 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6690 silly gunzTarPerm extractEntry HISTORY.md
 6691 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
-6692 silly gunzTarPerm extractEntry index.js
-6693 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6692 silly gunzTarPerm extractEntry routes.js
+6693 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6694 silly gunzTarPerm extractEntry HISTORY.md
 6695 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6696 silly gunzTarPerm extractEntry HISTORY.md
 6697 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6698 silly gunzTarPerm extractEntry README.md
 6699 silly gunzTarPerm modified mode [ 'README.md', 438, 436 ]
-6700 silly gunzTarPerm extractEntry index.js
-6701 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6700 silly gunzTarPerm extractEntry routes.js
+6701 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6702 silly gunzTarPerm extractEntry HISTORY.md
 6703 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6704 silly gunzTarPerm extractEntry LICENSE
 6705 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6706 silly gunzTarPerm extractEntry implementation.js
 6707 silly gunzTarPerm modified mode [ 'implementation.js', 420, 436 ]
-6708 silly gunzTarPerm extractEntry src/index.js
-6709 silly gunzTarPerm modified mode [ 'src/index.js', 420, 436 ]
-6710 silly gunzTarPerm extractEntry test/index.js
-6711 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+6708 silly gunzTarPerm extractEntry src/routes.js
+6709 silly gunzTarPerm modified mode [ 'src/routes.js', 420, 436 ]
+6710 silly gunzTarPerm extractEntry test/routes.js
+6711 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 6712 silly gunzTarPerm extractEntry readme.md
 6713 silly gunzTarPerm modified mode [ 'readme.md', 420, 436 ]
 6714 silly gunzTarPerm extractEntry test/GetIntrinsic.js
 6715 silly gunzTarPerm modified mode [ 'test/GetIntrinsic.js', 420, 436 ]
-6716 silly gunzTarPerm extractEntry index.js
-6717 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6718 silly gunzTarPerm extractEntry index.js
-6719 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6716 silly gunzTarPerm extractEntry routes.js
+6717 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6718 silly gunzTarPerm extractEntry routes.js
+6719 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6720 silly gunzTarPerm extractEntry LICENSE
 6721 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6722 silly gunzTarPerm extractEntry README.md
@@ -11648,8 +11648,8 @@
 6731 silly gunzTarPerm modified mode [ 'license', 420, 436 ]
 6732 silly gunzTarPerm extractEntry readme.md
 6733 silly gunzTarPerm modified mode [ 'readme.md', 420, 436 ]
-6734 silly gunzTarPerm extractEntry index.js
-6735 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6734 silly gunzTarPerm extractEntry routes.js
+6735 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6736 silly gunzTarPerm extractEntry CHANGELOG.md
 6737 silly gunzTarPerm modified mode [ 'CHANGELOG.md', 420, 436 ]
 6738 silly gunzTarPerm extractEntry README.md
@@ -11658,20 +11658,20 @@
 6741 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6742 silly gunzTarPerm extractEntry README.md
 6743 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6744 silly gunzTarPerm extractEntry index.js
-6745 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6744 silly gunzTarPerm extractEntry routes.js
+6745 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6746 silly gunzTarPerm extractEntry HISTORY.md
 6747 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6748 silly gunzTarPerm extractEntry LICENSE
 6749 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6750 silly gunzTarPerm extractEntry README.md
 6751 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6752 silly gunzTarPerm extractEntry index.js
-6753 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6752 silly gunzTarPerm extractEntry routes.js
+6753 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6754 silly gunzTarPerm extractEntry HISTORY.md
 6755 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
-6756 silly gunzTarPerm extractEntry index.js
-6757 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6756 silly gunzTarPerm extractEntry routes.js
+6757 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6758 silly gunzTarPerm extractEntry HISTORY.md
 6759 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6760 silly gunzTarPerm extractEntry package.json
@@ -11680,7 +11680,7 @@
 6763 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
 6764 silly gunzTarPerm extractEntry README.md
 6765 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6766 silly gunzTarPerm extractEntry test/index.js
+6766 silly gunzTarPerm extractEntry test/routes.js
 6767 silly gunzTarPerm extractEntry lib/stringToParts.js
 6768 silly gunzTarPerm extractEntry test/stringToParts.js
 6769 silly gunzTarPerm extractEntry package.json
@@ -11771,18 +11771,18 @@
 6854 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 6855 silly gunzTarPerm extractEntry lib/formats.js
 6856 silly gunzTarPerm modified mode [ 'lib/formats.js', 420, 436 ]
-6857 silly gunzTarPerm extractEntry lib/index.js
-6858 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
-6859 silly gunzTarPerm extractEntry index.js
-6860 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6861 silly gunzTarPerm extractEntry lib/index.js
-6862 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
-6863 silly gunzTarPerm extractEntry src/index.js
-6864 silly gunzTarPerm modified mode [ 'src/index.js', 420, 436 ]
+6857 silly gunzTarPerm extractEntry lib/routes.js
+6858 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
+6859 silly gunzTarPerm extractEntry routes.js
+6860 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6861 silly gunzTarPerm extractEntry lib/routes.js
+6862 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
+6863 silly gunzTarPerm extractEntry src/routes.js
+6864 silly gunzTarPerm modified mode [ 'src/routes.js', 420, 436 ]
 6865 silly gunzTarPerm extractEntry build/common/helpers.js
 6866 silly gunzTarPerm modified mode [ 'build/common/helpers.js', 420, 436 ]
-6867 silly gunzTarPerm extractEntry build/index.js
-6868 silly gunzTarPerm modified mode [ 'build/index.js', 420, 436 ]
+6867 silly gunzTarPerm extractEntry build/routes.js
+6868 silly gunzTarPerm modified mode [ 'build/routes.js', 420, 436 ]
 6869 silly gunzTarPerm extractEntry build/common/receivebuffer.js
 6870 silly gunzTarPerm modified mode [ 'build/common/receivebuffer.js', 420, 436 ]
 6871 silly gunzTarPerm extractEntry build/client/socksclient.js
@@ -11795,8 +11795,8 @@
 6878 silly gunzTarPerm modified mode [ 'build/common/constants.js.map', 420, 436 ]
 6879 silly gunzTarPerm extractEntry build/common/helpers.js.map
 6880 silly gunzTarPerm modified mode [ 'build/common/helpers.js.map', 420, 436 ]
-6881 silly gunzTarPerm extractEntry build/index.js.map
-6882 silly gunzTarPerm modified mode [ 'build/index.js.map', 420, 436 ]
+6881 silly gunzTarPerm extractEntry build/routes.js.map
+6882 silly gunzTarPerm modified mode [ 'build/routes.js.map', 420, 436 ]
 6883 silly gunzTarPerm extractEntry build/common/receivebuffer.js.map
 6884 silly gunzTarPerm modified mode [ 'build/common/receivebuffer.js.map', 420, 436 ]
 6885 silly gunzTarPerm extractEntry build/client/socksclient.js.map
@@ -11839,8 +11839,8 @@
 6922 silly gunzTarPerm modified mode [ '.prettierrc.yaml', 420, 436 ]
 6923 silly gunzTarPerm extractEntry LICENSE
 6924 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6925 silly gunzTarPerm extractEntry index.js
-6926 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+6925 silly gunzTarPerm extractEntry routes.js
+6926 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 6927 silly gunzTarPerm extractEntry .travis.yml
 6928 silly gunzTarPerm extractEntry CHANGELOG.md
 6929 silly gunzTarPerm extractEntry package.json
@@ -11875,8 +11875,8 @@
 6958 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 6959 silly gunzTarPerm extractEntry README.md
 6960 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-6961 silly gunzTarPerm extractEntry index.js
-6962 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6961 silly gunzTarPerm extractEntry routes.js
+6962 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6963 silly gunzTarPerm extractEntry HISTORY.md
 6964 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6965 silly gunzTarPerm extractEntry HISTORY.md
@@ -11899,10 +11899,10 @@
 6982 silly gunzTarPerm modified mode [ 'SECURITY.md', 420, 436 ]
 6983 silly gunzTarPerm extractEntry LICENSE
 6984 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
-6985 silly gunzTarPerm extractEntry index.js
-6986 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-6987 silly gunzTarPerm extractEntry index.js
-6988 silly gunzTarPerm modified mode [ 'index.js', 438, 436 ]
+6985 silly gunzTarPerm extractEntry routes.js
+6986 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+6987 silly gunzTarPerm extractEntry routes.js
+6988 silly gunzTarPerm modified mode [ 'routes.js', 438, 436 ]
 6989 silly gunzTarPerm extractEntry HISTORY.md
 6990 silly gunzTarPerm modified mode [ 'HISTORY.md', 438, 436 ]
 6991 silly gunzTarPerm extractEntry lib/infra.js
@@ -11919,14 +11919,14 @@
 7002 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
 7003 silly gunzTarPerm extractEntry mime.js
 7004 silly gunzTarPerm modified mode [ 'mime.js', 420, 436 ]
-7005 silly gunzTarPerm extractEntry lib/collection/index.js
-7006 silly gunzTarPerm modified mode [ 'lib/collection/index.js', 420, 436 ]
+7005 silly gunzTarPerm extractEntry lib/collection/routes.js
+7006 silly gunzTarPerm modified mode [ 'lib/collection/routes.js', 420, 436 ]
 7007 silly gunzTarPerm extractEntry lib/mquery.js
 7008 silly gunzTarPerm modified mode [ 'lib/mquery.js', 420, 436 ]
-7009 silly gunzTarPerm extractEntry lib/index.js
-7010 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
-7011 silly gunzTarPerm extractEntry tests/fixtures/index.js
-7012 silly gunzTarPerm modified mode [ 'tests/fixtures/index.js', 420, 436 ]
+7009 silly gunzTarPerm extractEntry lib/routes.js
+7010 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
+7011 silly gunzTarPerm extractEntry tests/fixtures/routes.js
+7012 silly gunzTarPerm modified mode [ 'tests/fixtures/routes.js', 420, 436 ]
 7013 silly gunzTarPerm extractEntry encodings/dbcs-codec.js
 7014 silly gunzTarPerm modified mode [ 'encodings/dbcs-codec.js', 420, 436 ]
 7015 silly gunzTarPerm extractEntry functions/cmp.js
@@ -11935,8 +11935,8 @@
 7018 silly gunzTarPerm modified mode [ 'functions/coerce.js', 420, 436 ]
 7019 silly gunzTarPerm extractEntry docs/CHANGELOG.md
 7020 silly gunzTarPerm modified mode [ 'docs/CHANGELOG.md', 420, 436 ]
-7021 silly gunzTarPerm extractEntry index.js
-7022 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+7021 silly gunzTarPerm extractEntry routes.js
+7022 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 7023 silly gunzTarPerm extractEntry bin/nodetouch.js
 7024 silly gunzTarPerm modified mode [ 'bin/nodetouch.js', 493, 509 ]
 7025 silly gunzTarPerm extractEntry LICENSE.md
@@ -11969,16 +11969,16 @@
 7052 silly gunzTarPerm modified mode [ '', 511, 509 ]
 7053 silly gunzTarPerm extractEntry
 7054 silly gunzTarPerm modified mode [ '', 511, 509 ]
-7055 silly gunzTarPerm extractEntry index.js
-7056 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-7057 silly gunzTarPerm extractEntry test/index.js
-7058 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+7055 silly gunzTarPerm extractEntry routes.js
+7056 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+7057 silly gunzTarPerm extractEntry test/routes.js
+7058 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 7059 silly gunzTarPerm extractEntry test/callBound.js
 7060 silly gunzTarPerm modified mode [ 'test/callBound.js', 420, 436 ]
-7061 silly gunzTarPerm extractEntry index.js
-7062 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-7063 silly gunzTarPerm extractEntry test/index.js
-7064 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+7061 silly gunzTarPerm extractEntry routes.js
+7062 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+7063 silly gunzTarPerm extractEntry test/routes.js
+7064 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 7065 silly gunzTarPerm extractEntry package.json
 7066 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 7067 silly gunzTarPerm extractEntry package.json
@@ -11995,8 +11995,8 @@
 7078 silly gunzTarPerm modified mode [ 'index.d.ts', 420, 436 ]
 7079 silly gunzTarPerm extractEntry package.json
 7080 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
-7081 silly gunzTarPerm extractEntry index.js
-7082 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+7081 silly gunzTarPerm extractEntry routes.js
+7082 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 7083 silly gunzTarPerm extractEntry .travis.yml
 7084 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
 7085 silly gunzTarPerm extractEntry package.json
@@ -12025,15 +12025,15 @@
 7108 silly gunzTarPerm modified mode [ 'example/circular.js', 420, 436 ]
 7109 silly gunzTarPerm extractEntry test/circular.js
 7110 silly gunzTarPerm modified mode [ 'test/circular.js', 420, 436 ]
-7111 silly gunzTarPerm extractEntry test/index.js
-7112 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+7111 silly gunzTarPerm extractEntry test/routes.js
+7112 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 7113 silly gunzTarPerm extractEntry test.js
 7114 silly gunzTarPerm modified mode [ 'test.js', 420, 436 ]
 7115 silly gunzTarPerm extractEntry .travis.yml
 7116 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
 7117 silly gunzTarPerm extractEntry code-points.mem
-7118 silly gunzTarPerm extractEntry lib/cli/index.js
-7119 silly gunzTarPerm modified mode [ 'lib/cli/index.js', 420, 436 ]
+7118 silly gunzTarPerm extractEntry lib/cli/routes.js
+7119 silly gunzTarPerm modified mode [ 'lib/cli/routes.js', 420, 436 ]
 7120 silly gunzTarPerm extractEntry example/map.js
 7121 silly gunzTarPerm modified mode [ 'example/map.js', 420, 436 ]
 7122 silly gunzTarPerm extractEntry test/map.js
@@ -12042,12 +12042,12 @@
 7125 silly gunzTarPerm modified mode [ 'SECURITY.md', 420, 436 ]
 7126 silly gunzTarPerm extractEntry Readme.md
 7127 silly gunzTarPerm modified mode [ 'Readme.md', 420, 436 ]
-7128 silly gunzTarPerm extractEntry lib/browser/index.js
-7129 silly gunzTarPerm modified mode [ 'lib/browser/index.js', 420, 436 ]
+7128 silly gunzTarPerm extractEntry lib/browser/routes.js
+7129 silly gunzTarPerm modified mode [ 'lib/browser/routes.js', 420, 436 ]
 7130 silly gunzTarPerm extractEntry encodings/dbcs-data.js
 7131 silly gunzTarPerm modified mode [ 'encodings/dbcs-data.js', 420, 436 ]
-7132 silly gunzTarPerm extractEntry encodings/index.js
-7133 silly gunzTarPerm modified mode [ 'encodings/index.js', 420, 436 ]
+7132 silly gunzTarPerm extractEntry encodings/routes.js
+7133 silly gunzTarPerm modified mode [ 'encodings/routes.js', 420, 436 ]
 7134 silly gunzTarPerm extractEntry lib/parse.js
 7135 silly gunzTarPerm modified mode [ 'lib/parse.js', 420, 436 ]
 7136 silly gunzTarPerm extractEntry test/parse.js
@@ -12147,8 +12147,8 @@
 7230 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
 7231 silly gunzTarPerm extractEntry docs/ROADMAP.md
 7232 silly gunzTarPerm modified mode [ 'docs/ROADMAP.md', 420, 436 ]
-7233 silly gunzTarPerm extractEntry test/index.js
-7234 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+7233 silly gunzTarPerm extractEntry test/routes.js
+7234 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 7235 silly gunzTarPerm extractEntry package.json
 7236 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 7237 silly gunzTarPerm extractEntry CHANGELOG.md
@@ -12165,7 +12165,7 @@
 7248 silly gunzTarPerm modified mode [ 'test/deep.js', 420, 436 ]
 7249 silly gunzTarPerm extractEntry test/browser/dom.js
 7250 silly gunzTarPerm modified mode [ 'test/browser/dom.js', 420, 436 ]
-7251 silly gunzTarPerm extractEntry index.js
+7251 silly gunzTarPerm extractEntry routes.js
 7252 silly gunzTarPerm extractEntry LICENSE
 7253 silly gunzTarPerm extractEntry .travis.yml
 7254 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
@@ -12233,10 +12233,10 @@
 7316 silly gunzTarPerm modified mode [ 'lib/request.js', 420, 436 ]
 7317 silly gunzTarPerm extractEntry lib/helpers/model/applyDefaultsToPOJO.js
 7318 silly gunzTarPerm modified mode [ 'lib/helpers/model/applyDefaultsToPOJO.js', 420, 436 ]
-7319 silly gunzTarPerm extractEntry lib/config/index.js
-7320 silly gunzTarPerm modified mode [ 'lib/config/index.js', 420, 436 ]
-7321 silly gunzTarPerm extractEntry lib/help/index.js
-7322 silly gunzTarPerm modified mode [ 'lib/help/index.js', 420, 436 ]
+7319 silly gunzTarPerm extractEntry lib/config/routes.js
+7320 silly gunzTarPerm modified mode [ 'lib/config/routes.js', 420, 436 ]
+7321 silly gunzTarPerm extractEntry lib/help/routes.js
+7322 silly gunzTarPerm modified mode [ 'lib/help/routes.js', 420, 436 ]
 7323 silly gunzTarPerm extractEntry lib/helpers/query/applyGlobalOption.js
 7324 silly gunzTarPerm modified mode [ 'lib/helpers/query/applyGlobalOption.js', 420, 436 ]
 7325 silly gunzTarPerm extractEntry lib/permissions.js
@@ -12331,10 +12331,10 @@
 7414 silly gunzTarPerm modified mode [ 'internal/identifiers.js', 420, 436 ]
 7415 silly gunzTarPerm extractEntry functions/inc.js
 7416 silly gunzTarPerm modified mode [ 'functions/inc.js', 420, 436 ]
-7417 silly gunzTarPerm extractEntry classes/index.js
-7418 silly gunzTarPerm modified mode [ 'classes/index.js', 420, 436 ]
-7419 silly gunzTarPerm extractEntry index.js
-7420 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+7417 silly gunzTarPerm extractEntry classes/routes.js
+7418 silly gunzTarPerm modified mode [ 'classes/routes.js', 420, 436 ]
+7419 silly gunzTarPerm extractEntry routes.js
+7420 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 7421 silly gunzTarPerm extractEntry ranges/intersects.js
 7422 silly gunzTarPerm modified mode [ 'ranges/intersects.js', 420, 436 ]
 7423 silly gunzTarPerm extractEntry functions/lt.js
@@ -12419,12 +12419,12 @@
 7502 silly gunzTarPerm modified mode [ 'History.md', 420, 436 ]
 7503 silly gunzTarPerm extractEntry .github/ISSUE_TEMPLATE.md
 7504 silly gunzTarPerm modified mode [ '.github/ISSUE_TEMPLATE.md', 420, 436 ]
-7505 silly gunzTarPerm extractEntry es/index.js.map
-7506 silly gunzTarPerm modified mode [ 'es/index.js.map', 420, 436 ]
-7507 silly gunzTarPerm extractEntry es5m/index.js.map
-7508 silly gunzTarPerm modified mode [ 'es5m/index.js.map', 420, 436 ]
-7509 silly gunzTarPerm extractEntry lib/index.js.map
-7510 silly gunzTarPerm modified mode [ 'lib/index.js.map', 420, 436 ]
+7505 silly gunzTarPerm extractEntry es/routes.js.map
+7506 silly gunzTarPerm modified mode [ 'es/routes.js.map', 420, 436 ]
+7507 silly gunzTarPerm extractEntry es5m/routes.js.map
+7508 silly gunzTarPerm modified mode [ 'es5m/routes.js.map', 420, 436 ]
+7509 silly gunzTarPerm extractEntry lib/routes.js.map
+7510 silly gunzTarPerm modified mode [ 'lib/routes.js.map', 420, 436 ]
 7511 silly gunzTarPerm extractEntry .prettierrc.yaml
 7512 silly gunzTarPerm modified mode [ '.prettierrc.yaml', 420, 436 ]
 7513 silly gunzTarPerm extractEntry .travis.yml
@@ -12433,23 +12433,23 @@
 7516 silly gunzTarPerm modified mode [ 'HISTORY.md', 420, 436 ]
 7517 silly gunzTarPerm extractEntry README.md
 7518 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-7519 silly gunzTarPerm extractEntry lib/index.js
-7520 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
-7521 silly gunzTarPerm extractEntry lib/monitor/index.js
-7522 silly gunzTarPerm modified mode [ 'lib/monitor/index.js', 420, 436 ]
+7519 silly gunzTarPerm extractEntry lib/routes.js
+7520 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
+7521 silly gunzTarPerm extractEntry lib/monitor/routes.js
+7522 silly gunzTarPerm modified mode [ 'lib/monitor/routes.js', 420, 436 ]
 7523 silly gunzTarPerm extractEntry .github/PULL_REQUEST_TEMPLATE.md
 7524 silly gunzTarPerm modified mode [ '.github/PULL_REQUEST_TEMPLATE.md', 420, 436 ]
 7525 silly gunzTarPerm extractEntry lib/memory-code-points.js
 7526 silly gunzTarPerm extractEntry lib/util.js
-7527 silly gunzTarPerm extractEntry src/index.js.map
-7528 silly gunzTarPerm modified mode [ 'src/index.js.map', 420, 436 ]
-7529 silly gunzTarPerm extractEntry test/index.js
-7530 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+7527 silly gunzTarPerm extractEntry src/routes.js.map
+7528 silly gunzTarPerm modified mode [ 'src/routes.js.map', 420, 436 ]
+7529 silly gunzTarPerm extractEntry test/routes.js
+7530 silly gunzTarPerm modified mode [ 'test/routes.js', 420, 436 ]
 7531 silly gunzTarPerm extractEntry test/.eslintrc
 7532 silly gunzTarPerm modified mode [ 'test/.eslintrc', 420, 436 ]
 7533 silly gunzTarPerm extractEntry README.md
 7534 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
-7535 silly gunzTarPerm extractEntry test/index.js
+7535 silly gunzTarPerm extractEntry test/routes.js
 7536 silly gunzTarPerm extractEntry lib/cursor/change_stream_cursor.js
 7537 silly gunzTarPerm modified mode [ 'lib/cursor/change_stream_cursor.js', 420, 436 ]
 7538 silly gunzTarPerm extractEntry lib/change_stream.js
@@ -12535,12 +12535,12 @@
 7618 silly gunzTarPerm modified mode [ 'encodings/tables/cp950.json', 420, 436 ]
 7619 silly gunzTarPerm extractEntry SECURITY.md
 7620 silly gunzTarPerm modified mode [ 'SECURITY.md', 420, 436 ]
-7621 silly gunzTarPerm extractEntry lib/rules/index.js
-7622 silly gunzTarPerm modified mode [ 'lib/rules/index.js', 420, 436 ]
-7623 silly gunzTarPerm extractEntry lib/utils/index.js
-7624 silly gunzTarPerm modified mode [ 'lib/utils/index.js', 420, 436 ]
-7625 silly gunzTarPerm extractEntry src/index.js
-7626 silly gunzTarPerm modified mode [ 'src/index.js', 420, 436 ]
+7621 silly gunzTarPerm extractEntry lib/rules/routes.js
+7622 silly gunzTarPerm modified mode [ 'lib/rules/routes.js', 420, 436 ]
+7623 silly gunzTarPerm extractEntry lib/utils/routes.js
+7624 silly gunzTarPerm modified mode [ 'lib/utils/routes.js', 420, 436 ]
+7625 silly gunzTarPerm extractEntry src/routes.js
+7626 silly gunzTarPerm modified mode [ 'src/routes.js', 420, 436 ]
 7627 silly gunzTarPerm extractEntry src/inspector-log.js
 7628 silly gunzTarPerm modified mode [ 'src/inspector-log.js', 420, 436 ]
 7629 silly gunzTarPerm extractEntry example/fn.js
@@ -12655,8 +12655,8 @@
 7738 silly gunzTarPerm modified mode [ 'lib/extend-node.js', 420, 436 ]
 7739 silly gunzTarPerm extractEntry lib/index.d.ts
 7740 silly gunzTarPerm modified mode [ 'lib/index.d.ts', 420, 436 ]
-7741 silly gunzTarPerm extractEntry lib/index.js
-7742 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+7741 silly gunzTarPerm extractEntry lib/routes.js
+7742 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
 7743 silly gunzTarPerm extractEntry lib/streams.js
 7744 silly gunzTarPerm modified mode [ 'lib/streams.js', 420, 436 ]
 7745 silly gunzTarPerm extractEntry lib/helpers/query/applyQueryMiddleware.js
@@ -12721,8 +12721,8 @@
 7804 verbose gentlyRm don't care about contents; nuking /home/m9/Área de Trabalho/Zeus/node_modules/.staging/ipaddr.js-fe54b3fc/node_modules
 7805 silly gunzTarPerm extractEntry test/indent-option.js
 7806 silly gunzTarPerm modified mode [ 'test/indent-option.js', 420, 436 ]
-7807 silly gunzTarPerm extractEntry index.js
-7808 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
+7807 silly gunzTarPerm extractEntry routes.js
+7808 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
 7809 silly gentlyRm /home/m9/Área de Trabalho/Zeus/node_modules/.staging/send-818dc28d/node_modules is being purged
 7810 verbose gentlyRm don't care about contents; nuking /home/m9/Área de Trabalho/Zeus/node_modules/.staging/send-818dc28d/node_modules
 7811 silly gunzTarPerm extractEntry
@@ -13173,10 +13173,10 @@
 8252 silly gunzTarPerm modified mode [ '', 511, 509 ]
 8253 silly gunzTarPerm extractEntry lib/cmap/auth/gssapi.js
 8254 silly gunzTarPerm modified mode [ 'lib/cmap/auth/gssapi.js', 420, 436 ]
-8255 silly gunzTarPerm extractEntry lib/gridfs/index.js
-8256 silly gunzTarPerm modified mode [ 'lib/gridfs/index.js', 420, 436 ]
-8257 silly gunzTarPerm extractEntry lib/index.js
-8258 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+8255 silly gunzTarPerm extractEntry lib/gridfs/routes.js
+8256 silly gunzTarPerm modified mode [ 'lib/gridfs/routes.js', 420, 436 ]
+8257 silly gunzTarPerm extractEntry lib/routes.js
+8258 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
 8259 silly gunzTarPerm extractEntry lib/operations/indexes.js
 8260 silly gunzTarPerm modified mode [ 'lib/operations/indexes.js', 420, 436 ]
 8261 silly gunzTarPerm extractEntry lib/helpers/model/castBulkWrite.js
@@ -13537,48 +13537,48 @@
 8606 silly gunzTarPerm modified mode [ 'lib/operations/validate_collection.js', 420, 436 ]
 8607 silly gunzTarPerm extractEntry lib/helpers/immediate.js
 8608 silly gunzTarPerm modified mode [ 'lib/helpers/immediate.js', 420, 436 ]
-8609 silly gunzTarPerm extractEntry index.js
-8610 silly gunzTarPerm modified mode [ 'index.js', 420, 436 ]
-8611 silly gunzTarPerm extractEntry lib/drivers/browser/index.js
-8612 silly gunzTarPerm modified mode [ 'lib/drivers/browser/index.js', 420, 436 ]
-8613 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/index.js
-8614 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/index.js', 420, 436 ]
+8609 silly gunzTarPerm extractEntry routes.js
+8610 silly gunzTarPerm modified mode [ 'routes.js', 420, 436 ]
+8611 silly gunzTarPerm extractEntry lib/drivers/browser/routes.js
+8612 silly gunzTarPerm modified mode [ 'lib/drivers/browser/routes.js', 420, 436 ]
+8613 silly gunzTarPerm extractEntry lib/drivers/node-mongodb-native/routes.js
+8614 silly gunzTarPerm modified mode [ 'lib/drivers/node-mongodb-native/routes.js', 420, 436 ]
 8615 silly gunzTarPerm extractEntry lib/write_concern.js
 8616 silly gunzTarPerm modified mode [ 'lib/write_concern.js', 420, 436 ]
 8617 silly gunzTarPerm extractEntry lib/cmap/auth/x509.js
 8618 silly gunzTarPerm modified mode [ 'lib/cmap/auth/x509.js', 420, 436 ]
-8619 silly gunzTarPerm extractEntry lib/error/index.js
-8620 silly gunzTarPerm modified mode [ 'lib/error/index.js', 420, 436 ]
-8621 silly gunzTarPerm extractEntry lib/index.js
-8622 silly gunzTarPerm modified mode [ 'lib/index.js', 420, 436 ]
+8619 silly gunzTarPerm extractEntry lib/error/routes.js
+8620 silly gunzTarPerm modified mode [ 'lib/error/routes.js', 420, 436 ]
+8621 silly gunzTarPerm extractEntry lib/routes.js
+8622 silly gunzTarPerm modified mode [ 'lib/routes.js', 420, 436 ]
 8623 silly gentlyRm /home/m9/Área de Trabalho/Zeus/node_modules/.staging/semver-51deb9dd/node_modules is being purged
 8624 verbose gentlyRm don't care about contents; nuking /home/m9/Área de Trabalho/Zeus/node_modules/.staging/semver-51deb9dd/node_modules
-8625 silly gunzTarPerm extractEntry lib/plugins/index.js
-8626 silly gunzTarPerm modified mode [ 'lib/plugins/index.js', 420, 436 ]
-8627 silly gunzTarPerm extractEntry lib/schema/index.js
-8628 silly gunzTarPerm modified mode [ 'lib/schema/index.js', 420, 436 ]
+8625 silly gunzTarPerm extractEntry lib/plugins/routes.js
+8626 silly gunzTarPerm modified mode [ 'lib/plugins/routes.js', 420, 436 ]
+8627 silly gunzTarPerm extractEntry lib/schema/routes.js
+8628 silly gunzTarPerm modified mode [ 'lib/schema/routes.js', 420, 436 ]
 8629 silly gunzTarPerm extractEntry package.json
 8630 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
 8631 silly gunzTarPerm extractEntry tsconfig.json
 8632 silly gunzTarPerm modified mode [ 'tsconfig.json', 420, 436 ]
-8633 silly gunzTarPerm extractEntry lib/types/array/index.js
-8634 silly gunzTarPerm modified mode [ 'lib/types/array/index.js', 420, 436 ]
+8633 silly gunzTarPerm extractEntry lib/types/array/routes.js
+8634 silly gunzTarPerm modified mode [ 'lib/types/array/routes.js', 420, 436 ]
 8635 silly gunzTarPerm extractEntry lib/cursor/abstract_cursor.js.map
 8636 silly gunzTarPerm modified mode [ 'lib/cursor/abstract_cursor.js.map', 420, 436 ]
 8637 silly gunzTarPerm extractEntry lib/operations/add_user.js.map
 8638 silly gunzTarPerm modified mode [ 'lib/operations/add_user.js.map', 420, 436 ]
-8639 silly gunzTarPerm extractEntry lib/types/array/methods/index.js
-8640 silly gunzTarPerm modified mode [ 'lib/types/array/methods/index.js', 420, 436 ]
-8641 silly gunzTarPerm extractEntry lib/types/DocumentArray/index.js
-8642 silly gunzTarPerm modified mode [ 'lib/types/DocumentArray/index.js', 420, 436 ]
+8639 silly gunzTarPerm extractEntry lib/types/array/methods/routes.js
+8640 silly gunzTarPerm modified mode [ 'lib/types/array/methods/routes.js', 420, 436 ]
+8641 silly gunzTarPerm extractEntry lib/types/DocumentArray/routes.js
+8642 silly gunzTarPerm modified mode [ 'lib/types/DocumentArray/routes.js', 420, 436 ]
 8643 silly gunzTarPerm extractEntry lib/admin.js.map
 8644 silly gunzTarPerm modified mode [ 'lib/admin.js.map', 420, 436 ]
 8645 silly gunzTarPerm extractEntry lib/operations/aggregate.js.map
 8646 silly gunzTarPerm modified mode [ 'lib/operations/aggregate.js.map', 420, 436 ]
-8647 silly gunzTarPerm extractEntry lib/types/DocumentArray/methods/index.js
-8648 silly gunzTarPerm modified mode [ 'lib/types/DocumentArray/methods/index.js', 420, 436 ]
-8649 silly gunzTarPerm extractEntry lib/types/index.js
-8650 silly gunzTarPerm modified mode [ 'lib/types/index.js', 420, 436 ]
+8647 silly gunzTarPerm extractEntry lib/types/DocumentArray/methods/routes.js
+8648 silly gunzTarPerm modified mode [ 'lib/types/DocumentArray/methods/routes.js', 420, 436 ]
+8649 silly gunzTarPerm extractEntry lib/types/routes.js
+8650 silly gunzTarPerm modified mode [ 'lib/types/routes.js', 420, 436 ]
 8651 silly gunzTarPerm extractEntry lib/cursor/aggregation_cursor.js.map
 8652 silly gunzTarPerm modified mode [ 'lib/cursor/aggregation_cursor.js.map', 420, 436 ]
 8653 silly gunzTarPerm extractEntry lib/cmap/auth/auth_provider.js.map
@@ -13751,14 +13751,14 @@
 8816 silly gunzTarPerm modified mode [ 'lib/operations/get_more.js.map', 420, 436 ]
 8817 silly gunzTarPerm extractEntry lib/cmap/auth/gssapi.js.map
 8818 silly gunzTarPerm modified mode [ 'lib/cmap/auth/gssapi.js.map', 420, 436 ]
-8819 silly gunzTarPerm extractEntry lib/gridfs/index.js.map
-8820 silly gunzTarPerm modified mode [ 'lib/gridfs/index.js.map', 420, 436 ]
+8819 silly gunzTarPerm extractEntry lib/gridfs/routes.js.map
+8820 silly gunzTarPerm modified mode [ 'lib/gridfs/routes.js.map', 420, 436 ]
 8821 silly gunzTarPerm extractEntry lib/cast/number.js
 8822 silly gunzTarPerm modified mode [ 'lib/cast/number.js', 420, 436 ]
 8823 silly gunzTarPerm extractEntry lib/schema/number.js
 8824 silly gunzTarPerm modified mode [ 'lib/schema/number.js', 420, 436 ]
-8825 silly gunzTarPerm extractEntry lib/index.js.map
-8826 silly gunzTarPerm modified mode [ 'lib/index.js.map', 420, 436 ]
+8825 silly gunzTarPerm extractEntry lib/routes.js.map
+8826 silly gunzTarPerm modified mode [ 'lib/routes.js.map', 420, 436 ]
 8827 silly gunzTarPerm extractEntry lib/operations/indexes.js.map
 8828 silly gunzTarPerm modified mode [ 'lib/operations/indexes.js.map', 420, 436 ]
 8829 silly gunzTarPerm extractEntry lib/error/objectExpected.js
