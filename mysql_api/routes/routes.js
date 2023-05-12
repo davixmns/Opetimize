@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.use('/users', require('./UserRoutes'));
-router.use('/purchases', require('./PurchaseRoutes'));
-router.use('/pets', require('./PetRoutes'));
+router.use('/', require('./UserRoutes'));
+router.use('/', require('./PurchaseRoutes'));
+router.use('/', require('./PetRoutes'));
+router.use('/', require('./AuthRoutes'));
 
 module.exports = router;
 

@@ -61,7 +61,7 @@ module.exports = {
             if(!pet){
                 res.status(404).json({message: "Pet não encontrado!"})
             }
-            await PetModel.destroy(pet)
+            await pet.destroy()
             res.status(200).json({message: "Pet deletado com suceso"})
         }catch (error){
             console.log(error)

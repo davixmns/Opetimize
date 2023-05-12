@@ -5,27 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="reestruturando api">
-      <change afterPath="$PROJECT_DIR$/mysql_api/controllers/PetController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/controllers/PurchaseController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/routes/PetRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/routes/PurchaseRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql_api/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql_api/routes/AuthRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo_api/controllers/purchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mongo_api/controllers/PurchaseController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo_api/models/purchaseModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mongo_api/models/PurchaseModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mongo_api/npm-debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/mongo_api/npm-debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mongo_api/routes/purchaseRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mongo_api/routes/purchaseRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/database/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/database/DB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/pet.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/PetModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/purchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/PurchaseModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/PetController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/PetController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +163,8 @@
       <workItem from="1683739615654" duration="10284000" />
       <workItem from="1683830771496" duration="1171000" />
       <workItem from="1683831977734" duration="177000" />
-      <workItem from="1683832203428" duration="1252000" />
+      <workItem from="1683832203428" duration="3633000" />
+      <workItem from="1683899363833" duration="8279000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -497,7 +488,28 @@
       <option name="project" value="LOCAL" />
       <updated>1683750920915</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="reestruturando api">
+      <created>1683833458429</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1683833458429</updated>
+    </task>
+    <task id="LOCAL-00048" summary="reestruturando api">
+      <created>1683833473545</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683833473545</updated>
+    </task>
+    <task id="LOCAL-00049" summary="reestruturando api">
+      <created>1683835830701</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683835830701</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
