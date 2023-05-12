@@ -44,15 +44,17 @@ module.exports = {
     async deletePurchaseById(req, res) {
         try {
             const id = req.params.id;
+            console.log(id)
             const purchase = await Purchase.findByPk(id);
+            console.log(purchase)
             if (!purchase) {
-                res.status(404).json({ message: "Compra de ração não encontrada." });
+                return res.status(404).json({ message: "Compra de ração não encontrada." });
             }
             await purchase.destroy();
-            res.status(200).json({ message: "Compra de ração deletada com sucesso!" });
+            return res.status(200).json({ message: "Compra de ração deletada com sucesso!" });
         } catch (error) {
             console.log(error);
-            res.status(500).json({ error });
+            return res.status(500).json({ error });
         }
     },
 

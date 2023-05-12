@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://172.18.9.85:3000'; //vortex
+const BASE_URL = 'localhost:3000'; //vortex
 // const BASE_URL = 'http://192.168.1.2:3000'; //casa
 // const BASE_URL = 'http://localhost:3000';
 
@@ -29,7 +29,7 @@ export const deletePurchaseById = async (purchaseID) => {
 
 export const insertPurchase = async (purchase) => {
     try{
-        const response = await axios.post(`${BASE_URL}/purchase`, purchase)
+        const response = await axios.post(`${BASE_URL}/purchases`, purchase)
         return response.data
     }catch (error){
         console.log(error)

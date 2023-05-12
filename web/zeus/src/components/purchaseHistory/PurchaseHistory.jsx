@@ -11,6 +11,7 @@ function PurchaseHistory() {
     useEffect(() => {
         const fetchData = async () => {
             const data = await getAllPurchases();
+            console.log(data)
             setPurchases(data);
         };
         fetchData();
@@ -61,8 +62,8 @@ function PurchaseHistory() {
                 <ul id="cardList">
                     {filteredPurchases.map((purchase) => (
                         <Card
-                            key={purchase._id}
-                            id={purchase._id}
+                            key={purchase.purchase_id}
+                            purchase_id={purchase.purchase_id}
                             name={purchase.name}
                             price={purchase.price}
                             weight={purchase.weight}

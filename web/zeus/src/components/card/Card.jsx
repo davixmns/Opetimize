@@ -17,12 +17,12 @@ export function Card(props) {
     const [date, setDate] = useState(props.date);
 
     const handleDelete = async () => {
-        await props.handleDelete(props.id);
+        await props.handleDelete(props.purchase_id);
     };
 
     async function handleSaveEdit(){
         const newCard = {
-            id: props.id,
+            id: props.purchase_id,
             name: name,
             price: price,
             weight: weight,
