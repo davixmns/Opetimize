@@ -28,7 +28,7 @@ export function Card(props) {
             weight: weight,
             date: date,
         };
-        await editPurchase(props.id, newCard)
+        await editPurchase(props.purchase_id, newCard)
         setShowEditModal(false);
         // eslint-disable-next-line no-restricted-globals
         location.reload()

@@ -62,8 +62,8 @@ function PurchaseHistory() {
                 <ul id="cardList">
                     {filteredPurchases.map((purchase) => (
                         <Card
-                            key={purchase.purchase_id}
-                            purchase_id={purchase.purchase_id}
+                            key={purchase._id} //substituir o _id por purchase_id para funcionar na api do mysql
+                            purchase_id={purchase._id}
                             name={purchase.name}
                             price={purchase.price}
                             weight={purchase.weight}
