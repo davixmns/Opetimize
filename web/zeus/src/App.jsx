@@ -1,20 +1,21 @@
-import './App.css';
+import {LoginPage} from "./pages/LoginPage";
+import {Login} from "./components/login/Login";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import {HomePage} from "./pages/HomePage";
+import { ToastContainer } from "react-toastify";
 
-import PurchaseHistory from "./components/purchaseHistory/PurchaseHistory";
-import Header from "./components/header/Header"
-import PurchaseForm from "./components/purchaseForm/PurchaseForm";
-import UsefulData from "./components/usefulData/UsefulData";
+
 //teste
 function App() {
   return (
-    <div className="App">
-        <Header/>
-        <div id="globalDiv">
-            <PurchaseForm/>
-            <PurchaseHistory/>
-            <UsefulData/>
-        </div>
-    </div>
+      <BrowserRouter>
+        <ToastContainer autoClose={4000} theme="colored" position="top-right" />
+        <Routes>
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/home" element={<HomePage/>} />
+        </Routes>
+      </BrowserRouter>
+
   );
 }
 

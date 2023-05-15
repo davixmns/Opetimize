@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="gitignore" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="reestruturando api">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/login/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/pages/HomePage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/pages/LoginPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2023_10_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_05_2023_10_21__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/PurchaseController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/routes/PurchaseRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/PurchaseRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,7 +48,6 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -51,7 +62,7 @@
     &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -72,11 +83,11 @@
       <recent name="$PROJECT_DIR$/backend_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mysql_api/database" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets/icons" />
       <recent name="$PROJECT_DIR$/web/zeus/public" />
       <recent name="$PROJECT_DIR$/web/zeus/src/service" />
-      <recent name="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders learn react link">
@@ -145,16 +156,15 @@
       <workItem from="1683119256236" duration="7755000" />
       <workItem from="1683206474932" duration="1776000" />
       <workItem from="1683298383468" duration="13004000" />
-      <workItem from="1683347088145" duration="3235000" />
-      <workItem from="1683476821036" duration="4050000" />
-      <workItem from="1683997370817" duration="140000" />
-    </task>
-    <task id="LOCAL-00001" summary="first">
-      <created>1681413073538</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1681413073538</updated>
+      <workItem from="1683642199449" duration="3146000" />
+      <workItem from="1683665392572" duration="37000" />
+      <workItem from="1683724996722" duration="271000" />
+      <workItem from="1683725277655" duration="8511000" />
+      <workItem from="1683739615654" duration="10284000" />
+      <workItem from="1683830771496" duration="1171000" />
+      <workItem from="1683831977734" duration="177000" />
+      <workItem from="1683832203428" duration="3633000" />
+      <workItem from="1683899363833" duration="13458000" />
     </task>
     <task id="LOCAL-00002" summary="first">
       <created>1681413534635</created>
@@ -408,21 +418,98 @@
       <option name="project" value="LOCAL" />
       <updated>1683310002751</updated>
     </task>
-    <task id="LOCAL-00038" summary="ajustes na api">
-      <created>1683952653110</created>
+    <task id="LOCAL-00038" summary="add edicao no mobile">
+      <created>1683577327047</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1683952653110</updated>
+      <updated>1683577327047</updated>
     </task>
-    <task id="LOCAL-00039" summary="gitignore">
-      <created>1683997452387</created>
+    <task id="LOCAL-00039" summary="add edicao no mobile">
+      <created>1683577344680</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1683997452387</updated>
+      <updated>1683577344680</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="arquitetura mvc">
+      <created>1683644269555</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1683644269555</updated>
+    </task>
+    <task id="LOCAL-00041" summary="api mysql">
+      <created>1683730214200</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1683730214201</updated>
+    </task>
+    <task id="LOCAL-00042" summary="api mysql">
+      <created>1683732373904</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1683732373904</updated>
+    </task>
+    <task id="LOCAL-00043" summary="api mysql">
+      <created>1683739438953</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1683739438953</updated>
+    </task>
+    <task id="LOCAL-00044" summary="api mysql">
+      <created>1683739450409</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1683739450409</updated>
+    </task>
+    <task id="LOCAL-00045" summary="api mysql">
+      <created>1683740746181</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1683740746181</updated>
+    </task>
+    <task id="LOCAL-00046" summary="reestruturando api">
+      <created>1683750920915</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1683750920915</updated>
+    </task>
+    <task id="LOCAL-00047" summary="reestruturando api">
+      <created>1683833458429</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1683833458429</updated>
+    </task>
+    <task id="LOCAL-00048" summary="reestruturando api">
+      <created>1683833473545</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1683833473545</updated>
+    </task>
+    <task id="LOCAL-00049" summary="reestruturando api">
+      <created>1683835830701</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1683835830701</updated>
+    </task>
+    <task id="LOCAL-00050" summary="reestruturando api">
+      <created>1683915110117</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1683915110117</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,7 +527,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first" />
     <MESSAGE value="save, findById, findAll" />
     <MESSAGE value="editar ração por id" />
     <MESSAGE value="DELETE BY ID" />
@@ -463,8 +549,9 @@
     <MESSAGE value="secao de utilidades" />
     <MESSAGE value="fim" />
     <MESSAGE value="add edicao no mobile" />
-    <MESSAGE value="ajustes na api" />
-    <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="arquitetura mvc" />
+    <MESSAGE value="api mysql" />
+    <MESSAGE value="reestruturando api" />
+    <option name="LAST_COMMIT_MESSAGE" value="reestruturando api" />
   </component>
 </project>

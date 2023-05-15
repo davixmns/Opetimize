@@ -1,10 +1,11 @@
 const Purchase  = require("../models/PurchaseModel");
 
 module.exports = {
-    async getAllPurchases(req, res) {
+    async getAllPurchasesByUserId(req, res) {
         try {
-            const allPurchases = await Purchase.findAll();
-            res.status(200).json(allPurchases);
+            const userId = req.params.userId;
+            const purchases = await Purchase.findAll({ where: { user_id: userId } });
+            res.status(200).json(purchases);
         } catch (error) {
             console.log(error);
             res.status(500).json({ error });
