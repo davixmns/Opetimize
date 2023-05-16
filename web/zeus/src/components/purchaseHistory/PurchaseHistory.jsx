@@ -1,27 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { getAllPurchases, deletePurchaseById } from '../../service/apiService';
+import React, {useState, useEffect} from 'react';
+import {deletePurchaseById, getAllPurchasesByUserId, verifyToken} from '../../service/apiService';
 import './styles.css';
-import { Card } from '../card/Card';
+import {Card} from '../card/Card';
 import SearchBar from "../searchBar/SearchBar";
+import {useNavigate} from "react-router-dom";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
     const [searchValue, setSearchValue] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await getAllPurchases();
-            console.log(data)
-            setPurchases(data);
+            const token = localStorage.getItem("token");
+            if (token && (await verifyToken(token))) {
+                const data = await getAllPurchasesByUserId(token);
+                setPurchases(data);
+            } else {
+                localStorage.setItem("token", "");
+                navigate("/login");
+            }
         };
         fetchData();
-    }, []);
+    }, [navigate]);
+
 
     const handleDelete = async (id) => {
-        await deletePurchaseById(id);
-        const data = await getAllPurchases();
-        console.log(data)
-        setPurchases(data);
+        const token = localStorage.getItem("token");
+        if (token && (await verifyToken(token))) {
+            await deletePurchaseById(id);
+            const data = await getAllPurchasesByUserId(token);
+            setPurchases(data);
+        } else {
+            navigate("/login");
+        }
     };
 
     const handleSearch = (event) => {
@@ -62,8 +74,8 @@ function PurchaseHistory() {
                 <ul id="cardList">
                     {filteredPurchases.map((purchase) => (
                         <Card
-                            key={purchase._id} //substituir o _id por purchase_id para funcionar na api do mysql
-                            purchase_id={purchase._id}
+                            key={purchase.purchase_id} //substituir o _id por purchase_id para funcionar na api do mysql
+                            purchase_id={purchase.purchase_id}
                             name={purchase.name}
                             price={purchase.price}
                             weight={purchase.weight}
@@ -73,7 +85,7 @@ function PurchaseHistory() {
                     ))}
                 </ul>
             </div>
-            <SearchBar handleSearch={handleSearch} />
+            <SearchBar handleSearch={handleSearch}/>
         </div>
     );
 }

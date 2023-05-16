@@ -13,10 +13,21 @@ module.exports = {
         if (!await bcrypt.compare(password, user.password)) {
             return res.status(400).json({error: 'Senha incorreta'});
         }
-
         const jwt_key = process.env.JWT_KEY;
-        const token = jwt.sign({userId: user.user_id}, jwt_key, {expiresIn: '1h'});
-
+        const token = jwt.sign({userId: user.user_id}, jwt_key, {expiresIn: '10s'});
         res.status(200).json({token});
     },
+
+    async verifyToken(req, res) {
+        try {
+            const token = req.params.token;
+            const jwt_key = process.env.JWT_KEY;
+            jwt.verify(token, jwt_key);
+            res.status(200).json({ valid: true });
+        } catch (error) {
+            console.log(error);
+            res.status(401).json({ valid: false });
+        }
+    }
+
 }

@@ -2,22 +2,23 @@ import "./styles.css";
 import TextInput from "../TextInput/TextInput";
 import SaveButton from "../saveButton/SaveButton";
 import DatePicker from "../datePicker/DatePicker";
-import {useEffect, useState} from "react";
-import {getAllPurchases, insertPurchase} from "../../service/apiService";
+import {useState} from "react";
+import {insertPurchase} from "../../service/apiService";
 import ErrorModal from "../errorModal/ErrorModal";
+import {useNavigate} from "react-router-dom";
 
 function PurchaseForm() {
     const today = new Date().toISOString().substr(0, 10);
-    const [error, setError] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
-
+    const [error, setModalError] = useState(false);
+    const [errorMessage, setModalErrorMessage] = useState('');
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
     const [weight, setWeight] = useState("");
     const [date, setDate] = useState(today);
+    const navigate = useNavigate();
 
     const handleCloseErrorModal = () => {
-        setError(false);
+        setModalError(false);
     };
 
     const handleNameChange = (event) => {
@@ -37,27 +38,31 @@ function PurchaseForm() {
     };
 
     const handleSaveClick = async () => {
-        try{
-            const purchase = { name, price, weight, date };
-            if (name && price && weight) {
-                if(!date){
-                    setDate(today)
+        try {
+            const token = localStorage.getItem("token");
+            if (token) {
+                const newPurchase = {name, price, weight, date};
+                if (name && price && weight) {
+                    if (!date) {
+                        setDate(today)
+                    }
+                    await insertPurchase(newPurchase, token)
+                    setName("");
+                    setPrice("");
+                    setWeight("");
+                    setDate("");
+                    // eslint-disable-next-line no-restricted-globals
+                    location.reload()
+                } else {
+                    setModalErrorMessage("Todos os campos precisam ser preenchidos");
+                    setModalError(true);
                 }
-                await insertPurchase(purchase);
-                setName("");
-                setPrice("");
-                setWeight("");
-                setDate("");
-                // eslint-disable-next-line no-restricted-globals
-                location.reload()
             } else {
-                setErrorMessage("Todos os campos precisam ser preenchidos");
-                setError(true);
+                navigate("/login");
             }
-
-        }catch (error){
-            setError(error.message)
-            setError(true)
+        } catch (error) {
+            setModalError(error.message)
+            setModalError(true)
         }
     };
 
@@ -68,12 +73,12 @@ function PurchaseForm() {
                 <ul id="inputList">
                     <div id="name-text-input">
                         <label htmlFor="name" id="label-name">Nome:</label>
-                        <TextInput id="name" value={name} onChange={handleNameChange} placeHolder = "Ração/Marca"/>
+                        <TextInput id="name" value={name} onChange={handleNameChange} placeHolder="Ração/Marca"/>
                     </div>
 
                     <div id="price-text-input">
                         <label htmlFor="price" id="label-price">Valor:</label>
-                        <TextInput id="price" value={price} onChange={handlePriceChange} placeHolder={"R$"} />
+                        <TextInput id="price" value={price} onChange={handlePriceChange} placeHolder={"R$"}/>
                     </div>
 
                     <div id="weight-text-input">
@@ -83,11 +88,11 @@ function PurchaseForm() {
 
                     <div id="date-datepicker">
                         <label htmlFor="date" id="label-date">Data:</label>
-                        <DatePicker id="date" value={date} onChange={handleDateChange} />
+                        <DatePicker id="date" value={date} onChange={handleDateChange}/>
                     </div>
 
-                    <SaveButton onClick={handleSaveClick} title={"Salvar"} />
-                    {error && <ErrorModal title="Erro" message={errorMessage} onClose={handleCloseErrorModal} />}
+                    <SaveButton onClick={handleSaveClick} title={"Salvar"}/>
+                    {error && <ErrorModal title="Erro" message={errorMessage} onClose={handleCloseErrorModal}/>}
                 </ul>
             </div>
         </div>

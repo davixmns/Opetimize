@@ -5,7 +5,7 @@ const BASE_URL = 'http://localhost:3000';
 
 export const tryLogin = async (email, password) => {
     try {
-        const response = await axios.post(`${BASE_URL}/auth/login`, { email, password });
+        const response = await axios.post(`${BASE_URL}/login`, {email, password});
         return response.data.token;
     } catch (error) {
         console.log(error);
@@ -13,12 +13,12 @@ export const tryLogin = async (email, password) => {
     }
 };
 
-export const getAllPurchasesByUserId = async (userId) => {
+export const getAllPurchasesByUserId = async (token) => {
     try {
-        const response = await axios.get(`${BASE_URL}/users/${userId}/purchases`);
+        const response = await axios.get(`${BASE_URL}/users/${token}/purchases`);
         const purchases = response.data;
         purchases.sort((a, b) => new Date(b.date) - new Date(a.date));
-        console.log(purchases)
+        console.log(purchases);
         return purchases;
     } catch (error) {
         console.log(error);
@@ -27,21 +27,21 @@ export const getAllPurchasesByUserId = async (userId) => {
 };
 
 
-export const deletePurchaseById = async (purchaseID) => {
-    try{
-        const response = await axios.delete(`${BASE_URL}/purchases/${purchaseID}`)
-        return response.data
+export const deletePurchaseById = async (id) => {
+    try {
+        const response = await axios.delete(`${BASE_URL}/purchases/${id}`);
+        return response.data;
     } catch (error) {
         console.log(error)
         return null;
     }
 }
 
-export const insertPurchase = async (purchase) => {
-    try{
-        const response = await axios.post(`${BASE_URL}/purchases`, purchase)
+export const insertPurchase = async (purchase, token) => {
+    try {
+        const response = await axios.post(`${BASE_URL}/purchases/${token}`, purchase)
         return response.data
-    }catch (error){
+    } catch (error) {
         console.log(error)
         return null
     }
@@ -56,6 +56,19 @@ export const editPurchase = async (id, purchase) => {
         return null;
     }
 };
+
+export async function verifyToken(token) {
+    try {
+        const response = await axios.get(`${BASE_URL}/verifyToken/${token}`);
+        const { valid } = response.data;
+        console.log(valid);
+        return valid;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+}
+
 
 
 

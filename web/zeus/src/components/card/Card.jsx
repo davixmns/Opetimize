@@ -7,6 +7,7 @@ import './styles.css';
 import {editPurchase} from "../../service/apiService";
 import EditModal from "../editModal/EditModal";
 import DeleteModal from "../deleteModal/DeleteModal";
+import {useNavigate} from "react-router-dom";
 
 export function Card(props) {
     const [showEditModal, setShowEditModal] = useState(false);
@@ -15,12 +16,23 @@ export function Card(props) {
     const [price, setPrice] = useState(props.price);
     const [weight, setWeight] = useState(props.weight);
     const [date, setDate] = useState(props.date);
+    const navigate = useNavigate()
 
     const handleDelete = async () => {
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/")
+            return
+        }
         await props.handleDelete(props.purchase_id);
     };
 
     async function handleSaveEdit(){
+        const token = localStorage.getItem("token");
+        if (!token) {
+            navigate("/")
+            return
+        }
         const newCard = {
             id: props.purchase_id,
             name: name,
