@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Defina a altura total da tela */
+    width: 100vw; /* Defina a largura total da tela */
 }
 
 #title{

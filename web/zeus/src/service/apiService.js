@@ -13,7 +13,7 @@ export const tryLogin = async (email, password) => {
     }
 };
 
-export const getAllPurchasesByUserId = async (token) => {
+export const getAllPurchasesByUserToken = async (token) => {
     try {
         const response = await axios.get(`${BASE_URL}/users/${token}/purchases`);
         const purchases = response.data;

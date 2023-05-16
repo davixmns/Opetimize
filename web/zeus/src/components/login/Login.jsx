@@ -1,7 +1,7 @@
-import "./login.css"
 import {useState} from "react";
 import {tryLogin} from "../../service/apiService";
 import { useNavigate } from "react-router-dom";
+import "./styles.css"
 
 export function Login() {
     const[email, setEmail] = useState("")

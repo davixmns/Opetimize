@@ -14,7 +14,7 @@ module.exports = {
             return res.status(400).json({error: 'Senha incorreta'});
         }
         const jwt_key = process.env.JWT_KEY;
-        const token = jwt.sign({userId: user.user_id}, jwt_key, {expiresIn: '10s'});
+        const token = jwt.sign({userId: user.user_id}, jwt_key, {expiresIn: '1h'});
         res.status(200).json({token});
     },
 

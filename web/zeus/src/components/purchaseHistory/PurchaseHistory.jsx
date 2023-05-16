@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {deletePurchaseById, getAllPurchasesByUserId, verifyToken} from '../../service/apiService';
+import {deletePurchaseById, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
 import './styles.css';
 import {Card} from '../card/Card';
 import SearchBar from "../searchBar/SearchBar";
@@ -14,7 +14,7 @@ function PurchaseHistory() {
         const fetchData = async () => {
             const token = localStorage.getItem("token");
             if (token && (await verifyToken(token))) {
-                const data = await getAllPurchasesByUserId(token);
+                const data = await getAllPurchasesByUserToken(token);
                 setPurchases(data);
             } else {
                 localStorage.setItem("token", "");
@@ -29,7 +29,7 @@ function PurchaseHistory() {
         const token = localStorage.getItem("token");
         if (token && (await verifyToken(token))) {
             await deletePurchaseById(id);
-            const data = await getAllPurchasesByUserId(token);
+            const data = await getAllPurchasesByUserToken(token);
             setPurchases(data);
         } else {
             navigate("/login");
