@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="autenticacao funcionando">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/logout/LogoutButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/logout/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/register/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/pages/RegisterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="login e registro">
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/happyDogs.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/header/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/header/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/SaveButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/saveButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/m09/Área de Trabalho/zeus/mobile/Opetimize/assets",
+    "last_opened_file_path": "/home/m09/Área de Trabalho/zeus/web/zeus/src/assets",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -88,9 +71,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
-      <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
       <recent name="$PROJECT_DIR$/backend_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -179,14 +162,7 @@
       <workItem from="1684242766182" duration="17082000" />
       <workItem from="1684270166421" duration="427000" />
       <workItem from="1684329063234" duration="715000" />
-      <workItem from="1684329818062" duration="12157000" />
-    </task>
-    <task id="LOCAL-00005" summary="first">
-      <created>1681417627834</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1681417627834</updated>
+      <workItem from="1684329818062" duration="14971000" />
     </task>
     <task id="LOCAL-00006" summary="save, findById, findAll">
       <created>1681493675379</created>
@@ -524,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684270466416</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="login e registro">
+      <created>1684353256760</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1684353256762</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -542,7 +525,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DELETE BY ID" />
     <MESSAGE value="react" />
     <MESSAGE value="react web begin" />
     <MESSAGE value="estruturando" />
@@ -567,6 +549,7 @@
     <MESSAGE value="reestruturando api" />
     <MESSAGE value="login page" />
     <MESSAGE value="autenticacao funcionando" />
-    <option name="LAST_COMMIT_MESSAGE" value="autenticacao funcionando" />
+    <MESSAGE value="login e registro" />
+    <option name="LAST_COMMIT_MESSAGE" value="login e registro" />
   </component>
 </project>

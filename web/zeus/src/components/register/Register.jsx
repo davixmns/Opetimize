@@ -13,26 +13,37 @@ export function Register() {
     const navigate = useNavigate()
 
     async function handleTryCreateUser() {
-        if (password === passwordConfirmation) {
-            if (name && email && password && passwordConfirmation) {
-                const user = {name, email, password};
-                try {
-                    const response = await createUser(user);
-                    if (response) {
-                        await swal("Sucesso", "Usuário salvo com sucesso!", "success");
-                    } else {
-                        await swal("Erro", "Email já cadastrado", "error");
-                    }
-                } catch (error) {
-                    console.log(error);
-                    await swal("Erro", "Ocorreu um erro no servidor", "error");
-                }
-            } else {
-                await swal("Erro", "Preencha todos os campos", "error");
-            }
-        } else {
+        if (password !== passwordConfirmation) {
             await swal("Erro", "Senhas não correspondem", "error");
+            return;
         }
+        if (!name || !email || !password || !passwordConfirmation) {
+            await swal("Erro", "Preencha todos os campos", "error");
+            return;
+        }
+        if (!verifyEmail(email)) {
+            await swal("Erro", "Email inválido", "error");
+            return;
+        }
+        const user = { name, email, password };
+        try {
+            const response = await createUser(user);
+            if (response) {
+                await swal("Sucesso", "Usuário salvo com sucesso!", "success");
+                navigate("/login");
+            } else {
+                await swal("Erro", "Email já cadastrado", "error");
+            }
+        } catch (error) {
+            console.log(error);
+            await swal("Erro", "Ocorreu um erro no servidor", "error");
+        }
+    }
+
+
+    function verifyEmail(email) {
+        const regex = /\S+@\S+\.\S+/;
+        return regex.test(email);
     }
 
 
@@ -71,7 +82,8 @@ export function Register() {
                     <input type={"email"} placeholder={"Email"} id={"text-input"} onChange={handleChangeEmail}></input>
                     <input type={"password"} placeholder={"Senha"} id={"text-input"}
                            onChange={handleChangePassword}></input>
-                    <input type={"password"} placeholder={"Confirmar senha"} id={"text-input"} onChange={handleChangePasswordConfirmation}></input>
+                    <input type={"password"} placeholder={"Confirmar senha"} id={"text-input"}
+                           onChange={handleChangePasswordConfirmation}></input>
                 </div>
 
                 <div id={"b"}>

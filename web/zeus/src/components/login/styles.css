@@ -1,10 +1,19 @@
 #content {
-    background-color: #E49052;
+    background-image: url("https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg");
+    background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza a imagem */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Defina a altura total da tela */
     width: 100vw; /* Defina a largura total da tela */
+    flex-direction: column;
+}
+
+#titleLogo {
+    width: 20rem;
+    height: 5rem;
+    margin-bottom: 2rem;
 }
 
 #title{
@@ -27,6 +36,7 @@
     align-items: center;
     align-self: center;
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.2);
+    margin-bottom: 4rem;
 }
 
 #text-input {
