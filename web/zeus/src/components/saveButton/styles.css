@@ -1,9 +1,9 @@
-#button {
+#buttonSave {
     height: 2.5rem;
     width: 20rem;
     outline: none;
     border: none;
-    background-color: #919974;
+    background-color: #E49052;
     border-radius: 15px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -11,12 +11,11 @@
     margin-bottom: 2rem;
 }
 
-#button:active{
+#buttonSave:active{
     background-color: darkolivegreen;
 }
 
-#button:hover{
-    background-color: #7C8046;
+#buttonSave:hover{
     height: 2.6rem;
     width: 20.5rem;
 }

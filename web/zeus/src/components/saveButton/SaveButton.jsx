@@ -1,12 +1,10 @@
 import "./styles.css"
 
-function SaveButton( {
-    onClick, title
-}){
+function SaveButton({onClick, title}) {
     return (
         <div>
-            <label htmlFor="button"></label>
-            <input onClick={onClick} type="button" id="button" value={title}></input>
+            <label htmlFor="buttonSave"></label>
+            <input onClick={onClick} type="button" id="buttonSave" value={title}></input>
         </div>
     )
 }

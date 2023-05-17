@@ -2,6 +2,7 @@ import {useState} from "react";
 import {tryLogin} from "../../service/apiService";
 import { useNavigate } from "react-router-dom";
 import "./styles.css"
+import swal from "sweetalert";
 
 export function Login() {
     const[email, setEmail] = useState("")
@@ -14,8 +15,14 @@ export function Login() {
             localStorage.setItem("token", token);
             navigate("/home");
         } else {
-            alert("Email ou senha incorretos");
+            await swal("Erro", "Email ou senha incorretos", "error")
         }
+    }
+
+    function handleGoToRegister() {
+        setEmail("")
+        setPassword("")
+        navigate("/register");
     }
 
     function handleChangeEmail(event){
@@ -30,13 +37,13 @@ export function Login() {
         <div id={"content"}>
             <div id={"form-background"}>
                 <div>
-                    <h1 id={"title"}>Login</h1>
+                    <h2 id={"title"}>Login</h2>
                 </div>
                 <input type={"text"} placeholder={"email"} id={"text-input"} onChange={handleChangeEmail}></input>
                 <input type={"password"} placeholder={"senha"} id={"text-input"} onChange={handleChangePassword}></input>
                 <button id={"button"} onClick={handleTryLogin}>Entrar</button>
-                <text>ou</text>
-                <button id={"button"}>Registrar</button>
+                <h3 id={"ou"}>ou</h3>
+                <button id={"button"} onClick={handleGoToRegister}>Criar conta</button>
             </div>
         </div>
     )

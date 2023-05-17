@@ -101,7 +101,7 @@ function UsefulData() {
 
     return (
         <div id="usefulDataContent">
-            <h2 id="title">Dados do mês</h2>
+            <h2 id={"formTitle"}>Dados do mês</h2>
             <div id="divBackground">
                 <label id="label" htmlFor="monthCosts">Gastos</label>
                 <h1 id="monthCosts">R${monthCosts}</h1>

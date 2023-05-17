@@ -1,4 +1,3 @@
-import "./styles.css";
 import TextInput from "../TextInput/TextInput";
 import SaveButton from "../saveButton/SaveButton";
 import DatePicker from "../datePicker/DatePicker";
@@ -6,6 +5,8 @@ import {useState} from "react";
 import {insertPurchase} from "../../service/apiService";
 import ErrorModal from "../errorModal/ErrorModal";
 import {useNavigate} from "react-router-dom";
+import "./styles.css";
+import {LogoutButton} from "../logout/LogoutButton";
 
 function PurchaseForm() {
     const today = new Date().toISOString().substr(0, 10);
@@ -68,7 +69,7 @@ function PurchaseForm() {
 
     return (
         <div id="formContent">
-            <h2 id="title">Cadastrar Ração</h2>
+            <h2 id={"formTitle"}>Cadastrar Ração</h2>
             <div id="formBackground">
                 <ul id="inputList">
                     <div id="name-text-input">

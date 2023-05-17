@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {deletePurchaseById, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
-import './styles.css';
 import {Card} from '../card/Card';
 import SearchBar from "../searchBar/SearchBar";
 import {useNavigate} from "react-router-dom";
+import './styles.css';
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
@@ -69,7 +69,7 @@ function PurchaseHistory() {
 
     return (
         <div id="historyContent">
-            <h2 id="title">Histórico</h2>
+            <h2 id={"formTitle"}>Histórico</h2>
             <div id="historyBackground">
                 <ul id="cardList">
                     {filteredPurchases.map((purchase) => (

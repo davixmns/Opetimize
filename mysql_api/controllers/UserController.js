@@ -34,10 +34,10 @@ module.exports = {
             const hashedPassword = await bcrypt.hash(password, 10);
             const user = {name, email, password: hashedPassword};
             await UserModel.create(user);
-            res.status(201).json({message:"Usuário salvo com sucesso!"});
+            return res.status(201).json({message:"Usuário salvo com sucesso!"});
         } catch (error) {
             console.log(error);
-            res.status(500).json(error);
+            return res.status(500).json(error);
         }
     },
 

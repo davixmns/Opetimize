@@ -2,20 +2,19 @@
     background-color: #DADADA;
     margin-top: 1rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     box-shadow: 0 4px 40px rgba(0, 0, 0, 0.33);
-    gap: 48rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
+    padding: 0.5rem 2rem;
 }
-
 
 #logo {
     width: 3.5rem;
     height: 3.5rem;
+    margin-right: 2rem;
 }
 
 #titulo {
     width: 15rem;
     height: 3.7rem;
-
+    margin-left: 40rem;
 }

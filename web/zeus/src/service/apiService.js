@@ -13,6 +13,16 @@ export const tryLogin = async (email, password) => {
     }
 };
 
+export const createUser = async (user) => {
+    try {
+        const response = await axios.post(`${BASE_URL}/users`, user);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 export const getAllPurchasesByUserToken = async (token) => {
     try {
         const response = await axios.get(`${BASE_URL}/users/${token}/purchases`);

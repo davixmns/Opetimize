@@ -7,26 +7,47 @@
     width: 100vw; /* Defina a largura total da tela */
 }
 
+#background {
+    gap: 3rem;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 35rem;
+    width: 60rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
 #title{
     color: #E49052;
+    font-size: 2.7rem;
 }
 
-#ou{
-    color: #E49052;
-    margin-left: 3rem;
+#logoTitle{
+    width: 20rem;
+    height: 5rem;
+    margin-bottom: 2rem;
 }
 
-#form-background {
-    background-color: #ffffff;
-    width: 35rem;
-    height: 40rem;
+#a {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     align-self: center;
-    box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.2);
+}
+
+#b {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 
 #text-input {
@@ -46,7 +67,8 @@
     width: 21rem;
     font-size: 1.2rem;
     color: #ffffff;
-    border: none
+    border: none;
+    height: 3rem;
 }
 
 #button:hover {
@@ -57,4 +79,6 @@
     transition: 0.5s;
 }
 
-
+#ou2{
+    margin-left: 3rem;
+}
