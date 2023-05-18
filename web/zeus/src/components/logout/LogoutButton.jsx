@@ -12,7 +12,7 @@ export function LogoutButton() {
 
     return (
         <div>
-            <button className={"logoutButton"} onClick={handleLogout}>Logout</button>
+            <button className={"logoutButton"} onClick={handleLogout}>Sair</button>
         </div>
     );
 }

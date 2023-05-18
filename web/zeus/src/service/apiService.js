@@ -28,7 +28,6 @@ export const getAllPurchasesByUserToken = async (token) => {
         const response = await axios.get(`${BASE_URL}/users/${token}/purchases`);
         const purchases = response.data;
         purchases.sort((a, b) => new Date(b.date) - new Date(a.date));
-        console.log(purchases);
         return purchases;
     } catch (error) {
         console.log(error);
@@ -71,7 +70,6 @@ export async function verifyToken(token) {
     try {
         const response = await axios.get(`${BASE_URL}/verifyToken/${token}`);
         const { valid } = response.data;
-        console.log(valid);
         return valid;
     } catch (error) {
         console.log(error);

@@ -5,7 +5,6 @@ import {ToastContainer} from "react-toastify";
 import "./App.css"
 import {RegisterPage} from "./pages/RegisterPage";
 
-//teste
 function App() {
     return (
         <BrowserRouter>

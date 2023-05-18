@@ -1,57 +1,58 @@
 import React, { useState } from 'react';
-import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
+import { addDays, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+
+import { editPurchase } from '../../service/apiService';
+import EditModal from '../editModal/EditModal';
+import DeleteModal from '../deleteModal/DeleteModal';
+
 import { ReactComponent as TrashIcon } from '../../assets/trash.svg';
 import { ReactComponent as EditIcon } from '../../assets/pencil.svg';
+
 import './styles.css';
-import {editPurchase} from "../../service/apiService";
-import EditModal from "../editModal/EditModal";
-import DeleteModal from "../deleteModal/DeleteModal";
-import {useNavigate} from "react-router-dom";
 
-export function Card(props) {
+export function Card({ purchase, handleDelete }) {
     const [showEditModal, setShowEditModal] = useState(false);
-    const [showDeleteModal, setShowDeleteModal] = useState(false)
-    const [name, setName] = useState(props.name);
-    const [price, setPrice] = useState(props.price);
-    const [weight, setWeight] = useState(props.weight);
-    const [date, setDate] = useState(props.date);
-    const navigate = useNavigate()
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
+    const [name, setName] = useState(purchase.name);
+    const [price, setPrice] = useState(purchase.price);
+    const [weight, setWeight] = useState(purchase.weight);
+    const [date, setDate] = useState(purchase.date);
+    const navigate = useNavigate();
 
-    const handleDelete = async () => {
-        const token = localStorage.getItem("token");
+    const handleSaveEdit = async () => {
+        const token = localStorage.getItem('token');
         if (!token) {
-            navigate("/")
-            return
+            navigate('/');
+            return;
         }
-        await props.handleDelete(props.purchase_id);
-    };
 
-    async function handleSaveEdit(){
-        const token = localStorage.getItem("token");
-        if (!token) {
-            navigate("/")
-            return
-        }
         const newCard = {
-            id: props.purchase_id,
-            name: name,
-            price: price,
-            weight: weight,
-            date: date,
+            id: purchase.purchase_id,
+            name,
+            price,
+            weight,
+            date,
         };
-        await editPurchase(props.purchase_id, newCard)
+
+        await editPurchase(purchase.purchase_id, newCard);
         setShowEditModal(false);
         // eslint-disable-next-line no-restricted-globals
-        location.reload()
-    }
+        location.reload();
+    };
 
     const handleCancelEditModal = () => {
         setShowEditModal(false);
     };
 
     const handleCancelDeleteModal = () => {
-        setShowDeleteModal(false)
+        setShowDeleteModal(false);
+    };
+
+    function formatDate(date) {
+        const modifiedDate = addDays(new Date(date), 1);
+        return format(modifiedDate, "dd 'de' MMMM 'de' yyyy", { locale: ptBR });
     }
 
     return (
@@ -60,13 +61,11 @@ export function Card(props) {
                 <h3>{name}</h3>
                 <p id="price">R${price}</p>
                 <p id="weight">{weight}g</p>
-                <p id="date">
-                    {format(new Date(date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}
-                </p>
+                <p id="date">{formatDate(date)}</p>
             </div>
             <div id="right">
                 <button id="edit" onClick={() => setShowEditModal(true)}>
-                    <EditIcon/>
+                    <EditIcon />
                 </button>
                 <button id="trash" onClick={() => setShowDeleteModal(true)}>
                     <TrashIcon />
@@ -74,7 +73,7 @@ export function Card(props) {
             </div>
             {showEditModal && (
                 <EditModal
-                    id={props.id}
+                    id={purchase.id}
                     name={name}
                     price={price}
                     weight={weight}
@@ -91,16 +90,15 @@ export function Card(props) {
             )}
             {showDeleteModal && (
                 <DeleteModal
-                    id={props.id}
+                    id={purchase.id}
                     name={name}
                     date={date}
-                    handleDeleteCard={handleDelete}
+                    handleDeleteCard={() => handleDelete(purchase.purchase_id)}
                     handleCancelDeleteModal={handleCancelDeleteModal}
                     showDeleteModal={showDeleteModal}
                     setShowDeleteModal={setShowDeleteModal}
                 />
             )}
-
         </div>
     );
 }

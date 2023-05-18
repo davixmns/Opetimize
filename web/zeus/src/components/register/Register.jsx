@@ -76,7 +76,7 @@ export function Register() {
             <div id={"background"}>
                 <div id={"a"}>
                     <div>
-                        <h2 id={"title"}>Registrar Conta</h2>
+                        <h2 id={"title"}>Criar Conta</h2>
                     </div>
                     <input type={"text"} placeholder={"Nome"} id={"text-input"} onChange={handleChangeName}></input>
                     <input type={"email"} placeholder={"Email"} id={"text-input"} onChange={handleChangeEmail}></input>

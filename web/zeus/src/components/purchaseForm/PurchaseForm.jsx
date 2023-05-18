@@ -1,12 +1,9 @@
-import TextInput from "../TextInput/TextInput";
-import SaveButton from "../saveButton/SaveButton";
 import DatePicker from "../datePicker/DatePicker";
 import {useState} from "react";
 import {insertPurchase} from "../../service/apiService";
 import ErrorModal from "../errorModal/ErrorModal";
 import {useNavigate} from "react-router-dom";
 import "./styles.css";
-import {LogoutButton} from "../logout/LogoutButton";
 
 function PurchaseForm() {
     const today = new Date().toISOString().substr(0, 10);
@@ -72,27 +69,30 @@ function PurchaseForm() {
             <h2 id={"formTitle"}>Cadastrar Ração</h2>
             <div id="formBackground">
                 <ul id="inputList">
-                    <div id="name-text-input">
-                        <label htmlFor="name" id="label-name">Nome:</label>
-                        <TextInput id="name" value={name} onChange={handleNameChange} placeHolder="Ração/Marca"/>
+                    <div className={"formItem"}>
+                        <label htmlFor="name" className={"labelFormItem"}>Ração:</label>
+                        <input type="text" className={"inputText"} onChange={handleNameChange} placeholder={"Nome/Marca"}/>
                     </div>
 
-                    <div id="price-text-input">
-                        <label htmlFor="price" id="label-price">Valor:</label>
-                        <TextInput id="price" value={price} onChange={handlePriceChange} placeHolder={"R$"}/>
+                    <div className={"formItem"}>
+                        <label htmlFor="price" className={"labelFormItem"}>Valor:</label>
+                        <input type={"number"} className={"inputText"} value={price} onChange={handlePriceChange} placeholder={"R$"}/>
                     </div>
 
-                    <div id="weight-text-input">
-                        <label htmlFor="weight" id="label-weight">Peso:</label>
-                        <TextInput id="weight" value={weight} onChange={handleWeightChange} placeHolder={"gramas"}/>
+                    <div className={"formItem"}>
+                        <label htmlFor="weight" className={"labelFormItem"}>Peso:</label>
+                        <input type={"number"} className={"inputText"} value={weight} onChange={handleWeightChange} placeholder={"gramas"}/>
                     </div>
 
-                    <div id="date-datepicker">
-                        <label htmlFor="date" id="label-date">Data:</label>
+                    <div className={"formItem"}>
+                        <label htmlFor="date" className={"labelFormItem"}>Data:</label>
                         <DatePicker id="date" value={date} onChange={handleDateChange}/>
                     </div>
 
-                    <SaveButton onClick={handleSaveClick} title={"Salvar"}/>
+                    <button type="button" id="buttonSave" onClick={handleSaveClick} title="Salvar">
+                        <span style={{color: "white", fontSize: 20}}>Salvar</span>
+                    </button>
+
                     {error && <ErrorModal title="Erro" message={errorMessage} onClose={handleCloseErrorModal}/>}
                 </ul>
             </div>
