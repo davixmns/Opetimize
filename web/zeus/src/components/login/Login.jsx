@@ -20,6 +20,12 @@ export function Login() {
         }
     }
 
+    function handleGoToForgotPassword() {
+        setEmail("")
+        setPassword("")
+        navigate("/forgotPassword");
+    }
+
     function handleGoToRegister() {
         setEmail("")
         setPassword("")
@@ -44,6 +50,7 @@ export function Login() {
                 <input type={"text"} placeholder={"email"} id={"text-input"} onChange={handleChangeEmail}></input>
                 <input type={"password"} placeholder={"senha"} id={"text-input"}
                        onChange={handleChangePassword}></input>
+                <button onClick={handleGoToForgotPassword}>esqueci a senha</button>
                 <button id={"button"} onClick={handleTryLogin}>Entrar</button>
                 <h3 id={"ou"}>ou</h3>
                 <button id={"button"} onClick={handleGoToRegister}>Criar conta</button>

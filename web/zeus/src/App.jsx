@@ -4,6 +4,7 @@ import {HomePage} from "./pages/HomePage";
 import {ToastContainer} from "react-toastify";
 import "./App.css"
 import {RegisterPage} from "./pages/RegisterPage";
+import {ForgotPassword} from "./components/forgotPassword/ForgotPassword";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/login" element={<LoginPage/>}/>
                 <Route path="/home" element={<HomePage/>}/>
                 <Route path={"/register"} element={<RegisterPage/>}/>
+                <Route path={"/forgotPassword"} element={<ForgotPassword/>}/>
             </Routes>
         </BrowserRouter>
     );

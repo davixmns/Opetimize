@@ -6,7 +6,6 @@ const bcrypt = require("bcrypt")
 module.exports = {
     async getAllUsers(req, res) {
         try {
-            console.log("entrou")
             const users = await UserModel.findAll()
             res.status(200).json(users)
         } catch (error) {
