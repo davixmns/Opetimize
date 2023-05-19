@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="reestruturando">
-      <change afterPath="$PROJECT_DIR$/mysql_api/utils/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/ForgotPassword.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/nodemailer/nodemailer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/AuthRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,12 +44,13 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/m09/Área de Trabalho/zeus/web/zeus/src/assets&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m09/Área de Trabalho/zeus/mobile/Opetimize/assets&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -67,7 +59,7 @@
     &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -82,17 +74,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
+      <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
       <recent name="$PROJECT_DIR$/backend_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/web/zeus/src/components" />
-      <recent name="$PROJECT_DIR$/web/zeus/src/register" />
-      <recent name="$PROJECT_DIR$/mysql_api/database" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets/icons" />
+      <recent name="$PROJECT_DIR$/web/zeus/public" />
+      <recent name="$PROJECT_DIR$/web/zeus/src/service" />
+      <recent name="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders learn react link">
@@ -161,24 +153,67 @@
       <workItem from="1683119256236" duration="7755000" />
       <workItem from="1683206474932" duration="1776000" />
       <workItem from="1683298383468" duration="13004000" />
-      <workItem from="1683642199449" duration="3146000" />
-      <workItem from="1683665392572" duration="37000" />
-      <workItem from="1683724996722" duration="271000" />
-      <workItem from="1683725277655" duration="8511000" />
-      <workItem from="1683739615654" duration="10284000" />
-      <workItem from="1683830771496" duration="1171000" />
-      <workItem from="1683831977734" duration="177000" />
-      <workItem from="1683832203428" duration="3633000" />
-      <workItem from="1683899363833" duration="13458000" />
-      <workItem from="1684242766182" duration="17082000" />
-      <workItem from="1684270166421" duration="427000" />
-      <workItem from="1684329063234" duration="715000" />
-      <workItem from="1684329818062" duration="15919000" />
-      <workItem from="1684358121577" duration="26000" />
-      <workItem from="1684415086494" duration="15672000" />
-      <workItem from="1684502871395" duration="15161000" />
-      <workItem from="1684525324698" duration="906000" />
-      <workItem from="1684526307890" duration="1370000" />
+      <workItem from="1683347088145" duration="3235000" />
+      <workItem from="1683476821036" duration="4050000" />
+      <workItem from="1683997370817" duration="140000" />
+      <workItem from="1684533479984" duration="3305000" />
+      <workItem from="1684536803616" duration="316000" />
+    </task>
+    <task id="LOCAL-00001" summary="first">
+      <created>1681413073538</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413073538</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first">
+      <created>1681413534635</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413534635</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first">
+      <created>1681413604244</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413604244</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first">
+      <created>1681413978584</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681413978584</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first">
+      <created>1681417627834</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681417627834</updated>
+    </task>
+    <task id="LOCAL-00006" summary="save, findById, findAll">
+      <created>1681493675379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681493675379</updated>
+    </task>
+    <task id="LOCAL-00007" summary="editar ração por id">
+      <created>1681494977317</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681494977317</updated>
+    </task>
+    <task id="LOCAL-00008" summary="DELETE BY ID">
+      <created>1681498022082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681498022082</updated>
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -383,147 +418,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683310002751</updated>
     </task>
-    <task id="LOCAL-00038" summary="add edicao no mobile">
-      <created>1683577327047</created>
+    <task id="LOCAL-00038" summary="ajustes na api">
+      <created>1683952653110</created>
       <option name="number" value="00038" />
       <option name="presentableId" value="LOCAL-00038" />
       <option name="project" value="LOCAL" />
-      <updated>1683577327047</updated>
+      <updated>1683952653110</updated>
     </task>
-    <task id="LOCAL-00039" summary="add edicao no mobile">
-      <created>1683577344680</created>
+    <task id="LOCAL-00039" summary="gitignore">
+      <created>1683997452387</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1683577344680</updated>
+      <updated>1683997452387</updated>
     </task>
-    <task id="LOCAL-00040" summary="arquitetura mvc">
-      <created>1683644269555</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1683644269555</updated>
-    </task>
-    <task id="LOCAL-00041" summary="api mysql">
-      <created>1683730214200</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1683730214201</updated>
-    </task>
-    <task id="LOCAL-00042" summary="api mysql">
-      <created>1683732373904</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1683732373904</updated>
-    </task>
-    <task id="LOCAL-00043" summary="api mysql">
-      <created>1683739438953</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1683739438953</updated>
-    </task>
-    <task id="LOCAL-00044" summary="api mysql">
-      <created>1683739450409</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1683739450409</updated>
-    </task>
-    <task id="LOCAL-00045" summary="api mysql">
-      <created>1683740746181</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1683740746181</updated>
-    </task>
-    <task id="LOCAL-00046" summary="reestruturando api">
-      <created>1683750920915</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1683750920915</updated>
-    </task>
-    <task id="LOCAL-00047" summary="reestruturando api">
-      <created>1683833458429</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1683833458429</updated>
-    </task>
-    <task id="LOCAL-00048" summary="reestruturando api">
-      <created>1683833473545</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1683833473545</updated>
-    </task>
-    <task id="LOCAL-00049" summary="reestruturando api">
-      <created>1683835830701</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1683835830701</updated>
-    </task>
-    <task id="LOCAL-00050" summary="reestruturando api">
-      <created>1683915110117</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1683915110117</updated>
-    </task>
-    <task id="LOCAL-00051" summary="login page">
-      <created>1684184536892</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1684184536892</updated>
-    </task>
-    <task id="LOCAL-00052" summary="autenticacao funcionando">
-      <created>1684263277695</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1684263277696</updated>
-    </task>
-    <task id="LOCAL-00053" summary="autenticacao funcionando">
-      <created>1684270466415</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1684270466416</updated>
-    </task>
-    <task id="LOCAL-00054" summary="login e registro">
-      <created>1684353256760</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1684353256762</updated>
-    </task>
-    <task id="LOCAL-00055" summary="login e registro">
-      <created>1684356035193</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1684356035194</updated>
-    </task>
-    <task id="LOCAL-00056" summary="login e registro">
-      <created>1684358134114</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1684358134114</updated>
-    </task>
-    <task id="LOCAL-00057" summary="reestruturando">
-      <created>1684441731332</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1684441731333</updated>
-    </task>
-    <option name="localTasksCounter" value="58" />
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,6 +450,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <MESSAGE value="save, findById, findAll" />
+    <MESSAGE value="editar ração por id" />
+    <MESSAGE value="DELETE BY ID" />
+    <MESSAGE value="react" />
     <MESSAGE value="react web begin" />
     <MESSAGE value="estruturando" />
     <MESSAGE value="card" />
@@ -559,13 +473,8 @@
     <MESSAGE value="secao de utilidades" />
     <MESSAGE value="fim" />
     <MESSAGE value="add edicao no mobile" />
-    <MESSAGE value="arquitetura mvc" />
-    <MESSAGE value="api mysql" />
-    <MESSAGE value="reestruturando api" />
-    <MESSAGE value="login page" />
-    <MESSAGE value="autenticacao funcionando" />
-    <MESSAGE value="login e registro" />
-    <MESSAGE value="reestruturando" />
-    <option name="LAST_COMMIT_MESSAGE" value="reestruturando" />
+    <MESSAGE value="ajustes na api" />
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
 </project>

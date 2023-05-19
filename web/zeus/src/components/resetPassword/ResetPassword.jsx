@@ -1,20 +1,11 @@
 import {useEffect, useState} from "react";
 import {updatePassword, verifyToken} from "../../service/apiService";
 import {useNavigate} from "react-router-dom";
+import swal from "sweetalert";
 
 export function ResetPassword() {
     const [newPassword, setNewPassword] = useState('')
     const navigate = useNavigate()
-
-    useEffect(() => {
-        const verify = async () => {
-            const token = localStorage.getItem('token')
-            if (!await verifyToken(token)) {
-                navigate('/login')
-            }
-        }
-        verify()
-    }, [])
 
     function handleOnChangeNewPassword(e) {
         setNewPassword(e.target.value)
@@ -22,7 +13,11 @@ export function ResetPassword() {
 
     function handleUpdatePassword() {
         const token = localStorage.getItem('token')
-        return updatePassword(token, newPassword)
+        updatePassword(token, newPassword)
+            .then(async () => {
+                await swal("Password updated!", "You can now login with your new password", "success")
+                navigate('/login')
+            })
     }
 
     return (

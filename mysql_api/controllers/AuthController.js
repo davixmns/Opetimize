@@ -1,36 +1,36 @@
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const nodemailer = require("nodemailer");
 const utils = require("../utils/utils");
-const {getUserById} = require("./UserController");
+const { getUserById } = require("./UserController");
 require('dotenv').config();
 
 const jwt_key = process.env.JWT_KEY;
-const mailer_user = process.env.MAILER_USER
-const mailer_pass = process.env.MAILER_PASS
+const mailer_user = process.env.MAILER_USER;
+const mailer_pass = process.env.MAILER_PASS;
 
 module.exports = {
     async login(req, res) {
-        const {email, password} = req.body;
-        const user = utils.findUserbyEmail(email)
+        const { email, password } = req.body;
+        const user = await utils.findUserbyEmail(email);
         if (!user) {
-            return res.status(400).json({error: 'Usuário não cadastrado no sistema'});
+            return res.status(400).json({ error: 'Usuário não cadastrado no sistema' });
         }
-        if (!await bcrypt.compare(password, user.password)) {
-            return res.status(400).json({error: 'Senha incorreta'});
+        if (!(await bcrypt.compare(password, user.password))) {
+            return res.status(400).json({ error: 'Senha incorreta' });
         }
-        const token = utils.createToken(user, '1h')
-        res.status(200).json({token});
+        const token = utils.createToken(user, '1h');
+        res.status(200).json({ token });
     },
 
     async verifyToken(req, res) {
         try {
             const token = req.params.token;
             jwt.verify(token, jwt_key);
-            res.status(200).json({valid: true});
+            res.status(200).json({ valid: true });
         } catch (error) {
             console.log(error);
-            res.status(401).json({valid: false});
+            res.status(401).json({ valid: false });
         }
     },
 
@@ -41,10 +41,10 @@ module.exports = {
                 return res.status(400).json({ error: 'Token não informado' });
             }
 
-            const decodedToken = await this.verifyToken(token);
+            const decodedToken = jwt.verify(token, jwt_key);
             if (decodedToken) {
                 const userId = decodedToken.user_id;
-                const user = getUserById(userId)
+                const user = await getUserById(userId);
                 if (!user) {
                     return res.status(400).json({ error: 'Usuário não encontrado' });
                 }
@@ -57,9 +57,8 @@ module.exports = {
         }
     },
 
-
-    sendEmailResetPassword(req, res) {
-        const user = utils.findUserbyEmail(req.params.email);
+    async sendEmailResetPassword(req, res) {
+        const user = await utils.findUserbyEmail(req.params.email);
         if (user) {
             const token = utils.createToken(user, '1h');
 
@@ -76,26 +75,25 @@ module.exports = {
                 }
             });
 
-            const resetURL = `localhost:3001/reset-password?token=${token}`; // Substitua "example.com" pelo seu domínio ou URL adequada
+            const resetURL = `http://localhost:3001/reset-password?token=${token}`;
             const message = {
                 from: "Opetimize Support <support@opetimize.com>",
-                to: req.body.email,
+                to: req.params.email,
                 subject: "Recuperação de senha Opetimize",
-                text: "",
-                html: `<p>Clique <a href="${resetURL}">aqui</a> para recuperar sua senha Opetimize</p>`
+                text: "Recuperação de senha",
+                html: `<a href="${resetURL}?token=${token}" 
+                  style="padding: 1rem 4rem; border-radius: 8px; color: #ffffff; 
+                  background: #0C1B33; font-weight: 900; text-decoration: none; 
+                  cursor: pointer; font-size: 14px;">REDEFINIR SUA SENHA</a>`
             };
-
 
             transport.sendMail(message, function (err) {
                 if (err) {
                     return res.status(400).json(err);
                 } else {
-                    return res.status(200).json({message: 'Email enviado com sucesso!'});
+                    return res.status(200).json({ message: 'Email enviado com sucesso!' });
                 }
             });
         }
     }
-
-
-
-}
+};

@@ -9,9 +9,11 @@ module.exports = {
     },
 
     async findUserbyEmail(email) {
-        const user = await UserModel.findOne(email);
-        if (user) {
-            return user;
+        try {
+            return await UserModel.findOne({where: {email: email}});
+        } catch (error) {
+            console.log(error);
+            throw error;
         }
     },
 
