@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:3000';
-// const BASE_URL = 'http://172.18.9.85:3000';
+// const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'http://172.18.9.85:3000';
 
 export const sendEmailForgotPassword = async (email) => {
     try {
         const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -13,15 +14,16 @@ export const sendEmailForgotPassword = async (email) => {
     }
 };
 
-export const updatePassword = async (token, password) => {
+export const updatePassword = async (token, newPassword) => {
     try {
-        const response = await axios.put(`${BASE_URL}/reset-password`, {token, password});
+        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, { newPassword });
         return response.data;
     } catch (error) {
         console.log(error);
-        return null;
+        throw error;
     }
 };
+
 
 export const tryLogin = async (email, password) => {
     try {

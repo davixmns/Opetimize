@@ -1,5 +1,4 @@
 #content {
-    background-image: url("https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg");
     background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
     background-position: center; /* Centraliza a imagem */
     display: flex;
@@ -8,6 +7,18 @@
     height: 100vh; /* Defina a altura total da tela */
     width: 100vw; /* Defina a largura total da tela */
     flex-direction: column;
+}
+
+#forgotPassword {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    margin-left: 15rem;
+}
+
+#forgotPassword:hover {
+    color: #E49052;
+    cursor: pointer;
 }
 
 #titleLogo {
@@ -38,33 +49,4 @@
     box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.2);
     margin-bottom: 4rem;
 }
-
-#text-input {
-    border-color: #E49052;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 1rem;
-    width: 20rem;
-    font-size: 1.2rem;
-}
-
-#button {
-    background-color: #E49052;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 1rem;
-    width: 21rem;
-    font-size: 1.2rem;
-    color: #ffffff;
-    border: none
-}
-
-#button:hover {
-    background-color: #ffffff;
-    border: 1px solid #E49052;
-    color: #E49052;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
 

@@ -9,12 +9,7 @@ module.exports = {
     },
 
     async findUserbyEmail(email) {
-        try {
-            return await UserModel.findOne({where: {email: email}});
-        } catch (error) {
-            console.log(error);
-            throw error;
-        }
+        return await UserModel.findOne({where: {email: email}});
     },
 
 }

@@ -4,6 +4,9 @@ import swal from "sweetalert";
 import "./styles.css"
 import {createUser} from "../../service/apiService";
 import titleLogo from "../../assets/titulo.png";
+import {MyTextInput} from "../myTextInput/MyTextInput";
+import {MyButton} from "../myButton/MyButton";
+import backImg from "../../assets/login-back.jpg";
 
 export function Register() {
     const [name, setName] = useState('')
@@ -25,7 +28,7 @@ export function Register() {
             await swal("Erro", "Email inválido", "error");
             return;
         }
-        const user = { name, email, password };
+        const user = {name, email, password};
         try {
             const response = await createUser(user);
             if (response) {
@@ -40,12 +43,10 @@ export function Register() {
         }
     }
 
-
     function verifyEmail(email) {
         const regex = /\S+@\S+\.\S+/;
         return regex.test(email);
     }
-
 
     async function handleGoToLogin() {
         setName('')
@@ -72,27 +73,26 @@ export function Register() {
     }
 
     return (
-        <div id={"content"}>
-            <div id={"background"}>
-                <div id={"a"}>
+        <div id="content" style={{backgroundImage: `url(${backImg})`}}>
+            <div id="background">
+                <div id="a">
                     <div>
-                        <h2 id={"title"}>Criar Conta</h2>
+                        <h2 id="title">Criar Conta</h2>
                     </div>
-                    <input type={"text"} placeholder={"Nome"} id={"text-input"} onChange={handleChangeName}></input>
-                    <input type={"email"} placeholder={"Email"} id={"text-input"} onChange={handleChangeEmail}></input>
-                    <input type={"password"} placeholder={"Senha"} id={"text-input"}
-                           onChange={handleChangePassword}></input>
-                    <input type={"password"} placeholder={"Confirmar senha"} id={"text-input"}
-                           onChange={handleChangePasswordConfirmation}></input>
+                    <MyTextInput type="text" placeholder="Nome" onChange={handleChangeName}/>
+                    <MyTextInput type="email" placeholder="Email" onChange={handleChangeEmail}/>
+                    <MyTextInput type="password" placeholder="Senha" onChange={handleChangePassword}/>
+                    <MyTextInput type="password" placeholder="Confirmar senha" onChange={handleChangePasswordConfirmation}/>
                 </div>
 
-                <div id={"b"}>
-                    <img id={"logoTitle"} src={titleLogo} alt={"logo"}/>
-                    <button id={"button"} onClick={handleTryCreateUser}>Salvar</button>
-                    <h3 id={"ou2"}>ou</h3>
-                    <button id={"button"} onClick={handleGoToLogin}>Cancelar</button>
+                <div id="b">
+                    <img id="logoTitle" src={titleLogo} alt="logo"/>
+                    <MyButton onClick={handleTryCreateUser} text="Salvar" backgroundColor="#E49052" color="#fff"/>
+                    <h3 id="ou2">ou</h3>
+                    <MyButton onClick={handleGoToLogin} text="Cancelar" backgroundColor="#E49052" color="#fff"/>
                 </div>
             </div>
         </div>
-    )
+    );
+
 }
