@@ -6,13 +6,15 @@
     padding-left: 2rem;
 }
 
-#formBackground {
+#background-purchase-form {
     width: 28rem;
     border-radius: 28px;
     /*background-color: #EF820D;*/
     background-color: #F5E7CC;
 
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
 }
 
 #inputList {
@@ -39,21 +41,11 @@
     margin-bottom: 2rem;
 }
 
-.formItem {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.4rem;
-}
-
-.labelFormItem {
-    margin-left: 0.5rem;
-}
-
 ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
 }
 
 #buttonSave {

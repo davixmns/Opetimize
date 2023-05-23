@@ -8,5 +8,5 @@
 }
 
 #text-input:focus {
-    outline: none; /* Remove a outline padrão do elemento ao receber foco */
+    outline: none;
 }

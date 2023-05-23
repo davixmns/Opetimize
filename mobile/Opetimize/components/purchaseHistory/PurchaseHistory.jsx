@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { deletePurchaseById, editPurchase, getAllPurchases } from '../../service/apiService';
+import { deletePurchaseById, editPurchase, getAllPurchasesByUserToken } from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import * as Animatable from 'react-native-animatable';
 import {FlatList, ScrollView, TextInput, TouchableOpacity, View} from "react-native";
 import {Text} from "react-native";
 import {StyleSheet} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
@@ -16,8 +17,9 @@ function PurchaseHistory() {
     }, []);
 
     async function fetchData() {
-        const data = await getAllPurchases();
-        setPurchases(data);
+        // const token = await AsyncStorage.getItem('token');
+        // const data = await getAllPurchasesByUserToken();
+        // setPurchases(data);
     }
 
     async function handleDeletePurchase(id) {

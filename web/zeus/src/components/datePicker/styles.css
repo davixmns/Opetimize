@@ -1,11 +1,11 @@
 #datePicker {
-    height: 2.5rem;
-    width: 20rem;
-    border-radius: 15px;
-    margin-bottom: 3rem;
     background-color: white;
     outline: none;
-    border: none;
     text-indent: 0.7rem;
-    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 1rem;
+    width: 20rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
 }

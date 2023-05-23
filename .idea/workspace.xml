@@ -5,30 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="gitignore">
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/forgot-back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/login-back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/assets/reset-back.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/MyTextInput.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_05_2023_01_16_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_05_2023_01_16__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/authStack/AuthStack.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myButton/MyButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myTextInput/MyTextInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_21_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_21__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/AuthRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/utils/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/ForgotPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/register/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/register/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,28 +57,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/m09/Desktop/zeus/web/zeus/src/assets",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m09/Desktop/zeus/mobile/Opetimize/components/myButton&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -91,10 +89,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mobile/Opetimize/components/myButton" />
+      <recent name="$PROJECT_DIR$/mobile/Opetimize/components/myTextInput" />
+      <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
       <recent name="$PROJECT_DIR$/web/zeus/src/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
-      <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
-      <recent name="$PROJECT_DIR$/backend_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
@@ -175,7 +174,9 @@
       <workItem from="1683997370817" duration="140000" />
       <workItem from="1684533479984" duration="3305000" />
       <workItem from="1684536803616" duration="316000" />
-      <workItem from="1684761606304" duration="18827000" />
+      <workItem from="1684761606304" duration="18883000" />
+      <workItem from="1684848514424" duration="9148000" />
+      <workItem from="1684868504756" duration="999000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -450,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683997452387</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="gitignore">
+      <created>1684787844261</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1684787844261</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

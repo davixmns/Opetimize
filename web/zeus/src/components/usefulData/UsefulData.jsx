@@ -53,7 +53,7 @@ function UsefulData() {
             setCheapestPetFood(
                 cheapestPurchase
                     ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
-                    : 'No purchases recorded.'
+                    : '...'
             );
         }
 
@@ -72,7 +72,7 @@ function UsefulData() {
 
 
         async function calculateBestDay() {
-            if (purchases) {
+            if (purchases.length > 0) {
                 const purchasesByWeekDay = Array.from({ length: 7 }, () => 0);
 
                 purchases.forEach((purchase) => {
@@ -87,6 +87,8 @@ function UsefulData() {
                 const bestDay = weekDays[bestDayIndex];
 
                 setBestDay(bestDay);
+            } else {
+                setBestDay("...");
             }
         }
 

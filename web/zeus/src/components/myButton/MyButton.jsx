@@ -7,7 +7,7 @@ export function MyButton(props) {
             <button
                 id="my-button"
                 onClick={props.onClick}
-                style={{ backgroundColor: props.backgroundColor, color: props.color }}
+                style={{ backgroundColor: props.backgroundColor, color: props.color, hover: props.hover}}
             >
                 {props.text}
             </button>

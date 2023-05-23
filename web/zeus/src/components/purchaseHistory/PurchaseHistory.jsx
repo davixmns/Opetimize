@@ -12,6 +12,10 @@ function PurchaseHistory() {
     const [searchValue, setSearchValue] = useState('');
     const navigate = useNavigate();
 
+    const handleOnChangeSearchValue = (event) => {
+        setSearchValue(event.target.value);
+    };
+
     useEffect(() => {
         const fetchData = async () => {
             const token = localStorage.getItem('token');
@@ -30,15 +34,11 @@ function PurchaseHistory() {
         const token = localStorage.getItem('token');
         if (token && (await verifyToken(token))) {
             await deletePurchaseById(id);
-            const data = await getAllPurchasesByUserToken(token);
-            setPurchases(data);
+            // eslint-disable-next-line no-restricted-globals
+            location.reload()
         } else {
             navigate('/login');
         }
-    };
-
-    const handleSearch = (event) => {
-        setSearchValue(event.target.value);
     };
 
     const filteredPurchases = purchases.filter(purchase => {
@@ -76,7 +76,7 @@ function PurchaseHistory() {
                     ))}
                 </ul>
             </div>
-            <SearchBar handleSearch={handleSearch} />
+            <SearchBar handleSearch={handleOnChangeSearchValue} />
         </div>
     );
 }

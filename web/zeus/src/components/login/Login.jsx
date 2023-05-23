@@ -45,26 +45,24 @@ export function Login() {
 
     return (
         <div id="content" style={{backgroundImage: `url(${backImg})`}}>
-            <img src={logoTitle} alt="logo" id="titleLogo" />
+            <img src={logoTitle} alt="logo" id="titleLogo"/>
             <div id="form-background">
                 <div>
                     <h2 id="title">Login</h2>
                 </div>
                 <MyTextInput
                     type="text"
-                    placeholder="email"
+                    placeholder="Email"
                     id="text-input"
                     onChange={handleChangeEmail}
                 />
                 <MyTextInput
                     type="password"
-                    placeholder="senha"
+                    placeholder="Senha"
                     id="text-input"
                     onChange={handleChangePassword}
                 />
-                <button id="forgotPassword" onClick={handleGoToForgotPassword}>
-                    esqueci a senha
-                </button>
+                <button id="forgotPassword" onClick={handleGoToForgotPassword}>esqueci a senha</button>
                 <MyButton
                     onClick={handleTryLogin}
                     text="Entrar"
@@ -81,5 +79,6 @@ export function Login() {
             </div>
         </div>
     );
+
 
 }

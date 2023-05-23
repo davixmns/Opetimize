@@ -4,12 +4,9 @@
     margin: 1rem;
     width: 21rem;
     font-size: 1.2rem;
-    border: none
+    border: none;
 }
 
 #my-button:hover {
     cursor: pointer;
-    transition: 0.5s;
 }
-
-
