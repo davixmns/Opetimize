@@ -73,21 +73,37 @@ function PurchaseForm() {
             <div id="background-purchase-form">
                 <ul id="inputList">
                     <div className={"formItem"}>
-                        <MyTextInput type="text" className={"inputText"} onChange={handleNameChange}
-                                     placeholder={"Nome/Marca"}/>
+                        <MyTextInput
+                            type="text"
+                            className={"inputText"}
+                            onChange={handleNameChange}
+                            placeholder={"Nome/Marca"}
+                        />
                     </div>
 
                     <div className={"formItem"}>
-                        <MyTextInput type={"number"} onChange={handlePriceChange} placeholder={"R$"}/>
+                        <MyTextInput
+                            type={"number"}
+                            onChange={handlePriceChange}
+                            placeholder={"R$"}
+                        />
                     </div>
 
                     <div className={"formItem"}>
-                        <MyTextInput type={"number"} className={"inputText"} onChange={handleWeightChange}
-                                     placeholder={"gramas"}/>
+                        <MyTextInput
+                            type={"number"}
+                            className={"inputText"}
+                            onChange={handleWeightChange}
+                            placeholder={"gramas"}
+                        />
                     </div>
 
                     <div className={"formItem"}>
-                        <DatePicker id="date" value={date} onChange={handleDateChange}/>
+                        <DatePicker
+                            id="date"
+                            value={date}
+                            onChange={handleDateChange}
+                        />
                     </div>
 
                     <div className={"formItem"}>

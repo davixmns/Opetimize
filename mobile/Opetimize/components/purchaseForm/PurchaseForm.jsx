@@ -3,6 +3,7 @@ import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, StatusB
 import {insertPurchase} from "../../service/apiService";
 import DatePicker from "react-native-modern-datepicker";
 import { Snackbar } from 'react-native-paper';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 function PurchaseForm() {
@@ -17,9 +18,9 @@ function PurchaseForm() {
         try {
             if (name && price && weight && date) {
                 const newPurchase = { name, price, weight, date };
-                await insertPurchase(newPurchase);
+                const token = await AsyncStorage.getItem('token');
+                await insertPurchase(newPurchase, token);
                 setSnackbarSaveVisible(true)
-                console.log('ração ' + name + ' salva com sucesso!');
                 setName('');
                 setPrice('');
                 setWeight('');

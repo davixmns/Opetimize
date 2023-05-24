@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="gitignore">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/authStack/AuthStack.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myButton/MyButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myTextInput/MyTextInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_21_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2023_14_21__Changes_.xml" beforeDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="inicio de aut no mobile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/authStack/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/authStack/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/bottomBar/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/myButton/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myButton/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/myTextInput/MyTextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/myTextInput/MyTextInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +169,8 @@
       <workItem from="1684536803616" duration="316000" />
       <workItem from="1684761606304" duration="18883000" />
       <workItem from="1684848514424" duration="9148000" />
-      <workItem from="1684868504756" duration="999000" />
+      <workItem from="1684868504756" duration="1068000" />
+      <workItem from="1684937795343" duration="12815000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -458,7 +452,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684787844261</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="inicio de aut no mobile">
+      <created>1684873911387</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1684873911387</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +477,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="first" />
     <MESSAGE value="save, findById, findAll" />
     <MESSAGE value="editar ração por id" />
     <MESSAGE value="DELETE BY ID" />
@@ -501,6 +501,7 @@
     <MESSAGE value="add edicao no mobile" />
     <MESSAGE value="ajustes na api" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="inicio de aut no mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="inicio de aut no mobile" />
   </component>
 </project>

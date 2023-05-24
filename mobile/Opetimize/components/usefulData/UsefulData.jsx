@@ -2,95 +2,100 @@ import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {StyleSheet} from 'react-native';
 import {useEffect, useState} from "react";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import {addDays} from "date-fns";
+import {getAllPurchasesByUserToken, verifyToken} from "../../service/apiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export function UsefulData() {
-    const [monthCosts, setMonthCosts] = useState(null)
-    const [racaoTotalDoMes, setRacaoTotalDoMes] = useState(null)
+    const [monthCosts, setMonthCosts] = useState(0);
+    const [totalPetFood, setTotalMonthlyPetFood] = useState(0)
     const [bestDay, setBestDay] = useState("")
-    const [racaoMaisBarata, setRacaoMaisBarata] = useState(null)
+    const [cheapestPetFood, setCheapestPetFood] = useState(null)
+    const [purchases, setPurchases] = useState([])
 
-    useEffect(() => {
-        fetchData()
-    }, [])
-
-    async function fetchData(){
-        // calculateMonthCosts()
-        // calcularEstoqueDeRacao()
-        // calculateBestDay()
-        // calcularRacaoMaisBarata()
+    async function fetchData() {
+        const token = await AsyncStorage.getItem('token');
+        if (token && await verifyToken(token)) {
+            const purchases = await getAllPurchasesByUserToken(token);
+            setPurchases(purchases);
+        }
     }
 
-    // async function calculateMonthCosts() {
-    //     const purchases = await getAllPurchases()
-    //     const currentMonthPurchases = purchases.filter((purchase) => {
-    //         const purchaseDate = new Date(purchase.date);
-    //         const currentMonth = new Date().getMonth();
-    //         const currentYear = new Date().getFullYear();
-    //         return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
-    //     });
-    //     const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
-    //     setMonthCosts(totalCost.toFixed(2));
-    // }
-    //
-    // async function calcularEstoqueDeRacao() {
-    //     const purchases = await getAllPurchases()
-    //     const comprasDoMes = purchases.filter((compra) => {
-    //         const dataDaCompra = new Date(compra.date);
-    //         const mesDaCompra = dataDaCompra.getMonth()
-    //         const anoDaCompra = dataDaCompra.getFullYear()
-    //         return dataDaCompra.getMonth() === mesDaCompra && dataDaCompra.getFullYear() === anoDaCompra
-    //     })
-    //     const racaoTotal = comprasDoMes.reduce((acumulador, compra) => acumulador + compra.weight, 0)
-    //     setRacaoTotalDoMes((racaoTotal / 1000).toFixed(2))
-    // }
-    //
-    // async function calculateBestDay() {
-    //     const purchases = await getAllPurchases()
-    //     if (purchases) {
-    //         const currentMonthPurchases = purchases.filter((purchase) => {
-    //             const purchaseDate = new Date(purchase.date);
-    //             const currentMonth = new Date().getMonth();
-    //             const currentYear = new Date().getFullYear();
-    //             return (
-    //                 purchaseDate.getMonth() === currentMonth &&
-    //                 purchaseDate.getFullYear() === currentYear
-    //             );
-    //         });
-    //
-    //         const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-    //         const purchasesByWeekDay = Array.from({length: 7}, () => 0);
-    //
-    //         currentMonthPurchases.forEach((purchase) => {
-    //             const purchaseDate = new Date(purchase.date);
-    //             const weekDay = purchaseDate.getDay();
-    //             purchasesByWeekDay[weekDay] += purchase.price;
-    //         });
-    //
-    //         const bestDayIndex = purchasesByWeekDay.indexOf(Math.max(...purchasesByWeekDay));
-    //         setBestDay(weekDays[bestDayIndex]);
-    //     }
-    // }
-    //
-    // async function calcularRacaoMaisBarata() {
-    //     const purchases = await getAllPurchases();
-    //     let cheapestPurchase = null;
-    //
-    //     for (const purchase of purchases) {
-    //         const costPerKg = purchase.price / (purchase.weight / 1000);
-    //         if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
-    //             cheapestPurchase = {
-    //                 ...purchase,
-    //                 costPerKg,
-    //             };
-    //         }
-    //     }
-    //
-    //     setRacaoMaisBarata(
-    //         cheapestPurchase
-    //             ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
-    //             : 'Nenhuma compra registrada.'
-    //     );
-    // }
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        async function getMonthCosts() {
+            const currentMonthPurchases = purchases.filter((purchase) => {
+                const purchaseDate = new Date(purchase.date);
+                const currentMonth = new Date().getMonth();
+                const currentYear = new Date().getFullYear();
+                return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
+            });
+            const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
+            setMonthCosts(totalCost.toFixed(2));
+            setPurchases(purchases)
+        }
+
+        async function calculateCheapestPetFood() {
+            let cheapestPurchase = null;
+            for (const purchase of purchases) {
+                const costPerKg = purchase.price / (purchase.weight / 1000);
+                if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
+                    cheapestPurchase = {
+                        ...purchase,
+                        costPerKg,
+                    };
+                }
+            }
+            setCheapestPetFood(
+                cheapestPurchase
+                    ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
+                    : '...'
+            );
+        }
+
+
+        async function calculatePetFoodInventory() {
+            const monthlyPurchases = purchases.filter((purchase) => {
+                const purchaseDate = new Date(purchase.date);
+                const purchaseMonth = purchaseDate.getMonth();
+                const purchaseYear = purchaseDate.getFullYear();
+                return purchaseDate.getMonth() === purchaseMonth && purchaseDate.getFullYear() === purchaseYear;
+            });
+
+            const totalPetFood = monthlyPurchases.reduce((accumulator, purchase) => accumulator + purchase.weight, 0);
+            setTotalMonthlyPetFood((totalPetFood / 1000).toFixed(2));
+        }
+
+
+        async function calculateBestDay() {
+            if (purchases.length > 0) {
+                const purchasesByWeekDay = Array.from({ length: 7 }, () => 0);
+
+                purchases.forEach((purchase) => {
+                    const purchaseDate = addDays(new Date(purchase.date),1);
+                    const weekDay = purchaseDate.getDay();
+                    purchasesByWeekDay[weekDay] += 1;
+                });
+
+                const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                const maxPurchaseCount = Math.max(...purchasesByWeekDay);
+                const bestDayIndex = purchasesByWeekDay.indexOf(maxPurchaseCount);
+                const bestDay = weekDays[bestDayIndex];
+
+                setBestDay(bestDay);
+            } else {
+                setBestDay("...");
+            }
+        }
+
+        calculateCheapestPetFood()
+        calculatePetFoodInventory()
+        calculateBestDay()
+        getMonthCosts();
+    }, [purchases]);
 
     return (
         <View style={styles.container}>
@@ -103,7 +108,7 @@ export function UsefulData() {
 
                 <View style={styles.dataCard}>
                     <Text style={styles.title}>Estoque do mês</Text>
-                    <Text style={styles.dataText}>{racaoTotalDoMes} Kg</Text>
+                    <Text style={styles.dataText}>{totalPetFood} Kg</Text>
                 </View>
 
                 <View style={styles.dataCard}>
@@ -113,7 +118,7 @@ export function UsefulData() {
 
                 <View style={styles.dataCard}>
                     <Text style={styles.title}>Ração mais barata</Text>
-                    <Text style={styles.dataText2}>{racaoMaisBarata}</Text>
+                    <Text style={styles.dataText2}>{cheapestPetFood}</Text>
                 </View>
             </ScrollView>
             <TouchableOpacity onPress={fetchData} style={styles.buttom}>

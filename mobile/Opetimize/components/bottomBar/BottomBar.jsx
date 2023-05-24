@@ -1,6 +1,6 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import {UsefulData} from "../usefulData/UsefulData";
-import {StyleSheet, View} from "react-native";
+import {StatusBar, StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../purchaseForm/PurchaseForm";
 import PurchaseHistory from "../purchaseHistory/PurchaseHistory";
@@ -10,6 +10,7 @@ const Tab = createBottomTabNavigator();
 function BottomBar() {
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor="#F19020" barStyle="light-content" translucent={false}/>
             <Tab.Navigator
                 screenOptions={{
                     tabBarStyle: {

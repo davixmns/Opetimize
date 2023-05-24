@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Text, StyleSheet, View, Modal, Button, TextInput, ScrollView} from "react-native";
+import React, {useState} from "react";
+import {Text, StyleSheet, View, Modal, TextInput, ScrollView} from "react-native";
 import {format} from "date-fns";
 import {ptBR} from "date-fns/locale";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
@@ -22,7 +22,6 @@ function Card(props) {
 
     function handleSaveEdit() {
         const editedPurchase = { name, price, weight, date: date};
-        console.log(date)
         props.handleSaveEdit(props.id, editedPurchase);
         setShowEditModal(false);
     }

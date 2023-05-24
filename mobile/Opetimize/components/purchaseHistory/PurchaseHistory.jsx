@@ -3,9 +3,9 @@ import { deletePurchaseById, editPurchase, getAllPurchasesByUserToken } from '..
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import * as Animatable from 'react-native-animatable';
-import {FlatList, ScrollView, TextInput, TouchableOpacity, View} from "react-native";
-import {Text} from "react-native";
-import {StyleSheet} from "react-native";
+import { FlatList, ScrollView, TextInput, TouchableOpacity, View } from "react-native";
+import { Text } from "react-native";
+import { StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function PurchaseHistory() {
@@ -17,15 +17,15 @@ function PurchaseHistory() {
     }, []);
 
     async function fetchData() {
-        // const token = await AsyncStorage.getItem('token');
-        // const data = await getAllPurchasesByUserToken();
-        // setPurchases(data);
+        const token = await AsyncStorage.getItem('token');
+        const data = await getAllPurchasesByUserToken(token);
+        setPurchases(data);
     }
 
     async function handleDeletePurchase(id) {
         try {
             await deletePurchaseById(id);
-            fetchData()
+            await fetchData();
         } catch (error) {
             console.log(error);
         }
@@ -33,11 +33,10 @@ function PurchaseHistory() {
 
     async function handleSaveEditPurchase(id, purchase) {
         try {
-            this.refs.card.animate('bounceOutRight', 500)
-            await editPurchase(id, purchase)
-            fetchData()
+            await editPurchase(id, purchase);
+            await fetchData();
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     }
 
@@ -47,8 +46,8 @@ function PurchaseHistory() {
         return (
             <Animatable.View animation="fadeInUp" delay={animationDelay}>
                 <Card
-                    key={purchase._id}
-                    id={purchase._id}
+                    key={purchase.purchase_id}
+                    id={purchase.purchase_id}
                     name={purchase.name}
                     price={purchase.price}
                     weight={purchase.weight}
@@ -85,7 +84,7 @@ function PurchaseHistory() {
 
         const monthIndex = monthNames.indexOf(searchValueLowerCase);
         return monthIndex !== -1 && parseInt(month) === monthIndex + 1;
-    })
+    });
 
     return (
         <View style={styles.background}>
@@ -97,15 +96,13 @@ function PurchaseHistory() {
                     style={styles.container}
                     data={filteredPurchases}
                     renderItem={renderPurchase}
-                    keyExtractor={(item) => item._id}
+                    keyExtractor={(item) => item.purchase_id}
                 />
-                <View style={styles.b}>
-
-                </View>
+                <View style={styles.b}></View>
             </ScrollView>
 
             <TouchableOpacity onPress={fetchData} style={styles.fab}>
-                <Icon name="refresh" size={25} color="white"/>
+                <Icon name="refresh" size={25} color="white" />
             </TouchableOpacity>
 
             <TextInput
@@ -115,7 +112,6 @@ function PurchaseHistory() {
                 value={searchTerm}
                 placeholderTextColor={"white"}
             />
-
         </View>
     );
 }
@@ -198,7 +194,6 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
-
 });
 
 export default PurchaseHistory;

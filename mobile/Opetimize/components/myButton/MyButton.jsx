@@ -5,7 +5,7 @@ export function MyButton(props) {
         <View>
             <Button
                 onPress={props.onPress}
-                style={{backgroundColor: props.backgroundColor, color: props.color, hover: props.hover}}
+                styles={props.button}
                 title={props.title}>
             </Button>
         </View>
