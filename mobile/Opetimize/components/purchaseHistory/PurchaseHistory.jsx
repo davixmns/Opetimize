@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { deletePurchaseById, editPurchase, getAllPurchasesByUserToken } from '../../service/apiService';
+import React, {useEffect, useState} from 'react';
+import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import * as Animatable from 'react-native-animatable';
-import { FlatList, ScrollView, TextInput, TouchableOpacity, View } from "react-native";
-import { Text } from "react-native";
-import { StyleSheet } from "react-native";
+import {FlatList, ScrollView, TextInput, TouchableOpacity, View} from "react-native";
+import {Text} from "react-native";
+import {StyleSheet} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {useNavigation} from "@react-navigation/native";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const navigation = useNavigation();
 
     useEffect(() => {
         fetchData();
@@ -22,10 +24,32 @@ function PurchaseHistory() {
         setPurchases(data);
     }
 
+    async function refresh() {
+        const token = await AsyncStorage.getItem('token');
+        if (token && await verifyToken(token)) {
+            await fetchData()
+        } else {
+            await AsyncStorage.removeItem('token');
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}]
+            });
+        }
+    }
+
     async function handleDeletePurchase(id) {
         try {
-            await deletePurchaseById(id);
-            await fetchData();
+            const token = await AsyncStorage.getItem('token');
+            if(token && await verifyToken(token)) {
+                await deletePurchaseById(id, token);
+                await fetchData();
+            } else {
+                await AsyncStorage.removeItem('token');
+                navigation.reset({
+                    index: 0,
+                    routes: [{name: 'Login'}]
+                });
+            }
         } catch (error) {
             console.log(error);
         }
@@ -33,14 +57,23 @@ function PurchaseHistory() {
 
     async function handleSaveEditPurchase(id, purchase) {
         try {
-            await editPurchase(id, purchase);
-            await fetchData();
+            const token = await AsyncStorage.getItem('token');
+            if(token && await verifyToken(token)) {
+                await editPurchase(id, purchase);
+                await fetchData();
+            } else {
+                await AsyncStorage.removeItem('token');
+                navigation.reset({
+                    index: 0,
+                    routes: [{name: 'Login'}]
+                });
+            }
         } catch (error) {
             console.log(error);
         }
     }
 
-    const renderPurchase = ({ item: purchase, index }) => {
+    const renderPurchase = ({item: purchase, index}) => {
         const animationDelay = index * 200; // Define um atraso para a animação com base no índice do item
 
         return (
@@ -101,8 +134,8 @@ function PurchaseHistory() {
                 <View style={styles.b}></View>
             </ScrollView>
 
-            <TouchableOpacity onPress={fetchData} style={styles.fab}>
-                <Icon name="refresh" size={25} color="white" />
+            <TouchableOpacity onPress={refresh} style={styles.fab}>
+                <Icon name="refresh" size={25} color="white"/>
             </TouchableOpacity>
 
             <TextInput
@@ -126,7 +159,7 @@ const styles = StyleSheet.create({
 
     title2: {
         color: "white",
-        fontSize: 30,
+        fontSize: 35,
         backgroundColor: "#F19020",
         alignSelf: "center",
         marginTop: 45
@@ -134,7 +167,7 @@ const styles = StyleSheet.create({
 
     title: {
         marginTop: 10,
-        fontSize: 25,
+        fontSize: 40,
         alignSelf: 'center',
         color: 'white',
     },

@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
 import {insertPurchase} from "../../service/apiService";
 import DatePicker from "react-native-modern-datepicker";
-import { Snackbar } from 'react-native-paper';
+import {Snackbar} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {Input} from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 
 function PurchaseForm() {
@@ -16,134 +18,183 @@ function PurchaseForm() {
 
     const handleSavePurchase = async () => {
         try {
+            console.log({name, price, weight, date})
             if (name && price && weight && date) {
-                const newPurchase = { name, price, weight, date };
+                const newPurchase = {name, price, weight, date};
+                console.log(newPurchase);
                 const token = await AsyncStorage.getItem('token');
                 await insertPurchase(newPurchase, token);
-                setSnackbarSaveVisible(true)
                 setName('');
                 setPrice('');
                 setWeight('');
+                setSnackbarSaveVisible(true)
                 setDate(new Date());
             } else {
                 setSnackbarVisible(true);
             }
         } catch (error) {
+            alert('Erro ao salvar a ração')
             console.log(error);
         }
     };
 
+    function handleOnChangeName(name) {
+        setName(name);
+    }
+
+    function handleOnChangePrice(price) {
+        setPrice(price);
+    }
+
+    function handleOnChangeWeight(weight) {
+        setWeight(weight);
+    }
+
+    function handleOnChangeDate(date) {
+        setDate(date);
+    }
     return (
-        <View style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <Text style={styles.title}>Cadastrar Ração</Text>
-                <Text style={styles.label}>Nome:</Text>
-                <TextInput
-                    style={styles.input}
-                    value={name}
-                    onChangeText={setName}
-                    placeholder="Ração/Marca"
-                />
-                <Text style={styles.label}>Valor:</Text>
-                <TextInput
-                    style={styles.input}
-                    value={price}
-                    onChangeText={setPrice}
-                    placeholder="R$"
-                    keyboardType="numeric"
-                />
-                <Text style={styles.label}>Peso:</Text>
-                <TextInput
-                    style={styles.input}
-                    value={weight}
-                    onChangeText={setWeight}
-                    placeholder="gramas"
-                    keyboardType="numeric"
-                />
-                <Text style={styles.label}>Data:</Text>
-                <DatePicker mode={'calendar'} date={date} onChange={setDate} />
-                <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
-                    <Text style={styles.buttonText}>Salvar</Text>
-                </TouchableOpacity>
+        <ScrollView showsVerticalScrollIndicator={false}>
+            <View style={styles.content}>
+                <Text style={styles.title}>Registrar Ração</Text>
+                <View style={styles.form}>
 
-                <Snackbar
-                    visible={snackbarVisible}
-                    duration={1000}
-                    onDismiss={() => setSnackbarVisible(false)}
-                    style={styles.snackBarError}
-                >
-                    Preencha todos os campos para salvar a ração
-                </Snackbar>
+                    <Input
+                        keyboardType={'default'}
+                        placeholder="Ração/Marca"
+                        leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
+                        onChangeText={handleOnChangeName}
+                        inputStyle={styles.inputStyle}
+                    />
 
-                <Snackbar
-                    style={styles.snackBarSave}
-                    visible={snackbarSaveVisible}
-                    duration={1000}
-                    onDismiss={() => setSnackbarSaveVisible(false)}
-                >
-                    Ração salva com sucesso!
-                </Snackbar>
-            </ScrollView>
-        </View>
-    );
+                    <Input
+                        keyboardType={'numeric'}
+                        placeholder="Valor"
+                        leftIcon={<Icon name="money" size={24} color='#F19020'/>}
+                        onChangeText={handleOnChangePrice}
+                        inputStyle={styles.inputStyle}
+                    />
+
+                    <Input
+                        keyboardType={'numeric'}
+                        placeholder="Peso"
+                        leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
+                        onChangeText={handleOnChangeWeight}
+                        inputStyle={styles.inputStyle}
+                    />
+
+                    <DatePicker mode={'calendar'} date={date} onDateChange={handleOnChangeDate}/>
+
+
+                    <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
+                        <Text style={styles.buttonText}>Salvar</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <Snackbar
+                visible={snackbarVisible}
+                duration={1000}
+                onDismiss={() => setSnackbarVisible(false)}
+                style={styles.snackBarError}
+            >
+                Preencha todos os campos para salvar a ração
+            </Snackbar>
+
+            <Snackbar
+                style={styles.snackBarSave}
+                visible={snackbarSaveVisible}
+                duration={1000}
+                onDismiss={() => setSnackbarSaveVisible(false)}
+            >
+                Ração salva com sucesso!
+            </Snackbar>
+        </ScrollView>
+    )
 }
 
 export default PurchaseForm
 
 const styles = StyleSheet.create({
-    container: {
-        justifyContent: "center",
+    content: {
         flex: 1,
-        paddingHorizontal: 20,
-        paddingTop: 0,
-        backgroundColor: "#F5E7CC"
-    },
-    label: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        marginBottom: 5,
-    },
-    input: {
-        borderWidth: 1,
-        borderColor: 'transparent',
-        borderRadius: 30,
-        padding: 10,
-        marginBottom: 20,
-        backgroundColor: "white",
-        fontSize: 18,
-    },
-    button: {
-        backgroundColor: '#F19020',
-        padding: 10,
-        borderRadius: 30,
+        justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 38,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 2,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-        elevation: 4,
-        marginBottom:20
+        backgroundColor: '#fff',
     },
-    buttonText: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 18,
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        padding: 20,
+        borderRadius: 10,
+        width: '100%',
+        paddingTop: 30,
+        gap: 10,
+        marginTop: 30,
+    },
+    logo: {
+        width: 80,
+        height: 80,
+        marginBottom: 10,
     },
     title: {
-        marginTop: 70,
+        marginTop: 34,
+        fontSize: 35,
+        color: '#F19020',
+    },
+    myTextInput: {
         fontSize: 30,
-        paddingBottom: 20,
-        color: "#F19020"
+        width: 300,
+        height: 50,
+        backgroundColor: '#F19020',
+    },
+    inputStyle: {
+        marginLeft: 10,
+        color: 'black',
+        fontSize: 25,
+    },
+    button: {
+        width: '95%',
+        height: 50,
+        backgroundColor: '#E49052',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    button2: {
+        width: '95%',
+        height: 50,
+        backgroundColor: '#fff',
+        borderColor: '#F19020',
+        borderStyle: 'solid',
+        borderWidth: 2,
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+        color: '#F19020',
+    },
+    buttonText: {
+        fontSize: 20,
+        color: '#fff',
+        alignSelf: 'center',
+    },
+    buttonText2: {
+        fontSize: 20,
+        color: '#F19020',
+        alignSelf: 'center',
+    },
+    errorText: {
+        color: 'red',
+        fontSize: 15,
     },
     snackBarSave: {
-        backgroundColor: "#E49052"
+        backgroundColor: "green"
     },
     snackBarError: {
         backgroundColor: "red"
     }
 });
-

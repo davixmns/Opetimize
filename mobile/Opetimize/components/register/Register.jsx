@@ -1,56 +1,51 @@
-import React, {useState} from 'react';
-import {tryLogin} from '../../service/apiService';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, Image, Text, TouchableOpacity, View} from 'react-native';
-import {MyTextInput} from '../myTextInput/MyTextInput';
-import {Input} from 'react-native-elements';
-import {MyButton} from '../myButton/MyButton';
-import BottomBar from "../bottomBar/BottomBar";
-import {StyleSheet} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import React, {useState} from "react";
+import {createUser} from "../../service/apiService";
 import {useNavigation} from "@react-navigation/native";
+import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import logo from "../../assets/logo.png";
+import {Input} from "react-native-elements";
+import Icon from "react-native-vector-icons/FontAwesome";
 
-const logo = require('../../assets/logo.png');
-
-const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [loginSuccess, setLoginSuccess] = useState(false);
+const Register = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [wrongPassword, setWrongPassword] = useState(false);
-    const navigation = useNavigation();
+    const navigation = useNavigation()
 
-    async function handleTryLogin() {
-        const token = await tryLogin(email, password);
-        if (token) {
-            await AsyncStorage.setItem('token', token);
-            setLoginSuccess(true);
-        } else {
-            setWrongPassword(true);
-            setTimeout(() => {
-                setWrongPassword(false);
-            }, 3000); // 5 segundos
+    async function handleCreateUser() {
+        if (password !== confirmPassword) {
+            alert('As senhas não coincidem')
+            return
+        }
+        try {
+            const user = {name, email, password}
+            await createUser(user)
+            alert('Usuário criado com sucesso')
+            navigation('Login')
+        } catch (err) {
+            alert('Erro ao criar usuário')
+            console.log(err)
+            return null;
         }
     }
 
-    function handleGoToRegister() {
-        navigation.navigate('Register');
-    }
-
-    function handleGoToForgotPassword() {
-        navigation.navigate('ForgotPassword');
-    }
-
-    if (loginSuccess) {
-        return (
-            <BottomBar/>
-        );
+    function handleGoToLogin() {
+        navigation.navigate('Login')
     }
 
     return (
         <View style={styles.content}>
-            <Image source={logo} style={styles.logo}/>
-            <Text style={styles.title}>Opetimize</Text>
+            <Text style={styles.title}>Criar Conta</Text>
             <View style={styles.form}>
+
+                <Input
+                    placeholder="Nome"
+                    leftIcon={<Icon name="user" size={24} color='#F19020'/>}
+                    onChangeText={setName}
+                    inputStyle={styles.inputStyle}
+                />
 
                 <Input
                     placeholder="Email"
@@ -66,27 +61,32 @@ const Login = () => {
                     inputStyle={styles.inputStyle}
                     secureTextEntry={true}
                 />
+
+                <Input
+                    placeholder="Confirmar Senha"
+                    leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                    onChangeText={setConfirmPassword}
+                    inputStyle={styles.inputStyle}
+                    secureTextEntry={true}
+                />
+
                 <View style={{height: 20}}>
                     {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={handleTryLogin}>
-                    <Text style={styles.buttonText}>Entrar</Text>
+                <TouchableOpacity style={styles.button} onPress={handleCreateUser}>
+                    <Text style={styles.buttonText}>Criar conta</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.button2} onPress={handleGoToRegister}>
-                    <Text style={styles.buttonText2}>Criar Conta</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={handleGoToForgotPassword}>
-                    <Text style={{color: '#F19020', fontSize: 20}}>Esqueci minha senha</Text>
+                <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>
+                    <Text style={styles.buttonText2}>Cancelar</Text>
                 </TouchableOpacity>
             </View>
         </View>
-    );
-};
+    )
+}
 
-export default Login;
+export default Register;
 
 const styles = StyleSheet.create({
     content: {
@@ -112,7 +112,6 @@ const styles = StyleSheet.create({
         width: 80,
         height: 80,
         marginBottom: 10,
-        borderRadius: 15,
     },
     title: {
         fontSize: 40,
@@ -163,6 +162,6 @@ const styles = StyleSheet.create({
     },
     errorText: {
         color: 'red',
-        fontSize: 16,
+        fontSize: 15,
     },
 });

@@ -1,10 +1,11 @@
 import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {StyleSheet} from 'react-native';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import {addDays} from "date-fns";
 import {getAllPurchasesByUserToken, verifyToken} from "../../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {useNavigation} from "@react-navigation/native";
 
 export function UsefulData() {
     const [monthCosts, setMonthCosts] = useState(0);
@@ -12,13 +13,33 @@ export function UsefulData() {
     const [bestDay, setBestDay] = useState("")
     const [cheapestPetFood, setCheapestPetFood] = useState(null)
     const [purchases, setPurchases] = useState([])
+    const navigation = useNavigation();
 
     async function fetchData() {
         const token = await AsyncStorage.getItem('token');
+        const purchases = await getAllPurchasesByUserToken(token);
+        setPurchases(purchases);
+
+    }
+
+    async function refresh() {
+        const token = await AsyncStorage.getItem('token');
         if (token && await verifyToken(token)) {
-            const purchases = await getAllPurchasesByUserToken(token);
-            setPurchases(purchases);
+            await fetchData()
+        } else {
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}]
+            });
         }
+    }
+
+    async function handleSignOut() {
+        await AsyncStorage.removeItem('token');
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}]
+        });
     }
 
     useEffect(() => {
@@ -72,10 +93,10 @@ export function UsefulData() {
 
         async function calculateBestDay() {
             if (purchases.length > 0) {
-                const purchasesByWeekDay = Array.from({ length: 7 }, () => 0);
+                const purchasesByWeekDay = Array.from({length: 7}, () => 0);
 
                 purchases.forEach((purchase) => {
-                    const purchaseDate = addDays(new Date(purchase.date),1);
+                    const purchaseDate = addDays(new Date(purchase.date), 1);
                     const weekDay = purchaseDate.getDay();
                     purchasesByWeekDay[weekDay] += 1;
                 });
@@ -120,8 +141,15 @@ export function UsefulData() {
                     <Text style={styles.title}>Ração mais barata</Text>
                     <Text style={styles.dataText2}>{cheapestPetFood}</Text>
                 </View>
+
+                <View style={{paddingLeft: 20, marginBottom: 20}}>
+                    <TouchableOpacity style={styles.buttonSignOut} onPress={handleSignOut}>
+                        <Text style={styles.buttonText}>Sair da Conta</Text>
+                    </TouchableOpacity>
+                </View>
+
             </ScrollView>
-            <TouchableOpacity onPress={fetchData} style={styles.buttom}>
+            <TouchableOpacity onPress={refresh} style={styles.refreshButtom}>
                 <Icon name="refresh" size={25} color="white"/>
             </TouchableOpacity>
         </View>
@@ -135,6 +163,23 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flex: 1
     },
+
+    buttonText: {
+        fontSize: 20,
+        color: '#fff',
+        alignSelf: 'center',
+    },
+
+    buttonSignOut: {
+        width: '40%',
+        height: 50,
+        backgroundColor: '#E49052',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 20,
+    },
+
     dataCard: {
         height: 150,
         width: 340,
@@ -159,9 +204,9 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize: 18,
+        fontSize: 22,
         marginBottom: 0,
-        color: "black"
+        color: '#E49052'
     },
 
     dataText: {
@@ -174,7 +219,7 @@ const styles = StyleSheet.create({
         color: "#E49052"
     },
 
-    buttom: {
+    refreshButtom: {
         position: 'absolute',
         bottom: 20,
         right: 20,
@@ -196,9 +241,9 @@ const styles = StyleSheet.create({
     },
     bigTitle: {
         color: "#E49052",
-        fontSize: 30,
+        fontSize: 35,
         alignSelf: "center",
-        marginTop: 35,
+        marginTop: 25,
         marginBottom: 10
     }
 })
