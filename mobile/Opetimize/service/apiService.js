@@ -6,7 +6,26 @@ const BASE_URL = 'http://172.18.9.85:3000';
 export const sendEmailForgotPassword = async (email) => {
     try {
         const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);
-        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const tryLogin = async (email, password) => {
+    try {
+        const response = await axios.post(`${BASE_URL}/login`, {email, password});
+        return response.data.token;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const getUserByEmail = async (email) => {
+    try {
+        const response = await axios.get(`${BASE_URL}/users/${email}`);
         return response.data;
     } catch (error) {
         console.log(error);
@@ -21,17 +40,6 @@ export const updatePassword = async (token, newPassword) => {
     } catch (error) {
         console.log(error);
         throw error;
-    }
-};
-
-
-export const tryLogin = async (email, password) => {
-    try {
-        const response = await axios.post(`${BASE_URL}/login`, {email, password});
-        return response.data.token;
-    } catch (error) {
-        console.log(error);
-        return null;
     }
 };
 

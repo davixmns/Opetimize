@@ -8,10 +8,12 @@ const UserModel = require('../models/UserModel');
 const jwt_key = process.env.JWT_KEY;
 const mailer_user = process.env.MAILER_USER;
 const mailer_pass = process.env.MAILER_PASS;
+const host = process.env.HOST;
 
 module.exports = {
     async login(req, res) {
         const {email, password} = req.body;
+        console.log(req.body)
         const user = await utils.findUserbyEmail(email);
         if (!user) {
             return res.status(400).json({error: 'Usuário não cadastrado no sistema'});
@@ -85,7 +87,7 @@ module.exports = {
             }
         });
 
-        const resetURL = `http://localhost:3001/reset-password?token=${token}`;
+        const resetURL = `http://${host}:3001/reset-password?token=${token}`;
         const message = {
             from: "Opetimize Support <support@opetimize.com>",
             to: req.params.email,

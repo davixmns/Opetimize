@@ -96,7 +96,7 @@ export function UsefulData() {
                 const purchasesByWeekDay = Array.from({length: 7}, () => 0);
 
                 purchases.forEach((purchase) => {
-                    const purchaseDate = addDays(new Date(purchase.date), 1);
+                    const purchaseDate = new Date(purchase.date);
                     const weekDay = purchaseDate.getDay();
                     purchasesByWeekDay[weekDay] += 1;
                 });
@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
         color: "#E49052",
         fontSize: 35,
         alignSelf: "center",
-        marginTop: 25,
+        marginTop: 50,
         marginBottom: 10
     }
 })

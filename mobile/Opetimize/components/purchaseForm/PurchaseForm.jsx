@@ -18,10 +18,8 @@ function PurchaseForm() {
 
     const handleSavePurchase = async () => {
         try {
-            console.log({name, price, weight, date})
             if (name && price && weight && date) {
                 const newPurchase = {name, price, weight, date};
-                console.log(newPurchase);
                 const token = await AsyncStorage.getItem('token');
                 await insertPurchase(newPurchase, token);
                 setName('');
@@ -140,7 +138,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        marginTop: 34,
+        marginTop: 60,
         fontSize: 35,
         color: '#F19020',
     },
@@ -153,7 +151,7 @@ const styles = StyleSheet.create({
     inputStyle: {
         marginLeft: 10,
         color: 'black',
-        fontSize: 25,
+        fontSize: 20,
     },
     button: {
         width: '95%',

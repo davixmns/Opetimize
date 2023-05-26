@@ -1,13 +1,12 @@
-import React, {useEffect, useState} from 'react';
-import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
+import React, { useEffect, useState } from 'react';
+import { deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken } from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import * as Animatable from 'react-native-animatable';
-import {FlatList, ScrollView, TextInput, TouchableOpacity, View} from "react-native";
-import {Text} from "react-native";
-import {StyleSheet} from "react-native";
+import { FlatList, TextInput, TouchableOpacity, View, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useNavigation} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+import * as Animatable from "react-native-animatable";
 
 function PurchaseHistory() {
     const [purchases, setPurchases] = useState([]);
@@ -32,7 +31,7 @@ function PurchaseHistory() {
             await AsyncStorage.removeItem('token');
             navigation.reset({
                 index: 0,
-                routes: [{name: 'Login'}]
+                routes: [{ name: 'Login' }]
             });
         }
     }
@@ -40,14 +39,14 @@ function PurchaseHistory() {
     async function handleDeletePurchase(id) {
         try {
             const token = await AsyncStorage.getItem('token');
-            if(token && await verifyToken(token)) {
+            if (token && await verifyToken(token)) {
                 await deletePurchaseById(id, token);
                 await fetchData();
             } else {
                 await AsyncStorage.removeItem('token');
                 navigation.reset({
                     index: 0,
-                    routes: [{name: 'Login'}]
+                    routes: [{ name: 'Login' }]
                 });
             }
         } catch (error) {
@@ -58,14 +57,14 @@ function PurchaseHistory() {
     async function handleSaveEditPurchase(id, purchase) {
         try {
             const token = await AsyncStorage.getItem('token');
-            if(token && await verifyToken(token)) {
+            if (token && await verifyToken(token)) {
                 await editPurchase(id, purchase);
                 await fetchData();
             } else {
                 await AsyncStorage.removeItem('token');
                 navigation.reset({
                     index: 0,
-                    routes: [{name: 'Login'}]
+                    routes: [{ name: 'Login' }]
                 });
             }
         } catch (error) {
@@ -73,7 +72,7 @@ function PurchaseHistory() {
         }
     }
 
-    const renderPurchase = ({item: purchase, index}) => {
+    const renderPurchase = ({ item: purchase, index }) => {
         const animationDelay = index * 200; // Define um atraso para a animação com base no índice do item
 
         return (
@@ -121,23 +120,18 @@ function PurchaseHistory() {
 
     return (
         <View style={styles.background}>
-            <ScrollView>
-                <View style={styles.a}>
-                    <Text style={styles.title2}>Histórico</Text>
-                </View>
-                <FlatList
-                    style={styles.container}
-                    data={filteredPurchases}
-                    renderItem={renderPurchase}
-                    keyExtractor={(item) => item.purchase_id}
-                />
-                <View style={styles.b}></View>
-            </ScrollView>
-
+            <FlatList
+                style={styles.container}
+                data={filteredPurchases}
+                renderItem={renderPurchase}
+                keyExtractor={(item) => item.purchase_id}
+                ListHeaderComponent={<Text style={styles.title2}>Histórico</Text>}
+                ListHeaderComponentStyle={styles.headerContainer}
+                contentContainerStyle={styles.contentContainer}
+            />
             <TouchableOpacity onPress={refresh} style={styles.fab}>
-                <Icon name="refresh" size={25} color="white"/>
+                <Icon name="refresh" size={25} color="white" />
             </TouchableOpacity>
-
             <TextInput
                 style={styles.searchInput}
                 placeholder="Pesquisar.."
@@ -152,33 +146,22 @@ function PurchaseHistory() {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 0,
-        backgroundColor: '',
         paddingTop: 20,
         paddingBottom: 20
     },
-
+    headerContainer: {
+        marginTop: 45,
+        backgroundColor: "#F19020",
+    },
     title2: {
         color: "white",
         fontSize: 35,
-        backgroundColor: "#F19020",
         alignSelf: "center",
-        marginTop: 45
-    },
-
-    title: {
-        marginTop: 10,
-        fontSize: 40,
-        alignSelf: 'center',
-        color: 'white',
+        marginBottom: 30,
     },
     background: {
         flex: 1,
         backgroundColor: "#F19020"
-    },
-
-    b: {
-        backgroundColor: "#F19020",
-        height: 20
     },
     fab: {
         position: 'absolute',
@@ -197,14 +180,8 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-
         elevation: 5,
     },
-    fabIcon: {
-        fontSize: 25,
-        color: '#fff',
-    },
-
     searchInput: {
         position: "absolute",
         backgroundColor: "#E49052",
@@ -227,6 +204,9 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5,
     },
+    contentContainer: {
+        flexGrow: 1,
+    }
 });
 
 export default PurchaseHistory;

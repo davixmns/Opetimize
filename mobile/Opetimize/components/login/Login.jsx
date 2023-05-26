@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {tryLogin} from '../../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, Image, Text, TouchableOpacity, View} from 'react-native';
+import {Button, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {MyTextInput} from '../myTextInput/MyTextInput';
 import {Input} from 'react-native-elements';
 import {MyButton} from '../myButton/MyButton';
@@ -47,42 +47,47 @@ const Login = () => {
     }
 
     return (
-        <View style={styles.content}>
-            <Image source={logo} style={styles.logo}/>
-            <Text style={styles.title}>Opetimize</Text>
-            <View style={styles.form}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-                <Input
-                    placeholder="Email"
-                    leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
-                    onChangeText={setEmail}
-                    inputStyle={styles.inputStyle}
-                />
+            <View style={styles.content}>
+                <Image source={logo} style={styles.logo}/>
+                <Text style={styles.title}>Opetimize</Text>
+                <View style={styles.form}>
 
-                <Input
-                    placeholder="Senha"
-                    leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                    onChangeText={setPassword}
-                    inputStyle={styles.inputStyle}
-                    secureTextEntry={true}
-                />
-                <View style={{height: 20}}>
-                    {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                    <Input
+                        autoCapitalize='none'
+                        keyboardType={'email-address'}
+                        placeholder="Email"
+                        leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
+                        onChangeText={setEmail}
+                        inputStyle={styles.inputStyle}
+                    />
+
+                    <Input
+                        placeholder="Senha"
+                        leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                        onChangeText={setPassword}
+                        inputStyle={styles.inputStyle}
+                        secureTextEntry={true}
+                    />
+                    <View style={{height: 20}}>
+                        {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                    </View>
+
+                    <TouchableOpacity style={styles.button} onPress={handleTryLogin}>
+                        <Text style={styles.buttonText}>Entrar</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button2} onPress={handleGoToRegister}>
+                        <Text style={styles.buttonText2}>Criar Conta</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity onPress={handleGoToForgotPassword}>
+                        <Text style={{color: '#F19020', fontSize: 20}}>Esqueci minha senha</Text>
+                    </TouchableOpacity>
                 </View>
-
-                <TouchableOpacity style={styles.button} onPress={handleTryLogin}>
-                    <Text style={styles.buttonText}>Entrar</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button2} onPress={handleGoToRegister}>
-                    <Text style={styles.buttonText2}>Criar Conta</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={handleGoToForgotPassword}>
-                    <Text style={{color: '#F19020', fontSize: 20}}>Esqueci minha senha</Text>
-                </TouchableOpacity>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     );
 };
 

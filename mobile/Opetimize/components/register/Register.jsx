@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {createUser} from "../../service/apiService";
+import {createUser, getUserByEmail} from "../../service/apiService";
 import {useNavigation} from "@react-navigation/native";
-import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Image, Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import logo from "../../assets/logo.png";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -15,19 +15,21 @@ const Register = () => {
     const navigation = useNavigation()
 
     async function handleCreateUser() {
-        if (password !== confirmPassword) {
-            alert('As senhas não coincidem')
-            return
+        if (!await verifyForm()) {
+            return null
         }
         try {
             const user = {name, email, password}
-            await createUser(user)
-            alert('Usuário criado com sucesso')
-            navigation('Login')
-        } catch (err) {
-            alert('Erro ao criar usuário')
-            console.log(err)
-            return null;
+            const response = await createUser(user)
+            if (!response) {
+                alert('Email já cadastrado!')
+                return null
+            }
+            navigation.navigate('Login')
+            alert('Conta criada com sucesso!')
+        } catch (error) {
+            console.log(error)
+            return null
         }
     }
 
@@ -35,54 +37,95 @@ const Register = () => {
         navigation.navigate('Login')
     }
 
+    function verifyEmailRegex() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    async function verifyForm() {
+        if (!name || !email || !password || !confirmPassword) {
+            alert('Preencha todos os campos!')
+            return false
+        }
+        if (!verifyEmailRegex()) {
+            alert('Email inválido!')
+            return false
+        }
+        if (password !== confirmPassword) {
+            alert('As senhas não coincidem!')
+            return false
+        }
+        return true
+    }
+
+    function handleOnChangeName(name) {
+        setName(name)
+    }
+
+    function handleOnChangeEmail(email) {
+        setEmail(email)
+    }
+
+    function handleOnChangePassword(password) {
+        setPassword(password)
+    }
+
+    function handleOnChangeConfirmPassword(confirmPassword) {
+        setConfirmPassword(confirmPassword)
+    }
+
     return (
-        <View style={styles.content}>
-            <Text style={styles.title}>Criar Conta</Text>
-            <View style={styles.form}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <View style={styles.content}>
+                <Text style={styles.title}>Criar Conta</Text>
+                <View style={styles.form}>
 
-                <Input
-                    placeholder="Nome"
-                    leftIcon={<Icon name="user" size={24} color='#F19020'/>}
-                    onChangeText={setName}
-                    inputStyle={styles.inputStyle}
-                />
+                    <Input
+                        placeholder="Nome"
+                        leftIcon={<Icon name="user" size={24} color='#F19020'/>}
+                        onChangeText={handleOnChangeName}
+                        inputStyle={styles.inputStyle}
+                    />
 
-                <Input
-                    placeholder="Email"
-                    leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
-                    onChangeText={setEmail}
-                    inputStyle={styles.inputStyle}
-                />
+                    <Input
+                        autoCapitalize='none'
+                        keyboardType={'email-address'}
+                        placeholder="Email"
+                        leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
+                        onChangeText={handleOnChangeEmail}
+                        inputStyle={styles.inputStyle}
+                    />
 
-                <Input
-                    placeholder="Senha"
-                    leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                    onChangeText={setPassword}
-                    inputStyle={styles.inputStyle}
-                    secureTextEntry={true}
-                />
+                    <Input
+                        placeholder="Senha"
+                        leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                        onChangeText={handleOnChangePassword}
+                        inputStyle={styles.inputStyle}
+                        secureTextEntry={true}
+                    />
 
-                <Input
-                    placeholder="Confirmar Senha"
-                    leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                    onChangeText={setConfirmPassword}
-                    inputStyle={styles.inputStyle}
-                    secureTextEntry={true}
-                />
+                    <Input
+                        placeholder="Confirmar Senha"
+                        leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                        onChangeText={handleOnChangeConfirmPassword}
+                        inputStyle={styles.inputStyle}
+                        secureTextEntry={true}
+                    />
 
-                <View style={{height: 20}}>
-                    {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                    <View style={{height: 20}}>
+                        {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                    </View>
+
+                    <TouchableOpacity style={styles.button} onPress={handleCreateUser}>
+                        <Text style={styles.buttonText}>Criar conta</Text>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>
+                        <Text style={styles.buttonText2}>Voltar</Text>
+                    </TouchableOpacity>
                 </View>
-
-                <TouchableOpacity style={styles.button} onPress={handleCreateUser}>
-                    <Text style={styles.buttonText}>Criar conta</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>
-                    <Text style={styles.buttonText2}>Cancelar</Text>
-                </TouchableOpacity>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
 

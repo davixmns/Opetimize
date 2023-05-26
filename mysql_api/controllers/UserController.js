@@ -27,6 +27,19 @@ module.exports = {
         }
     },
 
+    async getUserByEmail(req, res) {
+        try {
+            const user = await UserModel.findOne({where: {email: req.params.email}})
+            if (!user) {
+                res.status(404).json({message: "Usuário não encontrado :("})
+            }
+            res.status(200).json(user)
+        } catch (error) {
+            console.log(error)
+            res.status(500).json(error)
+        }
+    },
+
     async createUser(req, res) {
         try {
             const {name, email, password} = req.body;
