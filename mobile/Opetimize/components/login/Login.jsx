@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
-import {tryLogin} from '../../service/apiService';
+import React, { useState } from 'react';
+import { tryLogin } from '../../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Button, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
-import {MyTextInput} from '../myTextInput/MyTextInput';
-import {Input} from 'react-native-elements';
-import {MyButton} from '../myButton/MyButton';
+import { Button, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
+import { MyTextInput } from '../myTextInput/MyTextInput';
+import { Input } from 'react-native-elements';
+import { MyButton } from '../myButton/MyButton';
 import BottomBar from "../bottomBar/BottomBar";
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {useNavigation} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 
 const logo = require('../../assets/logo.png');
 
@@ -17,6 +17,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [wrongPassword, setWrongPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
     const navigation = useNavigation();
 
     async function handleTryLogin() {
@@ -42,7 +43,7 @@ const Login = () => {
 
     if (loginSuccess) {
         return (
-            <BottomBar/>
+            <BottomBar />
         );
     }
 
@@ -50,7 +51,7 @@ const Login = () => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
             <View style={styles.content}>
-                <Image source={logo} style={styles.logo}/>
+                <Image source={logo} style={styles.logo} />
                 <Text style={styles.title}>Opetimize</Text>
                 <View style={styles.form}>
 
@@ -58,19 +59,24 @@ const Login = () => {
                         autoCapitalize='none'
                         keyboardType={'email-address'}
                         placeholder="Email"
-                        leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
+                        leftIcon={<Icon name="envelope" size={24} color='#F19020' />}
                         onChangeText={setEmail}
                         inputStyle={styles.inputStyle}
                     />
 
                     <Input
                         placeholder="Senha"
-                        leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                        leftIcon={<Icon name="lock" size={32} color='#F19020' />}
                         onChangeText={setPassword}
                         inputStyle={styles.inputStyle}
-                        secureTextEntry={true}
+                        secureTextEntry={!showPassword}
+                        rightIcon={
+                            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                                <Icon name={showPassword ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
+                            </TouchableOpacity>
+                        }
                     />
-                    <View style={{height: 20}}>
+                    <View style={{ height: 20 }}>
                         {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
                     </View>
 
@@ -83,7 +89,7 @@ const Login = () => {
                     </TouchableOpacity>
 
                     <TouchableOpacity onPress={handleGoToForgotPassword}>
-                        <Text style={{color: '#F19020', fontSize: 20}}>Esqueci minha senha</Text>
+                        <Text style={{ color: '#F19020', fontSize: 20 }}>Esqueci minha senha</Text>
                     </TouchableOpacity>
                 </View>
             </View>

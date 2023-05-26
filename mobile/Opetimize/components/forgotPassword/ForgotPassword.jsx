@@ -5,51 +5,61 @@ import React, {useState} from "react";
 import logo from "../../assets/logo.png";
 import {useNavigation} from "@react-navigation/native";
 import {sendEmailForgotPassword} from "../../service/apiService";
+import {ActivityIndicator} from "react-native";
 
 export function ForgotPassword() {
-    const [email, setEmail] = useState('')
-    const navigation = useNavigation()
+    const [email, setEmail] = useState('');
+    const [loading, setLoading] = useState(false); // Estado para controlar o carregamento
+    const navigation = useNavigation();
 
     function handleOnChangeEmail(text) {
-        setEmail(text)
+        setEmail(text);
     }
 
     function handleGoToLogin() {
-        navigation.navigate('Login')
+        navigation.navigate('Login');
     }
 
     async function handleSendEmail() {
         try {
-            const response = await sendEmailForgotPassword(email)
+            setLoading(true); // Define o estado de carregamento como true
+            const response = await sendEmailForgotPassword(email);
             if (response) {
-                alert('Email enviado com sucesso!')
-                navigation.navigate('Login')
+                alert('Email enviado com sucesso!');
+                navigation.navigate('Login');
             } else {
-                alert('Email não encontrado :(')
+                alert('Email não encontrado :(');
             }
         } catch (e) {
-            console.log(e)
-            alert(e)
-            return null
+            console.log(e);
+            alert(e);
+            return null;
+        } finally {
+            setLoading(false); // Define o estado de carregamento como false, independentemente do resultado
         }
     }
 
     return (
         <View style={styles.content}>
-            <Image source={logo} style={styles.logo}/>
+            <Image source={logo} style={styles.logo} />
             <Text style={styles.title}>Esqueceu a senha?</Text>
-            <Text style={{fontSize: 15}}>Vamos enviar um email para você</Text>
+            <Text style={{ fontSize: 15 }}>Vamos enviar um email para você</Text>
             <View style={styles.form}>
-
                 <Input
+                    autoCapitalize='none'
+                    keyboardType={'email-address'}
                     placeholder="Email"
-                    leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
+                    leftIcon={<Icon name="envelope" size={24} color='#F19020' />}
                     onChangeText={handleOnChangeEmail}
                     inputStyle={styles.inputStyle}
                 />
 
                 <TouchableOpacity style={styles.button} onPress={handleSendEmail}>
-                    <Text style={styles.buttonText}>Enviar Email</Text>
+                    {loading ? (
+                        <ActivityIndicator color="white" size={"large"}/>
+                    ) : (
+                        <Text style={styles.buttonText}>Enviar Email</Text>
+                    )}
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>

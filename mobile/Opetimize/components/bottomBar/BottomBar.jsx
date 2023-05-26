@@ -4,6 +4,7 @@ import {StatusBar, StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../purchaseForm/PurchaseForm";
 import PurchaseHistory from "../purchaseHistory/PurchaseHistory";
+import {Profile} from "../profile/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -55,6 +56,18 @@ function BottomBar() {
                         headerShown: false,
                         tabBarIcon: () => {
                             return <Feather name="database" size={30} color={"#fff"}/>
+                        }
+                    }}
+                />
+                <Tab.Screen
+                    name={"Profile"}
+                    component={Profile}
+                    options={{
+                        tabBarActiveBackgroundColor: "#e07e38",
+                        tabBarShowLabel: false,
+                        headerShown: false,
+                        tabBarIcon: () => {
+                            return <Feather name="user" size={30} color={"#fff"}/>
                         }
                     }}
                 />

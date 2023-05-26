@@ -8,7 +8,7 @@ const UserModel = require('../models/UserModel');
 const jwt_key = process.env.JWT_KEY;
 const mailer_user = process.env.MAILER_USER;
 const mailer_pass = process.env.MAILER_PASS;
-const host = process.env.HOST;
+const host = process.env.DB_HOST;
 
 module.exports = {
     async login(req, res) {
@@ -50,7 +50,6 @@ module.exports = {
                     return res.status(400).json({error: 'Usuário não encontrado'});
                 }
                 user.password = await bcrypt.hash(req.body.newPassword, 10);
-                //ALTERAR USUARIO DO BANCO
                 await UserModel.update({
                     password: user.password
                 }, {
@@ -106,7 +105,5 @@ module.exports = {
                 return res.status(200).json({message: 'Email enviado com sucesso!'});
             }
         });
-
-
     }
 };

@@ -13,6 +13,8 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [wrongPassword, setWrongPassword] = useState(false);
     const navigation = useNavigation()
+    const [showPassword1, setShowPassword1] = useState(false)
+    const [showPassword2, setShowPassword2] = useState(false)
 
     async function handleCreateUser() {
         if (!await verifyForm()) {
@@ -102,6 +104,11 @@ const Register = () => {
                         onChangeText={handleOnChangePassword}
                         inputStyle={styles.inputStyle}
                         secureTextEntry={true}
+                        rightIcon={
+                            <TouchableOpacity onPress={() => setShowPassword1(!showPassword1)}>
+                                <Icon name={showPassword1 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
+                            </TouchableOpacity>
+                        }
                     />
 
                     <Input
@@ -110,6 +117,11 @@ const Register = () => {
                         onChangeText={handleOnChangeConfirmPassword}
                         inputStyle={styles.inputStyle}
                         secureTextEntry={true}
+                        rightIcon={
+                            <TouchableOpacity onPress={() => setShowPassword2(!showPassword2)}>
+                                <Icon name={showPassword2 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
+                            </TouchableOpacity>
+                        }
                     />
 
                     <View style={{height: 20}}>
