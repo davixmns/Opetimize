@@ -1,54 +1,150 @@
-import React, {useEffect} from 'react';
-import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal, ScrollView, TextInput} from 'react-native';
+import {deleteUserById, getUserByToken, verifyToken} from "../../service/apiService";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {useNavigation} from "@react-navigation/native";
+import DatePicker from "react-native-modern-datepicker";
+import {IconButton} from "react-native-paper";
+import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 
-export function Profile(){
+export function Profile() {
+    const [user, setUser] = useState({});
+    const navigation = useNavigation();
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const token = await AsyncStorage.getItem('token');
+                const user = await getUserByToken(token);
+                setUser(user);
+                setName(user.name);
+                setEmail(user.email);
+            } catch (error) {
+                alert('Erro ao carregar usuário');
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
 
-    const handleLogout = () => {
-        // Lógica para fazer logout
+    const handleEditProfile = async () => {
+        // navigation.navigate('EditProfile', {user});
     };
 
-    const handleDeleteAccount = () => {
-        // Lógica para deletar a conta
+    const handleLogout = async () => {
+        await AsyncStorage.removeItem('token');
+        navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}]
+        });
+    };
+
+    function handleEditModalClose() {
+        setShowEditModal(false);
+    }
+
+    function handleEditModalShow() {
+        setShowEditModal(true)
+    }
+
+
+
+    const handleDeleteAccount = async () => {
+        Alert.alert(
+            'Confirmação',
+            'Tem certeza que deseja deletar sua conta?',
+            [
+                {
+                    text: 'Cancelar',
+                    style: 'cancel'
+                },
+                {
+                    text: 'Sim',
+                    style: 'destructive',
+                    onPress: async () => {
+                        try {
+                            await deleteUserById(user.user_id);
+                            Alert.alert('Sucesso', 'Conta deletada com sucesso');
+                            await AsyncStorage.removeItem('token');
+                            navigation.reset({
+                                index: 0,
+                                routes: [{ name: 'Login' }]
+                            });
+                        } catch (e) {
+                            Alert.alert('Erro', 'Erro ao deletar conta');
+                            console.log(e);
+                        }
+                    }
+                }
+            ],
+            { cancelable: false }
+        );
     };
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={require('../../assets/logo.png')} style={styles.profileImage} />
-
+                <Image source={require('../../assets/logo.png')} style={styles.profileImage}/>
                 <View style={styles.userInfo}>
-                    <Text style={styles.username}>John Doe</Text>
-                    <Text style={styles.email}>johndoe@example.com</Text>
+                    <Text style={styles.username}>{user.name}</Text>
+                    <Text style={styles.email}>{user.email}</Text>
                 </View>
             </View>
 
             <View style={styles.content}>
-                <Text style={styles.sectionTitle}>Informações Pessoais</Text>
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoLabel}>Nome:</Text>
-                    <Text style={styles.infoValue}>John Doe</Text>
-                </View>
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoLabel}>Email:</Text>
-                    <Text style={styles.infoValue}>johndoe@example.com</Text>
-                </View>
-                <View style={styles.infoItem}>
-                    <Text style={styles.infoLabel}>Data de Nascimento:</Text>
-                    <Text style={styles.infoValue}>10 de janeiro de 1990</Text>
+                <View style={styles.item}>
+                    <TouchableOpacity style={styles.button} onPress={handleEditModalShow}>
+                        <Text style={styles.buttonText}>Editar Perfil</Text>
+                    </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity style={styles.button} onPress={handleLogout}>
-                    <Text style={styles.buttonText}>Sair da Conta</Text>
-                </TouchableOpacity>
+                <View style={styles.item}>
+                    <TouchableOpacity style={styles.button} onPress={handleLogout}>
+                        <Text style={styles.buttonText}>Sair da Conta</Text>
+                    </TouchableOpacity>
+                </View>
 
-                <TouchableOpacity style={styles.button} onPress={handleDeleteAccount}>
-                    <Text style={styles.buttonText}>Deletar Conta</Text>
-                </TouchableOpacity>
+                <View style={styles.item}>
+                    <TouchableOpacity style={styles.button} onPress={handleDeleteAccount}>
+                        <Text style={styles.buttonText}>Deletar Conta</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
+
+            <Modal visible={showEditModal} transparent={true}>
+                <View style={styles.editModal}>
+                    <ScrollView style={{flex: 1, width: 300}}>
+                        <Text style={styles.editModalTitle}>Editar Perfil</Text>
+
+                        <View>
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Nome:</Text>
+                                <TextInput style={styles.inputText} value={name} onChangeText={setName}/>
+                            </View>
+
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Email:</Text>
+                                <TextInput style={styles.inputText} value={email} onChangeText={setEmail}/>
+                            </View>
+                        </View>
+
+                        <View style={styles.editModalButtons}>
+                            <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                        onPress={() => handleSaveEdit()}/>
+                            <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                        onPress={() => handleEditModalClose()}/>
+                        </View>
+                    </ScrollView>
+                </View>
+
+            </Modal>
+
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -59,9 +155,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         padding: 20,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
         marginTop: 70,
+    },
+    item: {
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+        padding: 20
     },
     profileImage: {
         width: 80,
@@ -104,19 +203,81 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#666',
     },
-    button: {
-        width: '100%',
-        height: 50,
-        backgroundColor: '#F19020',
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 20,
-    },
     buttonText: {
         fontSize: 20,
-        color: '#fff',
+        color: '#E49052',
     },
+    editModal: {
+        backgroundColor: "white",
+        width: '100%',
+        height: 600,
+        alignSelf: "center",
+        alignItems: "center",
+        marginTop: 90,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 5,
+            height: 5,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 2,
+        elevation: 1,
+        borderRadius: 20
+    },
+
+    editModalTitle: {
+        color: "#E49052",
+        fontWeight: "bold",
+        fontSize: 25,
+        marginTop: 20
+    },
+
+    a: {
+        alignItems: "center"
+    },
+
+    b: {
+        alignItems: "center",
+        display: "flex",
+        gap: 20,
+        marginTop: 0,
+        marginLeft: 140
+    },
+
+    inputTextEdit: {
+        height: 30,
+        width: 300,
+        fontSize: 30,
+    },
+
+    inputGroup: {
+        marginBottom: 20
+    },
+    inputLabel: {
+        fontSize: 20,
+        color: "#333",
+        marginBottom: 5
+    },
+    inputText: {
+        fontSize: 18,
+        borderWidth: 1,
+        borderRadius: 20,
+        borderColor: "#999",
+        paddingHorizontal: 10,
+        paddingVertical: 5,
+        width: "100%"
+    },
+    picker: {
+        width: "100%",
+        marginTop: 5
+    },
+
+    editModalButtons: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        marginBottom: 40,
+    }
 });
 
 export default Profile;

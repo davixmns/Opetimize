@@ -2,7 +2,6 @@ import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {StyleSheet} from 'react-native';
 import React, {useEffect, useState} from "react";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import {addDays} from "date-fns";
 import {getAllPurchasesByUserToken, verifyToken} from "../../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
@@ -140,12 +139,6 @@ export function UsefulData() {
                 <View style={styles.dataCard}>
                     <Text style={styles.title}>Ração mais barata</Text>
                     <Text style={styles.dataText2}>{cheapestPetFood}</Text>
-                </View>
-
-                <View style={{paddingLeft: 20, marginBottom: 20}}>
-                    <TouchableOpacity style={styles.buttonSignOut} onPress={handleSignOut}>
-                        <Text style={styles.buttonText}>Sair da Conta</Text>
-                    </TouchableOpacity>
                 </View>
 
             </ScrollView>

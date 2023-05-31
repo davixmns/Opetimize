@@ -3,6 +3,26 @@ import axios from "axios";
 // const BASE_URL = 'http://localhost:3000';
 const BASE_URL = 'http://172.18.9.85:3000';
 
+export const getUserByToken = async (token) => {
+    try {
+        const response = await axios.get(`${BASE_URL}/getUserByToken/${token}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
+export const deleteUserById = async (id) => {
+    try {
+        const response = await axios.delete(`${BASE_URL}/users/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+
 export const sendEmailForgotPassword = async (email) => {
     try {
         const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);

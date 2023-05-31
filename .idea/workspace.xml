@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="registro e recuperar senha no mobile">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="profile init">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_05_2023_18_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_05_2023_18_56__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/register/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/UserModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +167,10 @@
       <workItem from="1684937795343" duration="12871000" />
       <workItem from="1685020867316" duration="4968000" />
       <workItem from="1685025888274" duration="9818000" />
-      <workItem from="1685107305195" duration="10964000" />
+      <workItem from="1685107305195" duration="16460000" />
+      <workItem from="1685372023143" duration="10064000" />
+      <workItem from="1685542084956" duration="3872000" />
+      <workItem from="1685564352700" duration="304000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -471,7 +473,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685047729238</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="debugs">
+      <created>1685124232638</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1685124232639</updated>
+    </task>
+    <task id="LOCAL-00045" summary="profile init">
+      <created>1685131848089</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1685131848089</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -489,8 +505,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DELETE BY ID" />
-    <MESSAGE value="react" />
     <MESSAGE value="react web begin" />
     <MESSAGE value="estruturando" />
     <MESSAGE value="card" />
@@ -514,6 +528,8 @@
     <MESSAGE value="inicio de aut no mobile" />
     <MESSAGE value="login no mobile" />
     <MESSAGE value="registro e recuperar senha no mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="registro e recuperar senha no mobile" />
+    <MESSAGE value="debugs" />
+    <MESSAGE value="profile init" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile init" />
   </component>
 </project>

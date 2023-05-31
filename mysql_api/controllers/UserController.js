@@ -2,6 +2,9 @@ const UserModel = require("../models/UserModel")
 const PetModel = require("../models/PetModel");
 const PurchaseModel = require("../models/PurchaseModel");
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
+
+const jwtKey = process.env.JWT_KEY
 
 module.exports = {
     async getAllUsers(req, res) {
@@ -14,16 +17,36 @@ module.exports = {
         }
     },
 
+    async getUserByToken(req, res) {
+        try {
+            const token = req.params.token
+            const decoded = jwt.verify(token, jwtKey)
+            if(decoded){
+                const user = await UserModel.findByPk(decoded.userId)
+                if(user){
+                    res.status(200).json(user)
+                } else {
+                    res.status(404).json({message: "Usuário não encontrado :("})
+                }
+            } else {
+                res.status(404).json({message: "Usuário não encontrado :("})
+            }
+        } catch (error) {
+            console.log(error);
+            return res.status(500).json(error);
+        }
+    },
+
     async getUserById(req, res) {
         try {
             const user = await UserModel.findByPk(req.params.id)
-            if (!user) {
+            if(user){
+                res.status(200).json(user)
+            } else {
                 res.status(404).json({message: "Usuário não encontrado :("})
             }
-            res.status(200).json(user)
         } catch (error) {
-            console.log(error)
-            res.status(500).json(error)
+            res.status(500).json({error})
         }
     },
 
