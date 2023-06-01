@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="profile init">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_05_2023_18_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_05_2023_18_56__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/UserModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +164,8 @@
       <workItem from="1685107305195" duration="16460000" />
       <workItem from="1685372023143" duration="10064000" />
       <workItem from="1685542084956" duration="3872000" />
-      <workItem from="1685564352700" duration="304000" />
+      <workItem from="1685564352700" duration="323000" />
+      <workItem from="1685626982875" duration="4132000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -487,7 +482,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685131848089</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="profile init">
+      <created>1685564668624</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1685564668624</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

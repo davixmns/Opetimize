@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal, ScrollView, TextInput} from 'react-native';
-import {deleteUserById, getUserByToken, verifyToken} from "../../service/apiService";
+import {deleteUserById, getUserByToken, updatePassword, updateUserById, verifyToken} from "../../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import DatePicker from "react-native-modern-datepicker";
@@ -11,8 +11,12 @@ export function Profile() {
     const [user, setUser] = useState({});
     const navigation = useNavigation();
     const [showEditModal, setShowEditModal] = useState(false);
+    const [showCPasswordModal, setShowCPasswordModal] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,10 +34,6 @@ export function Profile() {
         fetchData();
     }, []);
 
-    const handleEditProfile = async () => {
-        // navigation.navigate('EditProfile', {user});
-    };
-
     const handleLogout = async () => {
         await AsyncStorage.removeItem('token');
         navigation.reset({
@@ -42,14 +42,83 @@ export function Profile() {
         });
     };
 
-    function handleEditModalClose() {
-        setShowEditModal(false);
+    function verifyEmailRegex() {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    async function verifyForm() {
+        if (!newPassword || !confirmNewPassword) {
+            alert('Preencha todos os campos!')
+            return false
+        }
+        if (!verifyEmailRegex()) {
+            alert('Email inválido!')
+            return false
+        }
+        if (newPassword !== confirmNewPassword) {
+            alert('As senhas não coincidem!')
+            return false
+        }
+        return true
+    }
+
+    async function handleSaveEditProfile() {
+        const token = await AsyncStorage.getItem('token')
+        if (!token || !await verifyToken(token)) {
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}]
+            });
+        }
+        try {
+            user.name = name
+            user.email = email
+            await updateUserById(user.user_id, user)
+            handleEditModalClose()
+            await alert('Perfil Salvo!')
+        } catch (e) {
+            console.log(e)
+            await alert('Erro ao editar perfil')
+        }
+    }
+
+    async function handleSaveNewPassword() {
+        const token = await AsyncStorage.getItem('token')
+        if (!token || !await verifyToken(token)) {
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}]
+            });
+        }
+        try {
+            if (await verifyForm()) {
+                user.password = newPassword
+                await updatePassword(token, newPassword)
+                handleCPasswordModalClose()
+                await alert('Senha alterada com sucesso!')
+            }
+        } catch (e) {
+            console.log(e)
+            alert('Erro ao alterar senha')
+        }
     }
 
     function handleEditModalShow() {
         setShowEditModal(true)
     }
 
+    function handleEditModalClose() {
+        setShowEditModal(false);
+    }
+
+    function handleCPasswordModalShow() {
+        setShowCPasswordModal(true);
+    }
+
+    function handleCPasswordModalClose() {
+        setShowCPasswordModal(false)
+    }
 
 
     const handleDeleteAccount = async () => {
@@ -71,7 +140,7 @@ export function Profile() {
                             await AsyncStorage.removeItem('token');
                             navigation.reset({
                                 index: 0,
-                                routes: [{ name: 'Login' }]
+                                routes: [{name: 'Login'}]
                             });
                         } catch (e) {
                             Alert.alert('Erro', 'Erro ao deletar conta');
@@ -80,7 +149,7 @@ export function Profile() {
                     }
                 }
             ],
-            { cancelable: false }
+            {cancelable: false}
         );
     };
 
@@ -102,6 +171,12 @@ export function Profile() {
                 </View>
 
                 <View style={styles.item}>
+                    <TouchableOpacity style={styles.button} onPress={handleCPasswordModalShow}>
+                        <Text style={styles.buttonText}>Alterar Senha</Text>
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.item}>
                     <TouchableOpacity style={styles.button} onPress={handleLogout}>
                         <Text style={styles.buttonText}>Sair da Conta</Text>
                     </TouchableOpacity>
@@ -116,7 +191,7 @@ export function Profile() {
 
             <Modal visible={showEditModal} transparent={true}>
                 <View style={styles.editModal}>
-                    <ScrollView style={{flex: 1, width: 300}}>
+                    <ScrollView style={{flex: 1, width: '80%', marginTop: '50%'}}>
                         <Text style={styles.editModalTitle}>Editar Perfil</Text>
 
                         <View>
@@ -133,9 +208,38 @@ export function Profile() {
 
                         <View style={styles.editModalButtons}>
                             <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
-                                        onPress={() => handleSaveEdit()}/>
+                                        onPress={() => handleSaveEditProfile()}/>
                             <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
                                         onPress={() => handleEditModalClose()}/>
+                        </View>
+                    </ScrollView>
+                </View>
+
+            </Modal>
+
+            <Modal visible={showCPasswordModal} transparent={true}>
+                <View style={styles.editModal}>
+                    <ScrollView style={{flex: 1, width: '80%', marginTop: '50%'}}>
+                        <Text style={styles.editModalTitle}>Alterar Senha</Text>
+
+                        <View>
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Nova Senha:</Text>
+                                <TextInput style={styles.inputText} value={newPassword} onChangeText={setNewPassword}/>
+                            </View>
+
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Confirmar Nova Senha:</Text>
+                                <TextInput style={styles.inputText} value={confirmNewPassword}
+                                           onChangeText={setConfirmNewPassword}/>
+                            </View>
+                        </View>
+
+                        <View style={styles.editModalButtons}>
+                            <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                        onPress={() => handleSaveNewPassword()}/>
+                            <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                        onPress={() => handleCPasswordModalClose()}/>
                         </View>
                     </ScrollView>
                 </View>
@@ -208,21 +312,13 @@ const styles = StyleSheet.create({
         color: '#E49052',
     },
     editModal: {
+        display: "flex",
+        alignContent: "center",
         backgroundColor: "white",
         width: '100%',
-        height: 600,
+        height: '100%',
         alignSelf: "center",
         alignItems: "center",
-        marginTop: 90,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 5,
-            height: 5,
-        },
-        shadowOpacity: 0.2,
-        shadowRadius: 2,
-        elevation: 1,
-        borderRadius: 20
     },
 
     editModalTitle: {

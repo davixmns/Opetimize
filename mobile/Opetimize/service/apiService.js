@@ -127,6 +127,16 @@ export async function verifyToken(token) {
     }
 }
 
+export async function updateUserById(id, user){
+    try {
+        const response = await axios.put(`${BASE_URL}/users/${id}`, user);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
+
 
 
 
