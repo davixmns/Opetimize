@@ -20,7 +20,11 @@ const UserModel = database.define('user', {
     password: {
         type: Sequelize.STRING,
         allowNull: false
-    }
+    },
+    profile_image: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
 });
 
 module.exports = UserModel;

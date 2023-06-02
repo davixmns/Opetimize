@@ -3,9 +3,10 @@ import {View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal, ScrollVie
 import {deleteUserById, getUserByToken, updatePassword, updateUserById, verifyToken} from "../../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
-import DatePicker from "react-native-modern-datepicker";
 import {IconButton} from "react-native-paper";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
+import * as ImagePicker from 'expo-image-picker';
+import default_image from '../../assets/default_picture.jpg'
 
 export function Profile() {
     const [user, setUser] = useState({});
@@ -16,6 +17,7 @@ export function Profile() {
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const [image, setImage] = useState('');
 
 
     useEffect(() => {
@@ -153,10 +155,29 @@ export function Profile() {
         );
     };
 
+    async function handleImagePicker() {
+        const response = await ImagePicker.launchImageLibraryAsync({
+            aspect: [4, 4],
+            allowsEditing: true,
+            base64: true,
+            quality: 1
+        })
+        if (!response.canceled) {
+            setImage(response.assets[0].uri)
+            user.profile_image = image
+            try {
+                await updateUserById(user.user_id, user)
+            } catch (e) {
+                alert('Erro ao atualizar imagem')
+                console.log(e)
+            }
+        }
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={require('../../assets/logo.png')} style={styles.profileImage}/>
+                <Image source={image ? {uri: image} : default_image} style={styles.profileImage}/>
                 <View style={styles.userInfo}>
                     <Text style={styles.username}>{user.name}</Text>
                     <Text style={styles.email}>{user.email}</Text>
@@ -189,59 +210,61 @@ export function Profile() {
                 </View>
             </View>
 
+            {/*MODAL DE EDIÇÃO*/}
             <Modal visible={showEditModal} transparent={true}>
-                <View style={styles.editModal}>
-                    <ScrollView style={{flex: 1, width: '80%', marginTop: '50%'}}>
+                <View style={styles.editModalContainer}>
+                    <View style={styles.editModalContent}>
                         <Text style={styles.editModalTitle}>Editar Perfil</Text>
+                        <TouchableOpacity onPress={handleImagePicker} style={{marginVertical: 0,}}>
+                            <Image source={image ? {uri: image} : default_image} style={styles.profileImage2}/>
+                        </TouchableOpacity>
+                        <ScrollView style={{flex: 1, width: '80%'}}>
+                            <View>
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Nome:</Text>
+                                    <TextInput style={styles.inputText} value={name} onChangeText={setName}/>
+                                </View>
 
-                        <View>
-                            <View style={styles.inputGroup}>
-                                <Text style={styles.inputLabel}>Nome:</Text>
-                                <TextInput style={styles.inputText} value={name} onChangeText={setName}/>
+                                <View style={styles.inputGroup}>
+                                    <Text style={styles.inputLabel}>Email:</Text>
+                                    <TextInput style={styles.inputText} value={email} onChangeText={setEmail}/>
+                                </View>
                             </View>
 
-                            <View style={styles.inputGroup}>
-                                <Text style={styles.inputLabel}>Email:</Text>
-                                <TextInput style={styles.inputText} value={email} onChangeText={setEmail}/>
+                            <View style={styles.editModalButtons}>
+                                <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                            onPress={() => handleSaveEditProfile()}/>
+                                <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                            onPress={() => handleEditModalClose()}/>
                             </View>
-                        </View>
-
-                        <View style={styles.editModalButtons}>
-                            <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
-                                        onPress={() => handleSaveEditProfile()}/>
-                            <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
-                                        onPress={() => handleEditModalClose()}/>
-                        </View>
-                    </ScrollView>
+                        </ScrollView>
+                    </View>
                 </View>
 
             </Modal>
 
             <Modal visible={showCPasswordModal} transparent={true}>
-                <View style={styles.editModal}>
-                    <ScrollView style={{flex: 1, width: '80%', marginTop: '50%'}}>
-                        <Text style={styles.editModalTitle}>Alterar Senha</Text>
-
-                        <View>
-                            <View style={styles.inputGroup}>
-                                <Text style={styles.inputLabel}>Nova Senha:</Text>
-                                <TextInput style={styles.inputText} value={newPassword} onChangeText={setNewPassword}/>
-                            </View>
-
-                            <View style={styles.inputGroup}>
-                                <Text style={styles.inputLabel}>Confirmar Nova Senha:</Text>
-                                <TextInput style={styles.inputText} value={confirmNewPassword}
-                                           onChangeText={setConfirmNewPassword}/>
-                            </View>
+                <View style={styles.editModalContainer}>
+                    <Text style={styles.editModalTitle}>Alterar Senha</Text>
+                    <View>
+                        <View style={styles.inputGroup}>
+                            <Text style={styles.inputLabel}>Nova Senha:</Text>
+                            <TextInput style={styles.inputText} value={newPassword} onChangeText={setNewPassword}/>
                         </View>
 
-                        <View style={styles.editModalButtons}>
-                            <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
-                                        onPress={() => handleSaveNewPassword()}/>
-                            <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
-                                        onPress={() => handleCPasswordModalClose()}/>
+                        <View style={styles.inputGroup}>
+                            <Text style={styles.inputLabel}>Confirmar Nova Senha:</Text>
+                            <TextInput style={styles.inputText} value={confirmNewPassword}
+                                       onChangeText={setConfirmNewPassword}/>
                         </View>
-                    </ScrollView>
+                    </View>
+
+                    <View style={styles.editModalButtons}>
+                        <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                    onPress={() => handleSaveNewPassword()}/>
+                        <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                    onPress={() => handleCPasswordModalClose()}/>
+                    </View>
                 </View>
 
             </Modal>
@@ -271,6 +294,13 @@ const styles = StyleSheet.create({
         height: 80,
         borderRadius: 40,
         marginRight: 20,
+    },
+    profileImage2: {
+        width: 100,
+        height: 100,
+        borderRadius: 40,
+        marginRight: 20,
+        marginVertical: 30,
     },
     userInfo: {
         flex: 1,
@@ -311,7 +341,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#E49052',
     },
-    editModal: {
+    editModalContainer: {
+        display: "flex",
+        backgroundColor: "white",
+    },
+
+    editModalContent: {
         display: "flex",
         alignContent: "center",
         backgroundColor: "white",
@@ -319,12 +354,13 @@ const styles = StyleSheet.create({
         height: '100%',
         alignSelf: "center",
         alignItems: "center",
+        marginTop: '30%'
     },
 
     editModalTitle: {
         color: "#E49052",
         fontWeight: "bold",
-        fontSize: 25,
+        fontSize: 35,
         marginTop: 20
     },
 
