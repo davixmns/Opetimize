@@ -7,16 +7,6 @@ const jwt = require("jsonwebtoken")
 const jwtKey = process.env.JWT_KEY
 
 module.exports = {
-    async getAllUsers(req, res) {
-        try {
-            const users = await UserModel.findAll()
-            res.status(200).json(users)
-        } catch (error) {
-            console.log(error)
-            res.status(500).json(error)
-        }
-    },
-
     async getUserByToken(req, res) {
         try {
             const token = req.params.token
@@ -24,7 +14,13 @@ module.exports = {
             if(decoded){
                 const user = await UserModel.findByPk(decoded.userId)
                 if(user){
-                    res.status(200).json(user)
+                    const userDTO = {
+                        user_id: user.user_id,
+                        name: user.name,
+                        email: user.email,
+                        profile_image: user.profile_image
+                    }
+                    res.status(200).json(userDTO)
                 } else {
                     res.status(404).json({message: "Usuário não encontrado :("})
                 }
@@ -41,7 +37,13 @@ module.exports = {
         try {
             const user = await UserModel.findByPk(req.params.id)
             if(user){
-                res.status(200).json(user)
+                const userDTO = {
+                    user_id: user.user_id,
+                    name: user.name,
+                    email: user.email,
+                    profile_image: user.profile_image
+                }
+                res.status(200).json(userDTO)
             } else {
                 res.status(404).json({message: "Usuário não encontrado :("})
             }
@@ -56,7 +58,13 @@ module.exports = {
             if (!user) {
                 res.status(404).json({message: "Usuário não encontrado :("})
             }
-            res.status(200).json(user)
+            const userDTO = {
+                user_id: user.user_id,
+                name: user.name,
+                email: user.email,
+                profile_image: user.profile_image
+            }
+            res.status(200).json(userDTO)
         } catch (error) {
             console.log(error)
             res.status(500).json(error)
@@ -83,9 +91,8 @@ module.exports = {
             if (!oldUser) {
                 res.status(404).json({message: "Usuário não encontrado :("})
             }
-            const {name, email, password} = req.body
-            const hashedPassword = await bcrypt.hash(password, 10)
-            const newUser = {name, email, password: hashedPassword}
+            const {name, email, profile_image} = req.body
+            const newUser = {name, email, profile_image}
             await UserModel.update(newUser, {where: {user_id: id}})
             res.status(200).json({message: "Usuário atualizado com sucesso!"})
         } catch (error) {

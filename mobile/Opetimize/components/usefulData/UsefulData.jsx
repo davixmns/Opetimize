@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     },
 
     dataText: {
-        fontSize: 50,
+        fontSize: 45,
         color: "#E49052"
     },
 

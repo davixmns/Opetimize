@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken } from '../../service/apiService';
+import React, {useEffect, useState} from 'react';
+import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
 import Card from '../card/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import { FlatList, TextInput, TouchableOpacity, View, Text } from "react-native";
-import { StyleSheet } from "react-native";
+import {FlatList, TextInput, TouchableOpacity, View, Text, ScrollView} from "react-native";
+import {StyleSheet} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useNavigation } from "@react-navigation/native";
+import {useNavigation} from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 
 function PurchaseHistory() {
@@ -31,7 +31,7 @@ function PurchaseHistory() {
             await AsyncStorage.removeItem('token');
             navigation.reset({
                 index: 0,
-                routes: [{ name: 'Login' }]
+                routes: [{name: 'Login'}]
             });
         }
     }
@@ -46,7 +46,7 @@ function PurchaseHistory() {
                 await AsyncStorage.removeItem('token');
                 navigation.reset({
                     index: 0,
-                    routes: [{ name: 'Login' }]
+                    routes: [{name: 'Login'}]
                 });
             }
         } catch (error) {
@@ -64,7 +64,7 @@ function PurchaseHistory() {
                 await AsyncStorage.removeItem('token');
                 navigation.reset({
                     index: 0,
-                    routes: [{ name: 'Login' }]
+                    routes: [{name: 'Login'}]
                 });
             }
         } catch (error) {
@@ -72,7 +72,7 @@ function PurchaseHistory() {
         }
     }
 
-    const renderPurchase = ({ item: purchase, index }) => {
+    const renderPurchase = ({item: purchase, index}) => {
         const animationDelay = index * 200; // Define um atraso para a animação com base no índice do item
 
         return (
@@ -120,17 +120,21 @@ function PurchaseHistory() {
 
     return (
         <View style={styles.background}>
-            <FlatList
-                style={styles.container}
-                data={filteredPurchases}
-                renderItem={renderPurchase}
-                keyExtractor={(item) => item.purchase_id}
-                ListHeaderComponent={<Text style={styles.title2}>Histórico</Text>}
-                ListHeaderComponentStyle={styles.headerContainer}
-                contentContainerStyle={styles.contentContainer}
-            />
+            <ScrollView>
+
+                <FlatList
+                    style={styles.container}
+                    data={filteredPurchases}
+                    renderItem={renderPurchase}
+                    keyExtractor={(item) => item.purchase_id}
+                    ListHeaderComponent={<Text style={styles.title2}>Histórico</Text>}
+                    ListHeaderComponentStyle={styles.headerContainer}
+                    contentContainerStyle={styles.contentContainer}
+                />
+                <View style={{height: 50}}/>
+            </ScrollView>
             <TouchableOpacity onPress={refresh} style={styles.fab}>
-                <Icon name="refresh" size={25} color="white" />
+                <Icon name="refresh" size={25} color="white"/>
             </TouchableOpacity>
             <TextInput
                 style={styles.searchInput}

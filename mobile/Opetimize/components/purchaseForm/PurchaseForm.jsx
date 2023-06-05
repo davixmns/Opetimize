@@ -16,26 +16,6 @@ function PurchaseForm() {
     const [snackbarVisible, setSnackbarVisible] = useState(false);
     const [snackbarSaveVisible, setSnackbarSaveVisible] = useState(false);
 
-    const handleSavePurchase = async () => {
-        try {
-            if (name && price && weight && date) {
-                const newPurchase = {name, price, weight, date};
-                const token = await AsyncStorage.getItem('token');
-                await insertPurchase(newPurchase, token);
-                setName('');
-                setPrice('');
-                setWeight('');
-                setSnackbarSaveVisible(true)
-                setDate(new Date());
-            } else {
-                setSnackbarVisible(true);
-            }
-        } catch (error) {
-            alert('Erro ao salvar a ração')
-            console.log(error);
-        }
-    };
-
     function handleOnChangeName(name) {
         setName(name);
     }
@@ -51,6 +31,27 @@ function PurchaseForm() {
     function handleOnChangeDate(date) {
         setDate(date);
     }
+
+    const handleSavePurchase = async () => {
+        try {
+            if (name && price && weight && date) {
+                const newPurchase = { name, price, weight, date };
+                const token = await AsyncStorage.getItem('token');
+                await insertPurchase(newPurchase, token);
+                setName('');
+                setPrice('');
+                setWeight('');
+                setSnackbarSaveVisible(true);
+                setDate(new Date());
+            } else {
+                setSnackbarVisible(true);
+            }
+        } catch (error) {
+            alert('Erro ao salvar a ração');
+            console.log(error);
+        }
+    };
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.content}>
@@ -63,6 +64,7 @@ function PurchaseForm() {
                         leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
                         onChangeText={handleOnChangeName}
                         inputStyle={styles.inputStyle}
+                        value={name}
                     />
 
                     <Input
@@ -71,6 +73,7 @@ function PurchaseForm() {
                         leftIcon={<Icon name="money" size={24} color='#F19020'/>}
                         onChangeText={handleOnChangePrice}
                         inputStyle={styles.inputStyle}
+                        value={price}
                     />
 
                     <Input
@@ -79,10 +82,10 @@ function PurchaseForm() {
                         leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
                         onChangeText={handleOnChangeWeight}
                         inputStyle={styles.inputStyle}
+                        value={weight}
                     />
 
                     <DatePicker mode={'calendar'} date={date} onDateChange={handleOnChangeDate}/>
-
 
                     <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
                         <Text style={styles.buttonText}>Salvar</Text>

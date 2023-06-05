@@ -28,6 +28,7 @@ export function Profile() {
                 setUser(user);
                 setName(user.name);
                 setEmail(user.email);
+                setImage(user.profile_image);
             } catch (error) {
                 alert('Erro ao carregar usuário');
                 console.log(error);
@@ -76,6 +77,8 @@ export function Profile() {
         try {
             user.name = name
             user.email = email
+            user.profile_image = image
+            console.log(user)
             await updateUserById(user.user_id, user)
             handleEditModalClose()
             await alert('Perfil Salvo!')
@@ -215,7 +218,7 @@ export function Profile() {
                 <View style={styles.editModalContainer}>
                     <View style={styles.editModalContent}>
                         <Text style={styles.editModalTitle}>Editar Perfil</Text>
-                        <TouchableOpacity onPress={handleImagePicker} style={{marginVertical: 0,}}>
+                        <TouchableOpacity onPress={handleImagePicker}>
                             <Image source={image ? {uri: image} : default_image} style={styles.profileImage2}/>
                         </TouchableOpacity>
                         <ScrollView style={{flex: 1, width: '80%'}}>
@@ -244,26 +247,28 @@ export function Profile() {
             </Modal>
 
             <Modal visible={showCPasswordModal} transparent={true}>
-                <View style={styles.editModalContainer}>
-                    <Text style={styles.editModalTitle}>Alterar Senha</Text>
-                    <View>
-                        <View style={styles.inputGroup}>
-                            <Text style={styles.inputLabel}>Nova Senha:</Text>
-                            <TextInput style={styles.inputText} value={newPassword} onChangeText={setNewPassword}/>
+                <View style={styles.changePasswordContainer}>
+                    <View style={styles.changePasswordContent}>
+                        <Text style={styles.editModalTitle}>Alterar Senha</Text>
+                        <View>
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Nova Senha:</Text>
+                                <TextInput style={styles.inputText} value={newPassword} onChangeText={setNewPassword}/>
+                            </View>
+
+                            <View style={styles.inputGroup}>
+                                <Text style={styles.inputLabel}>Confirmar Nova Senha:</Text>
+                                <TextInput style={styles.inputText} value={confirmNewPassword}
+                                           onChangeText={setConfirmNewPassword}/>
+                            </View>
                         </View>
 
-                        <View style={styles.inputGroup}>
-                            <Text style={styles.inputLabel}>Confirmar Nova Senha:</Text>
-                            <TextInput style={styles.inputText} value={confirmNewPassword}
-                                       onChangeText={setConfirmNewPassword}/>
+                        <View style={styles.editModalButtons}>
+                            <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
+                                        onPress={() => handleSaveNewPassword()}/>
+                            <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
+                                        onPress={() => handleCPasswordModalClose()}/>
                         </View>
-                    </View>
-
-                    <View style={styles.editModalButtons}>
-                        <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
-                                    onPress={() => handleSaveNewPassword()}/>
-                        <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
-                                    onPress={() => handleCPasswordModalClose()}/>
                     </View>
                 </View>
 
@@ -283,6 +288,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         marginTop: 70,
+        marginLeft: 20,
     },
     item: {
         borderTopWidth: 1,
@@ -290,17 +296,20 @@ const styles = StyleSheet.create({
         padding: 20
     },
     profileImage: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        marginRight: 20,
-    },
-    profileImage2: {
         width: 100,
         height: 100,
-        borderRadius: 40,
+        borderRadius: 100,
+        marginRight: 20,
+        overflow: 'hidden',
+    },
+
+    profileImage2: {
+        width: 130,
+        height: 130,
+        borderRadius: 100,
         marginRight: 20,
         marginVertical: 30,
+
     },
     userInfo: {
         flex: 1,
@@ -344,6 +353,8 @@ const styles = StyleSheet.create({
     editModalContainer: {
         display: "flex",
         backgroundColor: "white",
+        height: '100%',
+        width: '100%',
     },
 
     editModalContent: {
@@ -354,7 +365,7 @@ const styles = StyleSheet.create({
         height: '100%',
         alignSelf: "center",
         alignItems: "center",
-        marginTop: '30%'
+        marginTop: '26%'
     },
 
     editModalTitle: {
@@ -388,7 +399,7 @@ const styles = StyleSheet.create({
     inputLabel: {
         fontSize: 20,
         color: "#333",
-        marginBottom: 5
+        marginBottom: 5,
     },
     inputText: {
         fontSize: 18,
@@ -408,8 +419,21 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
-        marginBottom: 40,
-    }
+        marginTop: 40,
+    },
+
+    changePasswordContainer: {
+        display: "flex",
+        alignItems: "center",
+        backgroundColor: "white",
+        width: '100%',
+        height: '100%',
+    },
+
+    changePasswordContent: {
+        width: '80%',
+        marginTop: '50%',
+    },
 });
 
 export default Profile;

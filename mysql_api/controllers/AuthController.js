@@ -13,7 +13,6 @@ const host = process.env.DB_HOST;
 module.exports = {
     async login(req, res) {
         const {email, password} = req.body;
-        console.log(req.body)
         const user = await utils.findUserbyEmail(email);
         if (!user) {
             return res.status(400).json({error: 'Usuário não cadastrado no sistema'});

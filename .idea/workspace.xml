@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="profile init">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="foto de perfil debugando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/usefulData/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/UserRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +172,8 @@
       <workItem from="1685564352700" duration="323000" />
       <workItem from="1685626982875" duration="4990000" />
       <workItem from="1685713260620" duration="4781000" />
-      <workItem from="1685733403620" duration="3306000" />
+      <workItem from="1685733403620" duration="3365000" />
+      <workItem from="1685969080509" duration="6191000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1681413073538</created>
@@ -500,7 +504,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685639780109</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="foto de perfil debugando">
+      <created>1685736845108</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1685736845108</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +529,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="react web begin" />
     <MESSAGE value="estruturando" />
     <MESSAGE value="card" />
     <MESSAGE value="scroll bar e delete na api" />
@@ -543,6 +553,7 @@
     <MESSAGE value="registro e recuperar senha no mobile" />
     <MESSAGE value="debugs" />
     <MESSAGE value="profile init" />
-    <option name="LAST_COMMIT_MESSAGE" value="profile init" />
+    <MESSAGE value="foto de perfil debugando" />
+    <option name="LAST_COMMIT_MESSAGE" value="foto de perfil debugando" />
   </component>
 </project>
