@@ -24,7 +24,9 @@ const UserModel = database.define('user', {
     profile_image: {
         type: Sequelize.STRING,
         allowNull: true
-    },
+    }
+}, {
+    timestamps: false // Desabilita as colunas createdAt e updatedAt
 });
 
 module.exports = UserModel;

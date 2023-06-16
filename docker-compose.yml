@@ -1,0 +1,44 @@
+
+version: "3.7"
+
+services:
+  db:
+    image: mysql
+    container_name: "opetimize-db"
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: opetimize
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./database/volumes/data:/var/lib/mysql
+    restart: on-failure
+    networks:
+      - opetimize-network
+
+  api:
+    build: ./mysql_api
+    container_name: "opetimize-api"
+    restart: on-failure
+    volumes:
+      - ./database/volumes/data2:/home/node/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - opetimize-network
+
+  web:
+    container_name: "opetimize-front"
+    build: ./web/zeus
+    ports:
+      - "3001:3000"
+
+networks:
+  opetimize-network:
+    name: opetimize-network
+    driver: bridge
+    external: false
+
+

@@ -17,6 +17,7 @@ CREATE TABLE purchases
     name        VARCHAR(50) NOT NULL,
     price       FLOAT       NOT NULL,
     weight      FLOAT       NOT NULL,
+    date        DATE        NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 

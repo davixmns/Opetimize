@@ -25,6 +25,8 @@ const PurchaseModel = database.define('purchase', {
         type: Sequelize.DATE,
         allowNull: false
     }
+}, {
+    timestamps: false
 });
 
 PurchaseModel.belongsTo(User, {

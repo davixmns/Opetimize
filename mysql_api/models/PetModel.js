@@ -29,6 +29,8 @@ const PetModel = database.define('pet', {
         type: Sequelize.DOUBLE,
         allowNull: false
     },
+}, {
+    timestamps: false
 });
 
 PetModel.belongsTo(User, {
