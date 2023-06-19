@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="DOCKERIZANDO">
-      <change afterPath="$PROJECT_DIR$/database/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/zeus/Dockerfile" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="dockerizacao do web finalizada">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/api/db/dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/api/db/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/database/DB.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/database/DB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/PetModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/PetModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/PurchaseModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/PurchaseModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/models/UserModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,33 +38,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/m09/Desktop/zeus/mysql_api",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/m09/Desktop/zeus/mysql_api&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -197,21 +186,9 @@
       <workItem from="1686836245297" duration="12342000" />
       <workItem from="1686854978363" duration="1144000" />
       <workItem from="1686921105446" duration="6237000" />
-      <workItem from="1686927445110" duration="9825000" />
-    </task>
-    <task id="LOCAL-00002" summary="first">
-      <created>1681413534635</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1681413534635</updated>
-    </task>
-    <task id="LOCAL-00003" summary="first">
-      <created>1681413604244</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1681413604244</updated>
+      <workItem from="1686927445110" duration="10288000" />
+      <workItem from="1687194223843" duration="538000" />
+      <workItem from="1687205054935" duration="394000" />
     </task>
     <task id="LOCAL-00004" summary="first">
       <created>1681413978584</created>
@@ -542,7 +519,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686601426251</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="dockerizacao do web finalizada">
+      <created>1686943583877</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1686943583877</updated>
+    </task>
+    <task id="LOCAL-00052" summary="dockerizacao do web finalizada">
+      <created>1686943606431</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1686943606431</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -560,7 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="card" />
     <MESSAGE value="scroll bar e delete na api" />
     <MESSAGE value="delete funcionando" />
     <MESSAGE value="favicon e titulo" />
@@ -585,6 +575,7 @@
     <MESSAGE value="profile init" />
     <MESSAGE value="foto de perfil debugando" />
     <MESSAGE value="DOCKERIZANDO" />
-    <option name="LAST_COMMIT_MESSAGE" value="DOCKERIZANDO" />
+    <MESSAGE value="dockerizacao do web finalizada" />
+    <option name="LAST_COMMIT_MESSAGE" value="dockerizacao do web finalizada" />
   </component>
 </project>
