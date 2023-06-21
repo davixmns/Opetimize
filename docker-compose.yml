@@ -43,6 +43,8 @@ services:
     build: ./mobile/Opetimize
     ports:
       - "19000:19000"
+      - "19001:19001"
+      - "19002:19002"
     depends_on:
       - web
     networks:
@@ -53,4 +55,3 @@ networks:
     name: opetimize-network
     driver: bridge
     external: false
-    
