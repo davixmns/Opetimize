@@ -63,9 +63,7 @@ module.exports = {
     async deletePurchaseById(req, res) {
         try {
             const id = req.params.id;
-            console.log(id)
             const purchase = await Purchase.findByPk(id);
-            console.log(purchase)
             if (!purchase) {
                 return res.status(404).json({message: "Compra de ração não encontrada."});
             }
@@ -74,19 +72,6 @@ module.exports = {
         } catch (error) {
             console.log(error);
             return res.status(500).json({error});
-        }
-    },
-
-
-    async deleteAllPurchases(req, res) {
-        try {
-            await Purchase.destroy({
-                truncate: true // Remove todas as linhas da tabela
-            });
-            res.status(200).json({message: "Todas as compras foram deletadas com sucesso."});
-        } catch (error) {
-            console.log(error);
-            res.status(500).json({error});
         }
     },
 };

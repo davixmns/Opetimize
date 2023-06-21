@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// const BASE_URL = 'http://localhost:3000';
-const BASE_URL = 'http://172.18.9.85:3000';
+const BASE_URL = 'http://localhost:3000';
 
 export const getUserByToken = async (token) => {
     try {
