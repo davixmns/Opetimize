@@ -49,6 +49,8 @@ services:
       - web
     networks:
       - opetimize-network
+    environment:
+      - REACT_NATIVE_PACKAGER_HOSTNAME=172.18.9.85
 
 networks:
   opetimize-network:

@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="fim da dockerizacao">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/Dockerfile" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="fim da dockerizacao do mobile">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/.Dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysql_api/.Dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/.Dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/zeus/src/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/controllers/PurchaseController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysql_api/routes/PurchaseRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/routes/PurchaseRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,33 +47,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/m09/Desktop/zeus/mysql_api&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "16.20.0",
+    "javascript.nodejs.core.library.typings.version": "16.18.36",
+    "last_opened_file_path": "/home/m09/Desktop/zeus/mysql_api",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -200,21 +204,8 @@
       <workItem from="1687280309211" duration="65000" />
       <workItem from="1687355149419" duration="2383000" />
       <workItem from="1687366383160" duration="7638000" />
-      <workItem from="1687375808325" duration="2059000" />
-    </task>
-    <task id="LOCAL-00005" summary="first">
-      <created>1681417627834</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1681417627834</updated>
-    </task>
-    <task id="LOCAL-00006" summary="save, findById, findAll">
-      <created>1681493675379</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1681493675379</updated>
+      <workItem from="1687375808325" duration="2654000" />
+      <workItem from="1687436375817" duration="18727000" />
     </task>
     <task id="LOCAL-00007" summary="editar ração por id">
       <created>1681494977317</created>
@@ -545,7 +536,21 @@
       <option name="project" value="LOCAL" />
       <updated>1687205461757</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="fim da dockerizacao do mobile">
+      <created>1687378458362</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1687378458362</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fim da dockerizacao do mobile">
+      <created>1687378581079</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1687378581080</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="delete funcionando" />
     <MESSAGE value="favicon e titulo" />
     <MESSAGE value="atualizacao da lista no delete" />
     <MESSAGE value="." />
@@ -588,6 +592,7 @@
     <MESSAGE value="DOCKERIZANDO" />
     <MESSAGE value="dockerizacao do web finalizada" />
     <MESSAGE value="fim da dockerizacao" />
-    <option name="LAST_COMMIT_MESSAGE" value="fim da dockerizacao" />
+    <MESSAGE value="fim da dockerizacao do mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="fim da dockerizacao do mobile" />
   </component>
 </project>

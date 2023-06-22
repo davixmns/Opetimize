@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:3000';
+const ipAddress = "172.18.9.85"
+const BASE_URL = `http://${ipAddress}:3000`;
+
 
 export const sendEmailForgotPassword = async (email) => {
     try {
@@ -15,7 +17,7 @@ export const sendEmailForgotPassword = async (email) => {
 
 export const updatePassword = async (token, newPassword) => {
     try {
-        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, { newPassword });
+        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
         return response.data;
     } catch (error) {
         console.log(error);
@@ -90,7 +92,7 @@ export const editPurchase = async (id, purchase) => {
 export async function verifyToken(token) {
     try {
         const response = await axios.get(`${BASE_URL}/verifyToken/${token}`);
-        const { valid } = response.data;
+        const {valid} = response.data;
         return valid;
     } catch (error) {
         console.log(error);
