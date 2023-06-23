@@ -21,11 +21,10 @@ function Card(props) {
     }
 
     function handleSaveEdit() {
-        const editedPurchase = { name, price, weight, date: date};
+        const editedPurchase = {name, price, weight, date: date};
         props.handleSaveEdit(props.id, editedPurchase);
         setShowEditModal(false);
     }
-
 
 
     function handleEditModalClose() {
@@ -37,13 +36,15 @@ function Card(props) {
     }
 
     return (
-        <View style={styles.background}>
+        <View style={styles.container}>
             <View style={styles.card}>
-                <Text style={styles.name}>{props.name}</Text>
-                <Text style={styles.price}>R${props.price}</Text>
-                <Text style={styles.weight}>{props.weight}g</Text>
-                <View>
-                    <Text style={styles.date}>{formattedDate}</Text>
+                <View style={{marginLeft: "2%"}}>
+                    <Text style={styles.name}>{props.name}</Text>
+                    <Text style={styles.price}>R${props.price}</Text>
+                    <Text style={styles.weight}>{props.weight}g</Text>
+                    <View>
+                        <Text style={styles.date}>{formattedDate}</Text>
+                    </View>
                 </View>
                 <View style={styles.content2}>
                     <IconButton
@@ -101,13 +102,16 @@ function Card(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignSelf: "center",
+        width: "88%"
+    },
+
     card: {
         height: 150,
-        width: 340,
         backgroundColor: "#FFF",
-        padding: 16,
+        padding: "4%",
         borderRadius: 20,
-        marginHorizontal: 20,
         marginBottom: 16,
         display: "flex",
         flexDirection: "column",
@@ -127,13 +131,12 @@ const styles = StyleSheet.create({
         display: "flex",
         flexDirection: "row",
         position: 'absolute',
-        bottom: 10,
+        bottom: 15,
         right: 10,
     },
     name: {
         fontSize: 22,
         fontWeight: "bold",
-        marginBottom: 0,
         color: "#E49052"
     },
     price: {

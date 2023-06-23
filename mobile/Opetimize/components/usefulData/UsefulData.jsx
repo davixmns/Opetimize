@@ -175,7 +175,7 @@ const styles = StyleSheet.create({
 
     dataCard: {
         height: 150,
-        width: 340,
+        width: 350,
         backgroundColor: "#FFF",
         padding: 16,
         borderRadius: 20,
@@ -236,7 +236,7 @@ const styles = StyleSheet.create({
         color: "#E49052",
         fontSize: 35,
         alignSelf: "center",
-        marginTop: 50,
-        marginBottom: 10
+        marginTop: "5%",
+        marginBottom: "5%"
     }
 })

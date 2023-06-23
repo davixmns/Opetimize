@@ -151,10 +151,10 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 0,
         paddingTop: 20,
-        paddingBottom: 20
+        paddingBottom: "4%"
     },
     headerContainer: {
-        marginTop: 45,
+        marginTop: "2%",
         backgroundColor: "#F19020",
     },
     title2: {

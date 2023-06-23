@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         padding: 20,
-        marginTop: 70,
+        marginTop: "10%",
         marginLeft: 20,
     },
     item: {

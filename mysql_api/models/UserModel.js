@@ -26,7 +26,7 @@ const UserModel = database.define('user', {
         allowNull: true
     }
 }, {
-    timestamps: false // Desabilita as colunas createdAt e updatedAt
+    timestamps: false
 });
 
 module.exports = UserModel;

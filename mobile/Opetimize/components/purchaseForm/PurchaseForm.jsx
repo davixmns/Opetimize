@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        marginTop: 60,
+        marginTop: "8%",
         fontSize: 35,
         color: '#F19020',
     },
