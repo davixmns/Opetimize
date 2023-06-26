@@ -5,73 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="ajustes front">
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/.Dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/.Dockerignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/App.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/forgot-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/forgot-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/login-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/login-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/pencil.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/pencil.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/reset-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/reset-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/titulo.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/titulo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/assets/trash.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/trash.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/card/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/card/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/DatePicker.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/datePicker/DatePicker.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/datePicker/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/datePicker/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/deleteModal/DeleteModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/deleteModal/DeleteModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/deleteModal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/deleteModal/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/editModal/EditModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/editModal/EditModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/editModal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/editModal/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/errorModal/ErrorModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/errorModal/ErrorModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/errorModal/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/errorModal/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/forgotPassword/ForgotPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/forgotPassword/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/forgotPassword/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/header/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/header/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/login/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/login/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/logout/LogoutButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/logout/LogoutButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/logout/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/logout/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/myButton/MyButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myButton/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/myButton/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/MyTextInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/myTextInput/MyTextInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/myTextInput/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/myTextInput/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/purchaseForm/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseForm/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/purchaseForm/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/purchaseHistory/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/purchaseHistory/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/purchaseHistory/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/register/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/register/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/register/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/register/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/resetPassword/ResetPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/resetPassword/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/resetPassword/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/searchBar/SearchBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/searchBar/SearchBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/searchBar/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/searchBar/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/usefulData/UsefulData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/components/usefulData/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/components/usefulData/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/pages/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/pages/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/pages/RegisterPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/pages/RegisterPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/reportWebVitals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/setupTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/zeus/src/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo14_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo14_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo15_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo15_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo16_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo16_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo17_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo17_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo18_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo18_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo19_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo19_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo20_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo20_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo21_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo21_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo22_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo22_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo23_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo23_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo24_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo24_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo25_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo25_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo26_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo26_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo27_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo27_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo28_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo28_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo29_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo29_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo30_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo30_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo31_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo31_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo32_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo32_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo33_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo33_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo34_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo34_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo35_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo35_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo36_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo36_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo37_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo37_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo38_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo38_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo39_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo39_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo40_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo40_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo41_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo41_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo42_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo42_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo43_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo43_tmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_1.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_10.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_2.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_3.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_4.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_5.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_6.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000186" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000186" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibtmp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/opetimize/purchases.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/opetimize/purchases.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,36 +91,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.20.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.36&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/m09/Desktop/zeus/mysql_api&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "javascript.nodejs.core.library.configured.version": "16.20.0",
+    "javascript.nodejs.core.library.typings.version": "16.18.36",
+    "last_opened_file_path": "/home/m09/Desktop/Opetimize",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "/home/davi/Área de Trabalho/Projetos/React/zeus/web/zeus/node_modules/react-scripts",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/app/extra/webstorm/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -263,6 +251,7 @@
       <workItem from="1687375808325" duration="2654000" />
       <workItem from="1687436375817" duration="18727000" />
       <workItem from="1687786473745" duration="770000" />
+      <workItem from="1687788676240" duration="708000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>

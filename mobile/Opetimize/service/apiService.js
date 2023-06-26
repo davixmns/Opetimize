@@ -1,6 +1,7 @@
 import axios from "axios";
+require("dotenv").config()
 
-const ipAddress = "172.18.9.85"
+const ipAddress = process.env.MY_IP
 const BASE_URL = `http://${ipAddress}:3000`;
 
 export const getUserByToken = async (token) => {
