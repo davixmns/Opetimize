@@ -1,0 +1,47 @@
+#content-forgot-password {
+    background-size: cover;
+    background-position: 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#form-forgot-password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    margin-right: 36rem;
+}
+
+#form-text {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+#description {
+    margin-bottom: 2rem;
+}
+
+#description h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#forgot-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+#forgot-items > * {
+    margin-bottom: 1rem;
+}

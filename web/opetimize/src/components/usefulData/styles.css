@@ -1,0 +1,42 @@
+#divBackground {
+    background-color: #F5E7CC;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.6rem;
+    align-items: center;
+}
+
+
+#usefulDataContent {
+    margin-right: 1rem;
+}
+
+#label {
+    display: flex;
+    font-size: 1.4rem;
+    position: absolute;
+    margin-top: 1.5rem;
+    color: #7C8046;
+}
+
+#label2 {
+    display: flex;
+    font-size: 1.4rem;
+    position: absolute;
+    margin-top: 7.5rem;
+    color: #7C8046;
+}
+
+h1 {
+    color: #7C8046;
+    font-size: 4rem;
+}
+
+#monthCosts2 {
+    font-size: 2rem;
+    color: #7C8046;
+    margin-top: 50px;
+}
