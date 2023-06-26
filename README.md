@@ -1,19 +1,32 @@
-
-## Opetimize <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940907990286436/logo.png" alt="Opetimize" width="30" height="30">
+## Opetimize <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940907990286436/logo.png" alt="Opetimize" width="25" height="25">
 
 Bem vindo ao Opetimize, Aplicativo e Website para otimização de controle de gastos em ração para pets.
 Com o Opetimize, você poderá gerenciar suas compras de ração de forma eficiente e acompanhar o consumo do seu pet,
 ajudando a economizar e garantir uma alimentação saudável.
 
 
-## Funcionalidades
+## 📜 Funcionalidades
 
-
+### Controle de usuários
 <li>
     <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940838863974470/Screenshot_1687544255.png" alt="Opetimize" width="20%" height="20%">
     <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940840743014441/Screenshot_1687547855.png" alt="Opetimize" width="20%" height="20%">
     <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940841175035935/Screenshot_1687547871.png" alt="Opetimize" width="20%" height="20%">
 </li>
+
+### Controle de compras de ração
+<li>
+    <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940839170150521/Screenshot_1687544302.png" alt="Opetimize" width="20%" height="20%">
+    <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940839405039746/Screenshot_1687544316.png" alt="Opetimize" width="20%" height="20%">
+    <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940839660900485/Screenshot_1687544319.png" alt="Opetimize" width="20%" height="20%">
+</li>
+
+### Configurações de conta
+<li>
+    <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940840034177095/Screenshot_1687544321.png" alt="Opetimize" width="20%" height="20%">
+    <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940840323600555/Screenshot_1687547527.png" alt="Opetimize" width="20%" height="20%">
+</li>
+
 
 
 
