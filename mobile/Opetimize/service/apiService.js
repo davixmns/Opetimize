@@ -1,8 +1,7 @@
 import axios from "axios";
-require("dotenv").config()
+import {MY_IP} from "../config";
 
-const ipAddress = process.env.MY_IP
-const BASE_URL = `http://${ipAddress}:3000`;
+const BASE_URL = `http://${MY_IP}:3000`;
 
 export const getUserByToken = async (token) => {
     try {
@@ -36,6 +35,7 @@ export const sendEmailForgotPassword = async (email) => {
 
 export const tryLogin = async (email, password) => {
     try {
+        console.log(`${BASE_URL}/login`)
         const response = await axios.post(`${BASE_URL}/login`, {email, password});
         return response.data.token;
     } catch (error) {
