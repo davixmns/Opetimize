@@ -32,7 +32,7 @@ ajudando a economizar e garantir uma alimentação saudável.
 
 ## 🚀 Começando
 
-Coloque o seu IP Ipv4 no .env do mobile e no arquivo docker-compose
+Coloque o seu IP Ipv4 no arquivo "config.js" do mobile e no arquivo "docker-compose.yml"
 
 ### 📋 Pré-requisitos
 
