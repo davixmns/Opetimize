@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="ajustes front">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="envs">
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo14_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo14_tmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo15_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo15_tmp" afterDir="false" />
@@ -51,15 +46,9 @@
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000186" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000186" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000187" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000187" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibdata1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/opetimize/purchases.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/opetimize/purchases.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +240,7 @@
       <workItem from="1687375808325" duration="2654000" />
       <workItem from="1687436375817" duration="18727000" />
       <workItem from="1687786473745" duration="770000" />
-      <workItem from="1687788676240" duration="708000" />
+      <workItem from="1687788676240" duration="1109000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -614,7 +603,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="atualizacao da lista no delete" />
     <MESSAGE value="." />
     <MESSAGE value="arrumando css do form" />
     <MESSAGE value="fim do web" />
@@ -639,6 +627,7 @@
     <MESSAGE value="fim da dockerizacao" />
     <MESSAGE value="fim da dockerizacao do mobile" />
     <MESSAGE value="ajustes front" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajustes front" />
+    <MESSAGE value="envs" />
+    <option name="LAST_COMMIT_MESSAGE" value="envs" />
   </component>
 </project>
