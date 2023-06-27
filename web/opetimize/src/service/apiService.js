@@ -1,13 +1,11 @@
 import axios from "axios";
 
-const ipAddress = "172.18.9.85"
-const BASE_URL = `http://${ipAddress}:3000`;
+const BASE_URL = `http://localhost:3001`;
 
 
 export const sendEmailForgotPassword = async (email) => {
     try {
         const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);
-        console.log(response.data);
         return response.data;
     } catch (error) {
         console.log(error);

@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(require("./routes/routes"));
 
 // Iniciar servidor
-const port = 3000;
+const port = 3001;
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });

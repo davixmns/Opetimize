@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment="DEBUG">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/script.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#ib_16384_0.dblwr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo12" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
@@ -50,19 +50,21 @@
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_7.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_8.ibt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000187" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000187" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000188" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000188" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000189" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000189" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.000194" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.000194" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/binlog.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibdata1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/ibtmp1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/mysql.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/volumes/data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/database/volumes/data/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysql_api/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysql_api/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/opetimize/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/opetimize/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/opetimize/src/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,9 +105,9 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.20.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.36&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/m09/Desktop/Opetimize&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.16.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.16.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/davi/projetos/vortex/Opetimize&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -256,6 +258,8 @@
       <workItem from="1687786473745" duration="770000" />
       <workItem from="1687788676240" duration="1109000" />
       <workItem from="1687798840103" duration="5069000" />
+      <workItem from="1687824334087" duration="2309000" />
+      <workItem from="1687827029969" duration="1543000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>

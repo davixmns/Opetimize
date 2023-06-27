@@ -7,7 +7,7 @@ CREATE TABLE users
     name          VARCHAR(50)  NOT NULL,
     email         VARCHAR(100) NOT NULL UNIQUE,
     password      VARCHAR(100) NOT NULL,
-    profile_image VARCHAR(100)
+    profile_image VARCHAR(500)
 );
 
 CREATE TABLE purchases

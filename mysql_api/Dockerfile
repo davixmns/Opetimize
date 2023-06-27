@@ -19,7 +19,7 @@ RUN npm install
 COPY . .
 
 # EXPOSED PORT
-EXPOSE 3000
+EXPOSE 3001
 
 # Run the app, waiting for the database to be available
 CMD dockerize -wait tcp://opetimize-db:3306 -timeout 30s node server.js

@@ -1,7 +1,7 @@
 import axios from "axios";
 import {MY_IP} from "../config";
 
-const BASE_URL = `http://${MY_IP}:3000`;
+const BASE_URL = `http://${MY_IP}:3001`;
 
 export const getUserByToken = async (token) => {
     try {
