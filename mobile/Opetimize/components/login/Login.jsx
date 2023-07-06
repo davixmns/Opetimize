@@ -92,6 +92,7 @@ const Login = () => {
                         <Text style={{ color: '#F19020', fontSize: 20 }}>Esqueci minha senha</Text>
                     </TouchableOpacity>
                 </View>
+                <Text style={{top: 50}}>Made by github.com/davixmns</Text>
             </View>
         </TouchableWithoutFeedback>
     );
