@@ -51,7 +51,7 @@ Execute o comando "npm install" nas aplicações para instalar as dependências
 ```
 
 
-## 🏃 Executando
+## 🏃 Executando com Docker
 ```
 Execute o comando "docker-compose up --build" no terminal
 ```
