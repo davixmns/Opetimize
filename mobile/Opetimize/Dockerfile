@@ -7,9 +7,8 @@ COPY . .
 COPY package.json .
 COPY package-lock.json .
 
-RUN npm install -g expo-cli
-
 RUN npm install
+RUN npm install -g expo-cli
 
 EXPOSE 19000
 EXPOSE 19001

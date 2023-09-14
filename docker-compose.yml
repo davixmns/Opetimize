@@ -2,7 +2,9 @@ version: "3.7"
 
 services:
   db:
-    image: mysql
+    build:
+      context: ./database
+      dockerfile: Dockerfile
     container_name: "opetimize-db"
     ports:
       - "3307:3306"
@@ -11,7 +13,6 @@ services:
       MYSQL_ROOT_PASSWORD: root
     volumes:
       - ./database/volumes/data:/var/lib/mysql
-    restart: on-failure
     networks:
       - opetimize-network
 
@@ -50,7 +51,7 @@ services:
     networks:
       - opetimize-network
     environment:
-      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.17
+      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.7
 
 networks:
   opetimize-network:

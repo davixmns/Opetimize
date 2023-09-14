@@ -121,7 +121,6 @@ function PurchaseHistory() {
     return (
         <View style={styles.background}>
             <ScrollView>
-
                 <FlatList
                     style={styles.container}
                     data={filteredPurchases}
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 35,
         alignSelf: "center",
-        marginBottom: 30,
+        paddingVertical: 20
     },
     background: {
         flex: 1,

@@ -131,9 +131,7 @@ const styles = StyleSheet.create({
         padding: 20,
         borderRadius: 10,
         width: '100%',
-        paddingTop: 30,
         gap: 10,
-        marginTop: 30,
     },
     logo: {
         width: 80,
@@ -141,7 +139,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        marginTop: "8%",
+        paddingTop: "15%",
         fontSize: 35,
         color: '#F19020',
     },

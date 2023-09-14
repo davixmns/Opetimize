@@ -33,7 +33,6 @@ ajudando a economizar e garantir uma alimentação saudável.
 ## 🚀 Começando
 
 - Coloque o seu IP Ipv4 no arquivo "config.js" do Mobile
-- Coloque o seu IP Ipv4 no arquivo "config.js" do WebSite
 - Coloque o seu IP Ipv4 no arquivo "docker-compose.yml"
 
 

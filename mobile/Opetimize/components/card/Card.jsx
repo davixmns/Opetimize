@@ -38,7 +38,7 @@ function Card(props) {
     return (
         <View style={styles.container}>
             <View style={styles.card}>
-                <View style={{marginLeft: "2%"}}>
+                <View>
                     <Text style={styles.name}>{props.name}</Text>
                     <Text style={styles.price}>R${props.price}</Text>
                     <Text style={styles.weight}>{props.weight}g</Text>
@@ -108,9 +108,8 @@ const styles = StyleSheet.create({
     },
 
     card: {
-        height: 150,
         backgroundColor: "#FFF",
-        padding: "4%",
+        padding: "5%",
         borderRadius: 20,
         marginBottom: 16,
         display: "flex",
@@ -149,7 +148,7 @@ const styles = StyleSheet.create({
         color: "#333",
     },
     date: {
-        alignSelf: "flex-end",
+        paddingTop: 10,
         fontSize: 17,
         color: "#777",
     },
