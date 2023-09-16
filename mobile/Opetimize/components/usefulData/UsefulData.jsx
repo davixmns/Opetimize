@@ -18,7 +18,6 @@ export function UsefulData() {
         const token = await AsyncStorage.getItem('token');
         const purchases = await getAllPurchasesByUserToken(token);
         setPurchases(purchases);
-
     }
 
     async function refresh() {
@@ -111,7 +110,6 @@ export function UsefulData() {
 
     return (
         <View style={styles.container}>
-            <ScrollView>
                 <Text style={styles.bigTitle}>Dados úteis</Text>
                 <View style={styles.dataCard}>
                     <Text style={styles.title}>Gastos do mês</Text>
@@ -133,7 +131,6 @@ export function UsefulData() {
                     <Text style={styles.dataText2}>{cheapestPetFood}</Text>
                 </View>
 
-            </ScrollView>
             <TouchableOpacity onPress={refresh} style={styles.refreshButtom}>
                 <Icon name="refresh" size={25} color="white"/>
             </TouchableOpacity>
@@ -143,26 +140,16 @@ export function UsefulData() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 10,
+        paddingTop: "12%",
         backgroundColor: '#F5E7CC',
         alignItems: "center",
-        flex: 1
+        flex: 1,
     },
 
     buttonText: {
         fontSize: 20,
         color: '#fff',
         alignSelf: 'center',
-    },
-
-    buttonSignOut: {
-        width: '40%',
-        height: 50,
-        backgroundColor: '#E49052',
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 20,
     },
 
     dataCard: {
@@ -190,7 +177,6 @@ const styles = StyleSheet.create({
 
     title: {
         fontSize: 22,
-        marginBottom: 0,
         color: '#E49052'
     },
 
@@ -228,6 +214,6 @@ const styles = StyleSheet.create({
         color: "#E49052",
         fontSize: 35,
         alignSelf: "center",
-        marginVertical: "10%"
+        paddingBottom: "5%"
     }
 })

@@ -1,7 +1,7 @@
-import axios from "axios";
 import {MY_IP} from "../config";
-
+import axios from "axios";
 const BASE_URL = `http://${MY_IP}:3001`;
+
 
 export const getUserByToken = async (token) => {
     try {
@@ -56,7 +56,7 @@ export const getUserByEmail = async (email) => {
 
 export const updatePassword = async (token, newPassword) => {
     try {
-        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, { newPassword });
+        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
         return response.data;
     } catch (error) {
         console.log(error);
@@ -120,7 +120,7 @@ export const editPurchase = async (id, purchase) => {
 export async function verifyToken(token) {
     try {
         const response = await axios.get(`${BASE_URL}/verifyToken/${token}`);
-        const { valid } = response.data;
+        const {valid} = response.data;
         return valid;
     } catch (error) {
         console.log(error);
@@ -128,7 +128,7 @@ export async function verifyToken(token) {
     }
 }
 
-export async function updateUserById(id, user){
+export async function updateUserById(id, user) {
     try {
         const response = await axios.put(`${BASE_URL}/users/${id}`, user);
         return response.data;

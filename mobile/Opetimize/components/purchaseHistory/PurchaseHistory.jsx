@@ -137,7 +137,7 @@ function PurchaseHistory() {
             </TouchableOpacity>
             <TextInput
                 style={styles.searchInput}
-                placeholder="Pesquisar.."
+                placeholder="Pesquisar..."
                 onChangeText={(text) => setSearchTerm(text)}
                 value={searchTerm}
                 placeholderTextColor={"white"}
@@ -189,10 +189,9 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "#E49052",
         borderRadius: 30,
-        width: 285,
-        marginTop: 30,
-        bottom: 18,
-        left: 25,
+        width: "70%",
+        bottom: "2.2%",
+        marginLeft: "5%",
         height: 50,
         textAlign: "left",
         color: "white",
@@ -206,6 +205,7 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
+        fontWeight: "bold"
     },
     contentContainer: {
         flexGrow: 1,

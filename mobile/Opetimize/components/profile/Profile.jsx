@@ -349,6 +349,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 20,
         color: '#E49052',
+        fontWeight: 'bold',
     },
     editModalContainer: {
         display: "flex",

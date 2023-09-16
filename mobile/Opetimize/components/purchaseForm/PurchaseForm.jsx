@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
+import {useState} from 'react';
+import {View, Text, StyleSheet, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
 import {insertPurchase} from "../../service/apiService";
-import DatePicker from "react-native-modern-datepicker";
 import {Snackbar} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import {AppDatePicker} from "../datePicker/AppDatePicker";
 
 function PurchaseForm() {
     const [name, setName] = useState('');
@@ -16,33 +15,17 @@ function PurchaseForm() {
     const [snackbarVisible, setSnackbarVisible] = useState(false);
     const [snackbarSaveVisible, setSnackbarSaveVisible] = useState(false);
 
-    function handleOnChangeName(name) {
-        setName(name);
-    }
-
-    function handleOnChangePrice(price) {
-        setPrice(price);
-    }
-
-    function handleOnChangeWeight(weight) {
-        setWeight(weight);
-    }
-
-    function handleOnChangeDate(date) {
-        setDate(date);
-    }
-
     const handleSavePurchase = async () => {
         try {
             if (name && price && weight && date) {
-                const newPurchase = { name, price, weight, date };
+                const newPurchase = {name, price, weight, date};
                 const token = await AsyncStorage.getItem('token');
                 await insertPurchase(newPurchase, token);
                 setName('');
                 setPrice('');
                 setWeight('');
                 setSnackbarSaveVisible(true);
-                setDate(new Date());
+                setDate('');
             } else {
                 setSnackbarVisible(true);
             }
@@ -53,16 +36,15 @@ function PurchaseForm() {
     };
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <>
             <View style={styles.content}>
                 <Text style={styles.title}>Registrar Ração</Text>
                 <View style={styles.form}>
-
                     <Input
                         keyboardType={'default'}
                         placeholder="Ração/Marca"
                         leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
-                        onChangeText={handleOnChangeName}
+                        onChangeText={setName}
                         inputStyle={styles.inputStyle}
                         value={name}
                     />
@@ -71,7 +53,7 @@ function PurchaseForm() {
                         keyboardType={'numeric'}
                         placeholder="Valor"
                         leftIcon={<Icon name="money" size={24} color='#F19020'/>}
-                        onChangeText={handleOnChangePrice}
+                        onChangeText={setPrice}
                         inputStyle={styles.inputStyle}
                         value={price}
                     />
@@ -80,25 +62,29 @@ function PurchaseForm() {
                         keyboardType={'numeric'}
                         placeholder="Peso"
                         leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
-                        onChangeText={handleOnChangeWeight}
+                        onChangeText={setWeight}
                         inputStyle={styles.inputStyle}
                         value={weight}
                     />
 
-                    <DatePicker mode={'calendar'} date={date} onDateChange={handleOnChangeDate}/>
+                    <AppDatePicker
+                        setDate={setDate}
+                        date={date}
+                    />
 
                     <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
                         <Text style={styles.buttonText}>Salvar</Text>
                     </TouchableOpacity>
                 </View>
             </View>
+
             <Snackbar
                 visible={snackbarVisible}
                 duration={1000}
                 onDismiss={() => setSnackbarVisible(false)}
                 style={styles.snackBarError}
             >
-                Preencha todos os campos para salvar a ração
+                <Text style={styles.snackBarErrorLabel}>Preencha todos os campos</Text>
             </Snackbar>
 
             <Snackbar
@@ -107,9 +93,9 @@ function PurchaseForm() {
                 duration={1000}
                 onDismiss={() => setSnackbarSaveVisible(false)}
             >
-                Ração salva com sucesso!
+                <Text style={styles.snackBarSaveLabel}>Ração salva com sucesso</Text>
             </Snackbar>
-        </ScrollView>
+        </>
     )
 }
 
@@ -118,7 +104,6 @@ export default PurchaseForm
 const styles = StyleSheet.create({
     content: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff',
     },
@@ -128,10 +113,9 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#fff',
-        padding: 20,
-        borderRadius: 10,
-        width: '100%',
-        gap: 10,
+        width: '90%',
+        gap: '20%',
+        paddingTop: '10%',
     },
     logo: {
         width: 80,
@@ -142,12 +126,6 @@ const styles = StyleSheet.create({
         paddingTop: "15%",
         fontSize: 35,
         color: '#F19020',
-    },
-    myTextInput: {
-        fontSize: 30,
-        width: 300,
-        height: 50,
-        backgroundColor: '#F19020',
     },
     inputStyle: {
         marginLeft: 10,
@@ -161,39 +139,32 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    button2: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#fff',
-        borderColor: '#F19020',
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-        color: '#F19020',
+        bottom: 0
     },
     buttonText: {
         fontSize: 20,
         color: '#fff',
         alignSelf: 'center',
-    },
-    buttonText2: {
-        fontSize: 20,
-        color: '#F19020',
-        alignSelf: 'center',
+        fontWeight: 'bold',
     },
     errorText: {
         color: 'red',
         fontSize: 15,
     },
     snackBarSave: {
-        backgroundColor: "green"
+        backgroundColor: "#4CBB17"
+    },
+    snackBarSaveLabel: {
+        color: '#fff',
+        fontWeight: 'bold',
+    },
+    snackBarErrorLabel: {
+        color: '#fff',
+        fontWeight: 'bold',
     },
     snackBarError: {
-        backgroundColor: "red"
+        backgroundColor: "red",
+        fontWeight: 'bold',
     }
+
 });
