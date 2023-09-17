@@ -1,11 +1,12 @@
 import {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, ScrollView, StatusBar} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {insertPurchase} from "../../service/apiService";
 import {Snackbar} from 'react-native-paper';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {AppDatePicker} from "../datePicker/AppDatePicker";
+import feeddog from "../../assets/feeddog.jpg";
 
 function PurchaseForm() {
     const [name, setName] = useState('');
@@ -42,6 +43,12 @@ function PurchaseForm() {
                     <Text style={styles.title}>Registrar Ração</Text>
                 </View>
                 <View style={styles.content}>
+                    <View style={styles.imageView}>
+                        <Image
+                            source={feeddog}
+                            style={styles.image}
+                        />
+                    </View>
                     <View style={styles.form}>
                         <Input
                             keyboardType={'default'}
@@ -71,10 +78,10 @@ function PurchaseForm() {
                             setDate={setDate}
                             date={date}
                         />
+                        <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
+                            <Text style={styles.buttonText}>Salvar</Text>
+                        </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
-                        <Text style={styles.buttonText}>Salvar</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
 
@@ -119,8 +126,16 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#fff',
         width: '90%',
-        gap: '20%',
+        gap: '10%',
         paddingTop: '10%',
+    },
+    imageView: {
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    image: {
+        width: 250,
+        height: 200,
     },
     logo: {
         width: 80,
@@ -138,7 +153,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
     button: {
-        width: '95%',
         height: 50,
         backgroundColor: '#E49052',
         borderRadius: 30,

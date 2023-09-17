@@ -91,7 +91,7 @@ function PurchaseHistory() {
         );
     };
 
-    const filteredPurchases = purchases.filter(purchase => {
+    const filteredPurchases = purchases ? purchases.filter(purchase => {
         const searchValueLowerCase = searchTerm.toLowerCase();
 
         if (purchase.name.toLowerCase().includes(searchValueLowerCase)) {
@@ -116,7 +116,7 @@ function PurchaseHistory() {
 
         const monthIndex = monthNames.indexOf(searchValueLowerCase);
         return monthIndex !== -1 && parseInt(month) === monthIndex + 1;
-    });
+    }) : [];
 
     return (
         <View style={styles.background}>
