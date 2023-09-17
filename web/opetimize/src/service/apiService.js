@@ -2,7 +2,6 @@ import axios from "axios";
 
 const BASE_URL = `http://localhost:3001`;
 
-
 export const sendEmailForgotPassword = async (email) => {
     try {
         const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);

@@ -2,9 +2,7 @@ version: "3.7"
 
 services:
   db:
-    build:
-      context: ./database
-      dockerfile: Dockerfile
+    build: ./database
     container_name: "opetimize-db"
     ports:
       - "3307:3306"
@@ -51,7 +49,7 @@ services:
     networks:
       - opetimize-network
     environment:
-      - REACT_NATIVE_PACKAGER_HOSTNAME=192.168.1.7
+      - REACT_NATIVE_PACKAGER_HOSTNAME=$MY_IP
 
 networks:
   opetimize-network:

@@ -37,41 +37,41 @@ function PurchaseForm() {
 
     return (
         <>
-            <View style={styles.content}>
-                <Text style={styles.title}>Registrar Ração</Text>
-                <View style={styles.form}>
-                    <Input
-                        keyboardType={'default'}
-                        placeholder="Ração/Marca"
-                        leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
-                        onChangeText={setName}
-                        inputStyle={styles.inputStyle}
-                        value={name}
-                    />
-
-                    <Input
-                        keyboardType={'numeric'}
-                        placeholder="Valor"
-                        leftIcon={<Icon name="money" size={24} color='#F19020'/>}
-                        onChangeText={setPrice}
-                        inputStyle={styles.inputStyle}
-                        value={price}
-                    />
-
-                    <Input
-                        keyboardType={'numeric'}
-                        placeholder="Peso"
-                        leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
-                        onChangeText={setWeight}
-                        inputStyle={styles.inputStyle}
-                        value={weight}
-                    />
-
-                    <AppDatePicker
-                        setDate={setDate}
-                        date={date}
-                    />
-
+            <View style={styles.container}>
+                <View>
+                    <Text style={styles.title}>Registrar Ração</Text>
+                </View>
+                <View style={styles.content}>
+                    <View style={styles.form}>
+                        <Input
+                            keyboardType={'default'}
+                            placeholder="Ração/Marca"
+                            leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
+                            onChangeText={setName}
+                            inputStyle={styles.inputStyle}
+                            value={name}
+                        />
+                        <Input
+                            keyboardType={'numeric'}
+                            placeholder="Valor"
+                            leftIcon={<Icon name="money" size={24} color='#F19020'/>}
+                            onChangeText={setPrice}
+                            inputStyle={styles.inputStyle}
+                            value={price}
+                        />
+                        <Input
+                            keyboardType={'numeric'}
+                            placeholder="Peso"
+                            leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
+                            onChangeText={setWeight}
+                            inputStyle={styles.inputStyle}
+                            value={weight}
+                        />
+                        <AppDatePicker
+                            setDate={setDate}
+                            date={date}
+                        />
+                    </View>
                     <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
                         <Text style={styles.buttonText}>Salvar</Text>
                     </TouchableOpacity>
@@ -102,16 +102,21 @@ function PurchaseForm() {
 export default PurchaseForm
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#fff',
+    },
     content: {
         flex: 1,
         alignItems: 'center',
+        justifyContent: 'center',
+        width: '100%',
         backgroundColor: '#fff',
     },
     form: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
         backgroundColor: '#fff',
         width: '90%',
         gap: '20%',
@@ -139,7 +144,6 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        bottom: 0
     },
     buttonText: {
         fontSize: 20,

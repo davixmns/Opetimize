@@ -25,6 +25,7 @@ export const AppDatePicker = ({date, setDate}) => {
                     placeholder={date ? date.toLocaleDateString() : "Selecione uma data"}
                     leftIcon={<Icon name="calendar" size={24} color="#F19020" style={{ paddingRight: 13 }} />}
                     onPressIn={toggleDatePicker}
+                    editable={false}
                 />
             </View>
             <DateTimePicker

@@ -179,11 +179,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#fff',
         alignSelf: 'center',
+        fontWeight: 'bold',
     },
     buttonText2: {
         fontSize: 20,
         color: '#F19020',
         alignSelf: 'center',
+        fontWeight: 'bold',
     },
     errorText: {
         color: 'red',

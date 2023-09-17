@@ -1,8 +1,7 @@
-import React, {useState} from "react";
-import {createUser, getUserByEmail} from "../../service/apiService";
+import {useRef, useState} from "react";
+import {createUser} from "../../service/apiService";
 import {useNavigation} from "@react-navigation/native";
-import {Image, Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
-import logo from "../../assets/logo.png";
+import {Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 
@@ -12,9 +11,12 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [wrongPassword, setWrongPassword] = useState(false);
-    const navigation = useNavigation()
     const [showPassword1, setShowPassword1] = useState(false)
     const [showPassword2, setShowPassword2] = useState(false)
+    const emailRef = useRef(null)
+    const passwordRef = useRef(null)
+    const confirmPasswordRef = useRef(null)
+    const navigation = useNavigation()
 
     async function handleCreateUser() {
         if (!await verifyForm()) {
@@ -60,22 +62,6 @@ const Register = () => {
         return true
     }
 
-    function handleOnChangeName(name) {
-        setName(name)
-    }
-
-    function handleOnChangeEmail(email) {
-        setEmail(email)
-    }
-
-    function handleOnChangePassword(password) {
-        setPassword(password)
-    }
-
-    function handleOnChangeConfirmPassword(confirmPassword) {
-        setConfirmPassword(confirmPassword)
-    }
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.content}>
@@ -85,8 +71,9 @@ const Register = () => {
                     <Input
                         placeholder="Nome"
                         leftIcon={<Icon name="user" size={24} color='#F19020'/>}
-                        onChangeText={handleOnChangeName}
+                        onChangeText={setName}
                         inputStyle={styles.inputStyle}
+                        onSubmitEditing={() => emailRef.current.focus()}
                     />
 
                     <Input
@@ -94,14 +81,16 @@ const Register = () => {
                         keyboardType={'email-address'}
                         placeholder="Email"
                         leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
-                        onChangeText={handleOnChangeEmail}
+                        onChangeText={setEmail}
                         inputStyle={styles.inputStyle}
+                        ref={emailRef}
+                        onSubmitEditing={() => passwordRef.current.focus()}
                     />
 
                     <Input
                         placeholder="Senha"
                         leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                        onChangeText={handleOnChangePassword}
+                        onChangeText={setPassword}
                         inputStyle={styles.inputStyle}
                         secureTextEntry={true}
                         rightIcon={
@@ -109,12 +98,14 @@ const Register = () => {
                                 <Icon name={showPassword1 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
                             </TouchableOpacity>
                         }
+                        ref={passwordRef}
+                        onSubmitEditing={() => confirmPasswordRef.current.focus()}
                     />
 
                     <Input
                         placeholder="Confirmar Senha"
                         leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                        onChangeText={handleOnChangeConfirmPassword}
+                        onChangeText={setConfirmPassword}
                         inputStyle={styles.inputStyle}
                         secureTextEntry={true}
                         rightIcon={
@@ -122,6 +113,7 @@ const Register = () => {
                                 <Icon name={showPassword2 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
                             </TouchableOpacity>
                         }
+                        ref={confirmPasswordRef}
                     />
 
                     <View style={{height: 20}}>
@@ -209,11 +201,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#fff',
         alignSelf: 'center',
+        fontWeight: 'bold',
     },
     buttonText2: {
         fontSize: 20,
         color: '#F19020',
         alignSelf: 'center',
+        fontWeight: 'bold',
     },
     errorText: {
         color: 'red',
