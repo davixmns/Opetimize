@@ -1,5 +1,6 @@
-const express = require('express');
-const cors = require('cors');
+import express from "express";
+import cors from "cors";
+import routes from "./routes/routes.js";
 const app = express();
 
 // Configurar middlewares
@@ -8,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //usando rotas
-app.use(require("./routes/routes"));
+app.use(routes);
 
 // Iniciar servidor
 const port = 3001;

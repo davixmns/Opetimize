@@ -1,13 +1,15 @@
-const UserController = require('../controllers/UserController')
-const express = require('express')
+import middleware from '../middlewares/middleware.js'
+import express from 'express'
+import UserController from "../controllers/UserController.js";
+
 const router = express.Router()
 
-router.post('/users', UserController.createUser)
-router.get('/users/:id', UserController.getUserById)
-router.put('/users/:id', UserController.updateUserById)
-router.delete('/users/:id', UserController.deleteUserById)
-router.delete('/users', UserController.deleteAllUsers)
-router.get('/users/:email', UserController.getUserByEmail)
-router.get('/getUserByToken/:token', UserController.getUserByToken)
+//ROTAS PUBLICAS
+router.post('/user', UserController.createUser)
 
-module.exports = router
+//ROTAS PRIVADAS
+router.put('/user', middleware.verifyToken, UserController.updateUser)
+router.delete('/user', middleware.verifyToken, UserController.deleteUser)
+router.get('/user', middleware.verifyToken, UserController.getUserData)
+
+export default router

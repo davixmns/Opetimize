@@ -1,13 +1,13 @@
-require('dotenv').config();
-const {Sequelize} = require("sequelize")
+import {Sequelize} from "sequelize";
+import dotenv from "dotenv";
+
+dotenv.config()
 
 const dbName = process.env.DB_NAME
 const dbUser = process.env.DB_USER
 const dbPass = process.env.DB_PASSWORD
 const host = process.env.DB_HOST
 const port = process.env.DB_PORT
-
-console.log(dbName + '\n' + dbUser + '\n' + dbPass + '\n' + host + '\n' + port)
 
 const sequelize = new Sequelize(dbName, dbUser, dbPass, {
     dialect: 'mysql',
@@ -26,4 +26,4 @@ sequelize
     });
 
 
-module.exports = sequelize
+export default sequelize;

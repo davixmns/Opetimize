@@ -1,7 +1,7 @@
-const Purchase = require("../models/PurchaseModel");
-const jwt = require("jsonwebtoken");
+import jwt from "jsonwebtoken";
+import Purchase from "../models/PurchaseModel.js";
 
-module.exports = {
+export default {
     async getAllPurchasesByUserId(req, res) {
         try {
             const token = req.params.token;

@@ -1,6 +1,7 @@
-const Sequelize = require('sequelize');
-const database = require('../database/DB');
-const User = require('./UserModel');
+import Sequelize from "sequelize";
+import database from "../database/DB.js";
+import UserModel from "./UserModel.js";
+
 
 const PurchaseModel = database.define('purchase', {
     purchase_id: {
@@ -29,8 +30,8 @@ const PurchaseModel = database.define('purchase', {
     timestamps: false
 });
 
-PurchaseModel.belongsTo(User, {
+PurchaseModel.belongsTo(UserModel, {
     foreignKey: 'user_id'
 });
 
-module.exports = PurchaseModel;
+export default PurchaseModel;

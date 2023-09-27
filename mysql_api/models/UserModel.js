@@ -1,5 +1,5 @@
-const Sequelize = require('sequelize');
-const database = require('../database/DB');
+import Sequelize from 'sequelize';
+import database from '../database/DB.js';
 
 const UserModel = database.define('user', {
     user_id: {
@@ -29,4 +29,4 @@ const UserModel = database.define('user', {
     timestamps: false
 });
 
-module.exports = UserModel;
+export default UserModel;
