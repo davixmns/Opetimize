@@ -1,5 +1,5 @@
 import {useRef, useState} from "react";
-import {createUser} from "../../service/apiService";
+import {createUser} from "../service/apiService";
 import {useNavigation} from "@react-navigation/native";
 import {Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import {Input} from "react-native-elements";
@@ -92,7 +92,7 @@ const Register = () => {
                         leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
                         onChangeText={setPassword}
                         inputStyle={styles.inputStyle}
-                        secureTextEntry={true}
+                        secureTextEntry={!showPassword1}
                         rightIcon={
                             <TouchableOpacity onPress={() => setShowPassword1(!showPassword1)}>
                                 <Icon name={showPassword1 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
@@ -107,7 +107,7 @@ const Register = () => {
                         leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
                         onChangeText={setConfirmPassword}
                         inputStyle={styles.inputStyle}
-                        secureTextEntry={true}
+                        secureTextEntry={!showPassword2}
                         rightIcon={
                             <TouchableOpacity onPress={() => setShowPassword2(!showPassword2)}>
                                 <Icon name={showPassword2 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />

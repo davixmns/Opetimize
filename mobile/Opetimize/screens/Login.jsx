@@ -1,21 +1,21 @@
 import {useState, useRef, useEffect} from 'react';
-import {tryLogin} from '../../service/apiService';
+import {tryLogin} from '../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {Input} from 'react-native-elements';
-import BottomBar from "../bottomBar/BottomBar";
+import BottomBar from "../components/BottomBar";
 import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from "@react-navigation/native";
 
-const logo = require('../../assets/logo.png');
+const logo = require('../assets/logo.png');
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [wrongPassword, setWrongPassword] = useState(false);
-    const [showPassword, setShowPassword] = useState(false); // Estado para controlar a visibilidade da senha
+    const [showPassword, setShowPassword] = useState(false);
     const navigation = useNavigation();
     const passwordRef = useRef(null);
 

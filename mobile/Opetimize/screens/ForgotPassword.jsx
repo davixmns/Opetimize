@@ -2,9 +2,9 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import React, {useState} from "react";
-import logo from "../../assets/logo.png";
+import logo from "../assets/logo.png";
 import {useNavigation} from "@react-navigation/native";
-import {sendEmailForgotPassword} from "../../service/apiService";
+import {sendEmailForgotPassword} from "../service/apiService";
 import {ActivityIndicator} from "react-native";
 
 export function ForgotPassword() {

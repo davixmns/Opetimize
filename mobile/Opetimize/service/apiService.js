@@ -1,141 +1,59 @@
 import {MY_IP} from "../config";
 import axios from "axios";
+
 const BASE_URL = `http://${MY_IP}:3001`;
 
-
 export const getUserByToken = async (token) => {
-    try {
-        const response = await axios.get(`${BASE_URL}/getUserByToken/${token}`);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.get(`${BASE_URL}/getUserByToken/${token}`);
 };
 
 export const deleteUserById = async (id) => {
-    try {
-        const response = await axios.delete(`${BASE_URL}/users/${id}`);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.delete(`${BASE_URL}/users/${id}`);
 };
 
 export const sendEmailForgotPassword = async (email) => {
-    try {
-        const response = await axios.get(`${BASE_URL}/forgot-password/${email}`);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.get(`${BASE_URL}/forgot-password/${email}`);
 };
 
 export const tryLogin = async (email, password) => {
-    try {
-        console.log(`${BASE_URL}/login`)
-        const response = await axios.post(`${BASE_URL}/login`, {email, password});
-        return response.data.token;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.post(`${BASE_URL}/login`, {email, password});
 };
 
 export const getUserByEmail = async (email) => {
-    try {
-        const response = await axios.get(`${BASE_URL}/users/${email}`);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.get(`${BASE_URL}/users/${email}`);
 };
 
 export const updatePassword = async (token, newPassword) => {
-    try {
-        const response = await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        throw error;
-    }
+    return await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
 };
 
 export const createUser = async (user) => {
-    try {
-        const response = await axios.post(`${BASE_URL}/users`, user);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.post(`${BASE_URL}/users`, user);
 };
 
 export const getAllPurchasesByUserToken = async (token) => {
-    try {
-        const response = await axios.get(`${BASE_URL}/users/${token}/purchases`);
-        const purchases = response.data;
-        purchases.sort((a, b) => new Date(b.date) - new Date(a.date));
-        return purchases;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.get(`${BASE_URL}/users/${token}/purchases`);
 };
 
 
 export const deletePurchaseById = async (id) => {
-    try {
-        const response = await axios.delete(`${BASE_URL}/purchases/${id}`);
-        return response.data;
-    } catch (error) {
-        console.log(error)
-        return null;
-    }
+    return await axios.delete(`${BASE_URL}/purchases/${id}`);
 }
 
 export const insertPurchase = async (purchase, token) => {
-    try {
-        const response = await axios.post(`${BASE_URL}/purchases/${token}`, purchase)
-        return response.data
-    } catch (error) {
-        console.log(error)
-        return null
-    }
+    return await axios.post(`${BASE_URL}/purchases/${token}`, purchase)
 }
 
 export const editPurchase = async (id, purchase) => {
-    try {
-        const response = await axios.put(`${BASE_URL}/purchases/${id}`, purchase);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.put(`${BASE_URL}/purchases/${id}`, purchase);
 };
 
 export async function verifyToken(token) {
-    try {
-        const response = await axios.get(`${BASE_URL}/verifyToken/${token}`);
-        const {valid} = response.data;
-        return valid;
-    } catch (error) {
-        console.log(error);
-        return false;
-    }
+    return await axios.get(`${BASE_URL}/verifyToken/${token}`);
 }
 
 export async function updateUserById(id, user) {
-    try {
-        const response = await axios.put(`${BASE_URL}/users/${id}`, user);
-        return response.data;
-    } catch (error) {
-        console.log(error);
-        return null;
-    }
+    return await axios.put(`${BASE_URL}/users/${id}`, user);
 }
 
 

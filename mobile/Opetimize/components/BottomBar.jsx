@@ -1,10 +1,10 @@
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-import {UsefulData} from "../usefulData/UsefulData";
+import {UsefulData} from "../screens/UsefulData";
 import {StatusBar, StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
-import PurchaseForm from "../purchaseForm/PurchaseForm";
-import PurchaseHistory from "../purchaseHistory/PurchaseHistory";
-import {Profile} from "../profile/Profile";
+import PurchaseForm from "../screens/PurchaseForm";
+import PurchaseHistory from "./PurchaseHistory";
+import {Profile} from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 

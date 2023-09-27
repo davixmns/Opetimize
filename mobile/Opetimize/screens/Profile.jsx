@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal, ScrollView, TextInput} from 'react-native';
-import {deleteUserById, getUserByToken, updatePassword, updateUserById, verifyToken} from "../../service/apiService";
+import {deleteUserById, getUserByToken, updatePassword, updateUserById, verifyToken} from "../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import {IconButton} from "react-native-paper";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import * as ImagePicker from 'expo-image-picker';
-import default_image from '../../assets/default_picture.jpg'
+import default_image from '../assets/default_picture.jpg'
 
 export function Profile() {
     const [user, setUser] = useState({});

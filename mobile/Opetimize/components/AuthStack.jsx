@@ -1,10 +1,10 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import Login from '../login/Login';
-import BottomBar from "../bottomBar/BottomBar";
+import Login from '../screens/Login';
+import BottomBar from "./BottomBar";
 import {NavigationContainer} from "@react-navigation/native";
-import Register from "../register/Register";
-import {ForgotPassword} from "../forgotPassword/ForgotPassword";
+import Register from "../screens/Register";
+import {ForgotPassword} from "../screens/ForgotPassword";
 
 const Stack = createStackNavigator();
 

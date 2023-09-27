@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../../service/apiService';
-import Card from '../card/Card';
+import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../service/apiService';
+import Card from './Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import {FlatList, TextInput, TouchableOpacity, View, Text, ScrollView} from "react-native";
 import {StyleSheet} from "react-native";

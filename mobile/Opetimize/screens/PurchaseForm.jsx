@@ -1,12 +1,20 @@
-import {useState} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
-import {insertPurchase} from "../../service/apiService";
-import {Snackbar} from 'react-native-paper';
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {Input} from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
-import {AppDatePicker} from "../datePicker/AppDatePicker";
-import feeddog from "../../assets/feeddog.jpg";
+import React, { useState } from 'react';
+import {
+    View,
+    Text,
+    StyleSheet,
+    TouchableOpacity,
+    Image,
+    TouchableWithoutFeedback,
+    Keyboard,
+} from 'react-native';
+import { insertPurchase } from '../service/apiService';
+import { Snackbar } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { AppDatePicker } from '../components/AppDatePicker';
+import feeddog from '../assets/feeddog.jpg';
 
 function PurchaseForm() {
     const [name, setName] = useState('');
@@ -19,7 +27,7 @@ function PurchaseForm() {
     const handleSavePurchase = async () => {
         try {
             if (name && price && weight && date) {
-                const newPurchase = {name, price, weight, date};
+                const newPurchase = { name, price, weight, date };
                 const token = await AsyncStorage.getItem('token');
                 await insertPurchase(newPurchase, token);
                 setName('');
@@ -37,23 +45,20 @@ function PurchaseForm() {
     };
 
     return (
-        <>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.container}>
                 <View>
                     <Text style={styles.title}>Registrar Ração</Text>
                 </View>
                 <View style={styles.content}>
                     <View style={styles.imageView}>
-                        <Image
-                            source={feeddog}
-                            style={styles.image}
-                        />
+                        <Image source={feeddog} style={styles.image} />
                     </View>
                     <View style={styles.form}>
                         <Input
                             keyboardType={'default'}
                             placeholder="Ração/Marca"
-                            leftIcon={<Icon name="pencil" size={24} color='#F19020'/>}
+                            leftIcon={<Icon name="pencil" size={24} color="#F19020" />}
                             onChangeText={setName}
                             inputStyle={styles.inputStyle}
                             value={name}
@@ -61,7 +66,7 @@ function PurchaseForm() {
                         <Input
                             keyboardType={'numeric'}
                             placeholder="Valor"
-                            leftIcon={<Icon name="money" size={24} color='#F19020'/>}
+                            leftIcon={<Icon name="money" size={24} color="#F19020" />}
                             onChangeText={setPrice}
                             inputStyle={styles.inputStyle}
                             value={price}
@@ -69,44 +74,42 @@ function PurchaseForm() {
                         <Input
                             keyboardType={'numeric'}
                             placeholder="Peso"
-                            leftIcon={<Icon name="balance-scale" size={24} color='#F19020'/>}
+                            leftIcon={<Icon name="balance-scale" size={24} color="#F19020" />}
                             onChangeText={setWeight}
                             inputStyle={styles.inputStyle}
                             value={weight}
                         />
-                        <AppDatePicker
-                            setDate={setDate}
-                            date={date}
-                        />
+                        <AppDatePicker setDate={setDate} date={date} />
                         <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
                             <Text style={styles.buttonText}>Salvar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
+                <View style={styles.snacks}>
+                    <Snackbar
+                        visible={snackbarVisible}
+                        duration={1000}
+                        onDismiss={() => setSnackbarVisible(false)}
+                        style={styles.snackBarError}
+                    >
+                        <Text style={styles.snackBarErrorLabel}>Preencha todos os campos</Text>
+                    </Snackbar>
+
+                    <Snackbar
+                        style={styles.snackBarSave}
+                        visible={snackbarSaveVisible}
+                        duration={1000}
+                        onDismiss={() => setSnackbarSaveVisible(false)}
+                    >
+                        <Text style={styles.snackBarSaveLabel}>Ração salva com sucesso</Text>
+                    </Snackbar>
+                </View>
             </View>
-
-            <Snackbar
-                visible={snackbarVisible}
-                duration={1000}
-                onDismiss={() => setSnackbarVisible(false)}
-                style={styles.snackBarError}
-            >
-                <Text style={styles.snackBarErrorLabel}>Preencha todos os campos</Text>
-            </Snackbar>
-
-            <Snackbar
-                style={styles.snackBarSave}
-                visible={snackbarSaveVisible}
-                duration={1000}
-                onDismiss={() => setSnackbarSaveVisible(false)}
-            >
-                <Text style={styles.snackBarSaveLabel}>Ração salva com sucesso</Text>
-            </Snackbar>
-        </>
-    )
+        </TouchableWithoutFeedback>
+    );
 }
 
-export default PurchaseForm
+export default PurchaseForm;
 
 const styles = StyleSheet.create({
     container: {
@@ -143,7 +146,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        paddingTop: "15%",
+        paddingTop: '15%',
         fontSize: 35,
         color: '#F19020',
     },
@@ -170,7 +173,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
     snackBarSave: {
-        backgroundColor: "#4CBB17"
+        backgroundColor: '#4CBB17',
+        top: 3,
     },
     snackBarSaveLabel: {
         color: '#fff',
@@ -181,8 +185,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     snackBarError: {
-        backgroundColor: "red",
+        backgroundColor: 'red',
         fontWeight: 'bold',
+        top: 9,
+    },
+    snacks: {
+        width: '95%',
+        alignItems: 'center',
+        justifyContent: 'center',
     }
-
 });
