@@ -1,7 +1,7 @@
 import {useState, useRef, useEffect} from 'react';
 import {tryLogin} from '../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
+import {Alert, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {Input} from 'react-native-elements';
 import BottomBar from "../components/BottomBar";
 import {StyleSheet} from 'react-native';
@@ -26,19 +26,24 @@ const Login = () => {
                 setLoginSuccess(true);
             }
         }
+
         getToken();
     }, [])
 
     async function handleTryLogin() {
-        const token = await tryLogin(email, password);
-        if (token) {
-            await AsyncStorage.setItem('token', token);
-            setLoginSuccess(true);
-        } else {
-            setWrongPassword(true);
-            setTimeout(() => {
-                setWrongPassword(false);
-            }, 3000); // 5 segundos
+        try {
+            const token = await tryLogin(email, password);
+            if (token) {
+                await AsyncStorage.setItem('token', token);
+                setLoginSuccess(true);
+            } else {
+                setWrongPassword(true);
+                setTimeout(() => {
+                    setWrongPassword(false);
+                }, 3000); // 5 segundos
+            }
+        } catch (e) {
+            Alert.alert(e.response)
         }
     }
 

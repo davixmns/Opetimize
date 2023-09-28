@@ -1,4 +1,4 @@
-mysql_api/node_modules
+api/node_modules
 web/node_modules
 mobile/node_modules
 database/volumes

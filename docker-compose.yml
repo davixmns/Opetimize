@@ -15,7 +15,7 @@ services:
       - opetimize-network
 
   api:
-    build: ./mysql_api
+    build: api
     container_name: "opetimize-api"
     restart: on-failure
     volumes:
