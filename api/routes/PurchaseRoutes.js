@@ -1,11 +1,12 @@
 import PurchaseController from '../controllers/PurchaseController.js';
 import express from "express";
+import middleware from "../middlewares/middleware.js";
 
 const router = express.Router();
 
-router.get('/users/:token/purchases', PurchaseController.getAllPurchasesByUserId);
-router.post('/purchases/:token', PurchaseController.createPurchase);
-router.put('/purchases/:id', PurchaseController.updatePurchaseById);
-router.delete('/purchases/:id', PurchaseController.deletePurchaseById);
+router.get('/purchases', middleware.verifyToken, PurchaseController.getAllPurchases);
+router.post('/purchase', middleware.verifyToken, PurchaseController.createPurchase);
+router.put('/purchase', middleware.verifyToken, PurchaseController.updatePurchase);
+router.delete('/purchase', middleware.verifyToken, PurchaseController.deletePurchase);
 
 export default router;

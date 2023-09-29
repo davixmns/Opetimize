@@ -3,7 +3,7 @@ import {UsefulData} from "../screens/UsefulData";
 import {StatusBar, StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
-import PurchaseHistory from "./PurchaseHistory";
+import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();

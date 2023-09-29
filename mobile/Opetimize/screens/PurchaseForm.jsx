@@ -8,7 +8,7 @@ import {
     TouchableWithoutFeedback,
     Keyboard,
 } from 'react-native';
-import { insertPurchase } from '../service/apiService';
+import { createPurchase } from '../service/apiService';
 import { Snackbar } from 'react-native-paper';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Input } from 'react-native-elements';
@@ -29,7 +29,7 @@ function PurchaseForm() {
             if (name && price && weight && date) {
                 const newPurchase = { name, price, weight, date };
                 const token = await AsyncStorage.getItem('token');
-                await insertPurchase(newPurchase, token);
+                await createPurchase(newPurchase, token);
                 setName('');
                 setPrice('');
                 setWeight('');

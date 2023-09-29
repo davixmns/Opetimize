@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity, StyleSheet, Alert, Modal, ScrollView, TextInput} from 'react-native';
-import {deleteUserById, getUserByToken, updatePassword, updateUserById, verifyToken} from "../service/apiService";
+import {deleteUserById, getMyData, updatePassword, updateUser, verifyToken} from "../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import {IconButton} from "react-native-paper";
@@ -19,12 +19,12 @@ export function Profile() {
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const [image, setImage] = useState('');
 
-
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const token = await AsyncStorage.getItem('token');
-                const user = await getUserByToken(token);
+                const response = await getMyData(token);
+                const user = response.data.user;
                 setUser(user);
                 setName(user.name);
                 setEmail(user.email);
@@ -44,70 +44,6 @@ export function Profile() {
             routes: [{name: 'Login'}]
         });
     };
-
-    function verifyEmailRegex() {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    async function verifyForm() {
-        if (!newPassword || !confirmNewPassword) {
-            alert('Preencha todos os campos!')
-            return false
-        }
-        if (!verifyEmailRegex()) {
-            alert('Email inválido!')
-            return false
-        }
-        if (newPassword !== confirmNewPassword) {
-            alert('As senhas não coincidem!')
-            return false
-        }
-        return true
-    }
-
-    async function handleSaveEditProfile() {
-        const token = await AsyncStorage.getItem('token')
-        if (!token || !await verifyToken(token)) {
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
-        }
-        try {
-            user.name = name
-            user.email = email
-            user.profile_image = image
-            console.log(user)
-            await updateUserById(user.user_id, user)
-            handleEditModalClose()
-            await alert('Perfil Salvo!')
-        } catch (e) {
-            console.log(e)
-            await alert('Erro ao editar perfil')
-        }
-    }
-
-    async function handleSaveNewPassword() {
-        const token = await AsyncStorage.getItem('token')
-        if (!token || !await verifyToken(token)) {
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
-        }
-        try {
-            if (await verifyForm()) {
-                user.password = newPassword
-                await updatePassword(token, newPassword)
-                handleCPasswordModalClose()
-                await alert('Senha alterada com sucesso!')
-            }
-        } catch (e) {
-            console.log(e)
-            alert('Erro ao alterar senha')
-        }
-    }
 
     function handleEditModalShow() {
         setShowEditModal(true)
@@ -158,25 +94,6 @@ export function Profile() {
         );
     };
 
-    async function handleImagePicker() {
-        const response = await ImagePicker.launchImageLibraryAsync({
-            aspect: [4, 4],
-            allowsEditing: true,
-            base64: true,
-            quality: 1
-        })
-        if (!response.canceled) {
-            setImage(response.assets[0].uri)
-            user.profile_image = image
-            try {
-                await updateUserById(user.user_id, user)
-            } catch (e) {
-                alert('Erro ao atualizar imagem')
-                console.log(e)
-            }
-        }
-    }
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -213,14 +130,12 @@ export function Profile() {
                 </View>
             </View>
 
-            {/*MODAL DE EDIÇÃO*/}
+            MODAL DE EDIÇÃO
             <Modal visible={showEditModal} transparent={true}>
                 <View style={styles.editModalContainer}>
                     <View style={styles.editModalContent}>
                         <Text style={styles.editModalTitle}>Editar Perfil</Text>
-                        <TouchableOpacity onPress={handleImagePicker}>
-                            <Image source={image ? {uri: image} : default_image} style={styles.profileImage2}/>
-                        </TouchableOpacity>
+
                         <ScrollView style={{flex: 1, width: '80%'}}>
                             <View>
                                 <View style={styles.inputGroup}>
@@ -232,13 +147,6 @@ export function Profile() {
                                     <Text style={styles.inputLabel}>Email:</Text>
                                     <TextInput style={styles.inputText} value={email} onChangeText={setEmail}/>
                                 </View>
-                            </View>
-
-                            <View style={styles.editModalButtons}>
-                                <IconButton icon={() => (<Icon name="check-circle-outline" color={"green"} size={40}/>)}
-                                            onPress={() => handleSaveEditProfile()}/>
-                                <IconButton icon={() => (<Icon name={"close"} color={"black"} size={40}/>)}
-                                            onPress={() => handleEditModalClose()}/>
                             </View>
                         </ScrollView>
                     </View>

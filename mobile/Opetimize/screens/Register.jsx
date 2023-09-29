@@ -1,5 +1,5 @@
 import {useRef, useState} from "react";
-import {createUser} from "../service/apiService";
+import {createAccount} from "../service/apiService";
 import {useNavigation} from "@react-navigation/native";
 import {Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import {Input} from "react-native-elements";
@@ -24,7 +24,7 @@ const Register = () => {
         }
         try {
             const user = {name, email, password}
-            const response = await createUser(user)
+            const response = await createAccount(user)
             if (!response) {
                 alert('Email já cadastrado!')
                 return null

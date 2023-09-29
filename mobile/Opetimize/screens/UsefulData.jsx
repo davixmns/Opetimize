@@ -2,7 +2,7 @@ import {ScrollView, Text, TouchableOpacity, View} from "react-native";
 import {StyleSheet} from 'react-native';
 import React, {useEffect, useState} from "react";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import {getAllPurchasesByUserToken, verifyToken} from "../service/apiService";
+import {getAllPurchases, verifyToken} from "../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 
@@ -16,7 +16,7 @@ export function UsefulData() {
 
     async function fetchData() {
         const token = await AsyncStorage.getItem('token');
-        const purchases = await getAllPurchasesByUserToken(token);
+        const purchases = await getAllPurchases(token);
         setPurchases(purchases);
     }
 

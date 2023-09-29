@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {deletePurchaseById, editPurchase, getAllPurchasesByUserToken, verifyToken} from '../service/apiService';
-import Card from './Card';
+import {deletePurchase, updatePurchase, getAllPurchases, verifyToken} from '../service/apiService';
+import Card from '../components/Card';
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import {FlatList, TextInput, TouchableOpacity, View, Text, ScrollView} from "react-native";
+import {FlatList, TextInput, TouchableOpacity, View, Text, ScrollView, Alert} from "react-native";
 import {StyleSheet} from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
@@ -18,21 +18,23 @@ function PurchaseHistory() {
     }, []);
 
     async function fetchData() {
-        const token = await AsyncStorage.getItem('token');
-        const data = await getAllPurchasesByUserToken(token);
-        setPurchases(data);
+        try {
+            const token = await AsyncStorage.getItem('token');
+            const response = await getAllPurchases(token);
+            setPurchases(response.data);
+        } catch (error) {
+            Alert.alert("Erro", error.response.message);
+        }
     }
 
     async function refresh() {
-        const token = await AsyncStorage.getItem('token');
-        if (token && await verifyToken(token)) {
-            await fetchData()
-        } else {
-            await AsyncStorage.removeItem('token');
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
+        try{
+            const token = await AsyncStorage.getItem('token');
+            const response = await getAllPurchases(token);
+            setPurchases(response.data);
+        }catch (e) {
+            console.log(e);
+            Alert.alert("Erro", e.data.toString());
         }
     }
 
@@ -40,7 +42,7 @@ function PurchaseHistory() {
         try {
             const token = await AsyncStorage.getItem('token');
             if (token && await verifyToken(token)) {
-                await deletePurchaseById(id, token);
+                await deletePurchase(id, token);
                 await fetchData();
             } else {
                 await AsyncStorage.removeItem('token');
@@ -58,7 +60,7 @@ function PurchaseHistory() {
         try {
             const token = await AsyncStorage.getItem('token');
             if (token && await verifyToken(token)) {
-                await editPurchase(id, purchase);
+                await updatePurchase(id, purchase);
                 await fetchData();
             } else {
                 await AsyncStorage.removeItem('token');

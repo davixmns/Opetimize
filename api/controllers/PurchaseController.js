@@ -2,15 +2,13 @@ import jwt from "jsonwebtoken";
 import Purchase from "../models/PurchaseModel.js";
 
 export default {
-    async getAllPurchasesByUserId(req, res) {
+    async getAllPurchases(req, res) {
         try {
-            const token = req.params.token;
-            const decoded = jwt.verify(token, process.env.JWT_KEY);
-            const userId = decoded.userId;
+            const userId = req.user_id;
             const purchases = await Purchase.findAll({where: {user_id: userId}});
             res.status(200).json(purchases);
         } catch (error) {
-            console.log(error);
+            console.log("ERRO AO PEGAR COMPRAS DE RAÇÃO, ERRO: " + error);
             res.status(500).json({error: error.message});
         }
     },
@@ -46,7 +44,7 @@ export default {
         }
     },
 
-    async updatePurchaseById(req, res) {
+    async updatePurchase(req, res) {
         try {
             const id = req.params.id;
             const oldPurchase = await Purchase.findByPk(id);
@@ -60,7 +58,7 @@ export default {
         }
     },
 
-    async deletePurchaseById(req, res) {
+    async deletePurchase(req, res) {
         try {
             const id = req.params.id;
             const purchase = await Purchase.findByPk(id);

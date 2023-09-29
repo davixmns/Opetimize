@@ -28,26 +28,6 @@ export default {
         }
     },
 
-    async updatePassword(req, res) {
-        try {
-            const user_id = req.user_id
-            const {oldPassword, newPassword} = req.body;
-            const user = await UserModel.findByPk(user_id);
-            if (!user) {
-                return res.status(400).json({message: 'Usuário não encontrado'});
-            }
-            if (!(await bcrypt.compare(oldPassword, user.password))) {
-                return res.status(400).json({message: 'Senha atual incorreta'});
-            }
-            const hashedPassword = await bcrypt.hash(newPassword, 12);
-            await UserModel.update({password: hashedPassword}, {where: {user_id: user_id}});
-            res.status(200).json({message: 'Senha atualizada com sucesso'});
-        } catch (e) {
-            console.log(e);
-            res.status(400).json({error: 'Erro ao atualizar senha'});
-        }
-    },
-
     async sendEmailResetPassword(req, res) {
         try {
             const email = req.body.email;

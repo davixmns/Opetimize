@@ -5,7 +5,7 @@ import middleware from "../middlewares/middleware.js";
 const router = express.Router();
 
 router.post("/login", AuthController.login);
-router.get("/forgot-password/:email", AuthController.sendEmailResetPassword)
+router.post("/reset-password", AuthController.sendEmailResetPassword)
 router.put("/update-password", middleware.verifyToken, AuthController.updatePassword)
 
 export default router
