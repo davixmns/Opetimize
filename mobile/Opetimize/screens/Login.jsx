@@ -3,7 +3,6 @@ import {tryLogin} from '../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Alert, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {Input} from 'react-native-elements';
-import BottomBar from "../components/BottomBar";
 import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from "@react-navigation/native";
@@ -14,7 +13,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loginSuccess, setLoginSuccess] = useState(false);
-    const [wrongPassword, setWrongPassword] = useState(false);
+    const [errorOcurred, setErrorOcurred] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigation = useNavigation();
     const passwordRef = useRef(null);
@@ -26,24 +26,39 @@ const Login = () => {
                 setLoginSuccess(true);
             }
         }
-
         getToken();
     }, [])
 
+    useEffect(() => {
+        if(loginSuccess) {
+            navigation.navigate("BottomBar");
+        }
+    }, [loginSuccess])
+
+    function showError(e){
+        setErrorOcurred(true);
+        setErrorMessage(e);
+        setTimeout(() => {
+            setErrorOcurred(false);
+            setErrorMessage('');
+        }, 3000);
+    }
+
     async function handleTryLogin() {
         try {
-            const token = await tryLogin(email, password);
+            if(!email || !password) {
+                showError("Preencha todos os campos")
+                return;
+            }
+            const tokenResponse = await tryLogin(email, password);
+            const token = tokenResponse.data.token.toString();
             if (token) {
                 await AsyncStorage.setItem('token', token);
                 setLoginSuccess(true);
-            } else {
-                setWrongPassword(true);
-                setTimeout(() => {
-                    setWrongPassword(false);
-                }, 3000); // 5 segundos
             }
         } catch (e) {
-            Alert.alert(e.response)
+            console.log(e.response.data.message);
+            showError(e.response.data.message);
         }
     }
 
@@ -55,15 +70,8 @@ const Login = () => {
         navigation.navigate('ForgotPassword');
     }
 
-    if (loginSuccess) {
-        return (
-            <BottomBar/>
-        );
-    }
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-
             <View style={styles.content}>
                 <Image source={logo} style={styles.logo}/>
                 <Text style={styles.title}>Opetimize</Text>
@@ -94,7 +102,7 @@ const Login = () => {
                         onSubmitEditing={handleTryLogin}
                     />
                     <View style={{height: 20}}>
-                        {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                        {errorOcurred && <Text style={styles.errorText}>{errorMessage}</Text>}
                     </View>
 
                     <TouchableOpacity style={styles.button} onPress={handleTryLogin}>

@@ -8,7 +8,7 @@ const jwt_key = process.env.JWT_KEY;
 const host = process.env.DB_HOST;
 
 export default {
-    async login(req, res) {
+    async login(req, res) { 
         try {
             const {email, password} = req.body;
             if (!email || !password) return res.status(400).json({message: 'Email e senha são obrigatórios'});
