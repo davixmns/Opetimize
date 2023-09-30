@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":hammer: getAllPurchases e getMyData">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/ReloadButtom.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/api/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/AuthRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/UserRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/UserRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/UsefulData.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ReactCreateComponentLastSelected": "arrowFunctionComponent",
+    "ReactCreateComponentLastSelected": "functionDeclarationComponent",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -245,7 +244,8 @@
       <workItem from="1695955045070" duration="2053000" />
       <workItem from="1695994829896" duration="34000" />
       <workItem from="1696008073607" duration="5965000" />
-      <workItem from="1696092776905" duration="4643000" />
+      <workItem from="1696092776905" duration="4801000" />
+      <workItem from="1696102950446" duration="2746000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -590,7 +590,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

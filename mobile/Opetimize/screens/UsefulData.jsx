@@ -1,139 +1,106 @@
-import {ScrollView, Text, TouchableOpacity, View} from "react-native";
-import {StyleSheet} from 'react-native';
-import React, {useEffect, useState} from "react";
-import Icon from "@expo/vector-icons/MaterialCommunityIcons";
-import {getAllPurchases, verifyToken} from "../service/apiService";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useNavigation} from "@react-navigation/native";
+import {Text, View, StyleSheet} from "react-native";
+import {useEffect, useState} from "react";
+import {usePurchaseContext} from "../contexts/PurchaseContext";
+import {ReloadButtom} from "../components/ReloadButtom";
 
 export function UsefulData() {
+    const {purchases, loadPurchases} = usePurchaseContext()
     const [monthCosts, setMonthCosts] = useState(0);
     const [totalPetFood, setTotalMonthlyPetFood] = useState(0)
     const [bestDay, setBestDay] = useState("")
     const [cheapestPetFood, setCheapestPetFood] = useState(null)
-    const [purchases, setPurchases] = useState([])
-    const navigation = useNavigation();
 
-    async function fetchData() {
-        const token = await AsyncStorage.getItem('token');
-        const purchases = await getAllPurchases(token);
-        setPurchases(purchases);
+    async function getMonthCosts() {
+        const currentMonthPurchases = purchases.filter((purchase) => {
+            const purchaseDate = new Date(purchase.date);
+            const currentMonth = new Date().getMonth();
+            const currentYear = new Date().getFullYear();
+            return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
+        });
+        const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
+        setMonthCosts(totalCost.toFixed(2));
     }
 
-    async function refresh() {
-        const token = await AsyncStorage.getItem('token');
-        if (token && await verifyToken(token)) {
-            await fetchData()
+    async function calculateCheapestPetFood() {
+        let cheapestPurchase = null;
+        for (const purchase of purchases) {
+            const costPerKg = purchase.price / (purchase.weight / 1000);
+            if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
+                cheapestPurchase = {
+                    ...purchase,
+                    costPerKg,
+                };
+            }
+        }
+        setCheapestPetFood(
+            cheapestPurchase
+                ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
+                : '...'
+        );
+    }
+
+
+    async function calculatePetFoodInventory() {
+        const monthlyPurchases = purchases.filter((purchase) => {
+            const purchaseDate = new Date(purchase.date);
+            const purchaseMonth = purchaseDate.getMonth();
+            const purchaseYear = purchaseDate.getFullYear();
+            return purchaseDate.getMonth() === purchaseMonth && purchaseDate.getFullYear() === purchaseYear;
+        });
+        const totalPetFood = monthlyPurchases.reduce((accumulator, purchase) => accumulator + purchase.weight, 0);
+        setTotalMonthlyPetFood((totalPetFood / 1000).toFixed(2));
+    }
+
+
+    async function calculateBestDay() {
+        if (purchases.length > 0) {
+            const purchasesByWeekDay = Array.from({length: 7}, () => 0);
+            purchases.forEach((purchase) => {
+                const purchaseDate = new Date(purchase.date);
+                const weekDay = purchaseDate.getDay();
+                purchasesByWeekDay[weekDay] += 1;
+            });
+            const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+            const maxPurchaseCount = Math.max(...purchasesByWeekDay);
+            const bestDayIndex = purchasesByWeekDay.indexOf(maxPurchaseCount);
+            const bestDay = weekDays[bestDayIndex];
+            setBestDay(bestDay);
         } else {
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
+            setBestDay("...");
         }
     }
 
     useEffect(() => {
-        fetchData();
-    }, []);
-
-    useEffect(() => {
-        async function getMonthCosts() {
-            const currentMonthPurchases = purchases.filter((purchase) => {
-                const purchaseDate = new Date(purchase.date);
-                const currentMonth = new Date().getMonth();
-                const currentYear = new Date().getFullYear();
-                return purchaseDate.getMonth() === currentMonth && purchaseDate.getFullYear() === currentYear;
-            });
-            const totalCost = currentMonthPurchases.reduce((acc, purchase) => acc + purchase.price, 0);
-            setMonthCosts(totalCost.toFixed(2));
-            setPurchases(purchases)
-        }
-
-        async function calculateCheapestPetFood() {
-            let cheapestPurchase = null;
-            for (const purchase of purchases) {
-                const costPerKg = purchase.price / (purchase.weight / 1000);
-                if (!cheapestPurchase || costPerKg < cheapestPurchase.costPerKg) {
-                    cheapestPurchase = {
-                        ...purchase,
-                        costPerKg,
-                    };
-                }
-            }
-            setCheapestPetFood(
-                cheapestPurchase
-                    ? `${cheapestPurchase.name} \n(R$${cheapestPurchase.costPerKg.toFixed(2)}/kg)`
-                    : '...'
-            );
-        }
-
-
-        async function calculatePetFoodInventory() {
-            const monthlyPurchases = purchases.filter((purchase) => {
-                const purchaseDate = new Date(purchase.date);
-                const purchaseMonth = purchaseDate.getMonth();
-                const purchaseYear = purchaseDate.getFullYear();
-                return purchaseDate.getMonth() === purchaseMonth && purchaseDate.getFullYear() === purchaseYear;
-            });
-
-            const totalPetFood = monthlyPurchases.reduce((accumulator, purchase) => accumulator + purchase.weight, 0);
-            setTotalMonthlyPetFood((totalPetFood / 1000).toFixed(2));
-        }
-
-
-        async function calculateBestDay() {
-            if (purchases.length > 0) {
-                const purchasesByWeekDay = Array.from({length: 7}, () => 0);
-
-                purchases.forEach((purchase) => {
-                    const purchaseDate = new Date(purchase.date);
-                    const weekDay = purchaseDate.getDay();
-                    purchasesByWeekDay[weekDay] += 1;
-                });
-
-                const weekDays = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
-                const maxPurchaseCount = Math.max(...purchasesByWeekDay);
-                const bestDayIndex = purchasesByWeekDay.indexOf(maxPurchaseCount);
-                const bestDay = weekDays[bestDayIndex];
-
-                setBestDay(bestDay);
-            } else {
-                setBestDay("...");
-            }
-        }
-
         calculateCheapestPetFood()
         calculatePetFoodInventory()
         calculateBestDay()
         getMonthCosts();
-    }, [purchases]);
+    }, [purchases])
 
     return (
         <View style={styles.container}>
-                <Text style={styles.bigTitle}>Dados úteis</Text>
-                <View style={styles.dataCard}>
-                    <Text style={styles.title}>Gastos do mês</Text>
-                    <Text style={styles.dataText}>R$ {monthCosts}</Text>
-                </View>
+            <Text style={styles.bigTitle}>Dados úteis</Text>
+            <View style={styles.dataCard}>
+                <Text style={styles.title}>Gastos do mês</Text>
+                <Text style={styles.dataText}>R$ {monthCosts}</Text>
+            </View>
 
-                <View style={styles.dataCard}>
-                    <Text style={styles.title}>Estoque do mês</Text>
-                    <Text style={styles.dataText}>{totalPetFood} Kg</Text>
-                </View>
+            <View style={styles.dataCard}>
+                <Text style={styles.title}>Estoque do mês</Text>
+                <Text style={styles.dataText}>{totalPetFood} Kg</Text>
+            </View>
 
-                <View style={styles.dataCard}>
-                    <Text style={styles.title}>Dia mais frequente</Text>
-                    <Text style={styles.dataText}>{bestDay}</Text>
-                </View>
+            <View style={styles.dataCard}>
+                <Text style={styles.title}>Dia mais frequente</Text>
+                <Text style={styles.dataText}>{bestDay}</Text>
+            </View>
 
-                <View style={styles.dataCard}>
-                    <Text style={styles.title}>Ração mais barata</Text>
-                    <Text style={styles.dataText2}>{cheapestPetFood}</Text>
-                </View>
+            <View style={styles.dataCard}>
+                <Text style={styles.title}>Ração mais barata</Text>
+                <Text style={styles.dataText2}>{cheapestPetFood}</Text>
+            </View>
 
-            <TouchableOpacity onPress={refresh} style={styles.refreshButtom}>
-                <Icon name="refresh" size={25} color="white"/>
-            </TouchableOpacity>
+            <ReloadButtom onPress={loadPurchases}/>
         </View>
     )
 }
@@ -144,12 +111,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5E7CC',
         alignItems: "center",
         flex: 1,
-    },
-
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-        alignSelf: 'center',
     },
 
     dataCard: {
@@ -190,26 +151,6 @@ const styles = StyleSheet.create({
         color: "#E49052"
     },
 
-    refreshButtom: {
-        position: 'absolute',
-        bottom: 20,
-        right: 20,
-        width: 50,
-        height: 50,
-        borderRadius: 25,
-        backgroundColor: '#E49052',
-        justifyContent: 'center',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5,
-    },
     bigTitle: {
         color: "#E49052",
         fontSize: 35,

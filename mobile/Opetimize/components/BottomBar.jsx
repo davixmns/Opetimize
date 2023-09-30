@@ -17,7 +17,7 @@ function BottomBar() {
                     tabBarStyle: {
                         backgroundColor: '#E49052',
                         borderBottomWidth: 0,
-                        height: 60,
+                        height: 80,
                     }
                 }}>
 
@@ -27,11 +27,14 @@ function BottomBar() {
                     options={{
                         tabBarHideOnKeyboard: true,
                         tabBarShowLabel: false,
-                        tabBarActiveBackgroundColor: "#e07e38",
                         headerShown: false,
-                        tabBarIcon: () => {
-                            return <Feather name="list" size={30} color={"#fff"}/>
+                        tabBarIcon: ({focused}) => {
+                            if (focused) {
+                                return <Feather name="list" size={30} color={'#e07e38'}/>
+                            }
+                            return <Feather name="list" size={30} color={'#fff'}/>
                         }
+
                     }}
                 />
                 <Tab.Screen
@@ -40,9 +43,11 @@ function BottomBar() {
                     options={{
                         tabBarHideOnKeyboard: true,
                         tabBarShowLabel: false,
-                        tabBarActiveBackgroundColor: "#e07e38",
                         headerShown: false,
-                        tabBarIcon: () => {
+                        tabBarIcon: ({focused}) => {
+                            if (focused) {
+                                return <Feather name="plus-circle" size={30} color={"#e07e38"}/>
+                            }
                             return <Feather name="plus-circle" size={30} color={"#fff"}/>
                         }
                     }}
@@ -51,11 +56,13 @@ function BottomBar() {
                     name="Data"
                     component={UsefulData}
                     options={{
-                        tabBarActiveBackgroundColor: "#e07e38",
                         tabBarShowLabel: false,
                         headerShown: false,
-                        tabBarIcon: () => {
-                            return <Feather name="database" size={30} color={"#fff"}/>
+                        tabBarIcon: ({focused}) => {
+                            if(focused){
+                                return <Feather name="bar-chart" size={30} color={"#e07e38"}/>
+                            }
+                            return <Feather name="bar-chart" size={30} color={"#fff"}/>
                         }
                     }}
                 />
@@ -63,10 +70,12 @@ function BottomBar() {
                     name={"Profile"}
                     component={Profile}
                     options={{
-                        tabBarActiveBackgroundColor: "#e07e38",
                         tabBarShowLabel: false,
                         headerShown: false,
-                        tabBarIcon: () => {
+                        tabBarIcon: ({focused}) => {
+                            if(focused){
+                                return <Feather name="user" size={30} color={"#e07e38"}/>
+                            }
                             return <Feather name="user" size={30} color={"#fff"}/>
                         }
                     }}
@@ -78,7 +87,7 @@ function BottomBar() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
     }
 });
 

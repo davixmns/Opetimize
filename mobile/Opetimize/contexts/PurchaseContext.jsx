@@ -12,11 +12,12 @@ export const usePurchaseContext = () => {
 export const PurchaseProvider = ({children}) => {
     const [purchases, setPurchases] = useState([]);
 
-    async function fetchData() {
+    async function loadPurchases() {
         try {
             const token = await AsyncStorage.getItem('token');
             const response = await getAllPurchases(token)
             setPurchases(response.data)
+            console.log("Compras carregadas")
         } catch (e) {
             console.log(e)
             Alert.alert("ERRRO", "Erro ao carregar as compras")
@@ -24,13 +25,14 @@ export const PurchaseProvider = ({children}) => {
     }
 
     useEffect(() => {
-        fetchData()
+        loadPurchases()
     }, []);
 
     return (
         <PurchaseContext.Provider
             value={{
-                purchases
+                purchases,
+                loadPurchases
             }}
         >
             {children}

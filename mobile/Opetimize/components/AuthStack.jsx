@@ -30,7 +30,6 @@ export function AuthStack() {
                     component={ForgotPassword}
                     options={{headerShown: false}}
                 />
-
             </Stack.Navigator>
         </NavigationContainer>
     );
