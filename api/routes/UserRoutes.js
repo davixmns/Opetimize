@@ -11,5 +11,6 @@ router.post('/user', UserController.createUser)
 router.put('/user', middleware.verifyToken, UserController.updateUser)
 router.delete('/user', middleware.verifyToken, UserController.deleteUser)
 router.get('/user', middleware.verifyToken, UserController.getUserData)
+router.put('/user/password', middleware.verifyToken, UserController.updatePassword)
 
 export default router

@@ -32,9 +32,12 @@ export const getAllPurchases = async (token) => {
     );
 };
 
-export const deleteUserById = async (id) => {
-    return await axios.delete(`${BASE_URL}/users/${id}`);
-};
+export const deleteMyAccount = async (token) => {
+    return await axios.delete(
+        `${BASE_URL}/user`,
+        {headers: {authorization: `Bearer ${token}`}}
+    );
+}
 
 export const sendEmailForgotPassword = async (email) => {
     return await axios.get(`${BASE_URL}/forgot-password/${email}`);
