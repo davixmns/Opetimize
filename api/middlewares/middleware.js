@@ -11,7 +11,6 @@ export default {
             if(!token) return res.status(401).json({message: 'Token não informado'})
             const decoded = await jose.jwtVerify(token, new TextEncoder().encode(JWT_SECRET))
             if(!decoded) return res.status(401).json({message: 'Token inválido'})
-
             req.user_id = decoded.payload.user_id
             next()
         } catch (e) {

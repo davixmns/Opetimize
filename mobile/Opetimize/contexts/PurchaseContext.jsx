@@ -1,7 +1,7 @@
 import React, {createContext, useContext, useEffect, useState} from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {Alert} from "react-native";
-import {getAllPurchases} from "../service/apiService.js";
+import {createPurchase, getAllPurchases} from "../service/apiService.js";
 
 const PurchaseContext = createContext();
 
@@ -24,6 +24,19 @@ export const PurchaseProvider = ({children}) => {
         }
     }
 
+    async function savePurchase(purchase) {
+        try {
+            const token = await AsyncStorage.getItem('token');
+            await createPurchase(token, purchase)
+            purchase.key = purchases.length + 1
+            setPurchases([...purchases, purchase])
+            Alert.alert("Sucesso", "Compra adicionada com sucesso")
+        } catch (e) {
+            console.log(e)
+            Alert.alert("ERRRO", "Erro ao adicionar a compra")
+        }
+    }
+
     useEffect(() => {
         loadPurchases()
     }, []);
@@ -32,7 +45,8 @@ export const PurchaseProvider = ({children}) => {
         <PurchaseContext.Provider
             value={{
                 purchases,
-                loadPurchases
+                loadPurchases,
+                savePurchase,
             }}
         >
             {children}

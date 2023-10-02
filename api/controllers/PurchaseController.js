@@ -15,29 +15,11 @@ export default {
 
     async createPurchase(req, res) {
         try {
-            const token = req.params.token;
-            const decoded = jwt.verify(token, process.env.JWT_KEY);
-            const userId = decoded.userId;
             const {name, price, weight, date} = req.body;
-            const newPurchase = {name, price, weight, date, user_id: userId};
-            await Purchase.create(newPurchase);
+            const purchase = {name, price, weight, date, user_id: req.user_id}
+            console.log(purchase)
+            await Purchase.create(purchase);
             res.status(201).json({message: "Compra de ração salva com sucesso!"});
-        } catch (error) {
-            console.log(error);
-            res.status(500).json({error});
-        }
-    },
-
-    async getPurchaseById(req, res) {
-        try {
-            const token = req.params.token;
-            const decoded = jwt.verify(token, process.env.JWT_KEY);
-            const userId = decoded.userId;
-            const purchase = await Purchase.findByPk(userId);
-            if (!purchase) {
-                res.status(404).json({message: "Compra de ração não encontrada."});
-            }
-            res.status(200).json(purchase);
         } catch (error) {
             console.log(error);
             res.status(500).json({error});

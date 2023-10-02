@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":hammer: getAllPurchases e getMyData">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/ReloadButtom.jsx" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: ajustes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/PurchaseController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/middlewares/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middlewares/middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,37 +49,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "ReactCreateComponentLastSelected": "functionDeclarationComponent",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "javascript.nodejs.core.library.configured.version": "18.17.0",
-    "javascript.nodejs.core.library.typings.version": "18.17.0",
-    "last_opened_file_path": "/Users/davixmns/Desktop/projetos/vortex/Opetimize/mobile/Opetimize/assets",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "/Users/davixmns/Desktop/projetos/vortex/Opetimize/web/zeus/node_modules/react-scripts",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "copyright.filetypes.JavaScript",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ReactCreateComponentLastSelected&quot;: &quot;functionDeclarationComponent&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/davixmns/Desktop/projetos/vortex/Opetimize/mobile/Opetimize/assets&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;/Users/davixmns/Desktop/projetos/vortex/Opetimize/web/zeus/node_modules/react-scripts&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright.filetypes.JavaScript&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -245,7 +247,10 @@
       <workItem from="1695994829896" duration="34000" />
       <workItem from="1696008073607" duration="5965000" />
       <workItem from="1696092776905" duration="4801000" />
-      <workItem from="1696102950446" duration="2746000" />
+      <workItem from="1696102950446" duration="2844000" />
+      <workItem from="1696126268706" duration="1068000" />
+      <workItem from="1696265969288" duration="7761000" />
+      <workItem from="1696283869146" duration="313000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -590,7 +595,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,8 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="inicio do mobile" />
-    <MESSAGE value="consumindo api e formatando data" />
     <MESSAGE value="estilizando lista" />
     <MESSAGE value="form" />
     <MESSAGE value="formulario funcionando e delete tambem" />
@@ -633,6 +636,8 @@
     <MESSAGE value="DEBUG" />
     <MESSAGE value=":sparkles: login funcionando no app" />
     <MESSAGE value=":hammer: getAllPurchases e getMyData" />
-    <option name="LAST_COMMIT_MESSAGE" value=":hammer: getAllPurchases e getMyData" />
+    <MESSAGE value=":hammer: PurchaseContext.jsx" />
+    <MESSAGE value=":sparkles: ajustes" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: ajustes" />
   </component>
 </project>

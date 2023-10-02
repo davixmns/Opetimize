@@ -57,8 +57,12 @@ export const deletePurchase = async (id) => {
     return await axios.delete(`${BASE_URL}/purchases/${id}`);
 }
 
-export const createPurchase = async (purchase, token) => {
-    return await axios.post(`${BASE_URL}/purchases/${token}`, purchase)
+export const createPurchase = async (token, purchase) => {
+    return await axios.post(
+        `${BASE_URL}/purchase`,
+        purchase,
+        {headers: {authorization: `Bearer ${token}`}}
+    )
 }
 
 export const updatePurchase = async (id, purchase) => {

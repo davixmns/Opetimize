@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import {useRef, useState} from 'react';
 import {
     View,
     Text,
@@ -7,104 +7,78 @@ import {
     Image,
     TouchableWithoutFeedback,
     Keyboard,
+    KeyboardAvoidingView,
 } from 'react-native';
-import { createPurchase } from '../service/apiService';
-import { Snackbar } from 'react-native-paper';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Input } from 'react-native-elements';
+import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { AppDatePicker } from '../components/AppDatePicker';
+import {AppDatePicker} from '../components/AppDatePicker';
 import feeddog from '../assets/feeddog.jpg';
+import {usePurchaseContext} from "../contexts/PurchaseContext";
 
 function PurchaseForm() {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
     const [date, setDate] = useState(new Date());
-    const [snackbarVisible, setSnackbarVisible] = useState(false);
-    const [snackbarSaveVisible, setSnackbarSaveVisible] = useState(false);
+    const {savePurchase} = usePurchaseContext()
+    const priceRef = useRef(null)
+    const weightRef = useRef(null)
 
-    const handleSavePurchase = async () => {
-        try {
-            if (name && price && weight && date) {
-                const newPurchase = { name, price, weight, date };
-                const token = await AsyncStorage.getItem('token');
-                await createPurchase(newPurchase, token);
-                setName('');
-                setPrice('');
-                setWeight('');
-                setSnackbarSaveVisible(true);
-                setDate('');
-            } else {
-                setSnackbarVisible(true);
-            }
-        } catch (error) {
-            alert('Erro ao salvar a ração');
-            console.log(error);
+    function handleSavePurchase() {
+        if (!name || !price || !weight) {
+            alert('Preencha todos os campos')
+            return
         }
-    };
+        const purchase = {name, price, weight, date}
+        savePurchase(purchase)
+    }
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={styles.container}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={100} style={styles.container}>
                 <View>
                     <Text style={styles.title}>Registrar Ração</Text>
                 </View>
                 <View style={styles.content}>
                     <View style={styles.imageView}>
-                        <Image source={feeddog} style={styles.image} />
+                        <Image source={feeddog} style={styles.image}/>
                     </View>
                     <View style={styles.form}>
                         <Input
                             keyboardType={'default'}
                             placeholder="Ração/Marca"
-                            leftIcon={<Icon name="pencil" size={24} color="#F19020" />}
+                            leftIcon={<Icon name="pencil" size={24} color="#F19020"/>}
                             onChangeText={setName}
                             inputStyle={styles.inputStyle}
                             value={name}
+                            onSubmitEditing={() => priceRef.current.focus()}
                         />
                         <Input
                             keyboardType={'numeric'}
                             placeholder="Valor"
-                            leftIcon={<Icon name="money" size={24} color="#F19020" />}
+                            leftIcon={<Icon name="money" size={24} color="#F19020"/>}
                             onChangeText={setPrice}
                             inputStyle={styles.inputStyle}
                             value={price}
+                            onSubmitEditing={() => weightRef.current.focus()}
+                            ref={priceRef}
                         />
                         <Input
                             keyboardType={'numeric'}
                             placeholder="Peso"
-                            leftIcon={<Icon name="balance-scale" size={24} color="#F19020" />}
+                            leftIcon={<Icon name="balance-scale" size={24} color="#F19020"/>}
                             onChangeText={setWeight}
                             inputStyle={styles.inputStyle}
                             value={weight}
+                            ref={weightRef}
                         />
-                        <AppDatePicker setDate={setDate} date={date} />
+                        <AppDatePicker setDate={setDate} date={date}/>
                         <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
                             <Text style={styles.buttonText}>Salvar</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.snacks}>
-                    <Snackbar
-                        visible={snackbarVisible}
-                        duration={1000}
-                        onDismiss={() => setSnackbarVisible(false)}
-                        style={styles.snackBarError}
-                    >
-                        <Text style={styles.snackBarErrorLabel}>Preencha todos os campos</Text>
-                    </Snackbar>
-
-                    <Snackbar
-                        style={styles.snackBarSave}
-                        visible={snackbarSaveVisible}
-                        duration={1000}
-                        onDismiss={() => setSnackbarSaveVisible(false)}
-                    >
-                        <Text style={styles.snackBarSaveLabel}>Ração salva com sucesso</Text>
-                    </Snackbar>
-                </View>
-            </View>
+            </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
     );
 }
@@ -167,31 +141,5 @@ const styles = StyleSheet.create({
         color: '#fff',
         alignSelf: 'center',
         fontWeight: 'bold',
-    },
-    errorText: {
-        color: 'red',
-        fontSize: 15,
-    },
-    snackBarSave: {
-        backgroundColor: '#4CBB17',
-        top: 3,
-    },
-    snackBarSaveLabel: {
-        color: '#fff',
-        fontWeight: 'bold',
-    },
-    snackBarErrorLabel: {
-        color: '#fff',
-        fontWeight: 'bold',
-    },
-    snackBarError: {
-        backgroundColor: 'red',
-        fontWeight: 'bold',
-        top: 9,
-    },
-    snacks: {
-        width: '95%',
-        alignItems: 'center',
-        justifyContent: 'center',
     }
 });
