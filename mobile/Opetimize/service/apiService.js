@@ -65,11 +65,6 @@ export const createPurchase = async (token, purchase) => {
     )
 }
 
-export const updatePurchase = async (id, purchase) => {
-    return await axios.put(`${BASE_URL}/purchases/${id}`, purchase);
-};
-
-
 
 
 

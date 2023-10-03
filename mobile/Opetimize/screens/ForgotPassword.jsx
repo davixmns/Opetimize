@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         width: '100%',
         paddingTop: 30,
-        gap: 10,
         marginTop: 30,
     },
     logo: {

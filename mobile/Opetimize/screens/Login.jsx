@@ -139,10 +139,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#fff',
         padding: 20,
-        borderRadius: 10,
         width: '100%',
-        paddingTop: 30,
-        gap: 10,
         marginTop: 30,
     },
     logo: {

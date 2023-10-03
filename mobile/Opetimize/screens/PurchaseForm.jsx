@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#fff',
         width: '90%',
-        gap: '10%',
         paddingTop: '10%',
     },
     imageView: {

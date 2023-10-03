@@ -1,10 +1,12 @@
-import React, {useContext, useState} from 'react';
+import {useEffect, useState} from 'react';
 import Card from '../components/Card';
-import {FlatList, TextInput, View, Text, ScrollView, StyleSheet, TouchableOpacity} from "react-native";
+import {FlatList, TextInput, View, Text, StyleSheet, KeyboardAvoidingView, Platform} from "react-native";
 import * as Animatable from "react-native-animatable";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
-import Icon from "react-native-vector-icons/FontAwesome";
 import {ReloadButtom} from "../components/ReloadButtom";
+import AnimatedLottieView from "lottie-react-native";
+import emptyBox from "../assets/empty_box.json";
+import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view";
 
 function PurchaseHistory() {
     const {purchases, loadPurchases} = usePurchaseContext()
@@ -45,56 +47,58 @@ function PurchaseHistory() {
 
     return (
         <View style={styles.background}>
-            <ScrollView>
-                <FlatList
-                    style={styles.container}
-                    data={filteredPurchases} // Use o estado de purchases do contexto
-                    renderItem={renderPurchase}
-                    keyExtractor={(item) => item.purchase_id}
-                    ListHeaderComponent={<Text style={styles.title2}>Histórico</Text>}
-                    ListHeaderComponentStyle={styles.headerContainer}
-                    contentContainerStyle={styles.contentContainer}
-                />
-                <View style={{height: 50}}/>
-            </ScrollView>
-            <ReloadButtom onPress={loadPurchases}/>
-            <TextInput
-                style={styles.searchInput}
-                placeholder="Pesquisar..."
-                onChangeText={(text) => setSearchTerm(text)}
-                value={searchTerm}
-                placeholderTextColor={"white"}
+            {purchases.length === 0 && (
+                <View style={styles.emptyBox}>
+                    <AnimatedLottieView source={emptyBox} autoPlay={true} loop={true} resizeMode={"cover"}
+                                        speed={0.6}/>
+                </View>
+            )}
+            {/*<ScrollView>*/}
+            <FlatList
+                style={styles.container}
+                data={filteredPurchases} // Use o estado de purchases do contexto
+                renderItem={renderPurchase}
+                keyExtractor={(item) => item.purchase_id}
+                ListHeaderComponent={<Text style={styles.title}>Histórico</Text>}
+                contentContainerStyle={styles.contentContainer}
             />
+
+            {/*</ScrollView>*/}
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios'? 'position': "height"} keyboardVerticalOffset={70}>
+                <ReloadButtom onPress={loadPurchases}/>
+                <TextInput
+                    style={styles.searchInput}
+                    placeholder="Pesquisar..."
+                    onChangeText={(text) => setSearchTerm(text)}
+                    value={searchTerm}
+                    placeholderTextColor={"white"}
+                />
+            </KeyboardAvoidingView>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 0,
         paddingTop: 20,
-        paddingBottom: "4%"
+        paddingBottom: "4%",
     },
-    headerContainer: {
-        marginTop: "2%",
-        backgroundColor: "#F19020",
-    },
-    title2: {
+    title: {
         color: "white",
         fontSize: 35,
         alignSelf: "center",
-        paddingVertical: 20
+        paddingVertical: 30
     },
     background: {
         flex: 1,
-        backgroundColor: "#F19020"
+        backgroundColor: "#F19020",
     },
     searchInput: {
         position: "absolute",
         backgroundColor: "#E49052",
         borderRadius: 30,
         width: "70%",
-        bottom: "2.2%",
+        bottom: 20,
         marginLeft: "5%",
         height: 50,
         textAlign: "left",
@@ -114,6 +118,14 @@ const styles = StyleSheet.create({
     contentContainer: {
         flexGrow: 1,
     },
+    emptyBox: {
+        width: "50%",
+        height: "30%",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: [{translateX: -100}, {translateY: -100}],
+    }
 });
 
 export default PurchaseHistory;

@@ -1,24 +1,27 @@
 import {createMaterialTopTabNavigator} from "@react-navigation/material-top-tabs";
 import {UsefulData} from "../screens/UsefulData";
-import {StatusBar, StyleSheet, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
 import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
+import {createMaterialBottomTabNavigator} from "react-native-paper/react-navigation";
 
 const Tab = createMaterialTopTabNavigator();
 
 function BottomBar() {
     return (
         <View style={styles.container}>
-            <StatusBar backgroundColor="#F19020" barStyle="light-content" translucent={false}/>
             <Tab.Navigator
                 tabBarPosition={"bottom"}
                 screenOptions={{
                     tabBarStyle: {
                         backgroundColor: '#E49052',
                         height: 80,
-                    }
+                    },
+                    tabBarIndicatorStyle: {
+                        backgroundColor: 'transparent',
+                    },
                 }}>
                 <Tab.Screen
                     name="List"
