@@ -15,8 +15,7 @@ const sequelize = new Sequelize(dbName, dbUser, dbPass, {
     port: port,
 })
 
-sequelize
-    .authenticate()
+sequelize.authenticate()
     .then(() => {
         console.log("Conectado ao banco");
         sequelize.sync();

@@ -4,6 +4,8 @@ import {deleteMyAccount, getMyData} from "../service/apiService";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import default_image from '../assets/default_picture.jpg'
+import AnimatedLottieView from "lottie-react-native";
+import profileAnimation from "../assets/profileAnimation.json";
 
 export function Profile() {
     const [user, setUser] = useState({});
@@ -88,6 +90,7 @@ export function Profile() {
                         <Text style={styles.buttonText}>Deletar Conta</Text>
                     </TouchableOpacity>
                 </View>
+
             </View>
         </View>
     );

@@ -5997,7 +5997,7 @@ react-native-tab-view@^3.5.2:
 
 react-native-toast-message@^2.1.6:
   version "2.1.6"
-  resolved "https://registry.npmjs.org/react-native-toast-message/-/react-native-toast-message-2.1.6.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.1.6.tgz#322827c66901fa22cb3db614c7383cc717f5bbe2"
   integrity sha512-VctXuq20vmRa9AE13acaNZhrLcS3FaBS2zEevS3+vhBsnVZYG0FIlWIis9tVnpnNxUb3ART+BWtwQjzSttXTng==
 
 react-native-vector-icons@^9.2.0:

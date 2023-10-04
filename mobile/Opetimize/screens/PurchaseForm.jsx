@@ -24,18 +24,18 @@ function PurchaseForm() {
     const priceRef = useRef(null)
     const weightRef = useRef(null)
 
-    function handleSavePurchase() {
-        if (!name || !price || !weight) {
-            alert('Preencha todos os campos')
-            return
+    async function handleSavePurchase() {
+        if (await savePurchase({name, price, weight, date})) {
+            setName('')
+            setPrice('')
+            setWeight('')
         }
-        const purchase = {name, price, weight, date}
-        savePurchase(purchase)
     }
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={100} style={styles.container}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={50}
+                                  style={styles.container}>
                 <View>
                     <Text style={styles.title}>Registrar Ração</Text>
                 </View>

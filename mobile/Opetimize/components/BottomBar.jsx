@@ -5,7 +5,6 @@ import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
 import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
-import {createMaterialBottomTabNavigator} from "react-native-paper/react-navigation";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -17,7 +16,7 @@ function BottomBar() {
                 screenOptions={{
                     tabBarStyle: {
                         backgroundColor: '#E49052',
-                        height: 80,
+                        height: 70,
                     },
                     tabBarIndicatorStyle: {
                         backgroundColor: 'transparent',

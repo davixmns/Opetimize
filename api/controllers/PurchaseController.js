@@ -1,4 +1,3 @@
-import jwt from "jsonwebtoken";
 import Purchase from "../models/PurchaseModel.js";
 
 export default {
@@ -6,10 +5,10 @@ export default {
         try {
             const userId = req.user_id;
             const purchases = await Purchase.findAll({where: {user_id: userId}});
-            res.status(200).json(purchases);
+            return res.status(200).json(purchases);
         } catch (error) {
             console.log("ERRO AO PEGAR COMPRAS DE RAÇÃO, ERRO: " + error);
-            res.status(500).json({error: error.message});
+            return res.status(500).json({error: error.message});
         }
     },
 
@@ -17,12 +16,11 @@ export default {
         try {
             const {name, price, weight, date} = req.body;
             const purchase = {name, price, weight, date, user_id: req.user_id}
-            console.log(purchase)
             await Purchase.create(purchase);
-            res.status(201).json({message: "Compra de ração salva com sucesso!"});
+            return res.status(201).json({message: "Compra de ração salva com sucesso!"});
         } catch (error) {
             console.log(error);
-            res.status(500).json({error});
+            return res.status(500).json({error});
         }
     },
 
@@ -33,10 +31,10 @@ export default {
             const {name, price, weight, date, user_id} = req.body;
             const newPurchase = {name, price, weight, date, user_id};
             await oldPurchase.update(newPurchase, {where: {purchase_id: id}});
-            res.status(200).json({message: "Compra de ração atualizada com sucesso!"});
+            return res.status(200).json({message: "Compra de ração atualizada com sucesso!"});
         } catch (error) {
             console.log(error);
-            res.status(500).json({error});
+            return res.status(500).json({error});
         }
     },
 
