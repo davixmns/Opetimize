@@ -1,52 +1,19 @@
-import React, {useEffect, useState} from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet, Alert} from 'react-native';
-import {deleteMyAccount, getMyData} from "../service/apiService";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import {useNavigation} from "@react-navigation/native";
-import default_image from '../assets/default_picture.jpg'
-import AnimatedLottieView from "lottie-react-native";
-import profileAnimation from "../assets/profileAnimation.json";
+import React from 'react';
+import {
+    View,
+    Text,
+    Image,
+    StyleSheet,
+    Alert,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import default_image from '../assets/default_picture.jpg';
+import { useAuthContext } from '../contexts/AuthContext';
+import { MyLabelButton } from '../components/MyLabelButton';
 
 export function Profile() {
-    const [user, setUser] = useState({});
+    const { user, logoutUser, deleteAccount } = useAuthContext();
     const navigation = useNavigation();
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const token = await AsyncStorage.getItem('token');
-                const response = await getMyData(token);
-                setUser(response.data);
-            } catch (error) {
-                alert('Erro ao carregar usuário');
-                console.log(error);
-            }
-        };
-        fetchData();
-    }, []);
-
-    const handleLogout = async () => {
-        try {
-            await AsyncStorage.clear();
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
-        } catch (e) {
-            console.log(e);
-            Alert.alert('Erro ao sair da conta');
-        }
-    };
-
-    async function handleDeleteAccount() {
-        try {
-            const token = await AsyncStorage.getItem('token');
-            await deleteMyAccount(token);
-        } catch (e) {
-            console.log(e);
-            Alert.alert('Erro ao deletar conta');
-        }
-    }
 
     function handleGoToEditProfile() {
         navigation.navigate('EditProfile');
@@ -56,10 +23,50 @@ export function Profile() {
         navigation.navigate('ChangePassword');
     }
 
+    function handleLogout() {
+        Alert.alert(
+            'Sair',
+            'Tem certeza de que deseja sair?',
+            [
+                {
+                    text: 'Cancelar',
+                    style: 'cancel',
+                },
+                {
+                    text: 'Sair',
+                    onPress: () => logoutUser(),
+                },
+            ],
+            { cancelable: false }
+        );
+    }
+
+    function handleDeleteAccount() {
+        Alert.alert(
+            'Deletar Conta',
+            'Tem certeza de que deseja deletar sua conta?',
+            [
+                {
+                    text: 'Cancelar',
+                    style: 'cancel',
+                },
+                {
+                    text: 'Deletar',
+                    onPress: () => deleteAccount(),
+                    style: 'destructive',
+                },
+            ],
+            { cancelable: false }
+        );
+    }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Image source={user.image ? {uri: user.image} : default_image} style={styles.profileImage}/>
+                <Image
+                    source={user.image ? { uri: user.image } : default_image}
+                    style={styles.profileImage}
+                />
                 <View style={styles.userInfo}>
                     <Text style={styles.username}>{user.name}</Text>
                     <Text style={styles.email}>{user.email}</Text>
@@ -67,30 +74,34 @@ export function Profile() {
             </View>
 
             <View style={styles.content}>
-                <View style={styles.item}>
-                    <TouchableOpacity style={styles.button} onPress={handleGoToEditProfile}>
-                        <Text style={styles.buttonText}>Editar Perfil</Text>
-                    </TouchableOpacity>
+                <View style={styles.button}>
+                    <MyLabelButton
+                        iconName={'pen-tool'}
+                        label="Editar Perfil"
+                        onPress={handleGoToEditProfile}
+                    />
                 </View>
-
-                <View style={styles.item}>
-                    <TouchableOpacity style={styles.button} onPress={handleGoToChangePassword}>
-                        <Text style={styles.buttonText}>Alterar Senha</Text>
-                    </TouchableOpacity>
+                <View style={styles.button}>
+                    <MyLabelButton
+                        iconName={'lock'}
+                        label="Alterar Senha"
+                        onPress={handleGoToChangePassword}
+                    />
                 </View>
-
-                <View style={styles.item}>
-                    <TouchableOpacity style={styles.button} onPress={handleLogout}>
-                        <Text style={styles.buttonText}>Sair da Conta</Text>
-                    </TouchableOpacity>
+                <View style={styles.button}>
+                    <MyLabelButton
+                        iconName={'log-out'}
+                        label="Sair"
+                        onPress={handleLogout}
+                    />
                 </View>
-
-                <View style={styles.item}>
-                    <TouchableOpacity style={styles.button} onPress={handleDeleteAccount}>
-                        <Text style={styles.buttonText}>Deletar Conta</Text>
-                    </TouchableOpacity>
+                <View style={styles.button}>
+                    <MyLabelButton
+                        iconName={'trash-2'}
+                        label="Deletar Conta"
+                        onPress={handleDeleteAccount}
+                    />
                 </View>
-
             </View>
         </View>
     );
@@ -105,13 +116,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         padding: 20,
-        marginTop: "10%",
+        marginTop: '10%',
         marginLeft: 20,
     },
-    item: {
-        borderTopWidth: 1,
-        borderTopColor: '#ccc',
-        padding: 20
+    content: {
+        flex: 1,
     },
     profileImage: {
         width: 100,
@@ -119,15 +128,6 @@ const styles = StyleSheet.create({
         borderRadius: 100,
         marginRight: 20,
         overflow: 'hidden',
-    },
-
-    profileImage2: {
-        width: 130,
-        height: 130,
-        borderRadius: 100,
-        marginRight: 20,
-        marginVertical: 30,
-
     },
     username: {
         fontSize: 24,
@@ -138,26 +138,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#666',
     },
-    content: {
-        flex: 1,
-        padding: 20,
-    },
-    sectionTitle: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 10,
-    },
-    infoItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10,
-    },
-
-    buttonText: {
-        fontSize: 20,
-        color: '#E49052',
-        fontWeight: 'bold',
+    button: {
+        padding: 20
     },
 });
-
-export default Profile;

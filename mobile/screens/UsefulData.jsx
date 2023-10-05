@@ -1,4 +1,4 @@
-import {Text, View, StyleSheet} from "react-native";
+import {Text, View, StyleSheet, ScrollView, RefreshControl} from "react-native";
 import {useEffect, useState} from "react";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
 import {ReloadButtom} from "../components/ReloadButtom";
@@ -9,6 +9,7 @@ export function UsefulData() {
     const [totalPetFood, setTotalMonthlyPetFood] = useState(0)
     const [bestDay, setBestDay] = useState("")
     const [cheapestPetFood, setCheapestPetFood] = useState(null)
+    const [refreshing, setRefreshing] = useState(false);
 
     async function getMonthCosts() {
         const currentMonthPurchases = purchases.filter((purchase) => {
@@ -79,26 +80,39 @@ export function UsefulData() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.bigTitle}>Dados úteis</Text>
-            <View style={styles.dataCard}>
-                <Text style={styles.title}>Gastos do mês</Text>
-                <Text style={styles.dataText}>R$ {monthCosts}</Text>
-            </View>
+            <ScrollView
+                refreshing={refreshing}
+                onRefresh={loadPurchases}
+                refreshControl={
+                    <RefreshControl
+                        tintColor={"#E49052"}
+                        refreshing={refreshing}
+                        onRefresh={loadPurchases}
+                        progressViewOffset={50}
+                    />
+                }
+            >
+                <Text style={styles.bigTitle}>Dados úteis</Text>
+                <View style={styles.dataCard}>
+                    <Text style={styles.title}>Gastos do mês</Text>
+                    <Text style={styles.dataText}>R$ {monthCosts}</Text>
+                </View>
 
-            <View style={styles.dataCard}>
-                <Text style={styles.title}>Estoque do mês</Text>
-                <Text style={styles.dataText}>{totalPetFood} Kg</Text>
-            </View>
+                <View style={styles.dataCard}>
+                    <Text style={styles.title}>Estoque do mês</Text>
+                    <Text style={styles.dataText}>{totalPetFood} Kg</Text>
+                </View>
 
-            <View style={styles.dataCard}>
-                <Text style={styles.title}>Dia mais frequente</Text>
-                <Text style={styles.dataText}>{bestDay}</Text>
-            </View>
+                <View style={styles.dataCard}>
+                    <Text style={styles.title}>Dia mais frequente</Text>
+                    <Text style={styles.dataText}>{bestDay}</Text>
+                </View>
 
-            <View style={styles.dataCard}>
-                <Text style={styles.title}>Ração mais barata</Text>
-                <Text style={styles.dataText2}>{cheapestPetFood}</Text>
-            </View>
+                <View style={styles.dataCard}>
+                    <Text style={styles.title}>Ração mais barata</Text>
+                    <Text style={styles.dataText2}>{cheapestPetFood}</Text>
+                </View>
+            </ScrollView>
 
             <ReloadButtom onPress={loadPurchases}/>
         </View>
@@ -107,12 +121,10 @@ export function UsefulData() {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: "12%",
         backgroundColor: '#F5E7CC',
         alignItems: "center",
         flex: 1,
     },
-
     dataCard: {
         height: 150,
         width: 350,
@@ -155,6 +167,7 @@ const styles = StyleSheet.create({
         color: "#E49052",
         fontSize: 35,
         alignSelf: "center",
-        paddingBottom: "5%"
+        paddingVertical: 20,
+        paddingTop: 50,
     }
 })

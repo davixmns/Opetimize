@@ -13,84 +13,84 @@ function BottomBar() {
     return (
         <View style={styles.container}>
             <PurchaseProvider>
-            <Tab.Navigator
-                tabBarPosition={"bottom"}
-                screenOptions={{
-                    tabBarStyle: {
-                        backgroundColor: '#E49052',
-                        height: 70,
-                    },
-                    tabBarIndicatorStyle: {
-                        backgroundColor: 'transparent',
-                    },
-                }}>
-                <Tab.Screen
-                    name="List"
-                    component={PurchaseHistory}
-                    options={{
-                        tabBarHideOnKeyboard: true,
-                        tabBarShowLabel: false,
-                        headerShown: false,
-                        tabBarIcon: ({focused}) => (
-                            <Feather
-                                name="list"
-                                size={30}
-                                color={focused ? '#e07e38' : '#fff'}
-                                style={styles.icon}
-                            />
-                        )
-                    }}
-                />
-                <Tab.Screen
-                    name="Add"
-                    component={PurchaseForm}
-                    options={{
-                        tabBarHideOnKeyboard: true,
-                        tabBarShowLabel: false,
-                        headerShown: false,
-                        tabBarIcon: ({focused}) => (
-                            <Feather
-                                name="plus-circle"
-                                size={30}
-                                color={focused ? '#e07e38' : '#fff'}
-                                style={styles.icon}
-                            />
-                        )
-                    }}
-                />
-                <Tab.Screen
-                    name="Data"
-                    component={UsefulData}
-                    options={{
-                        tabBarShowLabel: false,
-                        headerShown: false,
-                        tabBarIcon: ({focused}) => (
-                            <Feather
-                                name="bar-chart"
-                                size={30}
-                                color={focused ? '#e07e38' : '#fff'}
-                                style={styles.icon}
-                            />
-                        )
-                    }}
-                />
-                <Tab.Screen
-                    name={"Profile"}
-                    component={Profile}
-                    options={{
-                        tabBarShowLabel: false,
-                        headerShown: false,
-                        tabBarIcon: ({focused}) => (
-                            <Feather
-                                name="user"
-                                size={30}
-                                color={focused ? '#e07e38' : '#fff'}
-                                style={styles.icon}
-                            />
-                        )
-                    }}
-                />
-            </Tab.Navigator>
+                <Tab.Navigator
+                    tabBarPosition={"bottom"}
+                    screenOptions={{
+                        tabBarStyle: {
+                            backgroundColor: '#E49052',
+                            height: 70,
+                        },
+                        tabBarIndicatorStyle: {
+                            backgroundColor: 'transparent',
+                        },
+                    }}>
+                    <Tab.Screen
+                        name="List"
+                        component={PurchaseHistory}
+                        options={{
+                            tabBarHideOnKeyboard: true,
+                            tabBarShowLabel: false,
+                            headerShown: false,
+                            tabBarIcon: ({focused}) => (
+                                <Feather
+                                    name="list"
+                                    size={30}
+                                    color={focused ? '#e07e38' : '#fff'}
+                                    style={styles.icon}
+                                />
+                            )
+                        }}
+                    />
+                    <Tab.Screen
+                        name="Add"
+                        component={PurchaseForm}
+                        options={{
+                            tabBarHideOnKeyboard: true,
+                            tabBarShowLabel: false,
+                            headerShown: false,
+                            tabBarIcon: ({focused}) => (
+                                <Feather
+                                    name="plus-circle"
+                                    size={30}
+                                    color={focused ? '#e07e38' : '#fff'}
+                                    style={styles.icon}
+                                />
+                            )
+                        }}
+                    />
+                    <Tab.Screen
+                        name="Data"
+                        component={UsefulData}
+                        options={{
+                            tabBarShowLabel: false,
+                            headerShown: false,
+                            tabBarIcon: ({focused}) => (
+                                <Feather
+                                    name="bar-chart"
+                                    size={30}
+                                    color={focused ? '#e07e38' : '#fff'}
+                                    style={styles.icon}
+                                />
+                            )
+                        }}
+                    />
+                    <Tab.Screen
+                        name={"Profile"}
+                        component={Profile}
+                        options={{
+                            tabBarShowLabel: false,
+                            headerShown: false,
+                            tabBarIcon: ({focused}) => (
+                                <Feather
+                                    name="user"
+                                    size={30}
+                                    color={focused ? '#e07e38' : '#fff'}
+                                    style={styles.icon}
+                                />
+                            )
+                        }}
+                    />
+                </Tab.Navigator>
             </PurchaseProvider>
         </View>
     );

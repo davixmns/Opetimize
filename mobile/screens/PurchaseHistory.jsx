@@ -1,6 +1,15 @@
 import {useEffect, useState} from 'react';
 import Card from '../components/Card';
-import {FlatList, TextInput, View, Text, StyleSheet, KeyboardAvoidingView, Platform} from "react-native";
+import {
+    FlatList,
+    TextInput,
+    View,
+    Text,
+    StyleSheet,
+    KeyboardAvoidingView,
+    Platform,
+    RefreshControl
+} from "react-native";
 import * as Animatable from "react-native-animatable";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
 import {ReloadButtom} from "../components/ReloadButtom";
@@ -10,6 +19,7 @@ import emptyBox from "../assets/empty_box.json";
 function PurchaseHistory() {
     const {purchases, loadPurchases} = usePurchaseContext()
     const [searchTerm, setSearchTerm] = useState("");
+    const [refreshing, setRefreshing] = useState(false);
 
     useEffect(() => {
         loadPurchases();
@@ -57,12 +67,21 @@ function PurchaseHistory() {
                 </View>
             )}
             <FlatList
-                style={styles.container}
-                data={filteredPurchases} // Use o estado de purchases do contexto
+                data={filteredPurchases}
                 renderItem={renderPurchase}
                 keyExtractor={(item) => item.purchase_id}
                 ListHeaderComponent={<Text style={styles.title}>Histórico</Text>}
                 contentContainerStyle={styles.contentContainer}
+                refreshing={refreshing}
+                onRefresh={loadPurchases}
+                refreshControl={
+                    <RefreshControl
+                        tintColor={"white"}
+                        refreshing={refreshing}
+                        onRefresh={loadPurchases}
+                        progressViewOffset={50}
+                    />
+                }
             />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios'? 'position': "height"} keyboardVerticalOffset={10}>
                 <ReloadButtom onPress={loadPurchases}/>
@@ -79,15 +98,12 @@ function PurchaseHistory() {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        paddingTop: 20,
-        paddingBottom: "4%",
-    },
     title: {
         color: "white",
         fontSize: 35,
         alignSelf: "center",
-        paddingVertical: 20
+        paddingVertical: 20,
+        paddingTop: 50,
     },
     background: {
         flex: 1,

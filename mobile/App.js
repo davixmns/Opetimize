@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {AuthStack} from './routes/AuthStack';
-import {PurchaseProvider} from "./contexts/PurchaseContext";
 import Toast from "react-native-toast-message";
 import {toastConfig} from "./components/MyToast";
 import {AuthProvider} from "./contexts/AuthContext";

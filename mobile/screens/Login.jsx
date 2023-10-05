@@ -1,7 +1,5 @@
-import {useState, useRef, useEffect} from 'react';
-import {login} from '../service/apiService';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Alert, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
+import {useState, useRef} from 'react';
+import {Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {Input} from 'react-native-elements';
 import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -19,7 +17,9 @@ const Login = () => {
     const {tryLogin} = useAuthContext()
 
     async function handleTryLogin() {
-        tryLogin(email, password)
+        tryLogin(email, password).then(() => {
+
+        }).catch()
     }
 
     function handleGoToRegister() {

@@ -1,13 +1,24 @@
-import {Button, View} from "react-native";
+import {Text, TouchableOpacity, StyleSheet} from "react-native";
 
-export function MyButton(props) {
+export function MyButton({onPress, title}) {
     return (
-        <View>
-            <Button
-                onPress={props.onPress}
-                styles={props.button}
-                title={props.title}>
-            </Button>
-        </View>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+            <Text style={styles.buttonText}>{title}</Text>
+        </TouchableOpacity>
     );
 }
+
+const styles = StyleSheet.create({
+    button: {
+        height: '100%',
+        backgroundColor: '#E49052',
+        borderRadius: 30,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    buttonText: {
+        fontSize: 20,
+        color: '#fff',
+        fontWeight: 'bold',
+    }
+})

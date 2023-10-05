@@ -23,11 +23,9 @@ export const PurchaseProvider = ({children}) => {
 
     async function loadPurchases() {
         try {
-            console.log("Carregando compras")
             const token = await AsyncStorage.getItem('token');
             const response = await getAllPurchases(token)
             setPurchases(response.data)
-            showToast('success', "Sucesso", "Compras carregadas com sucesso")
         } catch (e) {
             console.log(e)
             showToast('error', "Erro", "Erro ao carregar as compras")
@@ -40,6 +38,7 @@ export const PurchaseProvider = ({children}) => {
             const purchaseIsOk = utils.verifyPurchase(purchase)
             if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
             await createPurchase(token, purchase)
+            showToast('success', "Sucesso", "Compra cadastrada com sucesso")
             return true
         } catch (e) {
             console.log(e)

@@ -14,6 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {AppDatePicker} from '../components/AppDatePicker';
 import feeddog from '../assets/feeddog.jpg';
 import {usePurchaseContext} from "../contexts/PurchaseContext";
+import {MyButton} from "../components/MyButton";
 
 function PurchaseForm() {
     const [name, setName] = useState('');
@@ -73,9 +74,9 @@ function PurchaseForm() {
                             ref={weightRef}
                         />
                         <AppDatePicker setDate={setDate} date={date}/>
-                        <TouchableOpacity style={styles.button} onPress={handleSavePurchase}>
-                            <Text style={styles.buttonText}>Salvar</Text>
-                        </TouchableOpacity>
+                        <View style={styles.button}>
+                            <MyButton title={'Salvar'} onPress={handleSavePurchase}/>
+                        </View>
                     </View>
                 </View>
             </KeyboardAvoidingView>
@@ -92,7 +93,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     content: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
@@ -119,7 +119,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        paddingTop: '15%',
+        paddingVertical: 20,
+        paddingTop: 50,
         fontSize: 35,
         color: '#F19020',
     },
@@ -130,15 +131,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        backgroundColor: '#E49052',
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
+        marginTop: 30,
     },
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    }
+
 });

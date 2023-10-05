@@ -5,20 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: ajustes">
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/assets/profileAnimation.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/components/MyToast.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/Opetimize/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/components/MyLabelButton.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/api/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/PurchaseController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/database/DB.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/DB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/components/BottomBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/contexts/PurchaseContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Opetimize/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Opetimize/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +101,11 @@
       <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mobile" />
+      <recent name="$PROJECT_DIR$/mobile/Opetimize/routes" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/screens" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/components" />
-      <recent name="$PROJECT_DIR$/web/opetimize/src" />
-      <recent name="$PROJECT_DIR$/mobile/Opetimize" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders learn react link">
@@ -256,7 +255,9 @@
       <workItem from="1696265969288" duration="7761000" />
       <workItem from="1696283869146" duration="313000" />
       <workItem from="1696342643935" duration="16197000" />
-      <workItem from="1696426286750" duration="16177000" />
+      <workItem from="1696426286750" duration="16412000" />
+      <workItem from="1696511978698" duration="7262000" />
+      <workItem from="1696526056702" duration="9847000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -601,7 +602,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
