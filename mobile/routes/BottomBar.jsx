@@ -5,12 +5,14 @@ import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
 import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
+import {PurchaseProvider} from "../contexts/PurchaseContext";
 
 const Tab = createMaterialTopTabNavigator();
 
 function BottomBar() {
     return (
         <View style={styles.container}>
+            <PurchaseProvider>
             <Tab.Navigator
                 tabBarPosition={"bottom"}
                 screenOptions={{
@@ -89,6 +91,7 @@ function BottomBar() {
                     }}
                 />
             </Tab.Navigator>
+            </PurchaseProvider>
         </View>
     );
 }

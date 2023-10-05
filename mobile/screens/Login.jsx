@@ -1,65 +1,25 @@
 import {useState, useRef, useEffect} from 'react';
-import {tryLogin} from '../service/apiService';
+import {login} from '../service/apiService';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Alert, Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {Input} from 'react-native-elements';
 import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from "@react-navigation/native";
+import {useAuthContext} from "../contexts/AuthContext";
 
 const logo = require('../assets/logo.png');
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [loginSuccess, setLoginSuccess] = useState(false);
-    const [errorOcurred, setErrorOcurred] = useState(false);
-    const [errorMessage, setErrorMessage] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const navigation = useNavigation();
     const passwordRef = useRef(null);
-
-    useEffect(() => {
-        async function getToken() {
-            const token = await AsyncStorage.getItem('token');
-            if (token) {
-                setLoginSuccess(true);
-            }
-        }
-        getToken();
-    }, [])
-
-    useEffect(() => {
-        if(loginSuccess) {
-            navigation.navigate("BottomBar");
-        }
-    }, [loginSuccess])
-
-    function showError(e){
-        setErrorOcurred(true);
-        setErrorMessage(e);
-        setTimeout(() => {
-            setErrorOcurred(false);
-            setErrorMessage('');
-        }, 3000);
-    }
+    const {tryLogin} = useAuthContext()
 
     async function handleTryLogin() {
-        try {
-            if(!email || !password) {
-                showError("Preencha todos os campos")
-                return;
-            }
-            const tokenResponse = await tryLogin(email, password);
-            const token = tokenResponse.data.token.toString();
-            if (token) {
-                await AsyncStorage.setItem('token', token);
-                setLoginSuccess(true);
-            }
-        } catch (e) {
-            console.log(e.response.data.message);
-            showError(e.response.data.message);
-        }
+        tryLogin(email, password)
     }
 
     function handleGoToRegister() {
@@ -101,9 +61,6 @@ const Login = () => {
                         ref={passwordRef}
                         onSubmitEditing={handleTryLogin}
                     />
-                    <View style={{height: 20}}>
-                        {errorOcurred && <Text style={styles.errorText}>{errorMessage}</Text>}
-                    </View>
 
                     <TouchableOpacity style={styles.button} onPress={handleTryLogin}>
                         <Text style={styles.buttonText}>Entrar</Text>

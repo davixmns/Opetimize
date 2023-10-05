@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Card from '../components/Card';
 import {FlatList, TextInput, View, Text, StyleSheet, KeyboardAvoidingView, Platform} from "react-native";
 import * as Animatable from "react-native-animatable";
@@ -10,6 +10,10 @@ import emptyBox from "../assets/empty_box.json";
 function PurchaseHistory() {
     const {purchases, loadPurchases} = usePurchaseContext()
     const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        loadPurchases();
+    }, []);
 
     const renderPurchase = ({item: purchase, index}) => {
         const animationDelay = index * 200;

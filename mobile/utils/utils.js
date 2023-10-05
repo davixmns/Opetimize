@@ -1,3 +1,4 @@
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default {
     verifyPurchase (p) {
@@ -21,6 +22,16 @@ export default {
         }
         if(p.weight > 10000) {
             return "Este peso é muito alto"
+        }
+        return true
+    },
+
+    verifyCredentials(email, password){
+        if(!email || !password) {
+            return "Preencha todos os campos"
+        }
+        if(!emailRegex.test(email)) {
+            return "Este email é inválido"
         }
         return true
     }

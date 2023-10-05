@@ -1,6 +1,5 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {Alert} from "react-native";
 import {createPurchase, getAllPurchases} from "../service/apiService.js";
 import utils from "../utils/utils";
 import Toast from "react-native-toast-message";
@@ -24,13 +23,14 @@ export const PurchaseProvider = ({children}) => {
 
     async function loadPurchases() {
         try {
+            console.log("Carregando compras")
             const token = await AsyncStorage.getItem('token');
             const response = await getAllPurchases(token)
             setPurchases(response.data)
-            console.log("Compras carregadas")
+            showToast('success', "Sucesso", "Compras carregadas com sucesso")
         } catch (e) {
             console.log(e)
-            Alert.alert("ERRRO", "Erro ao carregar as compras")
+            showToast('error', "Erro", "Erro ao carregar as compras")
         }
     }
 
@@ -39,23 +39,13 @@ export const PurchaseProvider = ({children}) => {
             const token = await AsyncStorage.getItem('token');
             const purchaseIsOk = utils.verifyPurchase(purchase)
             if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
-            await createPurchase(token, purchase).then((response) => {
-                console.log("response.data",response.data)
-                setPurchases((state)=>[...state, purchase])
-                showToast('success', "Sucesso", "Sua compra foi cadastrada!")
-            }).catch((error) => {
-                console.log(error)
-            })
+            await createPurchase(token, purchase)
             return true
         } catch (e) {
             console.log(e)
             showToast('error', "Erro", "Erro interno no servidor")
         }
     }
-
-    useEffect(() => {
-        loadPurchases()
-    }, []);
 
     return (
         <PurchaseContext.Provider
