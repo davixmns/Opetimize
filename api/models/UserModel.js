@@ -22,7 +22,7 @@ const UserModel = database.define('user', {
         allowNull: false
     },
     profile_image: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(1000),
         allowNull: true
     }
 }, {

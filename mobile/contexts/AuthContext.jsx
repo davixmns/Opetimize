@@ -2,7 +2,7 @@ import {createContext, useContext, useEffect, useState} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import Toast from "react-native-toast-message";
-import {deleteMyAccount, getMyData, login} from "../service/apiService";
+import {deleteMyAccount, getMyData, login, updateUser} from "../service/apiService";
 import utils from "../utils/utils";
 import {Alert} from "react-native";
 
@@ -85,9 +85,28 @@ export function AuthProvider({children}) {
         try {
             const token = await AsyncStorage.getItem('token');
             await deleteMyAccount(token);
+            showToast('success', 'Sucesso', "Conta deletada com sucesso");
+            await AsyncStorage.clear();
+            navigation.reset({
+                index: 0,
+                routes: [{name: 'Login'}]
+            });
         } catch (e) {
             console.log(e);
-            Alert.alert('Erro ao deletar conta');
+            showToast('error', 'Erro', "Erro ao deletar conta")
+        }
+
+    }
+
+    async function saveProfile(user){
+        try{
+            const token = await AsyncStorage.getItem('token');
+            await updateUser(token, user);
+            showToast('success', 'Sucesso', "Suas edições foram efetuadas");
+            return true
+        }catch (e) {
+            console.log(e);
+            showToast('error', 'Erro', "Erro ao salvar perfil")
         }
     }
 
@@ -98,6 +117,7 @@ export function AuthProvider({children}) {
                 user,
                 logoutUser,
                 deleteAccount,
+                saveProfile
             }}
         >
             {children}

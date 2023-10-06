@@ -8,7 +8,7 @@ const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 export default {
     async getUserData(req, res) {
         try {
-            const user = await UserModel.findByPk(req.user_id)
+            const user = await UserModel.findOne({where: {user_id: req.user_id}, attributes: {exclude: ['password']}})
             if (!user) res.status(404).json({message: "Usuário não encontrado :("})
             return res.status(200).json(user)
         } catch (error) {
@@ -36,7 +36,7 @@ export default {
         try {
             const user_id = req.user_id
             const {name, email, profile_image} = req.body
-            if(!name || !email || !profile_image) return res.status(400).json({message: "Preencha todos os campos"})
+            if(!name || !email) return res.status(400).json({message: "Preencha todos os campos"})
             const userData = {name, email, profile_image}
             await UserModel.update(userData, {where: {user_id: user_id}})
             return res.status(200).json({message: "Usuário atualizado com sucesso!"})

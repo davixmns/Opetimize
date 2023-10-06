@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import {useEffect, useRef, useState} from 'react';
 import {
     View,
     Text,
@@ -7,7 +7,7 @@ import {
     Image,
     TouchableWithoutFeedback,
     Keyboard,
-    KeyboardAvoidingView,
+    KeyboardAvoidingView, ScrollView,
 } from 'react-native';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -15,15 +15,34 @@ import {AppDatePicker} from '../components/AppDatePicker';
 import feeddog from '../assets/feeddog.jpg';
 import {usePurchaseContext} from "../contexts/PurchaseContext";
 import {MyButton} from "../components/MyButton";
+import StarsRating from "../components/StarsRating";
 
 function PurchaseForm() {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [weight, setWeight] = useState('');
     const [date, setDate] = useState(new Date());
+    const [rating, setRating] = useState(0);
     const {savePurchase} = usePurchaseContext()
     const priceRef = useRef(null)
     const weightRef = useRef(null)
+    const [buttonDisabled, setButtonDisabled] = useState(true)
+
+    useEffect(() => {
+        if (name && price && weight) {
+            setButtonDisabled(false)
+        } else {
+            setButtonDisabled(true)
+        }
+    }, [name, price, weight])
+
+    function onChangePrice(text) {
+        setPrice(text.replace(/[^0-9.]/g, ''))
+    }
+
+    function onChangeWeight(text) {
+        setWeight(text.replace(/[^0-9.]/g, ''))
+    }
 
     async function handleSavePurchase() {
         if (await savePurchase({name, price, weight, date})) {
@@ -44,7 +63,7 @@ function PurchaseForm() {
                     <View style={styles.imageView}>
                         <Image source={feeddog} style={styles.image}/>
                     </View>
-                    <View style={styles.form}>
+                    <ScrollView style={styles.form}>
                         <Input
                             keyboardType={'default'}
                             placeholder="Ração/Marca"
@@ -58,7 +77,7 @@ function PurchaseForm() {
                             keyboardType={'numeric'}
                             placeholder="Valor"
                             leftIcon={<Icon name="money" size={24} color="#F19020"/>}
-                            onChangeText={setPrice}
+                            onChangeText={onChangePrice}
                             inputStyle={styles.inputStyle}
                             value={price}
                             onSubmitEditing={() => weightRef.current.focus()}
@@ -68,20 +87,25 @@ function PurchaseForm() {
                             keyboardType={'numeric'}
                             placeholder="Peso"
                             leftIcon={<Icon name="balance-scale" size={24} color="#F19020"/>}
-                            onChangeText={setWeight}
+                            onChangeText={onChangeWeight}
                             inputStyle={styles.inputStyle}
                             value={weight}
                             ref={weightRef}
                         />
                         <AppDatePicker setDate={setDate} date={date}/>
+                        <View style={styles.stars}>
+                            <StarsRating rating={rating} setRating={setRating}/>
+                        </View>
+
                         <View style={styles.button}>
                             <MyButton title={'Salvar'} onPress={handleSavePurchase}/>
                         </View>
-                    </View>
+                    </ScrollView>
                 </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
-    );
+    )
+
 }
 
 export default PurchaseForm;
@@ -131,7 +155,15 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        marginTop: 30,
-    },
 
+    },
+    pickerAndRating: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    stars: {
+        paddingBottom: 20,
+    }
 });

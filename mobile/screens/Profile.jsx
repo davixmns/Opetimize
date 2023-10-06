@@ -16,7 +16,7 @@ export function Profile() {
     const navigation = useNavigation();
 
     function handleGoToEditProfile() {
-        navigation.navigate('EditProfile');
+        navigation.navigate('EditProfile', user);
     }
 
     function handleGoToChangePassword() {
@@ -64,7 +64,7 @@ export function Profile() {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image
-                    source={user.image ? { uri: user.image } : default_image}
+                    source={user.profile_image ? { uri: user.profile_image } : default_image}
                     style={styles.profileImage}
                 />
                 <View style={styles.userInfo}>

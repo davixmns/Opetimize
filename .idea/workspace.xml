@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: ajustes">
-      <change afterPath="$PROJECT_DIR$/mobile/components/MyLabelButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/components/CircleButton.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_23,_23_26_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_09_23__23_26__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +65,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;12.22.9&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;12.20.55&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.18.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.18.0&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/davixmns/Desktop/projetos/vortex/Opetimize/mobile/Opetimize/assets&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -258,6 +261,8 @@
       <workItem from="1696426286750" duration="16412000" />
       <workItem from="1696511978698" duration="7262000" />
       <workItem from="1696526056702" duration="9847000" />
+      <workItem from="1696599262427" duration="1604000" />
+      <workItem from="1696600875852" duration="8798000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>

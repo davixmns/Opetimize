@@ -4,6 +4,7 @@ import Login from '../screens/Login';
 import BottomBar from "./BottomBar";
 import Register from "../screens/Register";
 import {ForgotPassword} from "../screens/ForgotPassword";
+import {EditProfile} from "../screens/EditProfile";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,11 @@ export function AuthStack() {
             <Stack.Screen
                 name={"ForgotPassword"}
                 component={ForgotPassword}
+                options={{headerShown: false}}
+            />
+            <Stack.Screen
+                name={"EditProfile"}
+                component={EditProfile}
                 options={{headerShown: false}}
             />
         </Stack.Navigator>

@@ -25,6 +25,7 @@
     "date-fns": "^2.29.3",
     "dotenv": "^16.3.1",
     "expo": "~48.0.15",
+    "expo-device": "~5.2.1",
     "expo-image-picker": "~14.1.1",
     "expo-status-bar": "~1.4.4",
     "lottie-react-native": "5.1.4",
