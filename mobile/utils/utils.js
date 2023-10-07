@@ -21,8 +21,18 @@ export default {
     verifyUser(name, email) {
         if (!name || !email) return "Preencha todos os campos"
         if (name.length < 3) return `"${name}" é um nome muito curto`
-        if (name.length > 20) return "Este nome é muito longo"
+        if (name.length > 40) return "Este nome é muito longo"
         if (!emailRegex.test(email)) return "Este email é inválido"
         return true
+    },
+
+    verifyUserOnRegister(u) {
+        if (!u.name || !u.email) return "Preencha todos os campos"
+        if (u.name.length < 3) return `"${u.name}" é um nome muito curto`
+        if (u.name.length > 20) return "Este nome é muito longo"
+        if (!emailRegex.test(u.email)) return "Este email é inválido"
+        if(u.password.length < 6) return "A senha deve ter no mínimo 8 caracteres"
+        return true
     }
+
 }

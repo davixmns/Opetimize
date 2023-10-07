@@ -14,8 +14,8 @@ export default {
 
     async createPurchase(req, res) {
         try {
-            const {name, price, weight, date} = req.body;
-            const purchase = {name, price, weight, date, user_id: req.user_id}
+            const {name, price, weight, date, rating} = req.body;
+            const purchase = {name, price, weight, date, rating, user_id: req.user_id}
             await Purchase.create(purchase);
             return res.status(201).json({message: "Compra de ração salva com sucesso!"});
         } catch (error) {
@@ -28,8 +28,8 @@ export default {
         try {
             const id = req.params.id;
             const oldPurchase = await Purchase.findByPk(id);
-            const {name, price, weight, date, user_id} = req.body;
-            const newPurchase = {name, price, weight, date, user_id};
+            const {name, price, weight, date, rating, user_id} = req.body;
+            const newPurchase = {name, price, weight, date, rating, user_id};
             await oldPurchase.update(newPurchase, {where: {purchase_id: id}});
             return res.status(200).json({message: "Compra de ração atualizada com sucesso!"});
         } catch (error) {

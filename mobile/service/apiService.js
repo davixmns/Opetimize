@@ -39,6 +39,10 @@ export const deleteMyAccount = async (token) => {
     );
 }
 
+export const createUser = async (user) => {
+    return await axios.post(`${BASE_URL}/user`, user);
+};
+
 export const sendEmailForgotPassword = async (email) => {
     return await axios.get(`${BASE_URL}/forgot-password/${email}`);
 };
@@ -47,11 +51,6 @@ export const sendEmailForgotPassword = async (email) => {
 export const updatePassword = async (token, newPassword) => {
     return await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
 };
-
-export const createAccount = async (user) => {
-    return await axios.post(`${BASE_URL}/user`, user);
-};
-
 
 export const deletePurchase = async (id) => {
     return await axios.delete(`${BASE_URL}/purchases/${id}`);

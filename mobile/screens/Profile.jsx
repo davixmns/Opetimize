@@ -117,7 +117,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
         marginTop: '10%',
-        marginLeft: 20,
+        //sombra
+        shadowColor: '#000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: .2,
+        shadowRadius: 1.41,
+        elevation: 5,
     },
     content: {
         flex: 1,

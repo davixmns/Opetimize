@@ -36,6 +36,7 @@ function PurchaseHistory() {
                     price={purchase.price}
                     weight={purchase.weight}
                     date={purchase.date}
+                    rating={purchase.rating}
                 />
             </Animatable.View>
         );
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         backgroundColor: "#E49052",
         borderRadius: 30,
-        width: "70%",
+        width: "71%",
         bottom: 20,
         marginLeft: "5%",
         height: 50,

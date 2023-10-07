@@ -25,7 +25,11 @@ const PurchaseModel = database.define('purchase', {
     date: {
         type: Sequelize.DATE,
         allowNull: false
-    }
+    },
+    rating: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
 }, {
     timestamps: false
 });

@@ -45,7 +45,7 @@ function PurchaseForm() {
     }
 
     async function handleSavePurchase() {
-        if (await savePurchase({name, price, weight, date})) {
+        if (await savePurchase({name, price, weight, date, rating})) {
             setName('')
             setPrice('')
             setWeight('')
@@ -56,14 +56,12 @@ function PurchaseForm() {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} keyboardVerticalOffset={50}
                                   style={styles.container}>
-                <View>
-                    <Text style={styles.title}>Registrar Ração</Text>
-                </View>
+                <Text style={styles.title}>Registrar Ração</Text>
                 <View style={styles.content}>
                     <View style={styles.imageView}>
                         <Image source={feeddog} style={styles.image}/>
                     </View>
-                    <ScrollView style={styles.form}>
+                    <View style={styles.form}>
                         <Input
                             keyboardType={'default'}
                             placeholder="Ração/Marca"
@@ -96,11 +94,10 @@ function PurchaseForm() {
                         <View style={styles.stars}>
                             <StarsRating rating={rating} setRating={setRating}/>
                         </View>
-
                         <View style={styles.button}>
                             <MyButton title={'Salvar'} onPress={handleSavePurchase}/>
                         </View>
-                    </ScrollView>
+                    </View>
                 </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>
@@ -127,7 +124,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: '#fff',
         width: '90%',
-        paddingTop: '10%',
+        paddingTop: '3%',
     },
     imageView: {
         alignItems: 'center',
@@ -155,7 +152,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-
+        marginTop: '12%',
     },
     pickerAndRating: {
         display: 'flex',
@@ -164,6 +161,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     stars: {
-        paddingBottom: 20,
+        marginLeft: 10,
     }
 });

@@ -2,9 +2,8 @@ import {createContext, useContext, useEffect, useState} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import Toast from "react-native-toast-message";
-import {deleteMyAccount, getMyData, login, updateUser} from "../service/apiService";
+import {deleteMyAccount, getMyData, login, updateUser, createUser} from "../service/apiService";
 import utils from "../utils/utils";
-import {Alert} from "react-native";
 
 const AuthContext = createContext();
 
@@ -24,48 +23,55 @@ export function AuthProvider({children}) {
         });
     }
 
-    function enterInApp() {
-        showToast('success', 'Sucesso', `Bem Vindo!`);
-        navigation.navigate("BottomBar");
-        fetchUserData()
-    }
-
-    async function tryLogin(email, password) {
-        try {
-            const credentialsOk = utils.verifyCredentials(email, password);
-            if (credentialsOk !== true) return showToast('warning', 'Aviso', credentialsOk);
-            const tokenResponse = await login(email, password);
-            const token = tokenResponse.data.token.toString();
-            if (token) {
-                await AsyncStorage.setItem('token', token);
-                enterInApp();
-            }
-        } catch (e) {
-            console.log(e.response.data.message);
-            showToast('error', 'Erro', e.response.data.message);
-            navigation.navigate("Login");
-        }
-    }
-
     useEffect(() => {
-        async function checkIfUserIsLogged() {
-            const token = await AsyncStorage.getItem('token');
-            if (token) {
-                enterInApp()
-            }
-        }
         checkIfUserIsLogged();
     }, []);
 
+    async function checkIfUserIsLogged() {
+        const token = await AsyncStorage.getItem('token');
+        if (token) await enterInApp()
+    }
+
+    async function enterInApp() {
+        await fetchUserData()
+        showToast('success', 'Sucesso', `Bem Vindo!`);
+        navigation.navigate("BottomBar");
+    }
+
     async function fetchUserData() {
-        try {
-            const token = await AsyncStorage.getItem('token');
-            const response = await getMyData(token);
+        const token = await AsyncStorage.getItem('token');
+        await getMyData(token).then((response) => {
             setUser(response.data);
-        } catch (error) {
-            showToast('error', 'Erro', "Erro ao buscar dados do usuário");
+        }).catch((error) => {
             console.log(error);
-        }
+            showToast('error', 'Erro', `Erro ao buscar dados da conta`);
+        })
+    }
+
+    async function createAccount(user) {
+        const userOk = utils.verifyUserOnRegister(user);
+        if (userOk !== true) return showToast('warning', 'Aviso', userOk);
+        await createUser(user).then(() => {
+            showToast('success', 'Sucesso', `Conta criada com sucesso!`);
+            navigation.navigate("Login");
+        }).catch((error) => {
+            console.log(error);
+            showToast('error', 'Erro', `Erro ao criar conta!`);
+        })
+    }
+
+    async function tryLogin(email, password) {
+        const credentialsOk = utils.verifyCredentials(email, password);
+        if (credentialsOk !== true) return showToast('warning', 'Aviso', credentialsOk);
+        await login(email, password).then((response) => {
+            const token = response.data.token;
+            AsyncStorage.setItem('token', token);
+            enterInApp();
+        }).catch((error) => {
+            console.log(error.response.data.message);
+            showToast('error', 'Erro', error.response.data.message);
+        })
+
     }
 
     async function logoutUser() {
@@ -77,37 +83,37 @@ export function AuthProvider({children}) {
             });
         } catch (e) {
             console.log(e);
-            Alert.alert('Erro ao sair da conta');
+            showToast('error', 'Erro', "Erro ao sair da conta");
         }
-    };
+    }
 
     async function deleteAccount() {
-        try {
-            const token = await AsyncStorage.getItem('token');
-            await deleteMyAccount(token);
+        const token = await AsyncStorage.getItem('token');
+        await deleteMyAccount(token).then(async () => {
             showToast('success', 'Sucesso', "Conta deletada com sucesso");
             await AsyncStorage.clear();
             navigation.reset({
                 index: 0,
                 routes: [{name: 'Login'}]
             });
-        } catch (e) {
-            console.log(e);
+        }).catch((error) => {
+            console.log(error);
             showToast('error', 'Erro', "Erro ao deletar conta")
-        }
-
+        })
     }
 
-    async function saveProfile(user){
-        try{
-            const token = await AsyncStorage.getItem('token');
-            await updateUser(token, user);
-            showToast('success', 'Sucesso', "Suas edições foram efetuadas");
-            return true
-        }catch (e) {
-            console.log(e);
-            showToast('error', 'Erro', "Erro ao salvar perfil")
-        }
+    async function saveProfile(user) {
+        const userOk = utils.verifyUser(user.name, user.email)
+        if (userOk !== true) return showToast('error', 'Aviso', userOk)
+        const token = await AsyncStorage.getItem('token');
+        await updateUser(token, user).then(() => {
+            showToast('success', 'Sucesso', "Perfil atualizado com sucesso");
+            fetchUserData();
+            navigation.goBack()
+        }).catch((error) => {
+            console.log(error);
+            showToast('error', 'Erro', "Erro ao atualizar perfil")
+        })
     }
 
     return (
@@ -117,7 +123,8 @@ export function AuthProvider({children}) {
                 user,
                 logoutUser,
                 deleteAccount,
-                saveProfile
+                saveProfile,
+                createAccount
             }}
         >
             {children}

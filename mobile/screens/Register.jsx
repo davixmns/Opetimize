@@ -4,6 +4,7 @@ import {useNavigation} from "@react-navigation/native";
 import {Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
+import {useAuthContext} from "../contexts/AuthContext";
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -17,24 +18,10 @@ const Register = () => {
     const passwordRef = useRef(null)
     const confirmPasswordRef = useRef(null)
     const navigation = useNavigation()
+    const {createAccount} = useAuthContext()
 
     async function handleCreateUser() {
-        if (!await verifyForm()) {
-            return null
-        }
-        try {
-            const user = {name, email, password}
-            const response = await createAccount(user)
-            if (!response) {
-                alert('Email já cadastrado!')
-                return null
-            }
-            navigation.navigate('Login')
-            alert('Conta criada com sucesso!')
-        } catch (error) {
-            console.log(error)
-            return null
-        }
+        await createAccount({name, email, password})
     }
 
     function handleGoToLogin() {

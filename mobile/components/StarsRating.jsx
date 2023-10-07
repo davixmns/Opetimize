@@ -8,6 +8,7 @@ const StarsRating = ({rating, setRating}) => {
 
     return (
         <View style={styles.container}>
+            <Text style={styles.label}>Avalie a ração:</Text>
             <View style={styles.starContainer}>
                 {[1, 2, 3, 4, 5].map((star) => (
                     <TouchableOpacity
@@ -17,7 +18,7 @@ const StarsRating = ({rating, setRating}) => {
                     >
                         <FontAwesome
                             name={star <= rating ? 'star' : 'star-o'}
-                            size={31}
+                            size={35}
                             color="#FFD700"
                         />
                     </TouchableOpacity>
@@ -30,10 +31,13 @@ const StarsRating = ({rating, setRating}) => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     label: {
-        fontSize: 18,
-        fontWeight: 'bold',
+        fontSize: 20,
+        color: 'black',
     },
     starContainer: {
         flexDirection: 'row',

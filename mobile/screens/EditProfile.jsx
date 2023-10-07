@@ -43,12 +43,7 @@ export function EditProfile(user) {
     }
 
     async function handleSaveProfile() {
-        const userOk = utils.verifyUser(name, email)
-        if (userOk !== true) return showToast('error', 'Aviso', userOk)
-        console.log(image)
-        const res = await saveProfile({name, email, profile_image: image})
-        await fetchUserData()
-        if (res) navigation.goBack()
+        await saveProfile({name, email, profile_image: image})
     }
 
     return (
