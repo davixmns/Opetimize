@@ -7,6 +7,7 @@ function Stars({rating}) {
             <View style={styles.starRow}>
                 {[1, 2, 3, 4, 5].map((star) => (
                     <FontAwesome
+                        key={star}
                         name={star <= rating ? 'star' : 'star-o'}
                         size={31}
                         color="#FFD700"
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowOffset: {width: -1.5, height: 1.5},
         shadowOpacity: 0.3,
-        shadowRadius: 1,
+        shadowRadius: 0.2,
         elevation: 0.1,
     },
 });

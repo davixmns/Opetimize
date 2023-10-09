@@ -1,11 +1,4 @@
-import React from 'react';
-import {
-    View,
-    Text,
-    Image,
-    StyleSheet,
-    Alert,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, Alert,} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import default_image from '../assets/default_picture.jpg';
 import { useAuthContext } from '../contexts/AuthContext';
@@ -14,6 +7,7 @@ import { MyLabelButton } from '../components/MyLabelButton';
 export function Profile() {
     const { user, logoutUser, deleteAccount } = useAuthContext();
     const navigation = useNavigation();
+    const profileImage = user.profile_image ? { uri: user.profile_image } : default_image;
 
     function handleGoToEditProfile() {
         navigation.navigate('EditProfile', user);
@@ -64,7 +58,7 @@ export function Profile() {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image
-                    source={user.profile_image ? { uri: user.profile_image } : default_image}
+                    source={profileImage}
                     style={styles.profileImage}
                 />
                 <View style={styles.userInfo}>

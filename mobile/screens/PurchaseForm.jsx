@@ -3,11 +3,10 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity,
     Image,
     TouchableWithoutFeedback,
     Keyboard,
-    KeyboardAvoidingView, ScrollView,
+    KeyboardAvoidingView,
 } from 'react-native';
 import {Input} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -29,10 +28,12 @@ function PurchaseForm() {
     const [buttonDisabled, setButtonDisabled] = useState(true)
 
     useEffect(() => {
-        if (name && price && weight) {
-            setButtonDisabled(false)
-        } else {
+        if (name === undefined || name === '' ||
+            price === undefined || price === '' ||
+            weight === undefined || weight === '') {
             setButtonDisabled(true)
+        } else {
+            setButtonDisabled(false)
         }
     }, [name, price, weight])
 
@@ -95,7 +96,7 @@ function PurchaseForm() {
                             <StarsRating rating={rating} setRating={setRating}/>
                         </View>
                         <View style={styles.button}>
-                            <MyButton title={'Salvar'} onPress={handleSavePurchase}/>
+                            <MyButton disabled={buttonDisabled} title={'Salvar'} onPress={handleSavePurchase}/>
                         </View>
                     </View>
                 </View>

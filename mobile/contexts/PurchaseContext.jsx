@@ -33,17 +33,16 @@ export const PurchaseProvider = ({children}) => {
     }
 
     async function savePurchase(purchase) {
-        try {
-            const token = await AsyncStorage.getItem('token');
-            const purchaseIsOk = utils.verifyPurchase(purchase)
-            if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
-            await createPurchase(token, purchase)
+        const token = await AsyncStorage.getItem('token');
+        const purchaseIsOk = utils.verifyPurchase(purchase)
+        if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
+        await createPurchase(token, purchase).then(() => {
             showToast('success', "Sucesso", "Compra cadastrada com sucesso")
             return true
-        } catch (e) {
-            console.log(e)
-            showToast('error', "Erro", "Erro interno no servidor")
-        }
+        }).catch((error) => {
+            showToast('error', "Erro", "Erro ao cadastrar a compra")
+            console.log(error)
+        })
     }
 
     return (

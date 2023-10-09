@@ -4,22 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: ajustes">
-      <change afterPath="$PROJECT_DIR$/mobile/components/Stars.js" afterDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: stars rating">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/PurchaseController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/PurchaseModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/PurchaseModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/Stars.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Stars.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/utils/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +253,11 @@
       <workItem from="1696526056702" duration="9847000" />
       <workItem from="1696599262427" duration="1604000" />
       <workItem from="1696600875852" duration="9410000" />
-      <workItem from="1696640911310" duration="8048000" />
+      <workItem from="1696640911310" duration="8916000" />
+      <workItem from="1696798313967" duration="33000" />
+      <workItem from="1696798355017" duration="212000" />
+      <workItem from="1696807730276" duration="1126000" />
+      <workItem from="1696882090888" duration="3066000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -607,7 +602,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +620,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="estilizando lista" />
     <MESSAGE value="form" />
     <MESSAGE value="formulario funcionando e delete tambem" />
     <MESSAGE value="secao de utilidades" />
@@ -650,6 +644,7 @@
     <MESSAGE value=":hammer: getAllPurchases e getMyData" />
     <MESSAGE value=":hammer: PurchaseContext.jsx" />
     <MESSAGE value=":sparkles: ajustes" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: ajustes" />
+    <MESSAGE value=":sparkles: stars rating" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: stars rating" />
   </component>
 </project>
