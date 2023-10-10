@@ -5,93 +5,90 @@ import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
 import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
-import {PurchaseProvider} from "../contexts/PurchaseContext";
 
 const Tab = createMaterialTopTabNavigator();
 
 function BottomBar() {
     return (
         <View style={styles.container}>
-            <PurchaseProvider>
-                <Tab.Navigator
-                    tabBarPosition={"bottom"}
-                    screenOptions={{
-                        tabBarStyle: {
-                            backgroundColor: '#E49052',
-                            height: 70,
-                        },
-                        tabBarIndicatorStyle: {
-                            backgroundColor: 'transparent',
-                        },
-                    }}>
-                    <Tab.Screen
-                        name="List"
-                        component={PurchaseHistory}
-                        options={{
-                            tabBarHideOnKeyboard: true,
-                            tabBarShowLabel: false,
-                            headerShown: false,
-                            tabBarIcon: ({focused}) => (
-                                <Feather
-                                    name="list"
-                                    size={30}
-                                    color={focused ? '#e07e38' : '#fff'}
-                                    style={styles.icon}
-                                />
-                            )
-                        }}
-                    />
-                    <Tab.Screen
-                        name="Add"
-                        component={PurchaseForm}
-                        options={{
-                            tabBarHideOnKeyboard: true,
-                            tabBarShowLabel: false,
-                            headerShown: false,
-                            tabBarIcon: ({focused}) => (
-                                <Feather
-                                    name="plus-circle"
-                                    size={30}
-                                    color={focused ? '#e07e38' : '#fff'}
-                                    style={styles.icon}
-                                />
-                            )
-                        }}
-                    />
-                    <Tab.Screen
-                        name="Data"
-                        component={UsefulData}
-                        options={{
-                            tabBarShowLabel: false,
-                            headerShown: false,
-                            tabBarIcon: ({focused}) => (
-                                <Feather
-                                    name="bar-chart"
-                                    size={30}
-                                    color={focused ? '#e07e38' : '#fff'}
-                                    style={styles.icon}
-                                />
-                            )
-                        }}
-                    />
-                    <Tab.Screen
-                        name={"Profile"}
-                        component={Profile}
-                        options={{
-                            tabBarShowLabel: false,
-                            headerShown: false,
-                            tabBarIcon: ({focused}) => (
-                                <Feather
-                                    name="user"
-                                    size={30}
-                                    color={focused ? '#e07e38' : '#fff'}
-                                    style={styles.icon}
-                                />
-                            )
-                        }}
-                    />
-                </Tab.Navigator>
-            </PurchaseProvider>
+            <Tab.Navigator
+                tabBarPosition={"bottom"}
+                screenOptions={{
+                    tabBarStyle: {
+                        backgroundColor: '#E49052',
+                        height: 70,
+                    },
+                    tabBarIndicatorStyle: {
+                        backgroundColor: 'transparent',
+                    },
+                }}>
+                <Tab.Screen
+                    name="List"
+                    component={PurchaseHistory}
+                    options={{
+                        tabBarHideOnKeyboard: true,
+                        tabBarShowLabel: false,
+                        headerShown: false,
+                        tabBarIcon: ({focused}) => (
+                            <Feather
+                                name="list"
+                                size={30}
+                                color={focused ? '#e07e38' : '#fff'}
+                                style={styles.icon}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name="Add"
+                    component={PurchaseForm}
+                    options={{
+                        tabBarHideOnKeyboard: true,
+                        tabBarShowLabel: false,
+                        headerShown: false,
+                        tabBarIcon: ({focused}) => (
+                            <Feather
+                                name="plus-circle"
+                                size={30}
+                                color={focused ? '#e07e38' : '#fff'}
+                                style={styles.icon}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name="Data"
+                    component={UsefulData}
+                    options={{
+                        tabBarShowLabel: false,
+                        headerShown: false,
+                        tabBarIcon: ({focused}) => (
+                            <Feather
+                                name="bar-chart"
+                                size={30}
+                                color={focused ? '#e07e38' : '#fff'}
+                                style={styles.icon}
+                            />
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name={"Profile"}
+                    component={Profile}
+                    options={{
+                        tabBarShowLabel: false,
+                        headerShown: false,
+                        tabBarIcon: ({focused}) => (
+                            <Feather
+                                name="user"
+                                size={30}
+                                color={focused ? '#e07e38' : '#fff'}
+                                style={styles.icon}
+                            />
+                        )
+                    }}
+                />
+            </Tab.Navigator>
         </View>
     );
 }

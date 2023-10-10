@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useState} from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createPurchase, getAllPurchases} from "../service/apiService.js";
+import {createPurchase, deletePurchase, getAllPurchases, updatePurchase} from "../service/apiService.js";
 import utils from "../utils/utils";
 import Toast from "react-native-toast-message";
 
@@ -38,9 +38,33 @@ export const PurchaseProvider = ({children}) => {
         if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
         await createPurchase(token, purchase).then(() => {
             showToast('success', "Sucesso", "Compra cadastrada com sucesso")
-            return true
+            loadPurchases()
         }).catch((error) => {
             showToast('error', "Erro", "Erro ao cadastrar a compra")
+            console.log(error)
+        })
+    }
+
+    async function saveEditedPurchase(purchase){
+        const token = await AsyncStorage.getItem('token');
+        const purchaseIsOk = utils.verifyPurchase(purchase)
+        if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
+        await updatePurchase(token, purchase).then(() => {
+            showToast('success', "Sucesso", "Compra atualizada com sucesso")
+            loadPurchases()
+        }).catch((error) => {
+            showToast('error', "Erro", "Erro ao atualizar a compra")
+            console.log(error)
+        })
+    }
+
+    async function deletePurchaseById(purchase_id){
+        const token = await AsyncStorage.getItem('token');
+        await deletePurchase(token, purchase_id).then(() => {
+            showToast('success', "Sucesso", "Compra deletada com sucesso")
+            loadPurchases()
+        }).catch((error) => {
+            showToast('error', "Erro", "Erro ao deletar a compra")
             console.log(error)
         })
     }
@@ -51,6 +75,8 @@ export const PurchaseProvider = ({children}) => {
                 purchases,
                 loadPurchases,
                 savePurchase,
+                saveEditedPurchase,
+                deletePurchaseById
             }}
         >
             {children}

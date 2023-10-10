@@ -21,14 +21,6 @@ export function EditProfile(user) {
     const emailRef = useRef(null)
     const navigation = useNavigation()
 
-    const showToast = (type, title, description) => {
-        Toast.show({
-            type: type,
-            text1: title,
-            text2: description,
-        })
-    }
-
     async function handleImagePicker() {
         const response = await ImagePicker.launchImageLibraryAsync({
             aspect: [4, 4],

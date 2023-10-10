@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: stars rating">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/mobile/screens/PurchaseDetails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/Stars.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Stars.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/PurchaseController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/PurchaseRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/PurchaseRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Card.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/PurchaseContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +264,8 @@
       <workItem from="1696798313967" duration="33000" />
       <workItem from="1696798355017" duration="212000" />
       <workItem from="1696807730276" duration="1126000" />
-      <workItem from="1696882090888" duration="3066000" />
+      <workItem from="1696882090888" duration="3269000" />
+      <workItem from="1696888759377" duration="6571000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -602,7 +610,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="form" />
     <MESSAGE value="formulario funcionando e delete tambem" />
     <MESSAGE value="secao de utilidades" />
     <MESSAGE value="fim" />
@@ -645,6 +652,7 @@
     <MESSAGE value=":hammer: PurchaseContext.jsx" />
     <MESSAGE value=":sparkles: ajustes" />
     <MESSAGE value=":sparkles: stars rating" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: stars rating" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

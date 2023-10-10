@@ -46,11 +46,13 @@ function PurchaseForm() {
     }
 
     async function handleSavePurchase() {
-        if (await savePurchase({name, price, weight, date, rating})) {
+        await savePurchase({name, price, weight, date, rating}).then(() => {
             setName('')
             setPrice('')
             setWeight('')
-        }
+            setDate(new Date())
+            setRating(0)
+        })
     }
 
     return (

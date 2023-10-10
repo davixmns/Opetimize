@@ -52,12 +52,23 @@ export const updatePassword = async (token, newPassword) => {
     return await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
 };
 
-export const deletePurchase = async (id) => {
-    return await axios.delete(`${BASE_URL}/purchases/${id}`);
+export const deletePurchase = async (token, purchase_id) => {
+    return await axios.delete(
+        `${BASE_URL}/purchase/${purchase_id}`,
+        {headers: {authorization: `Bearer ${token}`}}
+    );
 }
 
 export const createPurchase = async (token, purchase) => {
     return await axios.post(
+        `${BASE_URL}/purchase`,
+        purchase,
+        {headers: {authorization: `Bearer ${token}`}}
+    )
+}
+
+export const updatePurchase = async (token, purchase) => {
+    return await axios.put(
         `${BASE_URL}/purchase`,
         purchase,
         {headers: {authorization: `Bearer ${token}`}}

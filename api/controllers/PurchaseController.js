@@ -40,7 +40,7 @@ export default {
 
     async deletePurchase(req, res) {
         try {
-            const id = req.params.id;
+            const id = req.params.purchase_id;
             const purchase = await Purchase.findByPk(id);
             if (!purchase) {
                 return res.status(404).json({message: "Compra de ração não encontrada."});

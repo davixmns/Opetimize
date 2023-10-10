@@ -8,7 +8,7 @@ import {
     StyleSheet,
     KeyboardAvoidingView,
     Platform,
-    RefreshControl
+    RefreshControl, TouchableOpacity
 } from "react-native";
 import * as Animatable from "react-native-animatable";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
@@ -31,7 +31,7 @@ function PurchaseHistory() {
             <Animatable.View animation="fadeInUp" delay={animationDelay}>
                 <Card
                     key={purchase.purchase_id}
-                    id={purchase.purchase_id}
+                    purchase_id={purchase.purchase_id}
                     name={purchase.name}
                     price={purchase.price}
                     weight={purchase.weight}
