@@ -4,11 +4,40 @@ import {format} from "date-fns";
 import {ptBR} from "date-fns/locale";
 import Stars from "./Stars";
 import {useNavigation} from "@react-navigation/native";
+import {Swipeable} from "react-native-gesture-handler";
+import {Feather} from "@expo/vector-icons";
+import {usePurchaseContext} from "../contexts/PurchaseContext";
 
 function Card(props) {
     const today = new Date(props.date);
     const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
     const navigations = useNavigation()
+    const {deletePurchaseById} = usePurchaseContext()
+
+    async function handleDeletePurchase(){
+        await deletePurchaseById(props.purchase_id)
+    }
+
+    const renderLeftActions = (progress, dragX) => {
+        return (
+            <TouchableOpacity onPress={handleDeletePurchase}>
+                <View style={styles.leftAction}>
+                    <Feather name={'trash'} size={30} color={'#fff'} style={{paddingHorizontal: 15}}/>
+                </View>
+            </TouchableOpacity>
+        );
+    };
+
+    const renderRightActions = (progress, dragX) => {
+        return (
+            <TouchableOpacity onPress={handleGoToDetails}>
+                <View style={styles.rightAction}>
+                    <Feather name={'edit'} size={30} color={'#fff'} style={{paddingHorizontal: 15}}/>
+                </View>
+            </TouchableOpacity>
+        );
+    };
+
 
     const handleGoToDetails = () => {
         navigations.navigate("PurchaseDetails", {
@@ -24,19 +53,24 @@ function Card(props) {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={handleGoToDetails}>
-                <View style={styles.card}>
-                    <View style={styles.content}>
-                        <Text style={styles.name}>{props.name}</Text>
-                        <Text style={styles.price}>R${props.price}</Text>
-                        <Text style={styles.weight}>{props.weight}g</Text>
-                        <Text style={styles.date}>{formattedDate}</Text>
+            <Swipeable
+                renderLeftActions={renderLeftActions}
+                renderRightActions={renderRightActions}
+            >
+                <TouchableOpacity onPress={handleGoToDetails}>
+                    <View style={styles.card}>
+                        <View style={styles.content}>
+                            <Text style={styles.name}>{props.name}</Text>
+                            <Text style={styles.price}>R${props.price}</Text>
+                            <Text style={styles.weight}>{props.weight}g</Text>
+                            <Text style={styles.date}>{formattedDate}</Text>
+                        </View>
+                        <View style={styles.stars}>
+                            <Stars rating={props.rating}/>
+                        </View>
                     </View>
-                    <View style={styles.stars}>
-                        <Stars rating={props.rating}/>
-                    </View>
-                </View>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </Swipeable>
         </View>
     );
 }
@@ -51,7 +85,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#FFF",
         padding: "5%",
         borderRadius: 20,
-        marginBottom: 16,
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
@@ -91,18 +124,19 @@ const styles = StyleSheet.create({
     },
     leftAction: {
         flex: 1,
-        backgroundColor: "red",
+        backgroundColor: "#E74C3C",
         justifyContent: "center",
         alignItems: "flex-end",
-        paddingRight: 20,
+        borderTopLeftRadius: 20,
+        borderBottomLeftRadius: 20,
     },
     rightAction: {
         flex: 1,
-        backgroundColor: "blue",
+        backgroundColor: "#3498DB",
         justifyContent: "center",
-        alignItems: "flex-start",
-        paddingLeft: 20,
-        borderRadius: 20,
+        alignItems: "flex-end",
+        borderTopRightRadius: 20,
+        borderBottomRightRadius: 20,
     },
     actionText: {
         color: "#fff",
