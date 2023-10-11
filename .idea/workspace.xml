@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=".">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: swipeable">
+      <change afterPath="$PROJECT_DIR$/mobile/screens/SplashScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/middlewares/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middlewares/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/AuthRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -255,7 +262,8 @@
       <workItem from="1696807730276" duration="1126000" />
       <workItem from="1696882090888" duration="3269000" />
       <workItem from="1696888759377" duration="6619000" />
-      <workItem from="1696975817889" duration="4083000" />
+      <workItem from="1696975817889" duration="4168000" />
+      <workItem from="1697029788337" duration="4229000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -600,7 +608,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +626,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="formulario funcionando e delete tambem" />
     <MESSAGE value="secao de utilidades" />
     <MESSAGE value="fim" />
     <MESSAGE value="add edicao no mobile" />
@@ -643,6 +650,7 @@
     <MESSAGE value=":sparkles: ajustes" />
     <MESSAGE value=":sparkles: stars rating" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value=":sparkles: swipeable" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: swipeable" />
   </component>
 </project>

@@ -75,6 +75,13 @@ export const updatePurchase = async (token, purchase) => {
     )
 }
 
+export const verifyJWT = async (token) => {
+    return await axios.get(
+        `${BASE_URL}/verify-jwt`,
+        {headers: {authorization: `Bearer ${token}`}}
+    );
+}
+
 
 
 

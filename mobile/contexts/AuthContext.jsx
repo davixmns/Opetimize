@@ -2,7 +2,7 @@ import {createContext, useContext, useEffect, useState} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import Toast from "react-native-toast-message";
-import {deleteMyAccount, getMyData, login, updateUser, createUser} from "../service/apiService";
+import {deleteMyAccount, getMyData, login, updateUser, createUser, verifyJWT} from "../service/apiService";
 import utils from "../utils/utils";
 
 const AuthContext = createContext();
@@ -14,6 +14,8 @@ export const useAuthContext = () => {
 export function AuthProvider({children}) {
     const navigation = useNavigation();
     const [user, setUser] = useState({});
+    const [isLogged, setIsLogged] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const showToast = (type, title, description) => {
         Toast.show({
@@ -29,13 +31,19 @@ export function AuthProvider({children}) {
 
     async function checkIfUserIsLogged() {
         const token = await AsyncStorage.getItem('token');
-        if (token) await enterInApp()
+        if(token === null) return setLoading(false)
+        await verifyJWT(token).then(() => {
+            enterInApp()
+        }).catch(() => {
+            setLoading(false)
+        })
     }
 
     async function enterInApp() {
         await fetchUserData()
         showToast('success', 'Sucesso', `Bem Vindo!`);
-        navigation.navigate("BottomBar");
+        setIsLogged(true);
+        setLoading(false)
     }
 
     async function fetchUserData() {
@@ -63,9 +71,9 @@ export function AuthProvider({children}) {
     async function tryLogin(email, password) {
         const credentialsOk = utils.verifyCredentials(email, password);
         if (credentialsOk !== true) return showToast('warning', 'Aviso', credentialsOk);
-        await login(email, password).then((response) => {
+        await login(email, password).then(async (response) => {
             const token = response.data.token;
-            AsyncStorage.setItem('token', token);
+            await AsyncStorage.setItem('token', token);
             enterInApp();
         }).catch((error) => {
             console.log(error.response.data.message);
@@ -76,6 +84,7 @@ export function AuthProvider({children}) {
 
     async function logoutUser() {
         try {
+            setIsLogged(false)
             await AsyncStorage.clear();
             navigation.reset({
                 index: 0,
@@ -124,7 +133,9 @@ export function AuthProvider({children}) {
                 logoutUser,
                 deleteAccount,
                 saveProfile,
-                createAccount
+                createAccount,
+                isLogged,
+                loading
             }}
         >
             {children}
