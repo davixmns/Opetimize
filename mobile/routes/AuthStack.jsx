@@ -13,13 +13,13 @@ const Stack = createStackNavigator();
 export function AuthStack() {
     const {isLogged, loading} = useAuthContext();
 
-    if(loading) return <SplashScreen/>
+    if (loading) return <SplashScreen/>
 
     return (
         <Stack.Navigator screenOptions={{
             headerShown: false,
             gestureEnabled: false,
-            cardStyleInterpolator: CardStyleInterpolators.forFadeFromCenter,
+            cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
         }}>
             {isLogged ? (
                 <>
@@ -31,6 +31,14 @@ export function AuthStack() {
                     <Stack.Screen
                         name={"PurchaseDetails"}
                         component={PurchaseDetails}
+                        options={{
+                            headerShown: false,
+                            cardStyleInterpolator: CardStyleInterpolators.forRevealFromBottomAndroid,
+                        }}
+                    />
+                    <Stack.Screen
+                        name={"EditProfile"}
+                        component={EditProfile}
                         options={{headerShown: false}}
                     />
                 </>
@@ -50,11 +58,6 @@ export function AuthStack() {
                     <Stack.Screen
                         name={"ForgotPassword"}
                         component={ForgotPassword}
-                        options={{headerShown: false}}
-                    />
-                    <Stack.Screen
-                        name={"EditProfile"}
-                        component={EditProfile}
                         options={{headerShown: false}}
                     />
                 </>

@@ -5,6 +5,7 @@ import {Feather} from "@expo/vector-icons";
 import PurchaseForm from "../screens/PurchaseForm";
 import PurchaseHistory from "../screens/PurchaseHistory";
 import {Profile} from "../screens/Profile";
+import * as Haptic from "expo-haptics";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -78,14 +79,17 @@ function BottomBar() {
                     options={{
                         tabBarShowLabel: false,
                         headerShown: false,
-                        tabBarIcon: ({focused}) => (
-                            <Feather
-                                name="user"
-                                size={30}
-                                color={focused ? '#e07e38' : '#fff'}
-                                style={styles.icon}
-                            />
-                        )
+                        tabBarIcon: ({focused}) => {
+                            if(focused) Haptic.impactAsync(Haptic.ImpactFeedbackStyle.Light);
+                            return (
+                                <Feather
+                                    name="user"
+                                    size={30}
+                                    color={focused ? '#e07e38' : '#fff'}
+                                    style={styles.icon}
+                                />
+                            )
+                        }
                     }}
                 />
             </Tab.Navigator>

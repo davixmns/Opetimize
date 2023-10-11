@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Text, StyleSheet, View, TouchableOpacity} from "react-native";
+import {Text, StyleSheet, View, TouchableOpacity, Vibration, Platform} from "react-native";
 import {format} from "date-fns";
 import {ptBR} from "date-fns/locale";
 import Stars from "./Stars";
@@ -7,14 +7,16 @@ import {useNavigation} from "@react-navigation/native";
 import {Swipeable} from "react-native-gesture-handler";
 import {Feather} from "@expo/vector-icons";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
+import * as Haptic from "expo-haptics";
 
 function Card(props) {
     const today = new Date(props.date);
     const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
     const navigations = useNavigation()
     const {deletePurchaseById} = usePurchaseContext()
+    const [bgColor, setBgColor] = useState('red')
 
-    async function handleDeletePurchase(){
+    async function handleDeletePurchase() {
         await deletePurchaseById(props.purchase_id)
     }
 
@@ -39,7 +41,7 @@ function Card(props) {
     };
 
 
-    const handleGoToDetails = () => {
+    const handleGoToDetails = async () => {
         navigations.navigate("PurchaseDetails", {
             name: props.name,
             price: props.price,
@@ -50,12 +52,20 @@ function Card(props) {
         });
     };
 
+    async function vibrate() {
+        await Haptic.impactAsync(Haptic.ImpactFeedbackStyle.Heavy)
+    }
+
+    function handleChangeColor(color) {
+        setBgColor(color)
+    }
 
     return (
         <View style={styles.container}>
             <Swipeable
                 renderLeftActions={renderLeftActions}
                 renderRightActions={renderRightActions}
+                onSwipeableWillOpen={vibrate}
             >
                 <TouchableOpacity onPress={handleGoToDetails}>
                     <View style={styles.card}>
@@ -79,6 +89,7 @@ const styles = StyleSheet.create({
     container: {
         alignSelf: "center",
         width: "88%",
+        borderRadius: 20,
     },
     card: {
         position: "relative",
@@ -124,7 +135,7 @@ const styles = StyleSheet.create({
     },
     leftAction: {
         flex: 1,
-        backgroundColor: "#E74C3C",
+        backgroundColor: "red",
         justifyContent: "center",
         alignItems: "flex-end",
         borderTopLeftRadius: 20,

@@ -3496,6 +3496,11 @@ expo-font@~11.1.1:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-haptics@~12.2.1:
+  version "12.2.1"
+  resolved "https://registry.yarnpkg.com/expo-haptics/-/expo-haptics-12.2.1.tgz#9705c245663fcf317ca19adc2e8bbcb5270562e7"
+  integrity sha512-XRZtmIQi901Q4+/cZnVrULRFOqShsgCuSP0SCbVEhnq8sK0OA4jgun12O93Pu5aGvTyoqsAcIArE8tX+8AEqRA==
+
 expo-image-loader@~4.1.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-4.1.1.tgz#efadbb17de1861106864820194900f336dd641b6"
@@ -5900,6 +5905,11 @@ react-native-gradle-plugin@^0.71.19:
   version "0.71.19"
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.19.tgz#3379e28341fcd189bc1f4691cefc84c1a4d7d232"
   integrity sha512-1dVk9NwhoyKHCSxcrM6vY6cxmojeATsBobDicX0ZKr7DgUF2cBQRTKsimQFvzH8XhOVXyH8p4HyDSZNIFI8OlQ==
+
+react-native-haptic-feedback@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-haptic-feedback/-/react-native-haptic-feedback-2.2.0.tgz#bc46edd1f053265bfbe6c32487cbce074e099429"
+  integrity sha512-3tqJOjCguWhIrX0nkURn4yw6kXdsSDjjrvZCRjKXYGlL28hdQmoW2okAHduDTD9FWj9lA+lHgwFWgGs4aFNN7A==
 
 react-native-image-picker@^5.4.0:
   version "5.7.0"

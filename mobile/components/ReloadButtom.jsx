@@ -1,9 +1,13 @@
 import Icon from "react-native-vector-icons/FontAwesome";
 import {TouchableOpacity, StyleSheet} from "react-native";
+import * as Haptic from "expo-haptics";
 
 export function ReloadButtom({onPress}){
     return (
-        <TouchableOpacity onPress={onPress} style={styles.fab}>
+        <TouchableOpacity onPress={() => {
+            onPress()
+            Haptic.impactAsync(Haptic.ImpactFeedbackStyle.Light)
+        }} style={styles.fab}>
             <Icon name="refresh" size={25} color="white"/>
         </TouchableOpacity>
     )

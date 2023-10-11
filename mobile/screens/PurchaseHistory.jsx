@@ -15,6 +15,7 @@ import {usePurchaseContext} from "../contexts/PurchaseContext";
 import {ReloadButtom} from "../components/ReloadButtom";
 import AnimatedLottieView from "lottie-react-native";
 import emptyBox from "../assets/empty_box.json";
+import * as Haptics from "expo-haptics";
 
 function PurchaseHistory() {
     const {purchases, loadPurchases} = usePurchaseContext()
@@ -74,7 +75,10 @@ function PurchaseHistory() {
                 ListHeaderComponent={<Text style={styles.title}>Histórico</Text>}
                 contentContainerStyle={styles.contentContainer}
                 refreshing={refreshing}
-                onRefresh={loadPurchases}
+                onRefresh={() => {
+                    loadPurchases()
+                    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)
+                }}
                 refreshControl={
                     <RefreshControl
                         tintColor={"white"}
