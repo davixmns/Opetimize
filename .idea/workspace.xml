@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: login with splash screen">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: vibrations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/ReloadButtom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/ReloadButtom.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/BottomBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +261,8 @@
       <workItem from="1696882090888" duration="3269000" />
       <workItem from="1696888759377" duration="6619000" />
       <workItem from="1696975817889" duration="4168000" />
-      <workItem from="1697029788337" duration="10216000" />
+      <workItem from="1697029788337" duration="10447000" />
+      <workItem from="1697202791848" duration="1852000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -607,7 +607,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -625,7 +625,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fim" />
     <MESSAGE value="add edicao no mobile" />
     <MESSAGE value="ajustes na api" />
     <MESSAGE value="gitignore" />
@@ -650,6 +649,7 @@
     <MESSAGE value="." />
     <MESSAGE value=":sparkles: swipeable" />
     <MESSAGE value=":sparkles: login with splash screen" />
-    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: login with splash screen" />
+    <MESSAGE value=":sparkles: vibrations" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: vibrations" />
   </component>
 </project>

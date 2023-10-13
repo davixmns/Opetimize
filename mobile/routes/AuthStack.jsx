@@ -39,7 +39,10 @@ export function AuthStack() {
                     <Stack.Screen
                         name={"EditProfile"}
                         component={EditProfile}
-                        options={{headerShown: false}}
+                        options={{
+                            headerShown: false,
+                            cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
+                        }}
                     />
                 </>
             ) : (

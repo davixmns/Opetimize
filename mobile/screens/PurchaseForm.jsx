@@ -143,10 +143,11 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        paddingVertical: 20,
-        paddingTop: 50,
+        paddingVertical: '5%',
+        paddingTop: '15%',
         fontSize: 35,
         color: '#F19020',
+        fontWeight: 'bold',
     },
     inputStyle: {
         marginLeft: 10,

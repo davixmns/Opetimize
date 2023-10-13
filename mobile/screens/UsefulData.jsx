@@ -92,24 +92,24 @@ export function UsefulData() {
                     />
                 }
             >
-                <Text style={styles.bigTitle}>Dados úteis</Text>
+                <Text style={styles.title}>Dados úteis</Text>
                 <View style={styles.dataCard}>
-                    <Text style={styles.title}>Gastos do mês</Text>
+                    <Text style={styles.subTitle}>Gastos do mês</Text>
                     <Text style={styles.dataText}>R$ {monthCosts}</Text>
                 </View>
 
                 <View style={styles.dataCard}>
-                    <Text style={styles.title}>Estoque do mês</Text>
+                    <Text style={styles.subTitle}>Estoque do mês</Text>
                     <Text style={styles.dataText}>{totalPetFood} Kg</Text>
                 </View>
 
                 <View style={styles.dataCard}>
-                    <Text style={styles.title}>Dia mais frequente</Text>
+                    <Text style={styles.subTitle}>Dia mais frequente</Text>
                     <Text style={styles.dataText}>{bestDay}</Text>
                 </View>
 
                 <View style={styles.dataCard}>
-                    <Text style={styles.title}>Ração mais barata</Text>
+                    <Text style={styles.subTitle}>Ração mais barata</Text>
                     <Text style={styles.dataText2}>{cheapestPetFood}</Text>
                 </View>
             </ScrollView>
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         position: 'relative',
     },
 
-    title: {
+    subTitle: {
         fontSize: 22,
         color: '#E49052'
     },
@@ -163,11 +163,12 @@ const styles = StyleSheet.create({
         color: "#E49052"
     },
 
-    bigTitle: {
+    title: {
         color: "#E49052",
         fontSize: 35,
         alignSelf: "center",
-        paddingVertical: 20,
-        paddingTop: 50,
+        paddingVertical: '5%',
+        paddingTop: '15%',
+        fontWeight: "bold",
     }
 })

@@ -1,15 +1,10 @@
-import {Image, TouchableOpacity, StyleSheet, Keyboard, View} from "react-native";
+import {Image, TouchableOpacity, StyleSheet, Keyboard, View, Text} from "react-native";
 import default_image from "../assets/default_picture.jpg";
 import * as ImagePicker from "expo-image-picker";
-import {updateUser} from "../service/apiService";
-import {useEffect, useRef, useState} from "react";
+import {useRef, useState} from "react";
 import {Input} from "react-native-elements";
-import Icon from "react-native-vector-icons/FontAwesome";
 import {Feather} from "@expo/vector-icons";
-import {MyButton} from "../components/MyButton";
 import {useAuthContext} from "../contexts/AuthContext";
-import utils from "../utils/utils";
-import Toast from "react-native-toast-message";
 import {useNavigation} from "@react-navigation/native";
 import {CircleButton} from "../components/CircleButton";
 
@@ -41,6 +36,7 @@ export function EditProfile(user) {
     return (
         <>
             <View style={styles.container}>
+                <Text style={styles.title}>Editar Perfil</Text>
                 <TouchableOpacity onPress={handleImagePicker}>
                     <Image
                         source={image ? {uri: image} : default_image}
@@ -88,13 +84,22 @@ const styles = StyleSheet.create({
         marginTop: 20,
         marginBottom: 20
     },
+    title: {
+        color: "#F19020",
+        fontWeight: "bold",
+        fontSize: 35,
+        alignSelf: "center",
+        position: 'absolute',
+        top: 0,
+        paddingTop: "25%"
+    },
     container: {
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
         alignItems: 'center',
         padding: 20,
-        paddingBottom: 150
+        paddingBottom: '35%'
     },
     content: {
         flex: 1,
