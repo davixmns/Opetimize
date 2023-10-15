@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.get('/purchases', middleware.verifyToken, PurchaseController.getAllPurchases);
 router.post('/purchase', middleware.verifyToken, PurchaseController.createPurchase);
-router.put('/purchase', middleware.verifyToken, PurchaseController.updatePurchase);
+router.put('/purchase/:purchase_id', middleware.verifyToken, PurchaseController.updatePurchase);
 router.delete('/purchase/:purchase_id', middleware.verifyToken, PurchaseController.deletePurchase);
 
 export default router;

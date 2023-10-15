@@ -30,15 +30,17 @@ function PurchaseHistory() {
         const animationDelay = index * 200;
         return (
             <Animatable.View animation="fadeInUp" delay={animationDelay}>
-                <Card
-                    key={purchase.purchase_id}
-                    purchase_id={purchase.purchase_id}
-                    name={purchase.name}
-                    price={purchase.price}
-                    weight={purchase.weight}
-                    date={purchase.date}
-                    rating={purchase.rating}
-                />
+                <View style={{marginBottom: 15}}>
+                    <Card
+                        key={purchase.purchase_id}
+                        purchase_id={purchase.purchase_id}
+                        name={purchase.name}
+                        price={purchase.price}
+                        weight={purchase.weight}
+                        date={purchase.date}
+                        rating={purchase.rating}
+                    />
+                </View>
             </Animatable.View>
         );
     };
@@ -88,7 +90,7 @@ function PurchaseHistory() {
                     />
                 }
             />
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios'? 'position': "height"} keyboardVerticalOffset={10}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : "height"} keyboardVerticalOffset={10}>
                 <ReloadButtom onPress={loadPurchases}/>
                 <TextInput
                     style={styles.searchInput}

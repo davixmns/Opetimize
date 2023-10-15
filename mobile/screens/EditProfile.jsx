@@ -34,51 +34,74 @@ export function EditProfile(user) {
     }
 
     return (
-        <>
-            <View style={styles.container}>
-                <View style={styles.content}>
 
-                    <Text style={styles.title}>Editar Perfil</Text>
-                    <TouchableOpacity onPress={handleImagePicker}>
-                        <Image
-                            source={image ? {uri: image} : default_image}
-                            style={styles.profileImage}
-                        />
-                    </TouchableOpacity>
-                    <View style={styles.input}>
-                        <Input
-                            keyboardType={'default'}
-                            placeholder="Nome"
-                            leftIcon={<Feather name="user" size={24} color={'#F19020'}/>}
-                            onChangeText={setName}
-                            inputStyle={styles.inputStyle}
-                            value={name}
-                            onSubmitEditing={() => emailRef.current.focus()}
-                        />
-                    </View>
-                    <View style={styles.input}>
-                        <Input
-                            keyboardType={'default'}
-                            placeholder="Email"
-                            leftIcon={<Feather name="mail" size={24} color={'#F19020'}/>}
-                            onChangeText={setEmail}
-                            inputStyle={styles.inputStyle}
-                            value={email}
-                            onSubmitEditing={Keyboard.dismiss}
-                            ref={emailRef}
-                        />
-                    </View>
-                    <View style={styles.buttons}>
-                        <CircleButton onPress={handleSaveProfile} iconName={'check'} color={'green'}/>
-                        <CircleButton onPress={navigation.goBack} iconName={'x'} src={'black'}/>
-                    </View>
+        <View style={styles.container}>
+            <Text style={styles.title}>Editar Perfil</Text>
+            <View style={styles.content}>
+                <TouchableOpacity onPress={handleImagePicker}>
+                    <Image
+                        source={image ? {uri: image} : default_image}
+                        style={styles.profileImage}
+                    />
+                </TouchableOpacity>
+                <View style={styles.input}>
+                    <Input
+                        keyboardType={'default'}
+                        placeholder="Nome"
+                        leftIcon={<Feather name="user" size={24} color={'#F19020'}/>}
+                        onChangeText={setName}
+                        inputStyle={styles.inputStyle}
+                        value={name}
+                        onSubmitEditing={() => emailRef.current.focus()}
+                    />
+                </View>
+                <View style={styles.input}>
+                    <Input
+                        keyboardType={'default'}
+                        placeholder="Email"
+                        leftIcon={<Feather name="mail" size={24} color={'#F19020'}/>}
+                        onChangeText={setEmail}
+                        inputStyle={styles.inputStyle}
+                        value={email}
+                        onSubmitEditing={Keyboard.dismiss}
+                        ref={emailRef}
+                    />
+                </View>
+                <View style={styles.buttons}>
+                    <CircleButton onPress={handleSaveProfile} iconName={'check'} color={'green'}/>
+                    <CircleButton onPress={navigation.goBack} iconName={'x'} src={'black'}/>
                 </View>
             </View>
-        </>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#F5E7CC',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+    },
+    content: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+        width: '95%',
+        height: '70%',
+        paddingBottom: '35%',
+        backgroundColor: '#fff',
+        borderRadius: 30,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 10,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 10,
+        elevation: 5,
+    },
     profileImage: {
         width: 150,
         height: 150,
@@ -94,32 +117,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         position: 'absolute',
         top: 0,
-        paddingTop: "15%"
-    },
-    container: {
-        flex: 1,
-        backgroundColor: '#F5E7CC',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-    },
-    content: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-        width: '95%',
-        height: '85%',
-        paddingBottom: '35%',
-        backgroundColor: '#fff',
-        borderRadius: 30,
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 10,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 10,
-        elevation: 5,
+        marginTop: "20%"
     },
     input: {
         width: '100%',
@@ -130,7 +128,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         position: 'absolute',
         bottom: 0,
-        marginBottom: '25%',
+        marginBottom: '17%',
         justifyContent: 'space-around',
     },
 

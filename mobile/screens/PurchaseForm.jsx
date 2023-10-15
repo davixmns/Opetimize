@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
     },
     button: {
         height: 50,
-        marginTop: '12%',
+        marginTop: '8%',
     },
     pickerAndRating: {
         display: 'flex',

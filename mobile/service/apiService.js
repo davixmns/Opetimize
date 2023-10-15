@@ -69,7 +69,7 @@ export const createPurchase = async (token, purchase) => {
 
 export const updatePurchase = async (token, purchase) => {
     return await axios.put(
-        `${BASE_URL}/purchase`,
+        `${BASE_URL}/purchase/${purchase.purchase_id}`,
         purchase,
         {headers: {authorization: `Bearer ${token}`}}
     )

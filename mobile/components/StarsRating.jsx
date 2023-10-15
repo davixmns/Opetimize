@@ -18,7 +18,7 @@ const StarsRating = ({rating, setRating}) => {
                     >
                         <FontAwesome
                             name={star <= rating ? 'star' : 'star-o'}
-                            size={35}
+                            size={45}
                             color="#FFD700"
                         />
                     </TouchableOpacity>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'space-between',
     },
     label: {

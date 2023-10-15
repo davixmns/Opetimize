@@ -26,7 +26,7 @@ export default {
 
     async updatePurchase(req, res) {
         try {
-            const id = req.params.id;
+            const id = req.params.purchase_id;
             const oldPurchase = await Purchase.findByPk(id);
             const {name, price, weight, date, rating, user_id} = req.body;
             const newPurchase = {name, price, weight, date, rating, user_id};

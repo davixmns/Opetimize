@@ -14,7 +14,6 @@ function Card(props) {
     const formattedDate = format(today, "dd/MM/yyyy", {locale: ptBR});
     const navigations = useNavigation()
     const {deletePurchaseById} = usePurchaseContext()
-    const [bgColor, setBgColor] = useState('red')
 
     async function handleDeletePurchase() {
         await deletePurchaseById(props.purchase_id)
@@ -54,10 +53,6 @@ function Card(props) {
 
     async function vibrate() {
         await Haptic.impactAsync(Haptic.ImpactFeedbackStyle.Heavy)
-    }
-
-    function handleChangeColor(color) {
-        setBgColor(color)
     }
 
     return (
