@@ -1,13 +1,13 @@
 import {View, Text, Image, StyleSheet, Alert,} from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import default_image from '../assets/default_picture.jpg';
-import { useAuthContext } from '../contexts/AuthContext';
-import { MyLabelButton } from '../components/MyLabelButton';
+import {useAuthContext} from '../contexts/AuthContext';
+import {MyLabelButton} from '../components/MyLabelButton';
 
 export function Profile() {
-    const { user, logoutUser, deleteAccount } = useAuthContext();
+    const {user, logoutUser, deleteAccount} = useAuthContext();
     const navigation = useNavigation();
-    const profileImage = user.profile_image ? { uri: user.profile_image } : default_image;
+    const profileImage = user.profile_image ? {uri: user.profile_image} : default_image;
 
     function handleGoToEditProfile() {
         navigation.navigate('EditProfile', user);
@@ -31,7 +31,7 @@ export function Profile() {
                     onPress: () => logoutUser(),
                 },
             ],
-            { cancelable: false }
+            {cancelable: false}
         );
     }
 
@@ -50,20 +50,22 @@ export function Profile() {
                     style: 'destructive',
                 },
             ],
-            { cancelable: false }
+            {cancelable: false}
         );
     }
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Image
-                    source={profileImage}
-                    style={styles.profileImage}
-                />
-                <View style={styles.userInfo}>
-                    <Text style={styles.username}>{user.name}</Text>
-                    <Text style={styles.email}>{user.email}</Text>
+            <View style={{backgroundColor: '#F19020'}}>
+                <View style={styles.header}>
+                    <Image
+                        source={profileImage}
+                        style={styles.profileImage}
+                    />
+                    <View style={styles.userInfo}>
+                        <Text style={styles.username}>Olá {user.name.toString().split(" ")[0]}!</Text>
+                        <Text style={styles.email}>{user.email}</Text>
+                    </View>
                 </View>
             </View>
             <View style={styles.content}>
@@ -105,27 +107,19 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#ffffff',
     },
-    title: {
-        fontSize: 35,
-        fontWeight: 'bold',
-        color: '#E49052',
-        alignSelf: 'center',
-        marginTop: '15%',
-    },
     header: {
-        marginTop: '20%',
-        flexDirection: 'row',
-        alignItems: 'center',
+        marginTop: '10%',
+        marginBottom: '5%',
         padding: 20,
-        //sombra
-        shadowColor: '#000',
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: .2,
-        shadowRadius: 1.41,
-        elevation: 5,
+        flexDirection: 'column',
+        display: 'flex',
+        alignItems: 'flex-start',
+    },
+    userInfo: {
+        flexDirection: 'column',
+        display: 'flex',
+        alignItems: 'flex-start',
+        marginTop: '5%',
     },
     content: {
         flex: 1,
@@ -141,10 +135,11 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 5,
+        color: '#fff',
     },
     email: {
         fontSize: 16,
-        color: '#666',
+        color: '#fff',
     },
     button: {
         padding: 20

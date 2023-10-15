@@ -143,8 +143,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     title: {
-        paddingVertical: '5%',
-        paddingTop: '15%',
+        paddingVertical: '3%',
+        paddingTop: '11%',
         fontSize: 35,
         color: '#F19020',
         fontWeight: 'bold',

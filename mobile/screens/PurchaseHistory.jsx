@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
         color: "white",
         fontSize: 35,
         alignSelf: "center",
-        paddingVertical: '5%',
-        paddingTop: '15%',
+        paddingVertical: '3%',
+        paddingTop: '11%',
         fontWeight: "bold"
     },
     background: {
