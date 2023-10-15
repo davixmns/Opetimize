@@ -66,7 +66,6 @@ export function Profile() {
                     <Text style={styles.email}>{user.email}</Text>
                 </View>
             </View>
-
             <View style={styles.content}>
                 <View style={styles.button}>
                     <MyLabelButton
@@ -106,11 +105,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#ffffff',
     },
+    title: {
+        fontSize: 35,
+        fontWeight: 'bold',
+        color: '#E49052',
+        alignSelf: 'center',
+        marginTop: '15%',
+    },
     header: {
+        marginTop: '20%',
         flexDirection: 'row',
         alignItems: 'center',
         padding: 20,
-        marginTop: '10%',
         //sombra
         shadowColor: '#000',
         shadowOffset: {

@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":art: estilizacao">
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: update purchase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/PurchaseController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/PurchaseController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/PurchaseRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/PurchaseRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/EditProfile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +261,7 @@
       <workItem from="1697206294352" duration="47000" />
       <workItem from="1697222890571" duration="106000" />
       <workItem from="1697319749641" duration="2809000" />
-      <workItem from="1697334454372" duration="2946000" />
+      <workItem from="1697334454372" duration="3374000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -614,7 +606,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +624,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajustes na api" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="inicio de aut no mobile" />
     <MESSAGE value="login no mobile" />
@@ -657,6 +648,7 @@
     <MESSAGE value=":sparkles: login with splash screen" />
     <MESSAGE value=":sparkles: vibrations" />
     <MESSAGE value=":art: estilizacao" />
-    <option name="LAST_COMMIT_MESSAGE" value=":art: estilizacao" />
+    <MESSAGE value=":sparkles: update purchase" />
+    <option name="LAST_COMMIT_MESSAGE" value=":sparkles: update purchase" />
   </component>
 </project>
