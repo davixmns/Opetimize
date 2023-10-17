@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: update purchase">
+      <change afterPath="$PROJECT_DIR$/api/controllers/NodeMailerController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controllers/ResetTokenController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/models/ResetTokenModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/nodemailer/messages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/nodemailer/transport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/components/ResetTokenInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/screens/ResetTokenVerification.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/api/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/AuthRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/nodemailer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/StarsRating.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/routes/AuthStack.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseHistory.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/UsefulData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/utils/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,11 +111,11 @@
       <recent name="$PROJECT_DIR$/mobile/Opetimize/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/nodemailer" />
       <recent name="$PROJECT_DIR$/mobile" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/routes" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/assets" />
       <recent name="$PROJECT_DIR$/mobile/Opetimize/screens" />
-      <recent name="$PROJECT_DIR$/mobile/Opetimize/components" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.renders learn react link">
@@ -265,7 +283,12 @@
       <workItem from="1697222890571" duration="106000" />
       <workItem from="1697319749641" duration="2809000" />
       <workItem from="1697334454372" duration="4021000" />
-      <workItem from="1697393806981" duration="2943000" />
+      <workItem from="1697393806981" duration="3061000" />
+      <workItem from="1697462638481" duration="2414000" />
+      <workItem from="1697467672504" duration="695000" />
+      <workItem from="1697486800451" duration="1038000" />
+      <workItem from="1697548823681" duration="3179000" />
+      <workItem from="1697566293374" duration="7431000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -610,7 +633,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

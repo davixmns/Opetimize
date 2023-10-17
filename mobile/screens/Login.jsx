@@ -5,6 +5,7 @@ import {StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from "@react-navigation/native";
 import {useAuthContext} from "../contexts/AuthContext";
+import {MyButton} from "../components/MyButton";
 
 const logo = require('../assets/logo.png');
 
@@ -17,9 +18,7 @@ const Login = () => {
     const {tryLogin} = useAuthContext()
 
     async function handleTryLogin() {
-        tryLogin(email, password).then(() => {
-
-        }).catch()
+        await tryLogin(email, password)
     }
 
     function handleGoToRegister() {
@@ -36,42 +35,43 @@ const Login = () => {
                 <Image source={logo} style={styles.logo}/>
                 <Text style={styles.title}>Opetimize</Text>
                 <View style={styles.form}>
+                    <View style={styles.input}>
+                        <Input
+                            autoCapitalize='none'
+                            keyboardType={'email-address'}
+                            placeholder="Email"
+                            leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
+                            onChangeText={setEmail}
+                            inputStyle={styles.inputLabel}
+                            onSubmitEditing={() => passwordRef.current.focus()}
+                        />
+                    </View>
+                    <View style={styles.input}>
+                        <Input
+                            placeholder="Senha"
+                            leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
+                            onChangeText={setPassword}
+                            inputStyle={styles.inputLabel}
+                            secureTextEntry={!showPassword}
+                            rightIcon={
+                                <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
+                                    <Icon name={showPassword ? 'eye' : 'eye-slash'} size={28} color='#F19020'/>
+                                </TouchableOpacity>
+                            }
+                            ref={passwordRef}
+                            onSubmitEditing={handleTryLogin}
+                        />
+                    </View>
 
-                    <Input
-                        autoCapitalize='none'
-                        keyboardType={'email-address'}
-                        placeholder="Email"
-                        leftIcon={<Icon name="envelope" size={24} color='#F19020'/>}
-                        onChangeText={setEmail}
-                        inputStyle={styles.inputStyle}
-                        onSubmitEditing={() => passwordRef.current.focus()}
-                    />
-
-                    <Input
-                        placeholder="Senha"
-                        leftIcon={<Icon name="lock" size={32} color='#F19020'/>}
-                        onChangeText={setPassword}
-                        inputStyle={styles.inputStyle}
-                        secureTextEntry={!showPassword}
-                        rightIcon={
-                            <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
-                                <Icon name={showPassword ? 'eye' : 'eye-slash'} size={28} color='#F19020'/>
-                            </TouchableOpacity>
-                        }
-                        ref={passwordRef}
-                        onSubmitEditing={handleTryLogin}
-                    />
-
-                    <TouchableOpacity style={styles.button} onPress={handleTryLogin}>
-                        <Text style={styles.buttonText}>Entrar</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.button2} onPress={handleGoToRegister}>
-                        <Text style={styles.buttonText2}>Criar Conta</Text>
-                    </TouchableOpacity>
+                    <View style={styles.button}>
+                        <MyButton onPress={handleTryLogin} disabled={false} title={'Entrar'} type={1}/>
+                    </View>
+                    <View style={styles.button}>
+                        <MyButton onPress={handleGoToRegister} disabled={false} title={"Criar Conta"} type={2}/>
+                    </View>
 
                     <TouchableOpacity onPress={handleGoToForgotPassword}>
-                        <Text style={{color: '#F19020', fontSize: 20}}>Esqueci minha senha</Text>
+                        <Text style={styles.forgot}>Esqueci minha senha</Text>
                     </TouchableOpacity>
                 </View>
                 <Text style={{top: 50}}>Made by github.com/davixmns</Text>
@@ -109,53 +109,21 @@ const styles = StyleSheet.create({
         fontSize: 40,
         color: '#F19020',
     },
-    myTextInput: {
-        fontSize: 30,
-        width: 300,
-        height: 50,
-        backgroundColor: '#F19020',
+    input: {
+        width: '100%',
+        marginBottom: '3%',
     },
-    inputStyle: {
+    inputLabel: {
         marginLeft: 10,
         color: 'black',
     },
+    forgot: {
+        fontSize: 20,
+        color: '#F19020',
+        marginTop: '5%',
+    },
     button: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#F19020',
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 20,
-    },
-    button2: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#fff',
-        borderColor: '#F19020',
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-        color: '#F19020',
-    },
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
-    buttonText2: {
-        fontSize: 20,
-        color: '#F19020',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
-    errorText: {
-        color: 'red',
-        fontSize: 16,
+        width: '100%',
+        paddingTop: '5%',
     },
 });

@@ -33,6 +33,6 @@ export default {
         if (!emailRegex.test(u.email)) return "Este email é inválido"
         if(u.password.length < 6) return "A senha deve ter no mínimo 8 caracteres"
         return true
-    }
-
+    },
+    emailRegex
 }

@@ -1,11 +1,8 @@
-import {htmlForgotPasswordEmail, nodemailerTransport} from "../utils/nodemailer.js";
-
 import * as jose from "jose";
 import bcrypt from "bcryptjs";
 import UserModel from "../models/UserModel.js";
 
 const jwt_key = process.env.JWT_KEY;
-const host = process.env.DB_HOST;
 
 export default {
     async login(req, res) { 
@@ -27,30 +24,4 @@ export default {
             res.status(400).json({message: 'Erro ao realizar login'});
         }
     },
-
-    async sendEmailResetPassword(req, res) {
-        try {
-            const email = req.body.email;
-            if (!email) return res.status(400).json({error: 'Email é obrigatório'});
-            const user = await UserModel.findOne({where: {email: email}})
-            if (!user) return res.status(400).json({error: 'Usuário não encontrado'});
-            const token = await new jose.SignJWT({user_id: user.user_id})
-                .setProtectedHeader({alg: "HS256"})
-                .setIssuedAt()
-                .setExpirationTime("1y")
-                .sign(new TextEncoder().encode(jwt_key));
-
-            const resetURL = `http://${host}:3001/reset-password?token=${token}`;
-            const message = htmlForgotPasswordEmail(email, token, resetURL)
-            await nodemailerTransport.sendMail(message)
-        } catch (e) {
-            console.log(e)
-            return res.status(500).json({message: "Erro ao enviar email"})
-        }
-    },
-
-    async allowUser(req, res){
-        console.log("token valido")
-        return res.status(200).json({message: "Token válido"})
-    }
 };

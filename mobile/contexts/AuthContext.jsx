@@ -2,7 +2,15 @@ import {createContext, useContext, useEffect, useState} from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {useNavigation} from "@react-navigation/native";
 import Toast from "react-native-toast-message";
-import {deleteMyAccount, getMyData, login, updateUser, createUser, verifyJWT} from "../service/apiService";
+import {
+    deleteMyAccount,
+    getMyData,
+    login,
+    updateUser,
+    createUser,
+    verifyJWT,
+    sendForgotPasswordEmail
+} from "../service/apiService";
 import utils from "../utils/utils";
 
 const AuthContext = createContext();
@@ -125,6 +133,18 @@ export function AuthProvider({children}) {
         })
     }
 
+    async function sendResetToken(email) {
+        // const validEmail = utils.emailRegex.test(email);
+        // if (!validEmail) return showToast('warning', 'Aviso', "Email inválido");
+        // await sendForgotPasswordEmail(email).then((response) => {
+        //     showToast('success', 'Sucesso', response.data.message);
+            navigation.navigate("ResetTokenVerification", {email: email})
+        // }).catch((error) => {
+        //     console.log(error);
+        //     showToast('error', 'Erro', "Erro ao enviar email")
+        // })
+    }
+
     return (
         <AuthContext.Provider
             value={{
@@ -135,7 +155,8 @@ export function AuthProvider({children}) {
                 saveProfile,
                 createAccount,
                 isLogged,
-                loading
+                loading,
+                sendResetToken
             }}
         >
             {children}

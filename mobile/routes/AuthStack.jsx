@@ -7,6 +7,7 @@ import {EditProfile} from "../screens/EditProfile";
 import {PurchaseDetails} from "../screens/PurchaseDetails";
 import {useAuthContext} from "../contexts/AuthContext";
 import {SplashScreen} from "../screens/SplashScreen";
+import {ResetTokenVerification} from "../screens/ResetTokenVerification";
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ export function AuthStack() {
         <Stack.Navigator screenOptions={{
             headerShown: false,
             gestureEnabled: false,
-            cardStyleInterpolator: CardStyleInterpolators.forModalPresentationIOS,
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
             {isLogged ? (
                 <>
@@ -61,6 +62,11 @@ export function AuthStack() {
                     <Stack.Screen
                         name={"ForgotPassword"}
                         component={ForgotPassword}
+                        options={{headerShown: false}}
+                    />
+                    <Stack.Screen
+                        name={"ResetTokenVerification"}
+                        component={ResetTokenVerification}
                         options={{headerShown: false}}
                     />
                 </>

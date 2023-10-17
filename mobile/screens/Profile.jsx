@@ -9,6 +9,8 @@ export function Profile() {
     const navigation = useNavigation();
     const profileImage = user.profile_image ? {uri: user.profile_image} : default_image;
 
+    console.log(user.profile_image);
+
     function handleGoToEditProfile() {
         navigation.navigate('EditProfile', user);
     }

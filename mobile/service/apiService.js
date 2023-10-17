@@ -43,13 +43,8 @@ export const createUser = async (user) => {
     return await axios.post(`${BASE_URL}/user`, user);
 };
 
-export const sendEmailForgotPassword = async (email) => {
-    return await axios.get(`${BASE_URL}/forgot-password/${email}`);
-};
-
-
-export const updatePassword = async (token, newPassword) => {
-    return await axios.put(`${BASE_URL}/reset-password/${token}`, {newPassword});
+export const sendForgotPasswordEmail = async (email) => {
+    return await axios.post(`${BASE_URL}/reset-password`, {email});
 };
 
 export const deletePurchase = async (token, purchase_id) => {
