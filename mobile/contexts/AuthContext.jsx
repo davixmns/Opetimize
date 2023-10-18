@@ -134,15 +134,15 @@ export function AuthProvider({children}) {
     }
 
     async function sendResetToken(email) {
-        // const validEmail = utils.emailRegex.test(email);
-        // if (!validEmail) return showToast('warning', 'Aviso', "Email inválido");
-        // await sendForgotPasswordEmail(email).then((response) => {
-        //     showToast('success', 'Sucesso', response.data.message);
+        const validEmail = utils.emailRegex.test(email);
+        if (!validEmail) return showToast('warning', 'Aviso', "Email inválido");
+        await sendForgotPasswordEmail(email).then((response) => {
+            showToast('success', 'Sucesso', response.data.message);
             navigation.navigate("ResetTokenVerification", {email: email})
-        // }).catch((error) => {
-        //     console.log(error);
-        //     showToast('error', 'Erro', "Erro ao enviar email")
-        // })
+        }).catch((error) => {
+            console.log(error);
+            showToast('error', 'Erro', "Erro ao enviar email")
+        })
     }
 
     return (

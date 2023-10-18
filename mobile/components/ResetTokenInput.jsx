@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 
 export function ResetTokenInput() {
@@ -7,6 +7,7 @@ export function ResetTokenInput() {
     const [input3, setInput3] = useState("");
     const [input4, setInput4] = useState("");
 
+    const input1Ref = useRef(null);
     const input2Ref = useRef(null);
     const input3Ref = useRef(null);
     const input4Ref = useRef(null);
@@ -18,12 +19,15 @@ export function ResetTokenInput() {
                 onChangeText={(text) => handleTextChange(text, 1)}
                 style={styles.input}
                 maxLength={1}
+                onKeyPress={(e) => handleBackspacePress(e, 1)}
+                ref={input1Ref}
             />
             <TextInput
                 value={input2}
                 onChangeText={(text) => handleTextChange(text, 2)}
                 style={styles.input}
                 maxLength={1}
+                onKeyPress={(e) => handleBackspacePress(e, 2)}
                 ref={input2Ref}
             />
             <TextInput
@@ -31,6 +35,7 @@ export function ResetTokenInput() {
                 onChangeText={(text) => handleTextChange(text, 3)}
                 style={styles.input}
                 maxLength={1}
+                onKeyPress={(e) => handleBackspacePress(e, 3)}
                 ref={input3Ref}
             />
             <TextInput
@@ -38,16 +43,18 @@ export function ResetTokenInput() {
                 onChangeText={(text) => handleTextChange(text, 4)}
                 style={styles.input}
                 maxLength={1}
+                onKeyPress={(e) => handleBackspacePress(e, 4)}
                 ref={input4Ref}
             />
         </View>
     );
 
     function handleTextChange(text, inputNumber) {
-        text.toUpperCase()
+        text = text.toUpperCase();
         if (text.length > 1) {
             return;
         }
+
         switch (inputNumber) {
             case 1:
                 setInput1(text);
@@ -69,9 +76,30 @@ export function ResetTokenInput() {
                 break;
             case 4:
                 setInput4(text);
+                if(text) {
+                    input4Ref.current.focus();
+                }
                 break;
             default:
                 break;
+        }
+    }
+
+    function handleBackspacePress(e, inputNumber) {
+        if (e.nativeEvent.key === "Backspace" && inputNumber > 1) {
+            switch (inputNumber) {
+                case 2:
+                    input1Ref.current.focus();
+                    break;
+                case 3:
+                    input2Ref.current.focus();
+                    break;
+                case 4:
+                    input3Ref.current.focus();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
@@ -101,5 +129,4 @@ const styles = StyleSheet.create({
         shadowRadius: 10,
         elevation: 10,
     },
-
 });
