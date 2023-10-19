@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":sparkles: verification code screen">
-      <change afterPath="$PROJECT_DIR$/mobile/components/ResendButton.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mobile/components/Timer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/AuthController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/AuthController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controllers/ResetTokenController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/ResetTokenController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/nodemailer/transport.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/nodemailer/transport.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/AuthRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/AuthRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/utils/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/utils/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/components/ResetTokenInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/ResetTokenInput.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/ResetTokenVerification.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/ResetTokenVerification.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/public/logo192.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/logo192.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/public/logo512.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/public/logo512.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/src/assets/forgot-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/forgot-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/src/assets/login-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/login-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/src/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/src/assets/reset-back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/reset-back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/opetimize/src/assets/titulo.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/opetimize/src/assets/titulo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -282,7 +281,9 @@
       <workItem from="1697548823681" duration="3179000" />
       <workItem from="1697566293374" duration="7461000" />
       <workItem from="1697635062863" duration="79000" />
-      <workItem from="1697637123832" duration="6676000" />
+      <workItem from="1697637123832" duration="6710000" />
+      <workItem from="1697725933089" duration="1442000" />
+      <workItem from="1697743445020" duration="4075000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -627,7 +628,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

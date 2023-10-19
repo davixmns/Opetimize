@@ -1,7 +1,7 @@
 import {Image, Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from "react-native";
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import logo from "../assets/logo.png";
 import {useNavigation} from "@react-navigation/native";
 import {ActivityIndicator} from "react-native";
@@ -16,12 +16,12 @@ export function ForgotPassword() {
     async function handleSendForgotPasswordEmail() {
         setLoading(true);
         await sendResetToken(email).finally(() => setLoading(false));
+        setEmail('');
     }
 
     function handleGoToLogin() {
         navigation.navigate('Login');
     }
-
 
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>

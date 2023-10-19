@@ -1,8 +1,6 @@
-import * as jose from "jose";
 import bcrypt from "bcryptjs";
 import UserModel from "../models/UserModel.js";
-
-const jwt_key = process.env.JWT_KEY;
+import utils from "../utils/utils.js";
 
 export default {
     async login(req, res) { 
@@ -13,11 +11,7 @@ export default {
             if (!user) return res.status(400).json({message: 'Usuário não cadastrado no sistema'});
             const correctPassword = await bcrypt.compare(password, user.password);
             if (!correctPassword) return res.status(400).json({message: 'Senha incorreta'});
-            const token = await new jose.SignJWT({user_id: user.user_id})
-                .setProtectedHeader({alg: "HS256"})
-                .setIssuedAt()
-                .setExpirationTime("1y")
-                .sign(new TextEncoder().encode(jwt_key));
+            const token = utils.signJWT(user.id);
             res.status(200).json({token});
         } catch (e) {
             console.log(e);

@@ -44,8 +44,18 @@ export const createUser = async (user) => {
 };
 
 export const sendForgotPasswordEmail = async (email) => {
-    return await axios.post(`${BASE_URL}/reset-password`, {email});
+    return await axios.post(
+        `${BASE_URL}/reset-password`,
+        {email}
+    );
 };
+
+export const verifyResetTokenCode = async (token, email) => {
+    return await axios.post(
+        `${BASE_URL}/verify-reset-token`,
+        {token, email}
+    );
+}
 
 export const deletePurchase = async (token, purchase_id) => {
     return await axios.delete(

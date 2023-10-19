@@ -1,12 +1,7 @@
 import React, { useRef, useState } from "react";
 import { TextInput, View, StyleSheet } from "react-native";
 
-export function ResetTokenInput() {
-    const [input1, setInput1] = useState("");
-    const [input2, setInput2] = useState("");
-    const [input3, setInput3] = useState("");
-    const [input4, setInput4] = useState("");
-
+export function ResetTokenInput({input1, input2, input3, input4, setInput1, setInput2, setInput3, setInput4}) {
     const input1Ref = useRef(null);
     const input2Ref = useRef(null);
     const input3Ref = useRef(null);

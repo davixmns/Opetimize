@@ -9,7 +9,7 @@ import {
     updateUser,
     createUser,
     verifyJWT,
-    sendForgotPasswordEmail
+    sendForgotPasswordEmail, verifyResetTokenCode
 } from "../service/apiService";
 import utils from "../utils/utils";
 
@@ -141,7 +141,19 @@ export function AuthProvider({children}) {
             navigation.navigate("ResetTokenVerification", {email: email})
         }).catch((error) => {
             console.log(error);
-            showToast('error', 'Erro', "Erro ao enviar email")
+            showToast('error', 'Erro', error.response.data.message)
+        })
+    }
+
+    async function verifyResetTokenn(token, email) {
+        if(token.length !== 4) return showToast('warning', 'Aviso', "Token inválido");
+        await verifyResetTokenCode(token, email).then((response) => {
+            showToast('success', 'Sucesso', response.data.message);
+            console.log("OK");
+            navigation.navigate("CreateNewPassword")
+        }).catch((error) => {
+            console.log(error);
+            showToast('error', 'Erro', "Erro ao verificar token")
         })
     }
 
@@ -156,7 +168,8 @@ export function AuthProvider({children}) {
                 createAccount,
                 isLogged,
                 loading,
-                sendResetToken
+                sendResetToken,
+                verifyResetTokenn
             }}
         >
             {children}

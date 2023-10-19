@@ -8,11 +8,16 @@ import {ResendButton} from "../components/ResendButton";
 import {useAuthContext} from "../contexts/AuthContext";
 
 export function ResetTokenVerification(user) {
-    const {sendResetToken} = useAuthContext()
+    const {sendResetToken, verifyResetTokenn} = useAuthContext()
+    const [input1, setInput1] = useState("");
+    const [input2, setInput2] = useState("");
+    const [input3, setInput3] = useState("");
+    const [input4, setInput4] = useState("");
     const navigation = useNavigation();
     const [timerIsRunning, setTimerIsRunning] = useState(true);
     const sendAgainOpacity = timerIsRunning ? {opacity: 0.4} : {opacity: 1};
     const [loading, setLoading] = useState(false)
+    const userEmail = user.route.params.email
 
     function finishTimer() {
         setTimerIsRunning(false);
@@ -20,12 +25,12 @@ export function ResetTokenVerification(user) {
 
     async function handleSendTokenAgain() {
         setLoading(true);
-        const email = user.route.params.email
-        await sendResetToken(email).finally(() => setLoading(false));
+        await sendResetToken(userEmail).finally(() => setLoading(false));
     }
 
     async function handleVerifyResetToken(){
-
+        const resetCode = input1 + input2 + input3 + input4
+        await verifyResetTokenn(resetCode, userEmail)
     }
 
     return (
@@ -38,12 +43,21 @@ export function ResetTokenVerification(user) {
                             poderá alterar sua
                             senha</Text>
                     </View>
-                    <ResetTokenInput/>
+                    <ResetTokenInput
+                        input1={input1}
+                        input2={input2}
+                        input3={input3}
+                        input4={input4}
+                        setInput1={setInput1}
+                        setInput2={setInput2}
+                        setInput3={setInput3}
+                        setInput4={setInput4}
+                    />
                     <View style={styles.timer}>
                         {timerIsRunning ? (
                             <>
                                 <Text style={styles.timerText}>Este código irá vencer em</Text>
-                                <Timer finishTimer={finishTimer} tokenSeconds={10} isRunning={timerIsRunning}/>
+                                <Timer finishTimer={finishTimer} tokenSeconds={300} isRunning={timerIsRunning}/>
                             </>
                         ) : (
                             <Text style={styles.timerText}>O código expirou</Text>
