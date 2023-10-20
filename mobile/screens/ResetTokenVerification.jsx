@@ -1,4 +1,4 @@
-import {View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard} from "react-native";
+import {View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard, ActivityIndicator} from "react-native";
 import {ResetTokenInput} from "../components/ResetTokenInput";
 import {MyButton} from "../components/MyButton";
 import {useNavigation} from "@react-navigation/native";
@@ -64,7 +64,11 @@ export function ResetTokenVerification(user) {
                         )}
                     </View>
                     <View style={[styles.sendAgain, sendAgainOpacity]}>
-                        <ResendButton onPress={handleSendTokenAgain} title={"Clique aqui para reenviar"} disabled={timerIsRunning}/>
+                        {loading ? (
+                            <ActivityIndicator size="large" color="#fff"/>
+                        ) : (
+                            <ResendButton onPress={handleSendTokenAgain} title={"Clique aqui para reenviar"} disabled={timerIsRunning}/>
+                        )}
                     </View>
                 </View>
                 <View style={styles.buttons}>
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
-        width: "100%",
+        width: "90%",
         position: "absolute",
         bottom: 0,
         marginBottom: 60,

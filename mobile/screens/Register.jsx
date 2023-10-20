@@ -28,27 +28,6 @@ const Register = () => {
         navigation.navigate('Login')
     }
 
-    function verifyEmailRegex() {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    async function verifyForm() {
-        if (!name || !email || !password || !confirmPassword) {
-            alert('Preencha todos os campos!')
-            return false
-        }
-        if (!verifyEmailRegex()) {
-            alert('Email inválido!')
-            return false
-        }
-        if (password !== confirmPassword) {
-            alert('As senhas não coincidem!')
-            return false
-        }
-        return true
-    }
-
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={styles.content}>
@@ -56,7 +35,7 @@ const Register = () => {
                 <View style={styles.form}>
 
                     <Input
-                        placeholder="Nome"
+                        placeholder="Nome Completo"
                         leftIcon={<Icon name="user" size={24} color='#F19020'/>}
                         onChangeText={setName}
                         inputStyle={styles.inputStyle}

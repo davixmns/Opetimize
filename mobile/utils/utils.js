@@ -31,8 +31,10 @@ export default {
         if (u.name.length < 3) return `"${u.name}" é um nome muito curto`
         if (u.name.length > 20) return "Este nome é muito longo"
         if (!emailRegex.test(u.email)) return "Este email é inválido"
-        if(u.password.length < 6) return "A senha deve ter no mínimo 8 caracteres"
+        if(u.password.length < 6) return "A senha deve ter no mínimo 6 caracteres"
         return true
     },
+
+
     emailRegex
 }

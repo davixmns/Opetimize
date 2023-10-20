@@ -8,6 +8,7 @@ import {PurchaseDetails} from "../screens/PurchaseDetails";
 import {useAuthContext} from "../contexts/AuthContext";
 import {SplashScreen} from "../screens/SplashScreen";
 import {ResetTokenVerification} from "../screens/ResetTokenVerification";
+import {CreateNewPassword} from "../screens/CreateNewPassword";
 
 const Stack = createStackNavigator();
 
@@ -67,6 +68,11 @@ export function AuthStack() {
                     <Stack.Screen
                         name={"ResetTokenVerification"}
                         component={ResetTokenVerification}
+                        options={{headerShown: false}}
+                    />
+                    <Stack.Screen
+                        name={"CreateNewPassword"}
+                        component={CreateNewPassword}
                         options={{headerShown: false}}
                     />
                 </>

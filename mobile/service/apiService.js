@@ -10,6 +10,14 @@ export const login = async (email, password) => {
     );
 };
 
+export const createNewPassword = async (token, password) => {
+    return await axios.put(
+        `${BASE_URL}/new-password`,
+        {password},
+        {headers: {authorization: `Bearer ${token}`}}
+    );
+}
+
 export async function updateUser(token, user) {
     return await axios.put(
         `${BASE_URL}/user`,
@@ -81,8 +89,9 @@ export const updatePurchase = async (token, purchase) => {
 }
 
 export const verifyJWT = async (token) => {
-    return await axios.get(
+    return await axios.post(
         `${BASE_URL}/verify-jwt`,
+        {},
         {headers: {authorization: `Bearer ${token}`}}
     );
 }
