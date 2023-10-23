@@ -96,6 +96,12 @@ export const verifyJWT = async (token) => {
     );
 }
 
+export const connect = async () => {
+    return await axios.get(
+        `${BASE_URL}`
+    );
+}
+
 
 
 

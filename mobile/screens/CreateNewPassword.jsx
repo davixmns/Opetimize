@@ -54,9 +54,11 @@ export function CreateNewPassword() {
                     }
                     ref={confirmPasswordRef}
                 />
-                <MyButton onPress={handleCreatePassword} disabled={password !== confirmPassword} title={"Salvar"}
-                          type={1}/>
-                <MyButton onPress={handleCancel} disabled={false} title={"Voltar"} type={2}/>
+                <View style={styles.buttons}>
+                    <MyButton onPress={handleCreatePassword} disabled={false} title={"Salvar"}
+                              type={1}/>
+                    <MyButton onPress={handleCancel} disabled={false} title={"Voltar"} type={2}/>
+                </View>
             </View>
         </View>
     )
@@ -86,4 +88,12 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: 'black',
     },
+    buttons: {
+        alignItems: 'center',
+        width: '100%',
+        justifyContent: 'space-between',
+        flexDirection: 'column',
+        marginTop: 20,
+        height: 120,
+    }
 })

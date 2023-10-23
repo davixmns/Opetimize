@@ -16,6 +16,7 @@ export function ResetTokenVerification(user) {
     const navigation = useNavigation();
     const [timerIsRunning, setTimerIsRunning] = useState(true);
     const sendAgainOpacity = timerIsRunning ? {opacity: 0.4} : {opacity: 1};
+    const [timerSeconds, setTimerSeconds] = useState(300);
     const [loading, setLoading] = useState(false)
     const userEmail = user.route.params.email
 
@@ -23,9 +24,13 @@ export function ResetTokenVerification(user) {
         setTimerIsRunning(false);
     }
 
+    const verifyButtonEnabled = input1 && input2 && input3 && input4
+
     async function handleSendTokenAgain() {
         setLoading(true);
         await sendResetToken(userEmail).finally(() => setLoading(false));
+        setTimerIsRunning(true);
+        setTimerSeconds(20)
     }
 
     async function handleVerifyResetToken(){
@@ -57,7 +62,7 @@ export function ResetTokenVerification(user) {
                         {timerIsRunning ? (
                             <>
                                 <Text style={styles.timerText}>Este código irá vencer em</Text>
-                                <Timer finishTimer={finishTimer} tokenSeconds={300} isRunning={timerIsRunning}/>
+                                <Timer finishTimer={finishTimer} tokenSeconds={timerSeconds} isRunning={timerIsRunning}/>
                             </>
                         ) : (
                             <Text style={styles.timerText}>O código expirou</Text>
@@ -72,7 +77,7 @@ export function ResetTokenVerification(user) {
                     </View>
                 </View>
                 <View style={styles.buttons}>
-                    <MyButton title={"Verificar código"} onPress={handleVerifyResetToken} disabled={false} type={2}/>
+                    <MyButton title={"Verificar código"} onPress={handleVerifyResetToken} disabled={!verifyButtonEnabled} type={2}/>
                     <MyButton title={"Voltar"} onPress={navigation.goBack} disabled={false} type={1}/>
                 </View>
             </View>
@@ -107,7 +112,7 @@ const styles = StyleSheet.create({
     },
     description: {
         fontSize: 20,
-        color: "#000",
+        color: "white",
     },
     buttons: {
         flexDirection: "column",
@@ -119,7 +124,8 @@ const styles = StyleSheet.create({
         marginBottom: 60,
     },
     sendAgain: {
-        alignSelf: "center",
+        alignItems: "center",
+        justifyContent: "center",
     },
     timer: {
         display: "flex",

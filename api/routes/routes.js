@@ -9,6 +9,10 @@ router.use(AuthRoutes)
 router.use(UserRoutes)
 router.use(PurchaseRoutes)
 
+router.use('/', (req, res) => {
+    res.send("OPETIMIZE API OK!")
+})
+
 export default router;
 
 

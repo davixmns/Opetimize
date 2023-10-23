@@ -8,6 +8,7 @@ const JWT_SECRET = process.env.JWT_KEY
 export default {
     async verifyToken(req, res, next) {
         try {
+            console.log(req.headers['authorization'])
             const token = req.headers['authorization']?.split(' ')[1]
             if (!token) {
                 console.log("token não informado")

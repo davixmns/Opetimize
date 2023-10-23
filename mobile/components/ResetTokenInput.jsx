@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     input: {
         height: 80,
         width: 70,
-        borderRadius: 10,
+        borderRadius: 100,
         paddingHorizontal: 10,
         fontSize: 40,
         backgroundColor: "#fff",
@@ -117,11 +117,13 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         shadowColor: "#000",
         shadowOffset: {
-            width: 0,
-            height: 10,
+            width: 3,
+            height: 4,
         },
         shadowOpacity: 0.4,
-        shadowRadius: 10,
-        elevation: 10,
+        shadowRadius: 3,
+        elevation: 2,
+        borderColor: "#000",
+        borderWidth: 4,
     },
 });

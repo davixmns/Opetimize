@@ -9,7 +9,7 @@ import {
     updateUser,
     createUser,
     verifyJWT,
-    sendForgotPasswordEmail, verifyResetTokenCode, createNewPassword
+    sendForgotPasswordEmail, verifyResetTokenCode, createNewPassword, connect
 } from "../service/apiService";
 import utils from "../utils/utils";
 
@@ -34,17 +34,23 @@ export function AuthProvider({children}) {
     }
 
     useEffect(() => {
-        checkIfUserIsLogged();
+        async function connectAndFetch() {
+            await connect().then(async () => {
+                await checkIfUserIsLogged();
+            }).catch(() => {
+                setLoading(false)
+                showToast('error', 'Erro', "Erro ao conectar com o servidor");
+            })
+        }
+        connectAndFetch()
     }, []);
 
     async function checkIfUserIsLogged() {
         const token = await AsyncStorage.getItem('token');
-        if(token === null) return setLoading(false)
+        if (token === null) return setLoading(false)
         await verifyJWT(token).then(() => {
-            console.log("token válido")
             enterInApp()
         }).catch(() => {
-            console.log("token inválido")
             setLoading(false)
         })
     }
@@ -148,9 +154,10 @@ export function AuthProvider({children}) {
     }
 
     async function verifyResetTokenn(token, email) {
-        if(token.length !== 4) return showToast('warning', 'Aviso', "Token inválido");
+        if (token.length !== 4) return showToast('warning', 'Aviso', "Token inválido");
         await verifyResetTokenCode(token, email).then(async (response) => {
             showToast('success', 'Sucesso', response.data.message);
+            console.log(response.data)
             await AsyncStorage.setItem('token', response.data.jwt.toString());
             navigation.navigate("CreateNewPassword")
         }).catch((error) => {
@@ -159,15 +166,14 @@ export function AuthProvider({children}) {
         })
     }
 
-    async function createPassword(password){
-        if(password.length < 6) return showToast('warning', 'Aviso', "Senha deve ter no mínimo 6 letras");
+    async function createPassword(password) {
+        if (password.length < 6) return showToast('warning', 'Aviso', "Senha deve ter no mínimo 6 letras");
         const token = await AsyncStorage.getItem('token');
-
         await createNewPassword(token, password).then(() => {
             showToast('success', 'Sucesso', "Senha criada com sucesso");
             enterInApp()
         }).catch((error) => {
-            console.log("erro");
+            console.log(error);
             showToast('error', 'Erro', error.response.data.message)
         })
     }

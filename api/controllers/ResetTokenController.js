@@ -46,7 +46,7 @@ export default {
             const now = new Date()
             const tokenDate = new Date(resetToken.updatedAt)
             if(now.getTime() - tokenDate.getTime() > fiveMinutes) return res.status(400).json({message: 'Código expirado'})
-            const jwt = utils.signJWT(user.user_id)
+            const jwt = await utils.signJWT(user.user_id)
             return res.status(200).json({message: 'Código válido', jwt: jwt})
         }catch (e) {
             console.log(e)

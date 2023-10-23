@@ -11,9 +11,12 @@ export function MyButton({ onPress, title, disabled, type }) {
         buttonTextStyle = [buttonTextStyle, styles.buttonStyle2Label];
     }
 
-    if (disabled) {
+    if (disabled && type === 1) {
         buttonStyle = [buttonStyle, styles.buttonDisabled];
         buttonTextStyle = [buttonTextStyle, styles.buttonTextDisabled];
+    } else if(disabled && type === 2) {
+        buttonStyle = [buttonStyle, styles.buttonDisabled];
+        buttonTextStyle = [buttonTextStyle, styles.buttonTextDisabled2];
     }
 
     return (
@@ -41,6 +44,9 @@ const styles = StyleSheet.create({
     },
     buttonTextDisabled: {
         color: '#fff',
+    },
+    buttonTextDisabled2: {
+        color: '#F19020',
     },
     buttonStyle1: {
         width: '95%',
