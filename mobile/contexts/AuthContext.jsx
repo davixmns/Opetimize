@@ -102,7 +102,7 @@ export function AuthProvider({children}) {
         try {
             setIsLogged(false)
             await AsyncStorage.clear();
-            navigation.reset({
+            await navigation.reset({
                 index: 0,
                 routes: [{name: 'Login'}]
             });
@@ -117,10 +117,7 @@ export function AuthProvider({children}) {
         await deleteMyAccount(token).then(async () => {
             showToast('success', 'Sucesso', "Conta deletada com sucesso");
             await AsyncStorage.clear();
-            navigation.reset({
-                index: 0,
-                routes: [{name: 'Login'}]
-            });
+            navigation.navigate("Login")
         }).catch((error) => {
             console.log(error);
             showToast('error', 'Erro', "Erro ao deletar conta")
@@ -166,8 +163,9 @@ export function AuthProvider({children}) {
         })
     }
 
-    async function createPassword(password) {
+    async function createPassword(password, confirmPassword) {
         if (password.length < 6) return showToast('warning', 'Aviso', "Senha deve ter no mínimo 6 letras");
+        if (password !== confirmPassword) return showToast('warning', 'Aviso', "Senhas não coincidem");
         const token = await AsyncStorage.getItem('token');
         await createNewPassword(token, password).then(() => {
             showToast('success', 'Sucesso', "Senha criada com sucesso");
