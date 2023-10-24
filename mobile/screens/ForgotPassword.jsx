@@ -6,6 +6,8 @@ import logo from "../assets/logo.png";
 import {useNavigation} from "@react-navigation/native";
 import {ActivityIndicator} from "react-native";
 import {useAuthContext} from "../contexts/AuthContext";
+import {MyButton} from "../components/MyButton";
+import utils from "../utils/utils";
 
 export function ForgotPassword() {
     const {sendResetToken} = useAuthContext()
@@ -20,7 +22,7 @@ export function ForgotPassword() {
     }
 
     function handleGoToLogin() {
-        navigation.navigate('Login');
+        navigation.goBack()
     }
 
     return (
@@ -38,18 +40,12 @@ export function ForgotPassword() {
                         onChangeText={setEmail}
                         inputStyle={styles.inputStyle}
                     />
-
-                    <TouchableOpacity style={styles.button} onPress={handleSendForgotPasswordEmail}>
-                        {loading ? (
-                            <ActivityIndicator color="white" size={"large"}/>
-                        ) : (
-                            <Text style={styles.buttonText}>Enviar Email</Text>
-                        )}
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>
-                        <Text style={styles.buttonText2}>Cancelar</Text>
-                    </TouchableOpacity>
+                    <View style={styles.buttons}>
+                        <MyButton title={"Enviar"} disabled={!utils.emailRegex.test(email)} type={1} onPress={handleSendForgotPasswordEmail}
+                                  loading={loading}/>
+                        <MyButton title={"Cancelar"} disabled={false} type={2} onPress={handleGoToLogin}
+                                  loading={false}/>
+                    </View>
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -95,39 +91,11 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: 'black',
     },
-    button: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#F19020',
-        borderRadius: 30,
-        justifyContent: 'center',
+    buttons: {
+        width: '100%',
+        justifyContent: 'space-between',
+        height: 115,
         alignItems: 'center',
-        marginTop: 20,
-    },
-    button2: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#fff',
-        borderColor: '#F19020',
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-        color: '#F19020',
-    },
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
-    buttonText2: {
-        fontSize: 20,
-        color: '#F19020',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
+        marginTop: 45,
+    }
 });

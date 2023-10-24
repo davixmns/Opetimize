@@ -63,10 +63,8 @@ const Login = () => {
                         />
                     </View>
 
-                    <View style={styles.button}>
+                    <View style={styles.buttons}>
                         <MyButton onPress={handleTryLogin} disabled={false} title={'Entrar'} type={1}/>
-                    </View>
-                    <View style={styles.button}>
                         <MyButton onPress={handleGoToRegister} disabled={false} title={"Criar Conta"} type={2}/>
                     </View>
 
@@ -122,9 +120,11 @@ const styles = StyleSheet.create({
         color: '#F19020',
         marginTop: '5%',
     },
-    button: {
+    buttons: {
         width: '100%',
-        paddingTop: '5%',
+        marginTop: 35,
         alignItems: 'center',
+        justifyContent: 'space-between',
+        height: 115,
     },
 });

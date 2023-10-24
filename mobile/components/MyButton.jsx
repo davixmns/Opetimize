@@ -1,6 +1,6 @@
-import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import {Text, TouchableOpacity, StyleSheet, ActivityIndicator} from "react-native";
 
-export function MyButton({ onPress, title, disabled, type }) {
+export function MyButton({ onPress, title, disabled, type, loading}) {
     let buttonStyle = styles.buttonEnabled;
     let buttonTextStyle = styles.buttonTextEnabled;
 
@@ -21,7 +21,11 @@ export function MyButton({ onPress, title, disabled, type }) {
 
     return (
         <TouchableOpacity style={buttonStyle} disabled={disabled} onPress={onPress}>
-            <Text style={buttonTextStyle}>{title}</Text>
+            {loading ? (
+                <ActivityIndicator color="white" size={"large"}/>
+            ) : (
+                <Text style={buttonTextStyle}>{title}</Text>
+            )}
         </TouchableOpacity>
     );
 }
@@ -62,7 +66,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderColor: '#F19020',
         borderStyle: 'solid',
-        borderWidth: 2,
+        borderWidth: 3,
         borderRadius: 30,
         justifyContent: 'center',
         alignItems: 'center',

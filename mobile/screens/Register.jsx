@@ -5,6 +5,7 @@ import {Keyboard, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, 
 import {Input} from "react-native-elements";
 import Icon from "react-native-vector-icons/FontAwesome";
 import {useAuthContext} from "../contexts/AuthContext";
+import {MyButton} from "../components/MyButton";
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -19,6 +20,8 @@ const Register = () => {
     const confirmPasswordRef = useRef(null)
     const navigation = useNavigation()
     const {createAccount} = useAuthContext()
+
+    const buttonDisabled = name && email && password && confirmPassword && password === confirmPassword
 
     async function handleCreateUser() {
         await createAccount({name, email, password})
@@ -61,7 +64,7 @@ const Register = () => {
                         secureTextEntry={!showPassword1}
                         rightIcon={
                             <TouchableOpacity onPress={() => setShowPassword1(!showPassword1)}>
-                                <Icon name={showPassword1 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
+                                <Icon name={showPassword1 ? 'eye' : 'eye-slash'} size={28} color='#F19020'/>
                             </TouchableOpacity>
                         }
                         ref={passwordRef}
@@ -76,23 +79,15 @@ const Register = () => {
                         secureTextEntry={!showPassword2}
                         rightIcon={
                             <TouchableOpacity onPress={() => setShowPassword2(!showPassword2)}>
-                                <Icon name={showPassword2 ? 'eye' : 'eye-slash'} size={28} color='#F19020' />
+                                <Icon name={showPassword2 ? 'eye' : 'eye-slash'} size={28} color='#F19020'/>
                             </TouchableOpacity>
                         }
                         ref={confirmPasswordRef}
                     />
-
-                    <View style={{height: 20}}>
-                        {wrongPassword && <Text style={styles.errorText}>Email ou senha incorretos</Text>}
+                    <View style={styles.buttons}>
+                        <MyButton onPress={handleCreateUser} title={"Criar Conta"} type={1} disabled={!buttonDisabled}/>
+                        <MyButton onPress={handleGoToLogin} title={"Cancelar"} type={2}/>
                     </View>
-
-                    <TouchableOpacity style={styles.button} onPress={handleCreateUser}>
-                        <Text style={styles.buttonText}>Criar conta</Text>
-                    </TouchableOpacity>
-
-                    <TouchableOpacity style={styles.button2} onPress={handleGoToLogin}>
-                        <Text style={styles.buttonText2}>Voltar</Text>
-                    </TouchableOpacity>
                 </View>
             </View>
         </TouchableWithoutFeedback>
@@ -139,43 +134,11 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         color: 'black',
     },
-    button: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#F19020',
-        borderRadius: 30,
-        justifyContent: 'center',
+    buttons: {
+        width: '100%',
         alignItems: 'center',
-        marginTop: 20,
-    },
-    button2: {
-        width: '95%',
-        height: 50,
-        backgroundColor: '#fff',
-        borderColor: '#F19020',
-        borderStyle: 'solid',
-        borderWidth: 2,
-        borderRadius: 30,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-        color: '#F19020',
-    },
-    buttonText: {
-        fontSize: 20,
-        color: '#fff',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
-    buttonText2: {
-        fontSize: 20,
-        color: '#F19020',
-        alignSelf: 'center',
-        fontWeight: 'bold',
-    },
-    errorText: {
-        color: 'red',
-        fontSize: 15,
-    },
+        justifyContent: 'space-between',
+        height: 115,
+        marginTop: 50,
+    }
 });

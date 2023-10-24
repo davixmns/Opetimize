@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":wrench: create new password">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/middlewares/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middlewares/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/contexts/AuthContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/CreateNewPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/CreateNewPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/components/MyButton.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/components/MyButton.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/ForgotPassword.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/Register.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +281,8 @@
       <workItem from="1697832182860" duration="2785000" />
       <workItem from="1697837083699" duration="182000" />
       <workItem from="1698066875963" duration="49000" />
-      <workItem from="1698071437957" duration="5809000" />
+      <workItem from="1698071437957" duration="5874000" />
+      <workItem from="1698153673444" duration="1722000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -624,7 +627,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
