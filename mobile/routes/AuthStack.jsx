@@ -9,6 +9,7 @@ import {useAuthContext} from "../contexts/AuthContext";
 import {SplashScreen} from "../screens/SplashScreen";
 import {ResetTokenVerification} from "../screens/ResetTokenVerification";
 import {CreateNewPassword} from "../screens/CreateNewPassword";
+import {ChangePassword} from "../screens/ChangePassword";
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,14 @@ export function AuthStack() {
                         options={{
                             headerShown: false,
                             cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
+                        }}
+                    />
+                    <Stack.Screen
+                        name={"ChangePassword"}
+                        component={ChangePassword}
+                        options={{
+                            headerShown: false,
+                            // cardStyleInterpolator: CardStyleInterpolators.forScaleFromCenterAndroid,
                         }}
                     />
                 </>

@@ -122,8 +122,6 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.4,
         shadowRadius: 3,
-        elevation: 2,
-        borderColor: "#000",
-        borderWidth: 4,
+        elevation: 1,
     },
 });

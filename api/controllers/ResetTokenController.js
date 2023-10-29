@@ -38,7 +38,7 @@ export default {
         try{
             const {token, email} = req.body
             if(token.length !== 4) return res.status(400).json({message: 'Código inválido'})
-            const user = await UserModel.findOne({email: email})
+            const user = await UserModel.findOne({where: {email: email}})
             if(!user) return res.status(404).json({message: 'Usuário não encontrado'})
             const resetToken = await ResetTokenModel.findByPk(user.user_id)
             if(!resetToken) return res.status(404).json({message: 'Código não encontrado'})

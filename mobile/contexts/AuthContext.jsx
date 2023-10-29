@@ -154,7 +154,6 @@ export function AuthProvider({children}) {
         if (token.length !== 4) return showToast('warning', 'Aviso', "Token inválido");
         await verifyResetTokenCode(token, email).then(async (response) => {
             showToast('success', 'Sucesso', response.data.message);
-            console.log(response.data)
             await AsyncStorage.setItem('token', response.data.jwt.toString());
             navigation.navigate("CreateNewPassword")
         }).catch((error) => {
@@ -168,7 +167,7 @@ export function AuthProvider({children}) {
         if (password !== confirmPassword) return showToast('warning', 'Aviso', "Senhas não coincidem");
         const token = await AsyncStorage.getItem('token');
         await createNewPassword(token, password).then(() => {
-            showToast('success', 'Sucesso', "Senha criada com sucesso");
+            showToast('success', 'Sucesso', "Senha salva com sucesso");
             enterInApp()
         }).catch((error) => {
             console.log(error);

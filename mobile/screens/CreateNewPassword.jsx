@@ -56,7 +56,7 @@ export function CreateNewPassword() {
                         ref={confirmPasswordRef}
                     />
                     <View style={styles.buttons}>
-                        <MyButton onPress={handleCreatePassword} disabled={false} title={"Salvar"}
+                        <MyButton onPress={handleCreatePassword} disabled={password !== confirmPassword} title={"Salvar"}
                                   type={1}/>
                         <MyButton onPress={handleCancel} disabled={false} title={"Voltar"} type={2}/>
                     </View>
