@@ -14,7 +14,7 @@ export function Profile() {
     }
 
     function handleGoToChangePassword() {
-        navigation.navigate('CreateNewPassword');
+        navigation.navigate('ChangePassword');
     }
 
     function handleLogout() {

@@ -1,6 +1,11 @@
 import React, {createContext, useContext, useState} from 'react';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import {createPurchase, deletePurchase, getAllPurchases, updatePurchase} from "../service/apiService.js";
+import {
+    createPurchaseService,
+    deletePurchaseService,
+    getAllPurchasesService,
+    updatePurchaseService
+} from "../service/apiService.js";
 import utils from "../utils/utils";
 import Toast from "react-native-toast-message";
 
@@ -24,7 +29,7 @@ export const PurchaseProvider = ({children}) => {
     async function loadPurchases() {
         try {
             const token = await AsyncStorage.getItem('token');
-            const response = await getAllPurchases(token)
+            const response = await getAllPurchasesService(token)
             setPurchases(response.data)
         } catch (e) {
             console.log(e)
@@ -36,37 +41,43 @@ export const PurchaseProvider = ({children}) => {
         const token = await AsyncStorage.getItem('token');
         const purchaseIsOk = utils.verifyPurchase(purchase)
         if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
-        await createPurchase(token, purchase).then(() => {
-            showToast('success', "Sucesso", "Compra cadastrada com sucesso")
-            loadPurchases()
-        }).catch((error) => {
-            showToast('error', "Erro", "Erro ao cadastrar a compra")
-            console.log(error)
-        })
+        await createPurchaseService(token, purchase)
+            .then(() => {
+                showToast('success', "Sucesso", "Compra cadastrada com sucesso")
+                loadPurchases()
+            })
+            .catch((error) => {
+                showToast('error', "Erro", "Erro ao cadastrar a compra")
+                console.log(error)
+            })
     }
 
-    async function saveEditedPurchase(purchase){
+    async function saveEditedPurchase(purchase) {
         const token = await AsyncStorage.getItem('token');
         const purchaseIsOk = utils.verifyPurchase(purchase)
         if (purchaseIsOk !== true) return showToast('warning', "Aviso", purchaseIsOk)
-        await updatePurchase(token, purchase).then(() => {
-            showToast('success', "Sucesso", "Compra atualizada com sucesso")
-            loadPurchases()
-        }).catch((error) => {
-            showToast('error', "Erro", "Erro ao atualizar a compra")
-            console.log(error)
-        })
+        await updatePurchaseService(token, purchase)
+            .then(() => {
+                showToast('success', "Sucesso", "Compra atualizada com sucesso")
+                loadPurchases()
+            })
+            .catch((error) => {
+                showToast('error', "Erro", "Erro ao atualizar a compra")
+                console.log(error)
+            })
     }
 
-    async function deletePurchaseById(purchase_id){
+    async function deletePurchaseById(purchase_id) {
         const token = await AsyncStorage.getItem('token');
-        await deletePurchase(token, purchase_id).then(() => {
-            showToast('success', "Sucesso", "Compra deletada com sucesso")
-            loadPurchases()
-        }).catch((error) => {
-            showToast('error', "Erro", "Erro ao deletar a compra")
-            console.log(error)
-        })
+        await deletePurchaseService(token, purchase_id)
+            .then(() => {
+                showToast('success', "Sucesso", "Compra deletada com sucesso")
+                loadPurchases()
+            })
+            .catch((error) => {
+                showToast('error', "Erro", "Erro ao deletar a compra")
+                console.log(error)
+            })
     }
 
     return (
