@@ -5,7 +5,6 @@ WORKDIR /app
 COPY . .
 
 COPY package.json .
-COPY package-lock.json .
 
 RUN npm install
 RUN npm install -g expo-cli

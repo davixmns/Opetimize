@@ -11,9 +11,8 @@ WORKDIR /app/api
 
 # Install app dependencies
 COPY package.json .
-COPY package-lock.json .
 
-RUN npm install
+RUN yarn install
 
 # Bundle app source
 COPY . .
