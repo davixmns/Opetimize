@@ -1,6 +1,5 @@
 import {Sequelize} from "sequelize";
 import dotenv from "dotenv";
-
 dotenv.config()
 
 const dbName = process.env.DB_NAME
@@ -14,6 +13,8 @@ const sequelize = new Sequelize(dbName, dbUser, dbPass, {
     host: host,
     port: port,
 })
+
+console.log("Conectando ao banco de dados: ", dbName, dbUser, dbPass, host, port)
 
 sequelize.authenticate()
     .then(() => {

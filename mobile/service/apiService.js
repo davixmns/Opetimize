@@ -3,6 +3,8 @@ import axios from "axios";
 
 const BASE_URL = `http://${MY_IP}:3001`;
 
+console.log(`BASE_URL: ${BASE_URL}`)
+
 export const tryLoginService = async (email, password) => {
     return await axios.post(
         `${BASE_URL}/login`,

@@ -4,16 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":fire: removendo arquivos">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+    <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":whale: ajustando docker">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/api/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/bun.lockb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/database/DB.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/DB.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Dockerfile" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -288,7 +289,8 @@
       <workItem from="1698153673444" duration="1791000" />
       <workItem from="1698596707527" duration="129000" />
       <workItem from="1698597044469" duration="1176000" />
-      <workItem from="1698671805764" duration="4132000" />
+      <workItem from="1698671805764" duration="4277000" />
+      <workItem from="1698703525177" duration="3297000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>
@@ -633,7 +635,7 @@
       <option name="project" value="LOCAL" />
       <updated>1687548585597</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -654,7 +656,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="DOCKERIZANDO" />
     <MESSAGE value="dockerizacao do web finalizada" />
     <MESSAGE value="fim da dockerizacao" />
     <MESSAGE value="fim da dockerizacao do mobile" />
@@ -679,6 +680,7 @@
     <MESSAGE value=":wrench: ajustes" />
     <MESSAGE value=":sparkles: updatePassword" />
     <MESSAGE value=":fire: removendo arquivos" />
-    <option name="LAST_COMMIT_MESSAGE" value=":fire: removendo arquivos" />
+    <MESSAGE value=":whale: ajustando docker" />
+    <option name="LAST_COMMIT_MESSAGE" value=":whale: ajustando docker" />
   </component>
 </project>
