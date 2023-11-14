@@ -1,4 +1,3 @@
-<div style="background-color: #f18f20; padding: 1rem">
 
 ## Opetimize <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940907990286436/logo.png" alt="Opetimize" width="25" height="25">
 
@@ -73,6 +72,4 @@ Execute o comando "docker-compose up --build" no terminal em ./api
 ## 📄 Licença
 
 Este projeto está sob uma licença, veja o arquivo [LICENSE.md](https://github.com/davixmns/Opetimize/blob/master/LICENSE) para detalhes.
-
-</div>
 
