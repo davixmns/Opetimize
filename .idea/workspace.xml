@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d5d42494-da53-4ccf-a258-0d0652d4cbd0" name="Changes" comment=":whale: ajustando docker">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/.env" beforeDir="false" afterPath="$PROJECT_DIR$/api/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/bun.lockb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/database/DB.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/DB.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/database/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/api/database/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/PurchaseDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/PurchaseDetails.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/service/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/service/apiService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,6 +288,9 @@
       <workItem from="1698597044469" duration="1176000" />
       <workItem from="1698671805764" duration="4277000" />
       <workItem from="1698703525177" duration="3297000" />
+      <workItem from="1698845101347" duration="5000" />
+      <workItem from="1698938635502" duration="1061000" />
+      <workItem from="1699967771339" duration="2956000" />
     </task>
     <task id="LOCAL-00009" summary="react">
       <created>1681502087048</created>

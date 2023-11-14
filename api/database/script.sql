@@ -18,6 +18,7 @@ CREATE TABLE purchases
     price       FLOAT       NOT NULL,
     weight      FLOAT       NOT NULL,
     date        DATE        NOT NULL,
+    rating      INT         NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 

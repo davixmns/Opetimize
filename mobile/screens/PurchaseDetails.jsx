@@ -1,4 +1,4 @@
-import {View, StyleSheet, Text} from "react-native";
+import {View, StyleSheet, Text, TouchableWithoutFeedback, Keyboard} from "react-native";
 import {useRef, useState} from "react";
 import {CircleButton} from "../components/CircleButton";
 import {usePurchaseContext} from "../contexts/PurchaseContext";
@@ -40,47 +40,50 @@ export function PurchaseDetails(purchase) {
     }
 
     return (
-        <View style={styles.container}>
-            <Text style={styles.title}>Editar Ração</Text>
-            <View style={styles.content}>
-                <View style={styles.data}>
-                    <Input
-                        keyboardType={'default'}
-                        placeholder="Ração/Marca"
-                        leftIcon={<Icon name="pencil" size={24} color="#F19020"/>}
-                        onChangeText={setName}
-                        value={name}
-                        onSubmitEditing={() => priceRef.current.focus()}
-                    />
-                    <Input
-                        keyboardType={'numeric'}
-                        placeholder="Valor"
-                        leftIcon={<Icon name="money" size={24} color="#F19020"/>}
-                        onChangeText={setPrice}
-                        value={price.toString()}
-                        onSubmitEditing={() => weightRef.current.focus()}
-                        ref={priceRef}
-                    />
-                    <Input
-                        keyboardType={'numeric'}
-                        placeholder="Peso"
-                        leftIcon={<Icon name="balance-scale" size={24} color="#F19020"/>}
-                        onChangeText={setWeight}
-                        value={weight.toString()}
-                        ref={weightRef}
-                    />
-                    <AppDatePicker date={date} setDate={setDate}/>
-                    <View style={styles.stars}>
-                        <StarsRating rating={rating} setRating={setRating}/>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+
+            <View style={styles.container}>
+                <Text style={styles.title}>Editar Ração</Text>
+                <View style={styles.content}>
+                    <View style={styles.data}>
+                        <Input
+                            keyboardType={'default'}
+                            placeholder="Ração/Marca"
+                            leftIcon={<Icon name="pencil" size={24} color="#F19020"/>}
+                            onChangeText={setName}
+                            value={name}
+                            onSubmitEditing={() => priceRef.current.focus()}
+                        />
+                        <Input
+                            keyboardType={'numeric'}
+                            placeholder="Valor"
+                            leftIcon={<Icon name="money" size={24} color="#F19020"/>}
+                            onChangeText={setPrice}
+                            value={price.toString()}
+                            onSubmitEditing={() => weightRef.current.focus()}
+                            ref={priceRef}
+                        />
+                        <Input
+                            keyboardType={'numeric'}
+                            placeholder="Peso"
+                            leftIcon={<Icon name="balance-scale" size={24} color="#F19020"/>}
+                            onChangeText={setWeight}
+                            value={weight.toString()}
+                            ref={weightRef}
+                        />
+                        <AppDatePicker date={date} setDate={setDate}/>
+                        <View style={styles.stars}>
+                            <StarsRating rating={rating} setRating={setRating}/>
+                        </View>
+                    </View>
+                    <View style={styles.buttons}>
+                        <CircleButton onPress={handleSavePurchase} iconName={'check'} color={'green'}/>
+                        <CircleButton onPress={navigation.goBack} iconName={'x'} src={'black'}/>
+                        <CircleButton onPress={handleDeletePurchase} iconName={'trash'} color={'red'}/>
                     </View>
                 </View>
-                <View style={styles.buttons}>
-                    <CircleButton onPress={handleSavePurchase} iconName={'check'} color={'green'}/>
-                    <CircleButton onPress={navigation.goBack} iconName={'x'} src={'black'}/>
-                    <CircleButton onPress={handleDeletePurchase} iconName={'trash'} color={'red'}/>
-                </View>
             </View>
-        </View>
+        </TouchableWithoutFeedback>
     )
 }
 
