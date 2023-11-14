@@ -1,3 +1,5 @@
+<div style="background-color: #f18f20; padding: 1rem">
+
 ## Opetimize <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940907990286436/logo.png" alt="Opetimize" width="25" height="25">
 
 Bem vindo ao Opetimize, Aplicativo para otimização de controle de gastos em ração para pets.
@@ -29,6 +31,11 @@ ajudando a economizar e garantir uma alimentação saudável.
 </li>
 
 
+### 📋 Pré-requisitos
+
+```
+- Docker 🐋
+```
 
 
 ## 🚀 Começando
@@ -37,11 +44,6 @@ ajudando a economizar e garantir uma alimentação saudável.
 - Coloque o seu IP Ipv4 no arquivo ".env" na variável "MY_IP" da api
 
 
-### 📋 Pré-requisitos
-
-```
-- Docker 🐋
-```
 
 [//]: # (### 🔧 Instalação)
 
@@ -72,4 +74,5 @@ Execute o comando "docker-compose up --build" no terminal em ./api
 
 Este projeto está sob uma licença, veja o arquivo [LICENSE.md](https://github.com/davixmns/Opetimize/blob/master/LICENSE) para detalhes.
 
+</div>
 
