@@ -1,5 +1,5 @@
 
-## Opetimize <img src="https://cdn.discordapp.com/attachments/785634513966333953/1122940907990286436/logo.png" alt="Opetimize" width="25" height="25">
+## Opetimize <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1163569793505439754/logo.png?ex=65f89fd0&is=65e62ad0&hm=5bb190da5cb4a681f41e3de6388d119bd7509350cfa223b173e3be73814fc568&" alt="Opetimize" width="25" height="25">
 
 Bem vindo ao Opetimize, Aplicativo para otimização de controle de gastos em ração para pets.
 Com o Opetimize, você poderá gerenciar suas compras de ração de forma eficiente e acompanhar o consumo do seu pet,
@@ -10,23 +10,23 @@ ajudando a economizar e garantir uma alimentação saudável.
 
 ### Controle de usuários
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422813626408/IMG_5533.png?ex=6565f6c8&is=655381c8&hm=6a7c64d09c0807679457708d2bd79a81c3fcdd66f39b959b081288392d05ed75&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173991533893124238/IMG_5544.png?ex=6565f7d1&is=655382d1&hm=65d63a86d7106b9bced05ed8b34a0e078187d61b055b33b3bd15367f44d2b645&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420540313640/IMG_5543.png?ex=6565f6c7&is=655381c7&hm=6e3d4827dc79f549a7b5f924d6467ad91399ee78c4293d0e3582aee7c994d19a&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422813626408/IMG_5533.png?ex=65f99ec8&is=65e729c8&hm=b90405e516ce8fc57040e46a014d3f22e20baca5d074c582908f14751a574a5f&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173991533893124238/IMG_5544.png?ex=65f99fd1&is=65e72ad1&hm=f23e46df926a2c9c2e8a8d3eb93e2d4b94135238e3472c1c60ed98c87e740ce9&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420540313640/IMG_5543.png?ex=65f99ec7&is=65e729c7&hm=63e147c5b1f939b8374f23a24f28c746b071fe487b2b2680397a13d89d8c7098&" alt="Opetimize" width="30%" height="25%">
 </li>
 
 ### Controle de compras de ração
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421739884574/IMG_5534.png?ex=6565f6c8&is=655381c8&hm=2a96ab8e5130fa4342e6af11e2c9c5f91dcedd36966ac19db89cc3dc3284ef31&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422088003685/IMG_5535.png?ex=6565f6c8&is=655381c8&hm=c5856d34672e46878144ca31976894beaec0111b6c9be01a9bfc4e9c1d307027&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422444511333/IMG_5536.png?ex=6565f6c8&is=655381c8&hm=719af53f07e9e9a25c0ae72d084e5e4930b32dc153191855c0f849027725c876&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421739884574/IMG_5534.png?ex=65f99ec8&is=65e729c8&hm=00fc139081704c459bc9170e92cf01ff3c5106eebc529e8915bcb731ce4ab9ba&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422088003685/IMG_5535.png?ex=65f99ec8&is=65e729c8&hm=b779146f3bced4be5bd8b21442ec1349034e914d59c3c72b52579df9b01f586e&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422444511333/IMG_5536.png?ex=65f99ec8&is=65e729c8&hm=4d4e545a74ed3529a1f03f3c7acd01f772f1b948735561bcf26fee5b4b7bf64e&" alt="Opetimize" width="30%" height="25%">
 </li>
 
 ### Configurações de conta
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420963930142/IMG_5541.png?ex=6565f6c8&is=655381c8&hm=dd934fc4d2b76bc92af01cdf921d38a33adf6e30d1c7b14af322a3d5b0e5427e&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421370769448/IMG_5540.png?ex=6565f6c8&is=655381c8&hm=4f2b49aab347f57fa2b5b7ef8216b1910af33dedbf424e2dd4a7f958b74c8531&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173992882173132892/IMG_5545.png?ex=6565f912&is=65538412&hm=47097e83bafa4b20ec0d2b2a9952a4e5bdf89d956c807164b9c26ab9d1add1d1&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420963930142/IMG_5541.png?ex=65f99ec8&is=65e729c8&hm=b2268d632f78599f04b5b2c8adc5d9ce866033df5e2ef65d330e1f2f562639d6&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421370769448/IMG_5540.png?ex=65f99ec8&is=65e729c8&hm=3807a3b62885833b992e206c7dfff8f56555d6209b2104ec174b2eb2ecda1a51&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173992882173132892/IMG_5545.png?ex=65f9a112&is=65e72c12&hm=7e8b4b1cf3209bc82f5e809a6e49be2c6ccde422116e4ee7f1b0e97a2b631833&" alt="Opetimize" width="30%" height="25%">
 </li>
 
 
