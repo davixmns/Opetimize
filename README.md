@@ -10,23 +10,22 @@ ajudando a economizar e garantir uma alimentação saudável.
 
 ### Controle de usuários
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422813626408/IMG_5533.png?ex=65f99ec8&is=65e729c8&hm=b90405e516ce8fc57040e46a014d3f22e20baca5d074c582908f14751a574a5f&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173991533893124238/IMG_5544.png?ex=65f99fd1&is=65e72ad1&hm=f23e46df926a2c9c2e8a8d3eb93e2d4b94135238e3472c1c60ed98c87e740ce9&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420540313640/IMG_5543.png?ex=65f99ec7&is=65e729c7&hm=63e147c5b1f939b8374f23a24f28c746b071fe487b2b2680397a13d89d8c7098&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/da317a62-9265-4f81-bec4-e557dfb2f5b1" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/025c7696-b457-4aef-9206-b244ed5aa055" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/5c9e0689-58a6-4ce4-828b-8e736441be78" alt="Opetimize" width="30%" height="25%">
 </li>
 
 ### Controle de compras de ração
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421739884574/IMG_5534.png?ex=65f99ec8&is=65e729c8&hm=00fc139081704c459bc9170e92cf01ff3c5106eebc529e8915bcb731ce4ab9ba&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422088003685/IMG_5535.png?ex=65f99ec8&is=65e729c8&hm=b779146f3bced4be5bd8b21442ec1349034e914d59c3c72b52579df9b01f586e&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990422444511333/IMG_5536.png?ex=65f99ec8&is=65e729c8&hm=4d4e545a74ed3529a1f03f3c7acd01f772f1b948735561bcf26fee5b4b7bf64e&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/6b88ce7c-f7e2-4377-8ea7-f49f29505fe0" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/f44c5420-2ce4-424a-9827-08a4491ca413" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/9142cb18-67aa-4e7e-a04d-156c4ed9b7b0" alt="Opetimize" width="30%" height="25%">
 </li>
 
 ### Configurações de conta
 <li>
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990420963930142/IMG_5541.png?ex=65f99ec8&is=65e729c8&hm=b2268d632f78599f04b5b2c8adc5d9ce866033df5e2ef65d330e1f2f562639d6&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173990421370769448/IMG_5540.png?ex=65f99ec8&is=65e729c8&hm=3807a3b62885833b992e206c7dfff8f56555d6209b2104ec174b2eb2ecda1a51&" alt="Opetimize" width="30%" height="25%">
-    <img src="https://cdn.discordapp.com/attachments/1125604141356560458/1173992882173132892/IMG_5545.png?ex=65f9a112&is=65e72c12&hm=7e8b4b1cf3209bc82f5e809a6e49be2c6ccde422116e4ee7f1b0e97a2b631833&" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/4a615201-d381-40df-8a30-354d04559bee" alt="Opetimize" width="30%" height="25%">
+    <img src="https://github.com/davixmns/Opetimize/assets/82062555/e1a533d5-d0e5-48bc-be1d-895c72ebb5a6" alt="Opetimize" width="30%" height="25%">
 </li>
 
 
@@ -72,4 +71,8 @@ Execute o comando "docker-compose up --build" no terminal em ./api
 ## 📄 Licença
 
 Este projeto está sob uma licença, veja o arquivo [LICENSE.md](https://github.com/davixmns/Opetimize/blob/master/LICENSE) para detalhes.
+
+
+![IMG_5536]()
+
 
